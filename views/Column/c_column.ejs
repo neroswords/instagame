@@ -1,6 +1,12 @@
 <%- include("patials/header") %>
 <head>
     <title>Create team</title>
+    <!-- simple-tags CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- simple-tags JS -->
+    <script src="js/script.js"></script>
+	<!-- Demo CSS -->
+	<link rel="stylesheet" href="css/demo.css">
 </head>
     
 <body>
@@ -38,9 +44,16 @@
           <label for="exampleFormControlTextarea1">Other Description(please tell your server if have more than one)</label>
           <textarea class="form-control" id="descteam" rows="3"></textarea>
         </div>
+        <div class="simple-tags" id="container" data-simple-tags="HTML"></div>
         <button type="submit" class="btn-outline-primary" style="float: right;">Create</button>
       </form>
     </div>
+    <script>
+        var el = document.getElementById('container');
+        new Tags(el);
+    </script>
 </body>
 
+
 <%- include("patials/footer") %>
+
