@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget password</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="forget_psw.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="login">
+        <button type="button" class="login_btn_close">
+            <div class="login-icon-close"></div>
+        </button>
+        <div class="login_header">
+            <h4 style="font-family: 'Kanit', sans-serif; color: gray;">ลืมรหัสผ่าน
+            </h4>
+        </div>
+        <form method="POST" class="form-hor" id="fLogin" name="fLogin">
+            <div>
+                <label for="email" class="label-form-title">กรุณากรอกอีเมล์ที่ใช้สมัครสมาชิก</label>
+                <div class="form-inside">
+                    <input type="email" class="form-item" id="email" placeholder="ใส่อีเมล์" required>
+                </div>
+            </div>
+            <a href="/Forget password/ืnew_psw.html">
+                <div class="submit-login">
+                    <input type="submit" class="submit-login-btn" value="ขอรหัสผ่านใหม่">
+                </div>
+            </a>
+        </form>
+
+    </div>
+</body>

@@ -1,0 +1,58 @@
+<%- include("patials/header") %>
+<head>
+    <title>Login page</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/home.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="home.js" type="text/javascript" defer></script>
+</head>
+    
+<body>
+    <div class="login">
+        <button type="button" class="login_btn_close">
+            <div class="login-icon-close"></div>
+        </button>
+        <div class="login_header">
+            <h5 style="font-family: 'Kanit', sans-serif; color: gray;">เข้าสู่ระบบเว็บ 
+                <span style="font-family: 'Roboto', sans-serif; color: lightseagreen;">Instagame</span>
+            </h5>
+        </div>
+        <form method="POST" class="form-hor" id="fLogin" name="fLogin">
+            <div>
+                <label for="email" class="label-form-title">อีเมล์</label>
+                <div class="form-inside">
+                    <input type="email" class="form-item" id="email" placeholder="ใส่อีเมล์" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="label-form-title">รหัสผ่าน</label>
+                <div class="form-inside">
+                    <input type="password" class="form-item" id="email" placeholder="ใส่รหัสผ่าน" required>
+                </div>
+            </div>
+            <div>
+                <a href="/Forget password/forget_psw.html" title="ลืมรหัสผ่าน" class="forget-psw">
+                    <img src="unlock.svg" class="forget-psw-icon">
+                    ลืมรหัสผ่าน
+                </a>
+            </div>
+            <div class="submit-login">
+                <input type="submit" class="submit-login-btn" value="เข้าสู่ระบบ">
+                <button type="button" class="fb-login-btn">
+                    <img src="facebook icon.svg" class="fb-icon-login">
+                    เข้าสู่ระบบด้วย Facebook
+                </button>
+                <button type="button" class="gg-login-btn">
+                    <img src="google_icon.svg " class="gg-icon-login">
+                    เข้าสู่ระบบด้วย Google
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
