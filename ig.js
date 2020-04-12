@@ -15,11 +15,27 @@ app.set("view engine", "ejs");
 
 
 app.get("/", function(req,res){
+    res.render("landing");
+});
+
+app.get("/login", function(req,res){
     res.render("login");
+});
+
+app.get("/login/forgetpsswd", function(req,res){
+    res.render("forget_psw");
 });
 
 app.get("/Sign_up", function(req,res){
     res.render("SignUp");
+});
+
+app.get("/Sign_up/acception", function(req,res){
+    res.render("acception");
+});
+
+app.get("/team", function(req,res){
+    res.render("team");
 });
 
 app.get("/team/create", function(req,res){
@@ -29,6 +45,12 @@ app.get("/team/create", function(req,res){
 app.get("/subject/create", function(req,res){
     res.render("c_column");
 });
+
+app.get("/subject/create", function(req,res){
+    res.render("c_column");
+});
+
+
 
 app.listen(3000, function(req,res){
     console.log("Server have started!!");
