@@ -188,7 +188,19 @@ form {
     overflow: visible;
 }
 
-  
+.c_column_box {
+    width: 540px;
+    margin: 120px auto;
+    margin-top: 0rem;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-top: 5px solid lightseagreen;
+    cursor: default;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .18);
+    height: 740px;
+} 
 
 
 

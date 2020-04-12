@@ -4,7 +4,7 @@
 </head>
     
 <body>
-    <div class="container" style="width: 35%; margin: 25px auto;" >
+    <div class="container" style="width: 35%; margin: 80px auto;" >
     <form>
         <div class="form-group">
           <label for="exampleFormControlInput1">Heading</label>
@@ -38,9 +38,15 @@
           <label for="exampleFormControlTextarea1">Other Description(please tell your server if have more than one)</label>
           <textarea class="form-control" id="descteam" rows="3"></textarea>
         </div>
+        <div class="simple-tags" id="container" data-simple-tags="overwatch,FPS"></div>
         <button type="submit" class="btn-outline-primary" style="float: right;">Create</button>
       </form>
     </div>
 </body>
 
 <%- include("patials/footer") %>
+
+<script>
+  var el = document.getElementById('container');
+  new Tags(el);
+</script>
