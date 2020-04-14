@@ -1,6 +1,7 @@
 const express = require("express");
 let app = express();
 const path = require("path");
+var mongoose = require("mongoose");
 
 app.use(express.static(__dirname + '/public'));
 
@@ -42,8 +43,8 @@ app.get("/team/create", function(req,res){
     res.render("c_team");
 });
 
-app.get("/subject/create", function(req,res){
-    res.render("c_column");
+app.get("/subject", function(req,res){
+    res.render("column");
 });
 
 app.get("/subject/create", function(req,res){
