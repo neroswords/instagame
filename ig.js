@@ -52,6 +52,9 @@ app.get("/subject/create", function(req,res){
 });
 
 
+app.get("/home", function(req,res){
+    res.render("home");
+});
 
 app.listen(3000, function(req,res){
     console.log("Server have started!!");
