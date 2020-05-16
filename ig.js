@@ -10,6 +10,7 @@ app.set("views", [path.join(__dirname, "views"),
                     path.join(__dirname, "views/Forget_password"),
                     path.join(__dirname, "views/Sign_Up"),
                     path.join(__dirname, "views/Team"),
+                    path.join(__dirname, "views/Home"),
                     path.join(__dirname, "views/column")]);
 
 app.set("view engine", "ejs");

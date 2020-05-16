@@ -1,0 +1,31 @@
+.footer-content {
+    background-color: #212529;
+    overflow: hidden;
+}
+
+.footer-content-menu {
+    max-width: 980px;
+    display: flex;
+    margin: 0 auto;
+    padding: 2.25rem 0;
+    justify-content: center;
+}
+
+.footer-content-menu a {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 .5rem;
+}
+
+.footer-content-copyright {
+    max-width: 980px;
+    border-top: 1px solid #6c757d;
+    font-size: .875rem;
+    color: #6c757d;
+    text-align: center;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+
