@@ -17,45 +17,45 @@
 
 <body>
     <div class="login">
-        <button type="button" class="login_btn_close">
+        <a href="/" class="login_btn_close">
             <div class="login-icon-close"></div>
-        </button>
+        </a>
         <div class="login_header">
             <h4 style="font-family: 'Kanit', sans-serif; color: gray;">สมัครสมาชิกเว็บ 
                 <span style="font-family: 'Roboto', sans-serif; color: lightseagreen;">Instagame</span>
             </h4>
         </div>
-        <form method="POST" class="form-hor" id="fLogin" name="fLogin">
+        <form method="POST" action="/Sign_up" class="form-hor" id="fLogin" name="fLogin">
             <div>
                 <label for="email" class="label-form-title">อีเมล์</label>
                 <div class="form-inside">
-                    <input type="email" class="form-item" id="email" placeholder="ใส่อีเมล์" required>
+                    <input type="email" class="form-item" id="email" name="email" placeholder="ใส่อีเมล์" required>
                 </div>
             </div>
             <div>
                 <label for="password" class="label-form-title">รหัสผ่าน</label>
                 <div class="form-inside">
-                    <input type="password" class="form-item" id="email" placeholder="ใส่รหัสผ่าน" required>
+                    <input type="password" class="form-item" id="password" name="password" placeholder="ใส่รหัสผ่าน" required>
                 </div>
             </div>
             <div>
                 <label for="confirm_password" class="label-form-title">ยืนยันรหัสผ่าน</label>
                 <div class="form-inside">
-                    <input type="password" class="form-item" id="email" placeholder="ใส่ยืนยันรหัสผ่าน" required >
+                    <input type="password" class="form-item" id="confirm_password" placeholder="ใส่ยืนยันรหัสผ่าน" required >
                 </div>
             </div>
             <div>
                 <label for="penname" class="label-form-title">ชื่อนามแฝง</label>
                 <div class="form-inside">
-                    <input type="text" class="form-item" id="email" placeholder="ใส่ชื่อนามแฝง" required >
+                    <input type="text" class="form-item" name="username" placeholder="ใส่ชื่อนามแฝง" required >
                 </div>
             </div>
                 <div class="form-inside">
                     <div class="checkbox">
-                        <input type="checkbox" id="accept">
+                        <input type="checkbox" id="accept" required>
                         <label for="accept">
                             ฉันได้อ่านและยอมรับ
-                            <a href="acception.html" title="ข้อตกลงการใช้งาน">ข้อตกลงการใช้งาน</a>
+                            <a href="/Sign_up/acception" title="ข้อตกลงการใช้งาน" style="color: blue;">ข้อตกลงการใช้งาน</a>
                         </label>
                     </div>
                 </div>
