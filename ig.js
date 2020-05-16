@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const passportLocal = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
+const flash = require('connect-flash');
 
 mongoose.connect("mongodb://localhost/ig_db", {useNewUrlParser: true});
 const User = require("./models/user");
@@ -18,7 +19,7 @@ app.use(require('express-session')({
     saveUninitialized: false
 }));
 
-
+app.use(flash());
 
 const newsRoutes = require("./routes/news"),
     indexRoutes = require("./routes/index"),
@@ -47,8 +48,8 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req,res,next){
     res.locals.currentUser = req.user;
-    // res.locals.error = req.flash('error');
-    // res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    res.locals.success = req.flash('success');
     next();
 });
 

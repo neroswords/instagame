@@ -47,18 +47,25 @@
                 <a href="/subject" class="event-tracker" title="ชุมชน/กระทู้">ชุมชน / กระทู้</a>
                 <a href="/team" class="event-tracker" title="ปาร์ตี้">หาปาร์ตี้เล่นเกม</a>
                 <input type="search" id="search" placeholder="ค้นหา..." maxlength="200">
-                <a link href="/Sign_up" id="signup">
-                    <button type="button" id="user-signup-btn" class="topbar-btn">
-                        <img src="/image/topbar-register-icon.png" alt="signup">
-                        สมัครสมาชิก
-                    </button>
-                </a>
-                <a link href="/login" id="login">
+                <% if(!currentUser) { %>
+                    <a link href="/Sign_up" id="signup">
+                        <button type="button" id="user-signup-btn" class="topbar-btn">
+                            <img src="/image/topbar-register-icon.png" alt="signup">
+                            สมัครสมาชิก
+                        </button>
+                    </a>
+                    <a link href="/login" id="login">
+                        <button type="button" id="user-signin-btn" class="topbar-btn">
+                            <img src="/image/topbar-login-icon.png" alt="signin">
+                            เข้าสู่ระบบ
+                         </button>
+                    </a>
+                  <% } else { %>
+                    Welcome, you logged as <%= currentUser.username %>
                     <button type="button" id="user-signin-btn" class="topbar-btn">
-                        <img src="/image/topbar-login-icon.png" alt="signin">
-                        เข้าสู่ระบบ
+                        <a href='/logout'>Log out</a>
                      </button>
-                </a>
+                  <% } %>  
             </nav>
         </div>
     </div>
