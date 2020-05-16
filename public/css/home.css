@@ -3,6 +3,7 @@ body {
     font-family: 'Kanit', sans-serif;
     background-color: #fff;
     box-sizing: border-box;
+    display: block;
 }
 
 .topbar_sub {
@@ -87,6 +88,7 @@ body {
     position: relative;
     display: inline-block;
     font-size: 1.125rem;
+    font-weight: 500;
     text-decoration: none;
     padding: .75rem .5rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -155,9 +157,137 @@ body {
 }
 
 #user-signin-btn:hover {
-    background-color:#222;
-    border: solid #222;
+    background-color:rgb(85, 83, 83);
+    border: solid rgb(102, 101, 101);
 }
+
+.container {
+    /* width: 1000px; */
+    /* margin: 0 auto;  */
+}
+
+.add-highlight  {
+    background: #666 url(/image/GTA\ V.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: 6px auto;
+    width: 100%;
+    height: 1080px;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.add-highlight_area {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: -1000px auto ;  
+    width: 1220px;
+    height: 700px;
+}
+
+.all-recent-game-news {
+    margin-top: 950px;
+}
+
+.headline-sticky {
+    background-color: #fff;
+    color: lightseagreen;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 1220px;
+}
+
+.headline-sticky hr {
+    border: 4px solid #e9ecef;
+    margin-top: -20px;
+}
+
+.headline__name {
+    background: white;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 0;
+    padding: 0 12px;
+    display: inline-block;
+}
+
+.box {
+    width: 1220px;
+    background-color: white;
+    margin: 0 auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+
+.col-6 {
+    margin-bottom: 15px;
+}
+
+.col-md-3 {
+    margin-bottom: 15px;
+}
+
+.box_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.box_header h4,a {
+    margin-bottom: 0;
+    font-size: 22px;
+    color: #343a40;
+    font-weight: 600;
+}
+
+.btn-outline-scrollto {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    color: #343a40;
+    border-color: #343a40;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+}
+
+.card-body a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #343a40;
+}
+
+.card-body p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #464646;
+}
+
+#hot-game-section image {
+    width: 300px;
+    height: 250px;
+}
+
+
+
+
+
+
+
+
+
 
   
 
