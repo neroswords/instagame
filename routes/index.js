@@ -12,22 +12,22 @@ router.get("/login", function(req,res){
     res.render("login");
 });
     
-// router.post('/login', passport.authenticate('local',{
-//         successRedirect: '/',
-//         failureRedirect: '/login'
-//     }),function(req, res){
-// });
+router.post('/login', passport.authenticate('local',{
+        successRedirect: '/',
+        failureRedirect: '/login'
+    }),function(req, res){
+});
 
-router.post('/login', passport.authenticate("local", 
-    {
-        successRedirect: "/",
-        failureRedirect: "/login",
-        successFlash: true,            
-        failureFlash: true,
-        successFlash: 'Succesfu1!',
-        failureFlash: 'Invalid username or passwerd.'
-    })
-);
+// router.post('/login', passport.authenticate("local", 
+//     {
+//         successRedirect: "/",
+//         failureRedirect: "/login",
+//         successFlash: true,            
+//         failureFlash: true,
+//         successFlash: 'Succesful!',
+//         failureFlash: 'Invalid username or passwerd.'
+//     })
+// );
 
 router.get('/logout', function(req,res){
     req.logout();
@@ -51,6 +51,7 @@ router.post('/Sign_up', function(req,res){
             return res.render('SignUp');
         }
         passport.authenticate('local')(req,res,function(){
+            
             req.flash('success','Welcome to Instagame, ' + user.username);
             res.redirect('/');
         });
