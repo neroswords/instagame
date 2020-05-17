@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 let GameSchema = new mongoose.Schema({
     name : String,
-    view : Float64Array,
+    view : Number,
     tag : [
         {
             type: mongoose.Schema.Types.ObjectId,

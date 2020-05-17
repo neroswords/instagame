@@ -25,7 +25,9 @@ const express = require("express"),
         let n_content = req.body.content;
         let n_user_post = req.user;
         let n_game = req.body.game;
-        let n_post = {head:n_head, content:n_content, user_post:n_user_post, game:n_game};
+        var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
+        let n_date = new Date(asiaTime).toISOString();
+        let n_post = {head:n_head, content:n_content, user_post:n_user_post, game:n_game, date: n_date};
         News.create(n_post, function(error, newNews){
             if(error){
                 console.log("error create news");

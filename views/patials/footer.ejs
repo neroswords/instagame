@@ -35,8 +35,8 @@
 <body>
     <div class="footer-content">
         <nav class="footer-content-menu" role="navigation">
-                <a href="#">หน้าแรก</a>
-                <a href="#">ข่าวเกม</a>
+                <a href="/">หน้าแรก</a>
+                <a href="/news">ข่าวเกม</a>
                 <a href="#">รีวิวเกม</a>
                 <a href="#">เกมมาแรง</a>
                 <a href="#">ชุมชน / กระทู้</a>
@@ -49,3 +49,14 @@
     </div>
 </body>
 </html>
+
+<script>
+    (function($) {
+    $.fn.hasScrollBar = function() {
+        return this.get(0).scrollHeight > this.height().clientHeight;
+    }
+})(jQuery);
+if($('.scrollcheck').hasScrollBar()){
+    
+}
+</script>

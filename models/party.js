@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 let PartySchema = new mongoose.Schema({
-    number : Int16Array,
+    number : Number,
     list : [
         {
             type: mongoose.Schema.Types.ObjectId,
