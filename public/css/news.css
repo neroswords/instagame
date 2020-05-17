@@ -1,0 +1,18 @@
+
+.contents {
+    max-width: 980px;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 5;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.contents__main {
+    width: 100%;
+}
+
+.contents__read {
+    padding: 2rem 1rem;
+}
+
