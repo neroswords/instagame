@@ -5,7 +5,6 @@
     background-color: rgb(255, 255, 255);
     position: relative;
     border-top: 5px solid lightseagreen;
-    cursor: default;
     box-sizing: border-box;
     box-shadow: 0 0 15px rgba(0, 0, 0, .18);
     height: 330px;
@@ -13,14 +12,10 @@
 
 .login_btn_close {
     position: absolute;
-    top: -5px;
-    right: 0px;
-    font-size: 0px;
     margin: 0;
     padding: 15px;
     align-items: flex-start;
     background-color: lightseagreen;
-    border-bottom-color: lightseagreen;
     color: white;
     border-color: lightseagreen;
     border-style: solid;
@@ -73,8 +68,6 @@ form {
 }
 
 .form-item {
-    font-family: 'Kanit', sans-serif;
-    display: block;
     font-size: 14px;
     line-height: normal;
     width: 330px;
@@ -87,7 +80,6 @@ form {
     background-color: #fff;
     color: #555;
     border: 1px solid #ccc;
-    box-sizing: border-box;
 }
 
 .forget-psw {
@@ -113,28 +105,25 @@ form {
 }
 
 .checkbox {
-    font-family: 'Kanit', sans-serif;
     margin-top: 10px;
     margin-bottom: 20px;
     font-weight: 100;
     font-size: 16px;
     cursor: pointer;
-    box-sizing: border-box;
 }
 
-label a {
+.checkbox a {
     color: #444;
+    font-size: 16px;
 }
 
-label a:hover {
+.checkbox a:hover {
     color: #222;
 }
 
 .submit-login {
     text-align: center;
     margin: 10px 0;
-    font-family: 'Kanit', sans-serif;
-    box-sizing: border-box;
     width: 500px;
     height: 34px;
 }

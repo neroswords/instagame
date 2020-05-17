@@ -244,7 +244,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.box_header h4,a {
+.box_header h4 a{
     margin-bottom: 0;
     font-size: 22px;
     color: #343a40;

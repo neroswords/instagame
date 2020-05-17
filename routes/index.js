@@ -8,6 +8,26 @@ router.get("/", function(req,res){
     res.render("home");
 });
 
+router.get("/profile", function(req,res){
+    res.render("Edit_profile");
+});
+
+router.get("/profile/changePassword", function(req,res){
+    res.render("changePassword");
+});
+
+router.get("/all-news", function(req,res){
+    res.render("all_news");
+});
+
+router.get("/news-view", function(req,res){
+    res.render("news");
+});
+
+router.get("/create-news", function(req,res){
+    res.render("c_news");
+});
+
 router.get("/login", function(req,res){
     res.render("login");
 });
