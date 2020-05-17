@@ -62,7 +62,7 @@
             
 
             <div class="submit-login">
-                <input type="submit" class="submit-login-btn" value="เข้าสู่ระบบ">
+                <input type="submit" class="submit-login-btn" value="เข้าสู่ระบบ" onclick="return Validate()">
                 <button type="button" class="fb-login-btn">
                     <img src="/image/facebook icon.svg" class="fb-icon-login">
                     เข้าสู่ระบบด้วย Facebook
@@ -78,3 +78,15 @@
 </body>
 </html>
 <%- include("patials/footer") %>
+
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script>

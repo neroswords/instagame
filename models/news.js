@@ -5,6 +5,7 @@ let NewsSchema = new mongoose.Schema({
     content : String,
     user_post : String,
     date : Date,
+    game : String,
     comment : [
         {
             type: mongoose.Schema.Types.ObjectId,
