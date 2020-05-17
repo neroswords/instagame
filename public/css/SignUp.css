@@ -49,7 +49,7 @@ form {
 
 .label-form-title {
     font-family: 'Kanit', sans-serif;
-    float: left;
+    /* float: left; */
     text-align: right;
     width: 130px;
     font-size: 14px;
