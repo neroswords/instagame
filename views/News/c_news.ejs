@@ -10,14 +10,14 @@
 </head>
 <body>
     <div class="login">
-        <form>
+        <form action="/news/c_news" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Head of news</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="head">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Detail of news</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" style="height: 150px;">
+                <input type="text" class="form-control" id="exampleInputPassword1" style="height: 150px;" name="content">
             </div>
             <button type="submit" class="btn btn-primary" style="float: right;">Create</button>
         </form>

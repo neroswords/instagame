@@ -16,166 +16,18 @@
             </header>
             <section class="box">
                 <div class="row">
+                <% News.forEach(function(news){ %>
                     <div class="col-md-3">
                         <div class="card" style="width: 17rem;">
-                            <a href="/views/News/news.ejs">
+                            <a href="/news/<%= news._id %>">
                               <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
                             </a>
                             <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
+                              <a href="/news/<%= news._id %>"class="card-text"><%= news.head %></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width: 17rem;">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                            <div class="card-body">
-                              <a href=""class="card-text">ติดตั้ง True Super Fiber Gamer Pro Pack ลุ้นรับสินค้าพี่แป้ง ZBING Z. จำนวน 30 รางวัล</a>
-                            </div>
-                        </div>
-                    </div>
+                <% }); %>
                 </div>
             </section>
             <div class="loadmore-content">
