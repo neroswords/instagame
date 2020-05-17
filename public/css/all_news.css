@@ -1,4 +1,10 @@
-.crete-news {
-    margin: 0 auto;
+.all-news-container button {
+    margin-right: 50px;
+    float: right;
+}
+
+.all-news-container .loadmore-content {
     text-align: center;
+    margin-bottom: 50px;
+    
 }
