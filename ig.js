@@ -9,7 +9,11 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const flash = require('connect-flash');
 
 mongoose.connect("mongodb://localhost/ig_db", {useNewUrlParser: true});
-const User = require("./models/user");
+const User = require("./models/user"),
+    Team = require("./models/team"),
+    News = require("./models/news"),
+    Commu = require("./models/commu");
+    
 mongoose.set('useCreateIndex', true)
 
 app.use(bodyParser.urlencoded({extended: true}));

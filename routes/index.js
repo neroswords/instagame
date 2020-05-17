@@ -18,16 +18,6 @@ router.post('/login', passport.authenticate('local',{
     }),function(req, res){
 });
 
-// router.post('/login', passport.authenticate("local", 
-//     {
-//         successRedirect: "/",
-//         failureRedirect: "/login",
-//         successFlash: true,            
-//         failureFlash: true,
-//         successFlash: 'Succesful!',
-//         failureFlash: 'Invalid username or passwerd.'
-//     })
-// );
 
 router.get('/logout', function(req,res){
     req.logout();
