@@ -1,7 +1,8 @@
 const express = require("express"),
     router = express.Router(),
     passport = require('passport'),
-    User = require('../models/user');
+    User = require('../models/user'),
+    middleware = require('../middleware');
 
 
 router.get("/", function(req,res){
@@ -45,11 +46,11 @@ router.get('/logout', function(req,res){
     res.redirect('/');
 });
 
-router.get('/profile', isLoggedIn, function(req,res){
+router.get('/profile', middleware.isLoggedIn, function(req,res){
     res.render("profile")
 })
 
-router.post('/editProfile', isLoggedIn, function(req, res, next){
+router.post('/editProfile', middleware.isLoggedIn, function(req, res, next){
     User.findById(req.user.id, function (err, user) {
          if (!user) {
             req.flash('error', 'No account found');

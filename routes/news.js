@@ -6,11 +6,11 @@ const express = require("express"),
     middleware = require('../middleware');
 
     router.get("/", function(req,res){
-        res.render("");
+        res.render("all_news");
     })
 
     router.get("/c_news", middleware.isLoggedIn, function(req,res){
-        res.render("");
+        res.render("c_news");
     })
 
     router.post("/c_news", middleware.isLoggedIn, function(req,res){
@@ -25,7 +25,7 @@ const express = require("express"),
             }
             else{
                 console.log("New content");
-                res.redirect("/news");
+                res.redirect("/all_news");
             }
         })
     })
@@ -36,7 +36,7 @@ const express = require("express"),
                 console.log("ERROR");
                 
             } else{
-                res.render("");
+                res.render("news");
                 }
             }
         )}
