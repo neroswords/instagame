@@ -99,7 +99,7 @@ router.get("/Sign_up/acception", function(req,res){
 });
 
 router.post('/Sign_up', function(req,res){
-    User.register(new User({username: req.body.username, email: req.body.email}), req.body.password, function(err, user){
+    User.register(new User({username: req.body.username, email: req.body.email , alias : req.body.alias}), req.body.password, function(err, user){
         if(err){
             console.log(err);
             return res.render('SignUp');
