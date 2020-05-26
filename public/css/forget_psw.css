@@ -1,14 +1,26 @@
+@media only screen and (min-width: 320px) {
+    .login {
+        width: 90%;
+        margin: 80px auto;
+        padding: 15px; 
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .login {
+        width: 540px;
+        margin: 120px auto;
+        padding: 20px;
+    }
+}
+
 .login {
-    width: 540px;
-    margin: 120px auto;
-    padding: 20px;
     background-color: rgb(255, 255, 255);
     position: relative;
     border-top: 5px solid lightseagreen;
     cursor: default;
     box-sizing: border-box;
     box-shadow: 0 0 15px rgba(0, 0, 0, .18);
-    height: 200px;
 }
 
 .login_btn_close {
@@ -17,7 +29,7 @@
     right: 0px;
     font-size: 0px;
     margin: 0;
-    padding: 15px;
+    padding: 10px;
     align-items: flex-start;
     background-color: lightseagreen;
     border-bottom-color: lightseagreen;
@@ -35,7 +47,7 @@
 }
 
 .login-icon-close {
-    background-image: url(image/close.svg);
+    background-image: url(/image/close.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -44,55 +56,59 @@
     
 }
 
-form {
-    box-sizing: border-box;
-    display: block;
-    margin-top: 20px;
-    width: 500px;
-    height: 156px;
+@media only screen and (max-width: 767.98px) {
+    .login_header h4 span {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+.label-form-title {
+    float: left;
+    text-align: right;
+    width: 130px;
+}
+}
+
+@media (max-width: 767.98px) {
+.label-form-title {
+    float: none;
+    text-align: left;
+    width: 100%;
+}
 }
 
 .label-form-title {
-    font-family: 'Kanit', sans-serif;
-    float: left;
-    text-align: right;
-    width: 130px;
     font-size: 14px;
+    margin-top: 4px;
     display: inline-block;
-    font-weight: 500;
+    font-weight: 600;
     color: #000;
     margin: 2px 0;
-    cursor: default;
 }
 
-.label-form-title-newpsw {
-    font-family: 'Kanit', sans-serif;
-    float: left;
-    text-align: right;
-    width: 130px;
-    height: 30px;
-    font-size: 14px;
-    display: inline-block;
-    font-weight: 500;
-    color: #000;
-    margin: 2px 0;
-    cursor: default;
-}
-
+@media (min-width: 768px){
 .form-inside {
     margin-left: 130px;
     padding-left: 10px;
+}
+}
+
+@media (max-width: 767.98px) {
+    .form-inside {
+        margin-left: 0;
+    }
+}
+
+.form-inside {
     color: #666;
-    margin-top: 20px;
 }
 
 .form-item {
-    font-family: 'Kanit', sans-serif;
     display: block;
     font-size: 14px;
     line-height: normal;
-    width: 330px;
-    height: 30px;
+    width: 100%;
     margin-top: 2px;
     margin-bottom: 2px;
     padding: 4px 14px;
@@ -126,22 +142,48 @@ form {
     margin-top: -2px;
 }
 
+.checkbox {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 100;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+label a {
+    color: #444;
+}
+
+label a:hover {
+    color: #222;
+    text-decoration: underline;
+}
+
 .submit-login {
     text-align: center;
-    margin: 20px 0;
-    font-family: 'Kanit', sans-serif;
+    margin: 10px 0;
     box-sizing: border-box;
-    width: 500px;
-    height: 34px;
+}
 
+@media only screen and (min-width: 768px) {
+.submit-login-btn {
+    display: inline-block;
+    width: auto;
+}
+}
+
+@media only screen and (max-width: 767.98px) {
+.submit-login-btn {
+    display: block;
+    width: 100%;
+}
 }
 
 .submit-login-btn {
     background-color: #333;
     color: #fff;
     border-color: #333;
-    display: inline-block;
-    width: auto;
     border-style: solid;
     font-size: 14px;
     padding: 4px 14px;
@@ -154,3 +196,75 @@ form {
     border-color: #222;
 }
 
+@media only screen and (min-width: 768px) {
+.fb-login-btn {
+     display: inline-block;
+     width: auto;
+}
+}
+    
+@media only screen and (max-width: 767.98px) {
+.fb-login-btn {
+    display: block;
+    width: 100%;
+}
+}
+
+.fb-login-btn {
+    background-color: STEELBLUE;
+    color: #fff;
+    border-color: STEELBLUE;
+    border-style: solid;
+    font-size: 14px;
+    padding: 4px 14px;
+    margin: 2px 0px;
+}
+
+.fb-login-btn:hover {
+    background-color: rgb(70,130,200);
+    color: #fff;
+    border-color: rgb(70,130,200);
+}
+
+.fb-icon-login {
+    width: 14px;
+    height: 14px;
+    margin-left: 0px;
+    overflow: visible;
+}
+@media only screen and (min-width: 768px) {
+.gg-login-btn {
+     display: inline-block;
+     width: auto;
+}
+}
+        
+@media only screen and (max-width: 767.98px) {
+.gg-login-btn {
+    display: block;
+    width: 100%;
+}
+}
+
+.gg-login-btn {
+    background-color: whitesmoke;
+    color: #333;
+    border-color: whitesmoke;
+    border-style: solid;
+    font-size: 14px;
+    padding: 4px 14px;
+    margin: 2px 0px;
+}
+
+.gg-login-btn:hover {
+    background-color: LIGHTGRAY;
+    color: #222;
+    border-color: LIGHTGRAY;
+}
+
+.gg-icon-login {
+    width: 14px;
+    height: 14px;
+    margin-left: 0px;
+    overflow: visible;
+}

@@ -7,10 +7,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Kanit|Open+Sans|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/SignUp.css">
+    <link rel="stylesheet" href="/css/header.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -18,57 +15,67 @@
     <script src="/js/script-min.js"></script>
 </head>
     
-<body>
-    <!-- <div class="topbar_sub">
-        <div id="hot-tag-desktop">
-            <div id="hot-tag-box">
-                <h5><span>กำลังมาแรง</span></h5>
-                <a href="#" class="tag-box-item">Marvel</a>
-                <a href="#" class="tag-box-item">Resident Evil 3</a>
-                <a href="#" class="tag-box-item">PlayStation 5</a>
-                <a href="#" class="tag-box-item">Nintendo</a>
-                <a href="#" class="tag-box-item">PUBG</a>
-                <a href="#" class="tag-box-item">Animal Crossing</a>
+<body data-gr-c-s-loaded="true">
+
+        <nav class="navbar navbar-expand-md" id="topbar_main">
+            <div class="topbar_brand">
+                <a class="navbar-brand" href="/">
+                    <img src="/image/Logo.png" alt="Instagame" style="width: 70px; height: 50px;">
+                </a>
             </div>
-        </div>
-    </div> -->
-    <div class="topbar_main">
-        <div class="topbar_logo" style="margin-right: 15px;">
-            <a href="/">
-                <img src="/image/Logo.png" alt="Instagame" style="width: 70px; height: 55px; vertical-align: middle;">
-            </a>
-        </div>
-        <div class="topbar_sidemenu">
-            <nav class="topbar_menu" role="navigation">
-                <a href="/" class="event-tracker" title="หน้าแรก">หน้าแรก</a>
-                <a href="/news" class="event-tracker" title="ข่าวเกม">ข่าวเกม</a>
-                <a href="#" class="event-tracker" title="รีวิวเกม">รีวิวเกม</a>
-                <a href="#" class="event-tracker" title="เกมมาแรง">เกมมาแรง</a>
-                <a href="/subject" class="event-tracker" title="ชุมชน/กระทู้">ชุมชน / กระทู้</a>
-                <a href="/team" class="event-tracker" title="ปาร์ตี้">หาปาร์ตี้เล่นเกม</a>
-                <input type="search" id="search" placeholder="ค้นหา..." maxlength="200">
-                <% if(!currentUser) { %>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                 <li class="nav-item active">
+                     <a class="nav-link" href="/">หน้าแรก</a>
+                 </li>
+                 <li class="nav-item active">
+                    <a class="nav-link" href="#">ข่าวเกม</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">รีวิวเกม</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">เกมมาแรง</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">ชุมชน / กระทู้</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">หาปาร์ตี้เล่นเกม</a>
+                </li>
+                </ul>
+              <form class="form-inline my-2 my-lg-0" id="member-box">
+                  <div class="topbar_search">
+                    <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
+                  </div>
+                  <% if(!currentUser) { %>
                     <a link href="/Sign_up" id="signup">
-                        <button type="button" id="user-signup-btn" class="topbar-btn">
+                        <button type="button" id="user-signup" class="btn btn-signup my-2 my-sm-0">
                             <img src="/image/topbar-register-icon.png" alt="signup">
-                            สมัครสมาชิก
+                            <span class="d-inline-block">สมัครสมาชิก</span>
                         </button>
                     </a>
                     <a link href="/login" id="login">
-                        <button type="button" id="user-signin-btn" class="topbar-btn">
+                        <button type="button" id="user-signin" class="btn btn-signin my-2 my-sm-0">
                             <img src="/image/topbar-login-icon.png" alt="signin">
-                            เข้าสู่ระบบ
-                         </button>
+                            <span class="d-inline-block">เข้าสู่ระบบ</span>
+                        </button>
                     </a>
-                  <% } else { %>
+                 <% } else { %>
                     Welcome, you logged as <%= currentUser.username %>
-                    <button type="button" id="user-signin-btn" class="topbar-btn">
+                    <button type="button" id="user-signin" class="btn my-2 my-sm-0">
                         <a href='/logout'>Log out</a>
-                     </button>
-                  <% } %>  
-            </nav>
-        </div>
+                    </button>
+                 <% } %>    
+              </form>
+            </div>
+        </nav>
     </div>
+
     <div class='container'>
         <% if (error && error.length > 0) { %>
           <div class="alert alert-danger" role="alert">
@@ -80,6 +87,7 @@
             <%= success %>
           </div>
         <% } %>
-      </div>
+    </div>
+
 </body>
 </html>
