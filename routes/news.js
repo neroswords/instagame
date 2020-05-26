@@ -23,7 +23,7 @@ const express = require("express"),
     router.post("/c_news", middleware.isLoggedIn, function(req,res){
         let n_head = req.body.head;
         let n_content = req.body.content;
-        let n_user_post = req.user;
+        let n_user_post = {id: req.user._id, username: req.user.name};
         let n_game = req.body.game;
         var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
         let n_date = new Date(asiaTime).toISOString();
@@ -33,7 +33,7 @@ const express = require("express"),
                 console.log("error create news");
             }
             else{
-                console.log("New content!!");
+                console.log(newNews);
                 res.redirect("/news");
             }
         })
@@ -50,6 +50,16 @@ const express = require("express"),
             }
         )}
     )
+
+    router.delete("/:id", middleware.checkOwner, function(req,res){
+        News.findByIdAndRemove(req.params.id, function(err){
+            if(err){
+                console.log("error to delete news");
+                res.redirect("/news");
+            }
+            res.redirect("/news");
+        });
+    })
 
 
 

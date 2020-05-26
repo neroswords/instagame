@@ -7,6 +7,7 @@ const passport = require("passport");
 const passportLocal = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 const flash = require('connect-flash');
+const methodOverride = require('method-override')
 
 mongoose.connect("mongodb://localhost/ig_db", {useNewUrlParser: true});
 const User = require("./models/user"),
@@ -16,6 +17,7 @@ const User = require("./models/user"),
     
 mongoose.set('useCreateIndex', true)
 
+app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(require('express-session')({
     secret: 'Igproject',
