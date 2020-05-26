@@ -3,19 +3,63 @@
     overflow: hidden;
 }
 
-.footer-content-menu {
-    max-width: 980px;
+.footer-content__menu {
     display: flex;
+    max-width: 980px;
     margin: 0 auto;
     padding: 2.25rem 0;
     justify-content: center;
+    text-align: center;
 }
 
-.footer-content-menu a {
+@media (max-width: 991.98px) {
+    .footer-content__menu a {
+        width: 100%;
+        margin: 10px auto;
+    }   
+}
+
+.footer-content__menu a {
     color: white;
     font-size: 18px;
     font-weight: 400;
     padding: 0 .5rem;
+}
+
+.footer-content__menu a:hover {
+    color: #d7dbdf;
+}
+
+.social-icon {
+    display: flex;
+    max-width: 980px;
+    margin: 0 auto 20px;
+    padding: 0 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon a {
+    color: #adb5bd;
+    font-size: 24px;
+    font-weight: 200;
+    padding: 0 .5rem;
+}
+
+.Facebook-page :hover{
+    color: #3b5998;
+}
+
+.Twitter :hover{
+    color:  #1da1f2;
+}
+
+.Instagram :hover{
+    color: #c32aa3;
+}
+
+.Youtube-channel :hover{
+    color: #ff0000;
 }
 
 .footer-content-copyright {
