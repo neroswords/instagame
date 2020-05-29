@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/css/news.css">
 </head>
 <body>
+    <% if (currentUser && news.user_post.id.equals(currentUser._id)) { %>
+    <form action="/news/<%= news._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">remove news</button>
+    </form>
+    <% } %>
     <div class="contents">
         <div class="contents_main">
             <div class="contents_read" >
@@ -19,6 +24,7 @@
             </div>
         </div>
     </div>
+    <p>Create by <%= news.user_post.alias %></p>
 </body>
 </html>
 

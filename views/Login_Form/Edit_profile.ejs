@@ -10,7 +10,36 @@
 </head>
 
 <body>
-    <main class="profile-content">
+    <form method="POST" action="/editProfile/<% user._id %>?_method=PUT" class="form-hor">
+        <div>
+            <label for="email" class="label-form-title">Firstname</label>
+            <div class="form-inside">
+                <input type="email" class="form-item" id="firstname" name="user[firstname]" placeholder="ใส่อีเมล์" required>
+            </div>
+        </div>
+        <div>
+            <label for="password" class="label-form-title">Lastname</label>
+            <div class="form-inside">
+                <input type="password" class="form-item" id="lastname" name="user[lastname]" placeholder="ใส่รหัสผ่าน" required>
+            </div>
+        </div>
+        <div>
+            <label for="penname" class="label-form-title">ชื่อนามแฝง</label>
+            <div class="form-inside">
+                <input type="text" class="form-item" name="user[alias]" placeholder="ใส่ชื่อนามแฝง" required >
+            </div>
+        </div>
+        <div>
+            <label for="penname" class="label-form-title">เบอร์โทรศัพท์</label>
+            <div class="form-inside">
+                <input type="text" class="form-item" name="user[number]" placeholder="ใส่ชื่อนามแฝง" required >
+            </div>
+        </div>
+        <div class="submit-login">
+            <input type="submit" class="submit-login-btn" value="Edit">
+        </div>
+    </form>
+    <!-- <main class="profile-content">
         <div class="profile-content-container">
             <h1>แก้ไขข้อมูลส่วนตัว</h1>
             <form class="profile-form">
@@ -285,6 +314,6 @@
                 </div>
             </form>
         </div>
-    </main>
+    </main> -->
 </body>
 </html>
