@@ -33,7 +33,7 @@
                      <a class="nav-link" href="/">หน้าแรก</a>
                  </li>
                  <li class="nav-item active">
-                    <a class="nav-link" href="#">ข่าวเกม</a>
+                    <a class="nav-link" href="/news">ข่าวเกม</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">รีวิวเกม</a>
@@ -42,10 +42,10 @@
                     <a class="nav-link" href="#">เกมมาแรง</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">ชุมชน / กระทู้</a>
+                    <a class="nav-link" href="/community">ชุมชน / กระทู้</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">หาปาร์ตี้เล่นเกม</a>
+                    <a class="nav-link" href="/team">หาปาร์ตี้เล่นเกม</a>
                 </li>
                 </ul>
               <form class="form-inline my-2 my-lg-0" id="member-box">
@@ -66,7 +66,7 @@
                         </button>
                     </a>
                  <% } else { %>
-                    Welcome, you logged as <%= currentUser.username %>
+                    Welcome, you logged as <%= currentUser.alias %>
                     <button type="button" id="user-signin" class="btn my-2 my-sm-0">
                         <a href='/logout'>Log out</a>
                     </button>

@@ -23,7 +23,7 @@ const express = require("express"),
     router.post("/c_news", middleware.isLoggedIn, function(req,res){
         let n_head = req.body.head;
         let n_content = req.body.content;
-        let n_user_post = {id: req.user._id, username: req.user.name};
+        let n_user_post = {id: req.user._id, alias: req.user.alias};
         let n_game = req.body.game;
         var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
         let n_date = new Date(asiaTime).toISOString();
