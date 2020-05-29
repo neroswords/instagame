@@ -29,7 +29,7 @@ app.use(flash());
 
 const newsRoutes = require("./routes/news"),
     indexRoutes = require("./routes/index"),
-    subjectRoutes = require("./routes/communication"),
+    commuRoutes = require("./routes/communication"),
     teamRoutes = require("./routes/team");
 
 
@@ -64,7 +64,7 @@ app.use(function(req,res,next){
 app.use("/",indexRoutes);
 app.use("/news", newsRoutes);
 app.use("/team", teamRoutes);
-app.use("/subject", subjectRoutes);
+app.use("/commu", commuRoutes);
 
 
 app.listen(3000, function(req,res){

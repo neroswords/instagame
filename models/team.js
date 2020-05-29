@@ -7,6 +7,10 @@ let TeamSchema = new mongoose.Schema({
     date : Date,
     game : String,
     appointment : Date,
+    party : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Party"
+    },
     comment : [
         {
             type: mongoose.Schema.Types.ObjectId,
