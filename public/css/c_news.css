@@ -1,5 +1,5 @@
 @media only screen and (min-width: 320px) {
-    .login {
+    .create-news {
         width: 90%;
         margin: 80px auto;
         padding: 15px; 
@@ -7,14 +7,14 @@
 }
 
 @media only screen and (min-width: 1170px) {
-    .login {
-        width: 570px;
+    .create-news {
+        width: 540px;
         margin: 120px auto;
         padding: 20px;
     }
 }
 
-.login {
+.create-news {
     background-color: rgb(255, 255, 255);
     position: relative;
     border-top: 5px solid lightseagreen;
@@ -23,7 +23,7 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, .18);
 }
 
-.login_btn_close {
+.create-news_btn_close {
     position: absolute;
     top: -5px;
     right: 0px;
@@ -38,7 +38,7 @@
     border-style: solid;
 }
 
-.login_btn_close:hover {
+.create-news_btn_close:hover {
     background-color: TEAL;
     border-bottom-color: TEAL;
     color: white;
@@ -46,7 +46,7 @@
     border-style: solid;
 }
 
-.login-icon-close {
+.create-news-icon-close {
     background-image: url(/image/close.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -57,9 +57,14 @@
 }
 
 @media only screen and (max-width: 767.98px) {
-    .login_header h4 span {
+    .create-news_header h4 span {
         display: block;
     }
+}
+
+.create-news_header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
@@ -79,11 +84,11 @@
 }
 
 .label-form-title {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 4px;
     display: inline-block;
     font-weight: 600;
-    color: #000;
+    color: #222;
     margin: 2px 0;
 }
 
@@ -120,151 +125,38 @@
     box-sizing: border-box;
 }
 
-.forget-psw {
-    font-family: 'Kanit', sans-serif;
-    background-color: transparent;
-    color: #333;
-    font-size: 14px;
-    padding: 4px;
-    margin-top: auto;
-}
-
-.forget-psw:hover {
-    color: #000;
-    text-decoration: underline;
-}
-
-.forget-psw-icon {
-    width: 12.250px;
-    height: 14px;
-    margin-left: 140px;
-    overflow: visible;
-    margin-top: -2px;
-}
-
-.checkbox {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-weight: 100;
-    font-size: 16px;
-    cursor: pointer;
-    box-sizing: border-box;
-}
-
-label a {
-    color: #444;
-}
-
-label a:hover {
-    color: #222;
-    text-decoration: underline;
-}
-
-.submit-login {
+.submit-create-news {
     text-align: center;
     margin: 10px 0;
     box-sizing: border-box;
 }
 
 @media only screen and (min-width: 768px) {
-.submit-login-btn {
+.submit-create-news-btn {
     display: inline-block;
     width: auto;
 }
 }
 
 @media only screen and (max-width: 767.98px) {
-.submit-login-btn {
+.submit-create-news-btn {
     display: block;
     width: 100%;
 }
 }
 
-.submit-login-btn {
+.submit-create-news-btn {
     background-color: #333;
     color: #fff;
     border-color: #333;
     border-style: solid;
     font-size: 14px;
     padding: 4px 14px;
-    margin: 2px 0px;
+    margin: 2px auto;
 }
 
-.submit-login-btn:hover {
+.submit-create-news-btn:hover {
     background-color: #222;
     color: #fff;
     border-color: #222;
-}
-
-@media only screen and (min-width: 768px) {
-.fb-login-btn {
-     display: inline-block;
-     width: auto;
-}
-}
-    
-@media only screen and (max-width: 767.98px) {
-.fb-login-btn {
-    display: block;
-    width: 100%;
-}
-}
-
-.fb-login-btn {
-    background-color: STEELBLUE;
-    color: #fff;
-    border-color: STEELBLUE;
-    border-style: solid;
-    font-size: 14px;
-    padding: 4px 14px;
-    margin: 2px 0px;
-}
-
-.fb-login-btn:hover {
-    background-color: rgb(70,130,200);
-    color: #fff;
-    border-color: rgb(70,130,200);
-}
-
-.fb-icon-login {
-    width: 14px;
-    height: 14px;
-    margin-left: 0px;
-    overflow: visible;
-}
-@media only screen and (min-width: 768px) {
-.gg-login-btn {
-     display: inline-block;
-     width: auto;
-}
-}
-        
-@media only screen and (max-width: 767.98px) {
-.gg-login-btn {
-    display: block;
-    width: 100%;
-}
-}
-
-.gg-login-btn {
-    background-color: whitesmoke;
-    color: #333;
-    border-color: whitesmoke;
-    border-style: solid;
-    font-size: 14px;
-    padding: 4px 14px;
-    margin: 2px 0px;
-}
-
-.gg-login-btn:hover {
-    background-color: LIGHTGRAY;
-    color: #222;
-    border-color: LIGHTGRAY;
-}
-
-.gg-icon-login {
-    width: 14px;
-    height: 14px;
-    margin-left: 0px;
-    overflow: visible;
 }

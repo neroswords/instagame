@@ -6,25 +6,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>create-news</title>
-    <link rel="stylesheet" href="/css/all_news.css">
+    <link rel="stylesheet" href="/css/c_news.css">
 </head>
 <body>
-    <div class="login">
-        <form action="/news/c_news" method="POST">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Head of news</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="head">
+    <div class="create-news" href="/">
+        <a href="/" class="create-news_btn_close">
+            <div class="create-news-icon-close"></div>
+        </a>
+        <div class="create-news_header">
+            <h3 style="font-family: 'Kanit', sans-serif; color: gray;">สร้างข่าว</h3>
+        </div>
+        <form action = '/create-news' method = 'POST' class="form-hor">
+            <div>
+                <label for="text" class="label-form-title">พาดหัวข่าว</label>
+                <div class="form-inside">
+                    <input type="text" class="form-item" id="headline" name="headline" placeholder="ใส่พาดหัวข่าว" required>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Detail of news</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" style="height: 150px;" name="content">
+            <div>
+                <label for="text" class="label-form-title">ชื่อเกม</label>
+                <div class="form-inside">
+                    <input type="text" class="form-item" id="game" name="game" placeholder="ใส่ชื่อเกม" required>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary" style="float: right;">Create</button>
+            <div>
+                <label for="text" class="label-form-title">เนื้อหาข่าว</label>
+                <div class="form-inside">
+                    <textarea rows="10" cols="50" class="form-item" id="content" name="content" required></textarea>    
+                </div>
+            </div>
+            <div>
+                <label for="text" class="label-form-title">แนบรูปภาพ</label>
+                <div class="form-inside">
+                    <input type="file" class="form-item" id="picture" name="picture" required>
+                </div>
+            </div>
+            <div class="submit-create-news">
+                <input type="submit" class="submit-create-news-btn" value="สร้างข่าว">
+            </div>
         </form>
     </div>
-     <br>
-     <br>
-     <br>
 </body>
 </html>
 

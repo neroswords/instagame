@@ -21,8 +21,8 @@ router.get("/all-news", function(req,res){
     res.render("all_news");
 });
 
-router.get("/news-view", function(req,res){
-    res.render("news");
+router.get("/news-content", function(req,res){
+    res.render("news-content");
 });
 
 router.get("/create-news", function(req,res){
