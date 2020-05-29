@@ -17,18 +17,6 @@ router.get("/profile/changePassword", function(req,res){
     res.render("changePassword");
 });
 
-router.get("/all-news", function(req,res){
-    res.render("all_news");
-});
-
-router.get("/news-content", function(req,res){
-    res.render("news-content");
-});
-
-router.get("/create-news", function(req,res){
-    res.render("c_news");
-});
-
 router.get("/login", function(req,res){
     res.render("login");
 });
