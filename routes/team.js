@@ -3,6 +3,7 @@ const express = require("express"),
     passport = require('passport'),
     User = require('../models/user'),
     Team = require('../models/team'),
+    Party = require('../models/party'),
     middleware = require('../middleware');
 
 
@@ -54,4 +55,36 @@ router.delete("/:id", middleware.checkOwner, function(req,res){
         res.redirect("/team");
     });
 })
+
+router.post("/:id/addlist",middleware.isLoggedIn, function(req,res){
+    Team.findById(req.params.id, function(err, idTeam){
+        if(err){
+            console.log("cannot find team");
+            res.redirect("/team")
+        }
+        else{
+            Party.findById(idTeam.party.id, function(err, idParty){
+                if(err){
+                    console.log("cannot find team");
+                    res.redirect("/team")
+                }else{
+                    let n_id = req.user.id;
+                    let n_name = req.user.alias;
+                    let n_number = idParty.number++;
+                    let member = {list:{id:n_id, alias:n_name},number:n_number}
+                    idParty.posts.push(member);
+                    foundUser.save(function(err, data){
+                        if(err){
+                            console.log(err);
+                        } else {
+                            console.log(data);
+                        }
+                    });
+                }
+            })
+        }
+    })
+})
+
+
 module.exports = router;

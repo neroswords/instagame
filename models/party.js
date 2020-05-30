@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 let PartySchema = new mongoose.Schema({
     number : Number,
-    list : [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "List"
-        }
-    ]
+    list : {
+        id: {type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        alias: String
+    }
 });
 
 
