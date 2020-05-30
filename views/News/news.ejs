@@ -7,24 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>news-view</title>
     <link rel="stylesheet" href="/css/news.css">
+
 </head>
 <body>
-    <% if (currentUser && news.user_post.id.equals(currentUser._id)) { %>
-    <form action="/news/<%= news._id %>?_method=DELETE" method="POST">
-        <button class="btn btn-danger">remove news</button>
-    </form>
-    <% } %>
-    <div class="contents">
-        <div class="contents_main">
-            <div class="contents_read" >
-                <h2>
-                    <strong ><%= news.head %></strong>
-                </h2>
-                <p><%= news.content %></p>
+    <main class="main-body" role="main">
+        <header class="featured-box">
+          <figure class="featured-box__img">
+              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTMwLzE2NTYzMC90aHVtYm5haWwvUmVfMTIwMF82MjguanBnJnc9MTE0MCZoPTU5Nw" alt="Re:Zero เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if">
+          </figure>
+          <div class="featured-box__desc">
+            <h1>Re:Zero เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if</h1>
+            <div class="featured-box__meta">
+                <span class="mr-2">
+                    <i class="far fa-user-circle"></i>
+                    ใส่ชื่อคนโพสต์
+                </span>
+                <span class="mr-2">
+                    <i class="fas fa-eye"></i>
+                    ใส่ยอดวิว
+                </span>
+                <span>
+                    <i class="far fa-clock"></i>
+                    ใส่วันที่โพสต์
+                </span>
             </div>
-        </div>
-    </div>
-    <p>Create by <%= news.user_post.alias %></p>
+          </div>    
+        </header>    
+
+        <nav class="breadcrumb-box"></nav>
+  
+
+    </main>
 </body>
 </html>
 

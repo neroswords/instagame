@@ -169,8 +169,9 @@
     
     .add-view {
         display: flex;
-        float: right;
         margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        justify-content: center;
     }
     
     .scrollto-add {
@@ -181,16 +182,16 @@
         border: 1px solid #343a40;
         color: #343a40;
         background-color: transparent;
-        padding: .25rem .5rem;
-        font-size: .875rem;
+        padding: .375rem .75rem;
+        font-size: 1rem;
         line-height: 1.5;
         transition: color .15s;
     }
     
     .scrollto-add:hover {
         color: #fff;
-        background-color: rgb(0, 61, 154);
-        border-color: rgb(0, 61, 154);
+        background-color: teal;
+        border-color: teal;
     }
     
     .scrollto {
