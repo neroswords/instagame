@@ -1,16 +1,16 @@
-@media (min-width: 1200px) {
-    .news-body {
-        padding-top: 150px;
-    }
+    @media (min-width: 1200px) {
+        .teams-body {
+            padding-top: 150px;
+        }
     }
     
     @media (min-width: 768px) and (max-width: 991.98px){
-    .news-body {
-        padding-top: 100px;
-    }
+        .teams-body {
+            padding-top: 100px;
+        }
     }
     
-    .news-body {
+    .teams-body {
         overflow: hidden;
         padding-top: 85px;
         padding-bottom: 24px;
