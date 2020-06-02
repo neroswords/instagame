@@ -139,3 +139,13 @@ img {
     vertical-align: middle;
     border-style: none;
 }
+
+@media (max-width: 767.98px) {
+    .topbar_search {
+        display: block;
+        width: 100%;
+        
+    }
+}
+
+

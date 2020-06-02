@@ -12,68 +12,10 @@
     
     .news-body {
         overflow: hidden;
-        padding-top: 85px;
+        padding-top: 24px;
         padding-bottom: 24px;
     }
     
-    @media (min-width: 1200px) {
-        .highlight {
-            max-width: 980px;
-        }
-     }
-    
-     @media (min-width: 768px) and (max-width: 991.98px) {
-        .highlight {
-            max-width: 720px;
-        }
-     }
-    
-     @media (min-width: 576px) and (max-width: 767.98px) {
-        .highlight {
-            max-width: 540px;
-        }
-     }
-    
-     .highlight {
-        position: relative;
-        z-index: 5;
-        margin: auto;
-    }
-    
-    .hightlight-box {
-        position: relative;
-        background: #fff;
-        margin-bottom: 0;
-    }
-    
-    .carousel-item img {
-        opacity: 1;
-    }
-    
-    .carousel-item img:hover {
-        opacity: 0.9;
-        transition: ease-in-out .15s;
-    }
-    
-    .carousel-caption {
-        margin: 0 auto;
-        background-color: black;
-        border-style: double;
-        opacity: .8;
-        color: #fff;
-    }
-    
-    .carousel-caption:hover {
-        text-decoration: underline;
-    }
-    
-    .carousel-caption h4 {
-        font-weight: 600;
-    }
-    
-    .carousel-caption p {
-        font-weight: 500;
-    }
     
     @media (min-width: 1200px) {
         .headline {
@@ -101,6 +43,8 @@
         color: lightseagreen;
         position: relative;
         z-index: 5;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
     }
     
     .headline-sticky {
@@ -147,6 +91,8 @@
         padding-right: 1rem;
         padding-left: 1rem;
         width: 100%;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
     }
     
     .box_header {
