@@ -5,9 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>news-view</title>
+    <title>news</title>
     <link rel="stylesheet" href="/css/news.css">
-
 </head>
 <body>
     <main class="main-body" role="main">
@@ -42,23 +41,23 @@
                     <a href="/">หน้าแรก</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">/ ข่าวเกม</a>
+                    <a href="#">ข่าวเกม</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">/ ข่าวเกม: [ประเภทเกม]</a>
+                    <a href="#">ข่าวเกม: [ประเภทเกม]</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page"> 
-                    <a href="#">/ เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if</a>
+                    <a href="#">เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if</a>
                 </li>
             </ol>
         </nav>
 
         <!-- เนื้อข่าว -->
-        <div class="content bg-white">
+        <div class="content">
             <div class="content__main order-1">
                 <!-- Start Text Content -->
                 <div class="content__read">
-                    <h2>
+                    <h3>
                         <span style="color: #212529;">
                             <strong><%= news.head %></strong>
                         </span>
@@ -87,9 +86,9 @@
                         </h3>
                     </header>
                     <div class="box__body">
-                        <textarea rows="4" cols="50" name="comment" form="usrform">Add a comment...</textarea>
+                        <textarea rows="4" cols="50" name="comment" form="usrform">แสดงความคิดเห็น...</textarea>
                         <div class="submit-comment">
-                            <button type="button" class="submit-comment-btn">Post</button>
+                            <button type="button" class="submit-comment-btn">โพสต์</button>
                         </div> 
                     </div>
                 </section>

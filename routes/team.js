@@ -15,6 +15,14 @@ router.get("/create", function(req,res){
     res.render("c_team");
 });
 
+router.get("/my_team", function(req,res){
+    res.render("my_team");
+});
+
+router.get("/detail", function(req,res){
+    res.render("team_detail");
+});
+
 router.post("/create", middleware.isLoggedIn, function(req,res){
     let n_head = req.body.headline;
     let n_content = req.body.content;

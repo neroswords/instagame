@@ -6,7 +6,7 @@
     }
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 1200px) {
     .login {
         width: 570px;
         margin: 120px auto;
