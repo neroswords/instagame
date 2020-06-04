@@ -48,7 +48,7 @@ router.get("/:id", function(req,res){
             console.log("ERROR");
             
         } else{
-            res.render("team",{news:idTeam});
+            res.render("team",{team:idTeam});
             }
         }
     )}
