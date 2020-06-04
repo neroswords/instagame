@@ -39,7 +39,7 @@ router.get("/:id", function(req,res){
             console.log("ERROR");
             
         } else{
-            res.render("commu",{news:idTeam});
+            res.render("commu",{commu:idCommu});
             }
         }
     )}
@@ -54,4 +54,6 @@ router.delete("/:id", middleware.checkOwner, function(req,res){
         res.redirect("/commu");
     });
 })
+
+
 module.exports = router;
