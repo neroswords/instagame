@@ -1,0 +1,104 @@
+@media only screen and (min-width: 320px) {
+    .create-news {
+        width: 90%;
+        margin: 80px auto;
+        padding: 15px; 
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .create-news {
+        width: 570px;
+        margin: 120px auto;
+        padding: 20px;
+    }
+}
+
+.create-news {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-top: 5px solid lightseagreen;
+    cursor: default;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .18);
+}
+
+.create-news_btn_close {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    font-size: 0px;
+    margin: 0;
+    padding: 10px;
+    align-items: flex-start;
+    background-color: lightseagreen;
+    border-bottom-color: lightseagreen;
+    color: white;
+    border-color: lightseagreen;
+    border-style: solid;
+}
+
+.create-news_btn_close:hover {
+    background-color: TEAL;
+    border-bottom-color: TEAL;
+    color: white;
+    border-color: TEAL;
+    border-style: solid;
+}
+
+.create-news-icon-close {
+    background-image: url(/image/close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 17px;
+    height: 17px;
+    
+}
+
+@media only screen and (max-width: 767.98px) {
+    .create-news_header h3 span {
+        display: block;
+    }
+}
+
+.create-news_header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.submit-create-party {
+    text-align: center;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+.submit-create-party-btn {
+    display: inline-block;
+    width: auto;
+}
+}
+
+@media only screen and (max-width: 767.98px) {
+.submit-create-party-btn {
+    display: block;
+    width: 100%;
+}
+}
+
+.submit-create-party-btn {
+    background-color: YELLOWGREEN;
+    color: #fff;
+    border-color: YELLOWGREEN;
+    border-style: solid;
+    font-size: 14px;
+    padding: 4px 14px;
+    margin: 2px auto;
+}
+
+.submit-create-party-btn:hover {
+    background-color: OLIVEDRAB;
+    color: #fff;
+    border-color: OLIVEDRAB;
+}

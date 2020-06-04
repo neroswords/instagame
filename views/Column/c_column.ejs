@@ -1,39 +1,75 @@
 <%- include("patials/header") %>
+
 <head>
-    <title>Create team</title>
-    <!-- simple-tags CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- simple-tags JS -->
-    <script src="js/script.js"></script>
-    
-	<!-- Demo CSS -->
-	<link rel="stylesheet" href="css/demo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>create community</title>
+  <link rel="stylesheet" href="/css/c_column.css">
 </head>
     
 <body>
-    <div class="container" style="width: 35%; margin: 80px auto;" >
-    <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Heading</label>
-          <input type="text" class="form-control" id="heading" placeholder="your destination in game">
-        </div>
-        <div class="form-group">
-          <label for="img">Select image:</label>
-          <input type="file" id="img" name="img" accept="image/*">
-        </div>
-        <div class="form-group">
-          <label for="video">video link(if you have)</label>
-          <input type="text" id="v_link" placeholder="https://www.youtube.com/watch?v=rUAuEo3t0-o" style="width: 100%;"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Description</label>
-          <textarea class="form-control" id="descteam" style="height: 300px;"></textarea>
-        </div>
-        <div class="simple-tags" id="container" data-simple-tags="Overwatch, FPS"></div>
-        <button type="submit" class="btn-outline-primary" style="float: right;">Create</button>
-      </form>
+
+<div class="create-news" href="/">
+    <a href="/" class="create-news_btn_close">
+        <div class="create-news-icon-close"></div>
+    </a>
+    <div class="create-news_header">
+        <h3 style="font-family: 'Kanit', sans-serif; color: gray;">สร้างปาร์ตี้</h3>
     </div>
+
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">ชื่อปาร์ตี้</label>
+        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อปาร์ตี้">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">ชื่อเกม</label>
+        <input type="text" class="form-control" id="party-game-name" placeholder="ใส่ชื่อเกม">
+      </div>
+      <div class="form-group">
+        <label for="img">เลือกรูปภาพ:</label>
+        <input type="file" id="party-img" name="party-img" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">ชื่อในเกม</label>
+        <input type="text" class="form-control" id="party-leader-name" placeholder="ใส่ชื่อในเกม">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">จำนวนสมาชิกในปาร์ตี้</label>
+        <select class="form-control" id="party-member">
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="date">วันที่นัดหมาย</label>
+          <input type="date" id="party-date">
+        </div>       
+        <div class="form-group col-md-6">
+          <label for="date">เวลานัดหมาย</label>
+          <input type="time" id="party-time">
+        </div>    
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">คำอธิบายเพิ่มเติม</label>
+        <textarea class="form-control" id="descteam" rows="3"></textarea>
+      </div>
+      <div class="submit-create-party">
+        <button type="submit" class="submit-create-party-btn">สร้างปาร์ตี้</button>
+      </div>
+    </form>
+
+  </div>
+
 </body>
+
+<%- include("patials/footer") %>
 
 
 <%- include("patials/footer") %>
