@@ -419,6 +419,23 @@ section .col-md-6 {
     background-color: DARKRED;
 }
 
+.entry__meta__posted4 {
+    font-size: .875rem;
+    color: white;
+    border-color: #00ACC1;
+    background-color: #00ACC1;
+    border: 1px solid;
+    padding: 5px;
+    width: auto;
+    border-radius: .5rem;
+}
+
+.entry__meta__posted4:hover {
+    color: white;
+    border-color: #00838F;
+    background-color: #00838F;
+}
+
 .entry__body p {
     height: 65px;
     margin-bottom: 5px;

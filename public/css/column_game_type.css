@@ -150,6 +150,25 @@
     font-size: 16px;
 }
 
+.submit-create-party-btn {
+    background-color: YELLOWGREEN;
+    color: #fff;
+    border: 1px solid YELLOWGREEN;
+    display: inline-block;
+    position: relative;
+    padding: 5px 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: auto;
+    text-align: center;
+}
+
+.submit-create-party-btn:hover {
+    background-color: OLIVEDRAB;
+    color: #fff;
+    border-color: OLIVEDRAB;
+}
+
 .create_team-icon span {
     font-size: 1rem;
 }

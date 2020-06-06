@@ -213,6 +213,24 @@
     margin: .5rem 0;
 }
 
+.entry__meta__posted1 {
+    font-size: .875rem;
+    color: white;
+    border-color: YELLOWGREEN;
+    background-color: YELLOWGREEN;
+    border: 1px solid;
+    padding: 5px;
+    width: auto;
+    border-radius: .5rem;
+}
+
+.entry__meta__posted1:hover {
+    color: white;
+    border-color: OLIVEDRAB;
+    background-color: OLIVEDRAB;
+}
+
+
 .entry__meta__posted2 {
     font-size: .875rem;
     color: white;
@@ -247,6 +265,23 @@
     background-color: DARKRED;
 }
 
+.entry__meta__posted4 {
+    font-size: .875rem;
+    color: white;
+    border-color: #00ACC1;
+    background-color: #00ACC1;
+    border: 1px solid;
+    padding: 5px;
+    width: auto;
+    border-radius: .5rem;
+}
+
+.entry__meta__posted4:hover {
+    color: white;
+    border-color: #00838F;
+    background-color: #00838F;
+}
+
 .entry__body p {
     height: 65px;
     margin-bottom: 5px;
@@ -272,23 +307,6 @@
 .box__body textarea {
     font-size: 16px;
     color: #343a40;
-}
-
-.entry__meta__posted1 {
-    font-size: .875rem;
-    color: white;
-    border-color: YELLOWGREEN;
-    background-color: YELLOWGREEN;
-    border: 1px solid;
-    padding: 5px;
-    width: auto;
-    border-radius: .5rem;
-}
-
-.entry__meta__posted1:hover {
-    color: white;
-    border-color: OLIVEDRAB;
-    background-color: OLIVEDRAB;
 }
 
 .content__comment {

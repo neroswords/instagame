@@ -17,6 +17,74 @@
     }
     
     @media (min-width: 1200px) {
+        .teams__headline {
+            max-width: 980px;
+        }
+     }
+    
+     @media (min-width: 768px) and (max-width: 991.98px) {
+        .teams__headline {
+            max-width: 720px;
+        }
+     }
+    
+     @media (min-width: 576px) and (max-width: 767.98px) {
+        .teams__headline {
+            max-width: 540px;
+        }
+     }
+    
+    .teams__headline {
+        background-color: transparent;
+        margin: 0 auto;
+        padding: 1.25rem;
+        color: lightseagreen;
+        position: relative;
+        z-index: 5;
+        position: relative;
+        text-align: right;
+    }
+    
+    .headline-sticky {
+        z-index: 10;
+    }
+    
+    .entry__meta__posted3 {
+        font-size: .875rem;
+        color: white;
+        border-color: FIREBRICK;
+        background-color: FIREBRICK;
+        border: 1px solid;
+        padding: 5px;
+        width: auto;
+        border-radius: .5rem;
+    }
+    
+    .entry__meta__posted3:hover {
+        color: white;
+        border-color: DARKRED;
+        background-color: DARKRED;
+    }
+    
+    .entry__meta__posted4 {
+        font-size: .875rem;
+        color: white;
+        border-color: #00ACC1;
+        background-color: #00ACC1;
+        border: 1px solid;
+        padding: 5px;
+        width: auto;
+        border-radius: .5rem;
+    }
+    
+    .entry__meta__posted4:hover {
+        color: white;
+        border-color: #00838F;
+        background-color: #00838F;
+    }
+
+
+    @media (min-width: 1200px) {
         .featured-box {
             max-width: 980px;
         }
