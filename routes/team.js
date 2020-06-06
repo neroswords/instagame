@@ -23,10 +23,6 @@ router.get("/my_team", function(req,res){
     res.render("my_team");
 });
 
-router.get("/detail", function(req,res){
-    res.render("team_detail");
-});
-
 router.get("/create", middleware.isLoggedIn, function(req,res){
     res.render("c_team");
 });
@@ -42,9 +38,9 @@ router.post("/create", middleware.isLoggedIn, function(req,res){
     let n_appointment_time = req.body.appointment_time;
     var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
     let n_date = new Date(asiaTime).toISOString();
-    let n_post = {head:n_head, content:n_content, 
-                    user_post:n_user_post, 
-                    game:n_game, 
+    let n_post = {head:n_head, content:n_content,
+                    user_post:n_user_post,
+                    game:n_game,
                     date_post: n_date,
                     appointment_date:n_appointment_date,
                     appointment_time:n_appointment_time,
@@ -56,8 +52,22 @@ router.post("/create", middleware.isLoggedIn, function(req,res){
             console.log("error create team");
         }
         else{
-            console.log(newTeam);
-            res.redirect("/team");
+            newTeam.party.push(req.user._id);
+            newTeam.save();
+            res.redirect("/team/" + newTeam._id)
+            // Party.create(,function(err,newParty){
+            //     if(err){
+            //         console.log("error to create party list");
+                    
+            //     }
+            //     else{
+            //         newTeam.party.push(Party);
+            //         newTeam.save();
+            //         console.log(newTeam);
+                    
+            //         res.redirect("/team/" + newTeam._id)
+            //     }
+            // })
         }
     })
 })
@@ -68,7 +78,7 @@ router.get("/:id", function(req,res){
             console.log("ERROR");
             
         } else{
-            res.render("team",{team:idTeam});
+            res.render("team_detail",{team:idTeam});
             }
         }
     )}
@@ -78,7 +88,7 @@ router.delete("/:id", middleware.checkPartyOwner, function(req,res){
     Team.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log("error to delete team");
-            res.redirect("/team");
+            res.redirect("/team/"+ req.params.id);
         }
         res.redirect("/team");
     });

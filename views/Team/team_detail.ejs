@@ -12,7 +12,7 @@
     <main class="teams-body" role="news"> 
         <div id="teams-section" style="position: relative;">
           <header class="teams__headline headline-sticky">
-            <h2 class="headline__name">ใส่ชื่อปาร์ตี้</h2>
+            <h2 class="headline__name"><%= team.head %></h2>
           </header>
   
           <section class="box">
@@ -30,7 +30,7 @@
                           <div class="entry__meta2">
                             <span class="entry__meta__count2">
                               <i class="fas fa-gamepad"></i>
-                              <span>ใส่ชื่อเกม</span>
+                              <span><%= team.game %></span>
                             </span>
                           </div>
                         </div>
@@ -43,37 +43,37 @@
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               หัวหน้าปาร์ตี้: 
-                              <span class="party-detail-info">ใส่ชื่อหัวหน้าปาร์ตี้</span>
+                              <span class="party-detail-info"><%= team.user_post.alias %></span>
                             </span>
                           </div>
-                          <div class="entry__meta">
+                          <!-- <div class="entry__meta">
                             <span class="entry__meta__posted">
                               ชื่อในเกม: 
                               <span class="party-detail-info">ใส่ชื่อในเกมของหัวหน้าปาร์ตี้</span>
                             </span>
-                          </div>
+                          </div> -->
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               สมาชิกที่เข้าร่วม: 
-                              <span class="party-detail-info">จำนวนสมาชิกที่เข้าร่วม / จำนวนสมาชิกทั้งหมด</span>
+                              <span class="party-detail-info"><%= team.number %> / <%= team.maxplayer %></span>
                             </span>
                           </div>
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               วันที่นัดหมาย: 
-                              <span class="party-detail-info">2/06/2020</span>
+                              <span class="party-detail-info"><%= team.appointment_date %></span>
                             </span>
                           </div>
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               เวลานัดหมาย: 
-                              <span class="party-detail-info">21:00</span>
+                              <span class="party-detail-info"><%= team.appointment_time %></span>
                             </span>
                           </div>
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               คำอธิบายเพิ่มเติม: 
-                              <span class="party-detail-info">ใส่คำอธิบายเพิ่มเติม</span>
+                              <span class="party-detail-info"><%= team.content %></span>
                             </span>
                           </div>
                           <div class="entry__meta3">
