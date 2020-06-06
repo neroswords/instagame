@@ -8,8 +8,15 @@ const express = require("express"),
 
 
 router.get("/", function(req,res){
-    res.render("team");
-});
+    Team.find({}, function(error, allTeam){
+        if(error){
+            console.log("Error!!");
+            
+        }else{
+            res.render("team",{Team : allTeam});
+        }
+    })
+})
 
 router.get("/create", function(req,res){
     res.render("c_team");
@@ -28,6 +35,10 @@ router.post("/create", middleware.isLoggedIn, function(req,res){
     let n_content = req.body.content;
     let n_user_post = {id: req.user._id, alias: req.user.alias};
     let n_game = req.body.game;
+    let n_in_game_name = req.body.in_game_name;
+    let n_number = 1;
+    let n_appointment_date = req.body.appointment_date;
+    let n_appointment_time = req.body.appointment_time;
     var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
     let n_date = new Date(asiaTime).toISOString();
     let n_post = {head:n_head, content:n_content, user_post:n_user_post, game:n_game, date: n_date};
