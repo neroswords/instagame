@@ -1,5 +1,90 @@
 <%- include("patials/header") %>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>column</title>
+    <link rel="stylesheet" href="/css/column.css">
+</head>
+<body>
+    <main class="teams-body" role="news"> 
+        <div id="teams-section" style="position: relative;">
+          <header class="teams__headline headline-sticky">
+            <h2 class="headline__name">ชุมชน / กระทู้</h2>
+            <div class="teams__search">
+                <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหากระทู้..." aria-label="Search" maxlength="200">
+            </div>
+            <!-- <a href="#" class="my_team-icon">
+                <i class="fas fa-globe-americas"></i>
+                <span>ดูกระทู้ทั้งหมด</span> 
+            </a> -->
+            <a href="/column_game_type" class="create_team-icon">
+                <i class="fas fa-gamepad"></i>
+                <span>ดูกระทู้ตามประเภทเกม</span> 
+            </a>
+            <!-- <p href="#" class="game-type">
+                กระทู้เกมประเภท: 
+                <a href="#" class="game-type-tag">ประเภทเกม</a> 
+            </p> -->
+            <button type="submit" class="submit-create-party-btn">
+                <svg class="bi bi-file-earmark-plus" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5v-1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v2h1V6L9 1z"/>
+                    <path fill-rule="evenodd" d="M13.5 10a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M13 12.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
+                </svg>
+                สร้างกระทู้
+            </button>
+          </header>
+  
+          <section class="box">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-6">
+                        <article class="entry">
+                          <figure class="entry__thumb entry__thumb--zoom">
+                            <a href="">
+                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
+                            </a>
+                          </figure>
+                          <div class="entry__body">
+                            <h4 class="entry__title">
+                              <a href="">
+                                ใส่ชื่อกระทู้
+                              </a>
+                            </h4>
+                            <div class="entry__meta">
+                              <span class="entry__meta__count">
+                                <i class="fas fa-eye"></i>
+                                ใส่ยอดวิว
+                              </span>
+                              <span class="entry__meta__posted">
+                                <i class="far fa-clock"></i>
+                                ใส่วันที่โพสต์
+                              </span>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <header class="add-view">
+              <button href="#" class="scrollto-add">
+                โหลดเพิ่ม
+                <i class="fas fa-plus"></i>
+              </button>
+          </header>
+          
+       </section>
+
+      </div>
+    </main>
+</body>
+</html>
 
 
 <%- include("patials/footer") %>

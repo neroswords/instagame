@@ -8,7 +8,7 @@
 
 @media only screen and (min-width: 1200px) {
     .create-news {
-        width: 570px;
+        width: 670px;
         margin: 120px auto;
         padding: 20px;
     }
@@ -67,21 +67,37 @@
     margin-bottom: 20px;
 }
 
-.submit-create-party {
+#descteam {
+    height: 300px;
+}
+
+.party-btn {
     text-align: center;
+}
+
+.submit-create-party, .edit-party, .delete-party {
     margin: 10px 0;
     box-sizing: border-box;
+    display: inline-block;
+    width: auto;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .submit-create-party, .edit-party, .delete-party {
+        display: block;
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
-.submit-create-party-btn {
+.submit-create-party-btn, .edit-party-btn, .delete-party-btn {
     display: inline-block;
     width: auto;
 }
 }
 
 @media only screen and (max-width: 767.98px) {
-.submit-create-party-btn {
+.submit-create-party-btn, .edit-party-btn, .delete-party-btn {
     display: block;
     width: 100%;
 }
@@ -101,4 +117,36 @@
     background-color: OLIVEDRAB;
     color: #fff;
     border-color: OLIVEDRAB;
+}
+
+.edit-party-btn {
+    background-color: #FB8C00;
+    color: #fff;
+    border-color: #FB8C00;
+    border-style: solid;
+    font-size: 14px;
+    padding: 4px 14px;
+    margin: 2px auto;
+}
+
+.edit-party-btn:hover {
+    background-color: #E65100;
+    color: #fff;
+    border-color: #E65100;
+}
+
+.delete-party-btn {
+    background-color: #F44336;
+    color: #fff;
+    border-color: #F44336;
+    border-style: solid;
+    font-size: 14px;
+    padding: 4px 14px;
+    margin: 2px auto;
+}
+
+.delete-party-btn:hover {
+    background-color: #D32F2F;
+    color: #fff;
+    border-color: #D32F2F;
 }
