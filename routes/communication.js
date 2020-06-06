@@ -45,7 +45,7 @@ router.get("/:id", function(req,res){
     )}
 )
 
-router.delete("/:id", middleware.checkOwner, function(req,res){
+router.delete("/:id", middleware.checkCommuOwner, function(req,res){
     Communication.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log("error to delete commu");

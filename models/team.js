@@ -3,14 +3,23 @@ const mongoose = require("mongoose");
 let TeamSchema = new mongoose.Schema({
     head : String,
     content : String,
-    user_post : String,
+    user_post : {
+        id: {type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        alias: String
+    },
     date_post : Date,
     game : String,
     appointment_date : Date,
     appointment_time : String,
+    number : Number,
+    maxplayer : Number,
     party : {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Party"
+        id : {type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        alias : String
     },
     comment : [
         {

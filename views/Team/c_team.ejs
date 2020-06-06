@@ -20,23 +20,19 @@
     <form>
       <div class="form-group">
         <label for="exampleFormControlInput1">ชื่อปาร์ตี้</label>
-        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อปาร์ตี้">
+        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อปาร์ตี้" name="headline">
       </div>
       <div class="form-group">
         <label for="exampleFormControlInput1">ชื่อเกม</label>
-        <input type="text" class="form-control" id="party-game-name" placeholder="ใส่ชื่อเกม">
+        <input type="text" class="form-control" id="party-game-name" placeholder="ใส่ชื่อเกม" name="game">
       </div>
       <div class="form-group">
         <label for="img">เลือกรูปภาพ:</label>
         <input type="file" id="party-img" name="party-img" accept="image/*">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput1">ชื่อในเกม</label>
-        <input type="text" class="form-control" id="party-leader-name" placeholder="ใส่ชื่อในเกม">
-      </div>
-      <div class="form-group">
         <label for="exampleFormControlSelect1">จำนวนสมาชิกในปาร์ตี้</label>
-        <select class="form-control" id="party-member">
+        <select class="form-control" id="party-member" name="max_number">
           <option>2</option>
           <option>3</option>
           <option>4</option>
@@ -49,16 +45,16 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="date">วันที่นัดหมาย</label>
-          <input type="date" id="party-date">
+          <input type="date" id="party-date" name="appointment_date">
         </div>       
         <div class="form-group col-md-6">
           <label for="date">เวลานัดหมาย</label>
-          <input type="time" id="party-time">
+          <input type="time" id="party-time" name="appointment_time">
         </div>    
       </div>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">คำอธิบายเพิ่มเติม</label>
-        <textarea class="form-control" id="descteam" rows="3"></textarea>
+        <textarea class="form-control" id="descteam" rows="3" name="content"></textarea>
       </div>
       <div class="submit-create-party">
         <button type="submit" class="submit-create-party-btn">สร้างปาร์ตี้</button>

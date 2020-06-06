@@ -55,7 +55,7 @@ const express = require("express"),
         )}
     )
 
-    router.delete("/:id", middleware.checkOwner, function(req,res){
+    router.delete("/:id", middleware.checkNewsOwner, function(req,res){
         News.findByIdAndRemove(req.params.id, function(err){
             if(err){
                 console.log("error to delete news");
