@@ -1,9 +1,12 @@
 const User = require("../models/user"),
-    News = require("../models/news");
+    News = require("../models/news"),
+    Comment = require("../models/comment"),
+    Commu = require("../models/commu"),
+    Party = require("../models/party");
 
 let middlewareObj = {};
 
-middlewareObj.checkOwner = function(req,res,next){
+middlewareObj.checkNewsOwner = function(req,res,next){
     if(req.isAuthenticated()){
         News.findById(req.params.id, function(err, foundNews){
             if(err){
@@ -13,6 +16,69 @@ middlewareObj.checkOwner = function(req,res,next){
                 console.log(foundNews);
                 
                 if(foundNews.user_post.id.equals(req.user._id)){
+                    next();
+                }else{
+                    res.redirect("back");
+                }
+            }
+        })
+    }else{
+        res.redirect("back");
+    }
+}
+
+middlewareObj.checkCommuOwner = function(req,res,next){
+    if(req.isAuthenticated()){
+        Commu.findById(req.params.id, function(err, foundCommu){
+            if(err){
+                console.log("can not find Commu");
+                res.redirect("back");
+            } else{
+                console.log(foundCommu);
+                
+                if(foundCommu.user_post.id.equals(req.user._id)){
+                    next();
+                }else{
+                    res.redirect("back");
+                }
+            }
+        })
+    }else{
+        res.redirect("back");
+    }
+}
+
+middlewareObj.checkPartyOwner = function(req,res,next){
+    if(req.isAuthenticated()){
+        Party.findById(req.params.id, function(err, foundParty){
+            if(err){
+                console.log("can not find Party");
+                res.redirect("back");
+            } else{
+                console.log(foundParty);
+                
+                if(foundParty.user_post.id.equals(req.user._id)){
+                    next();
+                }else{
+                    res.redirect("back");
+                }
+            }
+        })
+    }else{
+        res.redirect("back");
+    }
+}
+
+middlewareObj.checkCommentOwner = function(req,res,next){
+    if(req.isAuthenticated()){
+        Comment.findById(req.params.comment_id, function(err, foundComment){
+            if(err){
+                console.log("can not find comment");
+                res.redirect("back");
+            } else{
+                console.log(foundNews);
+                
+                if(foundComment.user_post.id.equals(req.user._id)){
                     next();
                 }else{
                     res.redirect("back");

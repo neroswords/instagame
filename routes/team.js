@@ -18,9 +18,6 @@ router.get("/", function(req,res){
     })
 })
 
-router.get("/create", function(req,res){
-    res.render("c_team");
-});
 
 router.get("/my_team", function(req,res){
     res.render("my_team");
@@ -30,18 +27,30 @@ router.get("/detail", function(req,res){
     res.render("team_detail");
 });
 
+router.get("/create", middleware.isLoggedIn, function(req,res){
+    res.render("c_team");
+});
+
 router.post("/create", middleware.isLoggedIn, function(req,res){
     let n_head = req.body.headline;
     let n_content = req.body.content;
     let n_user_post = {id: req.user._id, alias: req.user.alias};
     let n_game = req.body.game;
-    let n_in_game_name = req.body.in_game_name;
     let n_number = 1;
+    let n_max_number = req.body.max_number;
     let n_appointment_date = req.body.appointment_date;
     let n_appointment_time = req.body.appointment_time;
     var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
     let n_date = new Date(asiaTime).toISOString();
-    let n_post = {head:n_head, content:n_content, user_post:n_user_post, game:n_game, date: n_date};
+    let n_post = {head:n_head, content:n_content, 
+                    user_post:n_user_post, 
+                    game:n_game, 
+                    date_post: n_date,
+                    appointment_date:n_appointment_date,
+                    appointment_time:n_appointment_time,
+                    number : n_number,
+                    maxplayer : n_max_number
+                };
     Team.create(n_post, function(error, newTeam){
         if(error){
             console.log("error create team");
@@ -65,7 +74,7 @@ router.get("/:id", function(req,res){
     )}
 )
 
-router.delete("/:id", middleware.checkOwner, function(req,res){
+router.delete("/:id", middleware.checkPartyOwner, function(req,res){
     Team.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log("error to delete team");
