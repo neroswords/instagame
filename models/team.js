@@ -4,9 +4,10 @@ let TeamSchema = new mongoose.Schema({
     head : String,
     content : String,
     user_post : String,
-    date : Date,
+    date_post : Date,
     game : String,
-    appointment : Date,
+    appointment_date : Date,
+    appointment_time : String,
     party : {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Party"

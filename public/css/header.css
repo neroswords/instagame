@@ -146,6 +146,13 @@ img {
         width: 100%;
         
     }
+    .navbar .btn-navbar {
+        display:inherit!important;
+      }
+      
+      .navbar .nav-collapse {
+        display:none;
+      }
 }
 
 
