@@ -419,6 +419,17 @@
         background-color: STEELBLUE;
     }
 
+    .entry__meta__posted4 {
+        font-size: .875rem;
+        color: white;
+        border-color: #B3B6B7;
+        background-color: #B3B6B7;
+        border: 1px solid;
+        padding: 5px;
+        width: auto;
+        border-radius: .5rem;
+    }
+
     .entry__body p {
         height: 65px;
         margin-bottom: 5px;

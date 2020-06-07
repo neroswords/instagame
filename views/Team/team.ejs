@@ -14,7 +14,7 @@
           <header class="teams__headline headline-sticky">
             <h2 class="headline__name">หาปาร์ตี้เล่นเกม</h2>
             <div class="teams__search">
-                <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
+                <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหาปาร์ตี้..." aria-label="Search" maxlength="200">
             </div>
             <% if(currentUser){ %>
             <button class="my_team-icon" onclick="window.location.href='/team/my_team';">
@@ -99,9 +99,9 @@
                           </div>
                           <div class="entry__meta3">
                             <% if(currentUser && team.user_post.id.equals(currentUser._id)) { %> <!--แก้เป็นเช็คทุกตัวในรายชื่อ-->
-                            <button class="entry__meta__posted2">
-                              <i class="fas fa-sign-in-alt"></i>
-                              เข้าร่วมปาร์ตี้แล้ว
+                            <button class="entry__meta__posted4">
+                              <i class="fas fa-check-circle"></i>
+                              เข้าร่วมแล้ว
                             </button>
                             <% } else{ %>
                               <form action="/team/<%= team._id %>/addlist" method="POST">

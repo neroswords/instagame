@@ -100,9 +100,7 @@
     transition: ease-in-out .15s;
 }
 
-.my_team-icon {
-    border: solid 1px DARKORCHID;
-    border-radius: .5rem;
+.game-type {
     display: inline-block;
     position: relative;
     padding: 5px 5px;
@@ -110,14 +108,42 @@
     margin-top: 10px;
     text-align: center;
     width: auto;
-    color: white;
-    background-color: DARKORCHID;
+    color: #313131;
+    background-color: transparent;
+    border: 0px transparent;
+    font-size: 1.1rem;
+    margin: 0 auto;
+}
+
+.game-type-tag {
+    color: #fff;
+    border: 1px solid #313131;
+    background-color: #313131;
+    padding: 1.5px;
+}
+
+.game-type-tag:hover{
+    color: #313131;
+    background-color: white;
+}
+
+.my_team-icon {
+    border: 1px solid #3F51B5;
+    background-color: #3F51B5;
+    display: inline-block;
+    position: relative;
+    padding: 5px 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    width: auto;
+    color: #fff;
 }
 
 .my_team-icon:hover {
-    border: solid 1px DARKVIOLET;
-    background-color: DARKVIOLET;
-    color: WHITE;
+    border: #303F9F;
+    background-color: #303F9F;
+    color: #fff;
 }
 
 .my_team-icon i {
@@ -125,12 +151,12 @@
 }
 
 .my_team-icon span {
-    font-size: 1rem;;
+    font-size: 1rem;
 }
 
 .create_team-icon {
-    border: solid 1px CORNFLOWERBLUE;
-    border-radius: .5rem;
+    border: 1px solid #E74C3C ;
+    background-color: #E74C3C  ;
     display: inline-block;
     position: relative;
     padding: 5px 5px;
@@ -138,14 +164,13 @@
     margin-top: 10px;
     text-align: center;
     width: auto;
-    color: white;
-    background-color: CORNFLOWERBLUE;
+    color: #fff;
 }
 
 .create_team-icon:hover {
-    border: solid 1px ROYALBLUE;
-    background-color: ROYALBLUE;
-    color: WHITE;
+    border: #C0392B ;
+    background-color: #C0392B ;
+    color: #fff;
 }
 
 .create_team-icon i {
@@ -155,6 +180,26 @@
 .create_team-icon span {
     font-size: 1rem;
 }
+
+.submit-create-party-btn {
+    background-color: YELLOWGREEN;
+    color: #fff;
+    border: 1px solid YELLOWGREEN;
+    display: inline-block;
+    position: relative;
+    padding: 5px 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: auto;
+    text-align: center;
+}
+
+.submit-create-party-btn:hover {
+    background-color: OLIVEDRAB;
+    color: #fff;
+    border-color: OLIVEDRAB;
+}
+
 
 @media (min-width: 1200px) {
     .box {
@@ -388,8 +433,8 @@ section .col-md-6 {
 .entry__meta__posted2 {
     font-size: .875rem;
     color: white;
-    border-color: CORAL;
-    background-color: CORAL;
+    border-color: YELLOWGREEN;
+    background-color: YELLOWGREEN;
     border: 1px solid;
     padding: 5px;
     width: auto;
@@ -398,15 +443,15 @@ section .col-md-6 {
 
 .entry__meta__posted2:hover {
     color: white;
-    border-color: ORANGERED;
-    background-color: ORANGERED;
+    border-color: OLIVEDRAB;
+    background-color: OLIVEDRAB;
 }
 
 .entry__meta__posted3 {
     font-size: .875rem;
     color: white;
-    border-color: FIREBRICK;
-    background-color: FIREBRICK;
+    border-color: rgb(72, 166, 224);
+    background-color: rgb(72, 166, 224);
     border: 1px solid;
     padding: 5px;
     width: auto;
@@ -415,25 +460,8 @@ section .col-md-6 {
 
 .entry__meta__posted3:hover {
     color: white;
-    border-color: DARKRED;
-    background-color: DARKRED;
-}
-
-.entry__meta__posted4 {
-    font-size: .875rem;
-    color: white;
-    border-color: #00ACC1;
-    background-color: #00ACC1;
-    border: 1px solid;
-    padding: 5px;
-    width: auto;
-    border-radius: .5rem;
-}
-
-.entry__meta__posted4:hover {
-    color: white;
-    border-color: #00838F;
-    background-color: #00838F;
+    border-color: STEELBLUE;
+    background-color: STEELBLUE;
 }
 
 .entry__body p {

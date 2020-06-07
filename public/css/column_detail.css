@@ -83,7 +83,6 @@
         background-color: #00838F;
     }
 
-
     @media (min-width: 1200px) {
         .featured-box {
             max-width: 980px;
@@ -370,7 +369,7 @@
             width: 100%;
         }
      }
-
+    
      .be-comment-block {
         margin-bottom: 50px !important;
         border: 1px solid #edeff2;
@@ -502,7 +501,6 @@
     .form-group textarea.form-input {
         height: 150px;
     }
-    
     
     
       

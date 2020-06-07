@@ -8,7 +8,7 @@
 
 @media only screen and (min-width: 1200px) {
     .create-news {
-        width: 570px;
+        width: 670px;
         margin: 120px auto;
         padding: 20px;
     }
@@ -67,24 +67,8 @@
     margin-bottom: 20px;
 }
 
-.submit-create-party {
-    text-align: center;
-    margin: 10px 0;
-    box-sizing: border-box;
-}
-
-@media only screen and (min-width: 768px) {
-.submit-create-party-btn {
-    display: inline-block;
-    width: auto;
-}
-}
-
-@media only screen and (max-width: 767.98px) {
-.submit-create-party-btn {
-    display: block;
-    width: 100%;
-}
+#descteam {
+    height: 300px;
 }
 
 .party-btn {

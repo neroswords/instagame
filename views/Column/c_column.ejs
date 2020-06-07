@@ -1,38 +1,68 @@
 <%- include("patials/header") %>
+
 <head>
-    <title>Create team</title>
-    <!-- simple-tags CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- simple-tags JS -->
-    <script src="js/script.js"></script>
-    
-	<!-- Demo CSS -->
-	<link rel="stylesheet" href="css/demo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>create community</title>
+  <link rel="stylesheet" href="/css/c_column.css">
 </head>
     
 <body>
-    <div class="container" style="width: 35%; margin: 80px auto;" >
-    <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Heading</label>
-          <input type="text" class="form-control" id="heading" placeholder="your destination in game">
-        </div>
-        <div class="form-group">
-          <label for="img">Select image:</label>
-          <input type="file" id="img" name="img" accept="image/*">
-        </div>
-        <div class="form-group">
-          <label for="video">video link(if you have)</label>
-          <input type="text" id="v_link" placeholder="https://www.youtube.com/watch?v=rUAuEo3t0-o" style="width: 100%;"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Description</label>
-          <textarea class="form-control" id="descteam" style="height: 300px;"></textarea>
-        </div>
-        <div class="simple-tags" id="container" data-simple-tags="Overwatch, FPS"></div>
-        <button type="submit" class="btn-outline-primary" style="float: right;">Create</button>
-      </form>
+
+<div class="create-news" href="/">
+    <a href="/" class="create-news_btn_close">
+        <div class="create-news-icon-close"></div>
+    </a>
+    <div class="create-news_header">
+        <h3 style="font-family: 'Kanit', sans-serif; color: gray;">สร้างกระทู้</h3>
     </div>
+
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">ชื่อกระทู้</label>
+        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อกระทู้">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">ชื่อเกม</label>
+        <input type="text" class="form-control" id="party-game-name" placeholder="ใส่ชื่อเกม">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">เนื้อหากระทู้</label>
+        <textarea class="form-control" id="descteam" rows="3">ใส่เนื้อหาของกระทู้...</textarea>
+      </div>
+      <div class="form-group">
+        <label for="img">แนบรูปภาพ:</label>
+        <input type="file" id="party-img" name="party-img" accept="image/*">
+      </div>
+      <div class="party-btn">
+        <div class="submit-create-party">
+          <button type="submit" class="submit-create-party-btn">
+            <svg class="bi bi-file-earmark-plus" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5v-1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v2h1V6L9 1z"/>
+              <path fill-rule="evenodd" d="M13.5 10a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
+              <path fill-rule="evenodd" d="M13 12.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
+            </svg>
+            สร้างกระทู้
+          </button>
+        </div>
+        <div class="edit-party">
+          <button type="submit" class="edit-party-btn">
+            <i class="far fa-edit"></i>
+            แก้ไขกระทู้
+          </button>
+        </div>
+        <div class="delete-party">
+          <button type="submit" class="delete-party-btn">
+            <i class="far fa-trash-alt"></i>
+            ลบกระทู้
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
 </body>
 
 

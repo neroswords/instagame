@@ -1,90 +1,40 @@
 <%- include("patials/header") %>
 
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-  <link rel="stylesheet" href="/css/home.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/f3bc929b7a.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="/js/home.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>column game type</title>
+    <link rel="stylesheet" href="/css/column_game_type.css">
 </head>
-
 <body>
-
-  <main class="main-body" role="main">
-      <section class="highlight">
-        <div id="main-highlight" class="hightlight-box">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="#">
-                  <img src="/image/slide1.JPG" class="d-block w-100" >
-                  <div class="carousel-caption d-sm-block">
-                    <h4>ใส่พาดหัวข่าว</h4>
-                    <p>ใส่ description สั้นๆของข่าว</p>
-                  </div>
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="#">
-                  <img src="/image/slide2.JPG" class="d-block w-100" >
-                  <div class="carousel-caption d-sm-block">
-                    <h4>ใส่พาดหัวข่าว</h4>
-                    <p>ใส่ description สั้นๆของข่าว</p>
-                  </div>
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="#">
-                  <img src="/image/slide3.JPG" class="d-block w-100" >
-                  <div class="carousel-caption d-sm-block">
-                    <h4>ใส่พาดหัวข่าว</h4>
-                    <p>ใส่ description สั้นๆของข่าว</p>
-                  </div>
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="#">
-                  <img src="/image/slide4.JPG" class="d-block w-100" >
-                  <div class="carousel-caption d-sm-block">
-                    <h4>ใส่พาดหัวข่าว</h4>
-                    <p>ใส่ description สั้นๆของข่าว</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+    <main class="teams-body" role="news"> 
+        <div id="teams-section" style="position: relative;">
+          <header class="teams__headline headline-sticky">
+            <h2 class="headline__name">ชุมชน / กระทู้</h2>
+            <div class="teams__search">
+              <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหากระทู้..." aria-label="Search" maxlength="200">
           </div>
-        </div>
-      </section>    
-
-      <div id="news-section" style="position: relative;">
-        <header class="headline headline-sticky">
-          <h2 class="headline__name">ข่าวล่าสุด จากเกมทุกประเภท</h2>
-          <hr>
-        </header>
-
-        <section class="box">
+            <a href="#" class="my_team-icon">
+                <i class="fas fa-globe-americas"></i>
+                <span>ดูกระทู้ทั้งหมด</span> 
+            </a>
+            <!-- <a href="#" class="create_team-icon">
+                <i class="fas fa-gamepad"></i>
+                <span>ดูกระทู้ตามประเภทเกม</span> 
+            </a> -->
+            <button type="submit" class="submit-create-party-btn">
+              <svg class="bi bi-file-earmark-plus" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5v-1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v2h1V6L9 1z"/>
+                  <path fill-rule="evenodd" d="M13.5 10a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
+                  <path fill-rule="evenodd" d="M13 12.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
+              </svg>
+              สร้างกระทู้
+          </button>
+          </header>
+  
+          <section class="box">
             <div class="row">
               <div class="col-md-6">
                 <header class="box_header">
@@ -92,7 +42,7 @@
                     <a href="#">Survival</a>
                   </h4>
                   <a href="#" class="scrollto">
-                    ดูข่าวทั้งหมด
+                    ดูกระทู้ทั้งหมด
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
@@ -158,7 +108,7 @@
                     <a href="#">Role-Player Game (RPG)</a>
                   </h4>
                   <a href="#" class="scrollto">
-                    ดูข่าวทั้งหมด
+                    ดูกระทู้ทั้งหมด
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
@@ -224,7 +174,7 @@
                     <a href="#">ฺBattle Royale</a>
                   </h4>
                   <a href="#" class="scrollto">
-                    ดูข่าวทั้งหมด
+                    ดูกระทู้ทั้งหมด
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
@@ -290,7 +240,7 @@
                     <a href="#">First Person Shooter (FPS)</a>
                   </h4>
                   <a href="#" class="scrollto">
-                    ดูข่าวทั้งหมด
+                    ดูกระทู้ทั้งหมด
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
@@ -356,7 +306,7 @@
                     <a href="#">Multiplayer Online Battle Arena</a>
                   </h4>
                   <a href="#" class="scrollto">
-                    ดูข่าวทั้งหมด
+                    ดูกระทู้ทั้งหมด
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
@@ -422,7 +372,7 @@
                     <a href="#">Fighting</a>
                   </h4>
                   <a href="#" class="scrollto">
-                    ดูข่าวทั้งหมด
+                    ดูกระทู้ทั้งหมด
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
@@ -488,7 +438,7 @@
                     <a href="#">Sports</a>
                   </h4>
                   <a href="#" class="scrollto">
-                    ดูข่าวทั้งหมด
+                    ดูกระทู้ทั้งหมด
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
@@ -554,7 +504,7 @@
                     <a href="#">Racing</a>
                   </h4>
                   <a href="#" class="scrollto">
-                    ดูข่าวทั้งหมด
+                    ดูกระทู้ทั้งหมด
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
@@ -615,318 +565,11 @@
               </div>
           </div>
         </section>
+
       </div>
-    
-      <div id="review-section">
-        <header class="headline headline-sticky">
-          <h2 class="headline__name">รีวิวเกม</h2>
-          <hr>
-        </header>
-    
-        <section class="box">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href="">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a href="">
-                          รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
-                        </a>
-                      </h4>
-                      <p>
-                        เปิดสนามให้ซิ่งรถแข่งกันแล้ววันนี้เมื่อทาง Nexon ผู้ให้บริการเกมชั้นนำของประเทศไทยได้มีการเปิดตัวเกมใหม่ KartRider Rush+...
-                        <a href="#">
-                          อ่านต่อ >>
-                        </a>
-                      </p>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href="">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a href="">
-                          รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
-                        </a>
-                      </h4>
-                      <p>
-                        เปิดสนามให้ซิ่งรถแข่งกันแล้ววันนี้เมื่อทาง Nexon ผู้ให้บริการเกมชั้นนำของประเทศไทยได้มีการเปิดตัวเกมใหม่ KartRider Rush+...
-                        <a href="#">
-                          อ่านต่อ >>
-                        </a>
-                      </p>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href="">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a href="">
-                          รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
-                        </a>
-                      </h4>
-                      <p>
-                        เปิดสนามให้ซิ่งรถแข่งกันแล้ววันนี้เมื่อทาง Nexon ผู้ให้บริการเกมชั้นนำของประเทศไทยได้มีการเปิดตัวเกมใหม่ KartRider Rush+...
-                        <a href="#">
-                          อ่านต่อ >>
-                        </a>
-                      </p>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href="">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a href="">
-                          รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
-                        </a>
-                      </h4>
-                      <p>
-                        เปิดสนามให้ซิ่งรถแข่งกันแล้ววันนี้เมื่อทาง Nexon ผู้ให้บริการเกมชั้นนำของประเทศไทยได้มีการเปิดตัวเกมใหม่ KartRider Rush+...
-                        <a href="#">
-                          อ่านต่อ >>
-                        </a>
-                      </p>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href="">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a href="">
-                          รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
-                        </a>
-                      </h4>
-                      <p>
-                        เปิดสนามให้ซิ่งรถแข่งกันแล้ววันนี้เมื่อทาง Nexon ผู้ให้บริการเกมชั้นนำของประเทศไทยได้มีการเปิดตัวเกมใหม่ KartRider Rush+...
-                        <a href="#">
-                          อ่านต่อ >>
-                        </a>
-                      </p>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href="">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a href="">
-                          รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
-                        </a>
-                      </h4>
-                      <p>
-                        เปิดสนามให้ซิ่งรถแข่งกันแล้ววันนี้เมื่อทาง Nexon ผู้ให้บริการเกมชั้นนำของประเทศไทยได้มีการเปิดตัวเกมใหม่ KartRider Rush+...
-                        <a href="#">
-                          อ่านต่อ >>
-                        </a>
-                      </p>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href="">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a href="">
-                          รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
-                        </a>
-                      </h4>
-                      <p>
-                        เปิดสนามให้ซิ่งรถแข่งกันแล้ววันนี้เมื่อทาง Nexon ผู้ให้บริการเกมชั้นนำของประเทศไทยได้มีการเปิดตัวเกมใหม่ KartRider Rush+...
-                        <a href="#">
-                          อ่านต่อ >>
-                        </a>
-                      </p>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href="">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a href="">
-                          รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
-                        </a>
-                      </h4>
-                      <p>
-                        เปิดสนามให้ซิ่งรถแข่งกันแล้ววันนี้เมื่อทาง Nexon ผู้ให้บริการเกมชั้นนำของประเทศไทยได้มีการเปิดตัวเกมใหม่ KartRider Rush+...
-                        <a href="#">
-                          อ่านต่อ >>
-                        </a>
-                      </p>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                  <header class="add-view">
-                    <a href="#" class="scrollto-add">
-                      ดูเพิ่มเติม
-                      <i class="fas fa-plus"></i>
-                    </a>
-                  </header> 
-                </div>
-              </div>
-            </div>
-        </div>
-      </section>
-    </div>
-
-    <section class="box hot-game-section">
-      <header class="headline headline-sticky">
-        <h2 class="headline__name">เกมมาแรง</h2>
-        <hr>
-      </header>
-      <div class="box__body">
-        
-      </div>
-
-    </section>
-    
-    
-
-  </main>
-      
-
+    </main>
 </body>
 </html>
 
- <%- include("patials/footer") %> 
+
+<%- include("patials/footer") %>

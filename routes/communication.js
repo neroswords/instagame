@@ -13,6 +13,13 @@ router.get("/create", function(req,res){
     res.render("c_column");
 });
 
+router.get("/type", function(req,res){
+    res.render("column_game_type");
+});
+
+router.get("/detail", function(req,res){
+    res.render("column_detail");
+});
 
 router.post("/create", middleware.isLoggedIn, function(req,res){
     let n_head = req.body.headline;

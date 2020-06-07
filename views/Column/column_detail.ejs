@@ -6,19 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>news</title>
-    <link rel="stylesheet" href="/css/news.css">
+    <link rel="stylesheet" href="/css/column_detail.css">
 </head>
 <body>
     <main class="main-body" role="main">
-        <!-- ปุ่มแก้ไขและลบข่าว -->
+        <!-- ปุ่มแก้ไขและลบกระทู้ -->
         <header class="teams__headline headline-sticky">
             <button class="entry__meta__posted4">
                 <i class="fas fa-edit"></i>
-                แก้ไขข่าว
+                แก้ไขกระทู้
             </button>
             <button class="entry__meta__posted3">
                 <i class="far fa-trash-alt"></i>
-                ลบข่าว
+                ลบกระทู้
             </button>
         </header>
 
@@ -28,7 +28,6 @@
               <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTMwLzE2NTYzMC90aHVtYm5haWwvUmVfMTIwMF82MjguanBnJnc9MTE0MCZoPTU5Nw" alt="Re:Zero เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if">
           </figure>
           <div class="featured-box__desc">
-            <h1><%= news.head %></h1>
             <div class="featured-box__meta">
                 <span class="mr-2">
                     <i class="far fa-user-circle"></i>
@@ -71,10 +70,8 @@
                 <div class="content__read">
                     <h3>
                         <span style="color: #212529;">
-                            <strong><%= news.head %></strong>
                         </span>
                     </h2>
-                    <p><%= news.content %></p>
                 </div>
                 <!-- End text content -->
 
