@@ -17,6 +17,7 @@
     box-sizing: border-box;
     border-radius: 1rem;
 }
+
 @media (min-width: 320px) and (max-width: 1199.98px) {
 .profile-content-container {
     width: 100%;
@@ -43,3 +44,185 @@
     margin: 0 auto;
 }
 }
+
+.profile-form-group {
+    display: block;
+}
+
+@media (min-width: 768px) {
+.profile-form-title {
+    float: left;
+    text-align: right;
+    width: 130px;
+}
+}
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+.profile-form-title {
+    float: none;
+    text-align: left;
+    width: 100%;
+}
+}
+
+.profile-form-title {
+    font-size: 14px;
+    margin-top: 4px;
+}
+.profile-label-item {
+    display: inline-block;
+    font-weight: 700;
+    color: #000;
+    margin: 2px 0;
+}
+
+@media (min-width: 768px) {
+.profile-form-inside {
+    margin-left: 130px;
+    padding-left: 10px;
+}
+}
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+.profile-form-inside {
+    margin-left: 0;
+}
+}
+
+.profile-form-inside {
+    color: #666;
+}
+
+.profile-form-inside p {
+    color: #999;
+    height: 30px;
+    margin: 2px 0;
+}
+
+@media only screen and (min-width: 768px) {
+.profile-avatar-preview {
+    margin: 0 0 0 120px;
+    padding-left: 10px;
+}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767.98px) {
+.profile-avatar-preview {
+    margin: 0;
+}
+}
+
+.profile-file .profile-file-name {
+    display: inline-block;
+    font-size: 0;
+    min-width: 300px;
+    vertical-align: middle;
+}
+
+.profile-form-item {
+    display: block;
+    font-size: 14px;
+    line-height: normal;
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 4px 14px;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.profile-remark {
+    font-size: 13px;
+}
+
+.profile-checkbox, .profile-radio {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 8px 5px 8px 0;
+    margin-top: 0;
+}
+
+.profile-selectbox {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+.profile-selectbox label {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-selectbox select {
+    display: block;
+    font-size: 14px;
+    max-width: 450px;
+    outline: 0;
+    line-height: normal;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 4px 34px 4px 14px;
+}
+
+.profile-form-act {
+    text-align: center;
+    margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+.profile-form-act .profile-btn {
+    display: inline-block;
+    width: auto;
+}
+}
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+.profile-form-act .profile-btn {
+    display: block;
+    width: 100%;
+}
+}
+
+.profile-btn-primary {
+    background-color: lightseagreen;
+    color: #fff;
+    border-color: lightseagreen;
+}
+
+.profile-btn-primary:hover {
+    background-color: teal;
+    color: #fff;
+    border-color: teal;
+}
+
+.profile-btn {
+    position: relative;
+    font-size: 14px;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: normal;
+    outline: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 4px 14px;
+    user-select: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
