@@ -55,23 +55,37 @@
                     <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
                   </div>
                   <% if(!currentUser) { %>
-                    <a link href="/Sign_up" id="signup">
+                    <a href="/Sign_up" id="signup">
                         <button type="button" id="user-signup" class="btn btn-signup my-2 my-sm-0">
                             <img src="/image/topbar-register-icon.png" alt="signup">
                             <span class="d-inline-block">สมัครสมาชิก</span>
                         </button>
                     </a>
-                    <a link href="/login" id="login">
+                    <a href="/login" id="login">
                         <button type="button" id="user-signin" class="btn btn-signin my-2 my-sm-0">
                             <img src="/image/topbar-login-icon.png" alt="signin">
                             <span class="d-inline-block">เข้าสู่ระบบ</span>
                         </button>
                     </a>
                  <% } else { %>
-                    Welcome, you logged as <%= currentUser.alias %>
-                    <button type="button" id="user-signin" class="btn my-2 my-sm-0">
-                        <a href='/logout'>Log out</a>
-                    </button>
+                    <%= currentUser.alias %>
+                    <div id="member-box d-inline" class="topbar__member">
+                      <div class="dropdown">
+                        <button class="btn dropdown-toggle dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          ใส่ชื่อโปรไฟล์
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">
+                            <i class="fas fa-user-circle"></i>
+                            ข้อมูลสมาชิก
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            <i class="fas fa-sign-out-alt"></i>
+                            ออกจากระบบ
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                  <% } %>    
               </form>
             </div>
