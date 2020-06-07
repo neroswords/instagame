@@ -52,7 +52,7 @@ router.post("/create", middleware.isLoggedIn, function(req,res){
             console.log("error create team");
         }
         else{
-            newTeam.party.push(req.user._id);
+            newTeam.party.push(req.user);
             newTeam.save();
             res.redirect("/team/" + newTeam._id)
             // Party.create(,function(err,newParty){
@@ -101,25 +101,38 @@ router.post("/:id/addlist",middleware.isLoggedIn, function(req,res){
             res.redirect("/team")
         }
         else{
-            Party.findById(idTeam.party.id, function(err, idParty){
-                if(err){
-                    console.log("cannot find team");
-                    res.redirect("/team")
-                }else{
-                    let n_id = req.user.id;
-                    let n_name = req.user.alias;
-                    let n_number = idParty.number++;
-                    let member = {list:{id:n_id, alias:n_name},number:n_number}
-                    idParty.posts.push(member);
-                    foundUser.save(function(err, data){
-                        if(err){
-                            console.log(err);
-                        } else {
-                            console.log(data);
-                        }
-                    });
+            idTeam.number++;
+            if(idTeam.maxplayer >= idTeam.number){
+                for(let n = 0; n < idTeam.number; n++){
+                    if(req.user._id.equals(idTeam.party[n])){
+                        return res.redirect("/team");
+                    }
                 }
-            })
+                idTeam.party.push(req.user);
+                idTeam.save();
+                console.log(idTeam); 
+                res.redirect("back")
+            }
+            else{
+                req.flash('error','Party is already full.');
+                res.redirect("back")
+            }
+            // Party.findById(idTeam.party._id, function(err, idParty){
+            //     if(err){
+            //         console.log("cannot find Party");
+            //         res.redirect("/team")
+            //     }else{
+            //         let n_number = idTeam.number++;
+            //         idParty.posts.push(member);
+            //         foundUser.save(function(err, data){
+            //             if(err){
+            //                 console.log(err);
+            //             } else {
+            //                 console.log(data);
+            //             }
+            //         });
+            //     }
+            // })
         }
     })
 })

@@ -104,10 +104,12 @@
                               เข้าร่วมแล้ว
                             </button>
                             <% } else{ %>
+                              <form action="/team/<%= team._id %>/addlist" method="POST">
                               <button class="entry__meta__posted2">
                                 <i class="fas fa-sign-in-alt"></i>
                                 เข้าร่วมปาร์ตี้
                               </button>
+                              </form>
                               <% } %>
                             <button class="entry__meta__posted3">
                               <a class="fas fa-info-circle" href="/team/<%= team._id %>"></a>
