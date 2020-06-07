@@ -61,12 +61,9 @@
                           <div class="entry__meta">
                             <div class="entry__meta__posted0">รายชื่อสมาชิก:</div>
                             <div class="party-people">
-                              <span class="party-detail-info0"><%= team.number %> / <%= team.maxplayer %></span>
-                              <span class="party-detail-info0"><%= team.number %> / <%= team.maxplayer %></span>
-                              <span class="party-detail-info0"><%= team.number %> / <%= team.maxplayer %></span>
-                              <span class="party-detail-info0"><%= team.number %> / <%= team.maxplayer %></span>
-                              <span class="party-detail-info0"><%= team.number %> / <%= team.maxplayer %></span>
-                              <span class="party-detail-info0"><%= team.number %> / <%= team.maxplayer %></span>
+                              <% team.party.forEach(function(list){ %>
+                                <span class="party-detail-info0"><%= list.alias %></span>
+                              <% }) %>
                             </div>
                           </div>
                           <div class="entry__meta">
@@ -88,15 +85,25 @@
                             </span>
                           </div>
                           <div class="entry__meta3">
-                            <form action="/team/<%= team._id %>/addlist" method="POST">
-                              <button class="entry__meta__posted1">
-                                <i class="fas fa-sign-in-alt"></i>
-                                เข้าร่วมปาร์ตี้
-                            </button>
+                            
+                            <% var inv = true %>
+                            <% for(var n = 0; n < team.number; n++){ %>
+                            <% if(currentUser && team.party[n].equals(currentUser._id)) { %>
                             <button class="entry__meta__posted5">
                               <i class="fas fa-check-circle"></i>
                               เข้าร่วมแล้ว
                           </button>
+                          <% inv = false %>
+                          <% break %>
+                          <% }} %>
+                          <% if(inv) { %>
+                            <form action="/team/<%= team._id %>/addlist" method="POST" style="display: inline;">
+                              <button class="entry__meta__posted1">
+                                <i class="fas fa-sign-in-alt"></i>
+                                เข้าร่วมปาร์ตี้
+                            </button>
+                            </form>
+                            <% } %>
                             <button class="entry__meta__posted4">
                               <i class="fas fa-edit"></i>
                               แก้ไขปาร์ตี้

@@ -98,23 +98,30 @@
                             </span>
                           </div>
                           <div class="entry__meta3">
-                            <% if(currentUser && team.user_post.id.equals(currentUser._id)) { %> <!--แก้เป็นเช็คทุกตัวในรายชื่อ-->
+                            <% var inv = true %>
+                            <% for(var n = 0; n < team.number; n++){ %>
+                            <% if(currentUser && team.party[n].equals(currentUser._id)) { %> <!--แก้เป็นเช็คทุกตัวในรายชื่อ-->
                             <button class="entry__meta__posted4">
                               <i class="fas fa-check-circle"></i>
                               เข้าร่วมแล้ว
                             </button>
-                            <% } else{ %>
-                              <form action="/team/<%= team._id %>/addlist" method="POST">
+                            <% inv = false %>
+                            <% break %>
+                            <% }} %>
+                            <% if(inv) { %>
+                              <form action="/team/<%= team._id %>/addlist" method="POST" style="display: inline;">
                               <button class="entry__meta__posted2">
                                 <i class="fas fa-sign-in-alt"></i>
                                 เข้าร่วมปาร์ตี้
                               </button>
                               </form>
-                              <% } %>
-                            <button class="entry__meta__posted3">
-                              <a class="fas fa-info-circle" href="/team/<%= team._id %>"></a>
-                              รายละเอียด
-                            </button>
+                            <% } %>
+                            <a href="/team/<%= team._id %>">
+                              <button class="entry__meta__posted3">
+                                <i class="fas fa-info-circle"></i>
+                                รายละเอียด
+                              </button>
+                            </a>
                           </div>
                         </div>
                       </article> 
@@ -127,8 +134,7 @@
                       <i class="fas fa-plus"></i>
                     </button>
                 </header>  
-            
-         </section>
+          </section>
       </div>
     </main>
 </body>

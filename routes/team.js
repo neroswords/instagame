@@ -18,10 +18,16 @@ router.get("/", function(req,res){
     })
 })
 
-
-router.get("/my_team", function(req,res){
-    res.render("my_team");
-});
+router.get("/my_team",middleware.isLoggedIn, function(req,res){
+    Team.find({}, function(error, allTeam){
+        if(error){
+            console.log("Error!!");
+            
+        }else{
+            res.render("my_team",{Team : allTeam});
+        }
+    })
+})
 
 router.get("/create", middleware.isLoggedIn, function(req,res){
     res.render("c_team");
