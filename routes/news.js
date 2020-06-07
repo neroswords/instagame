@@ -16,10 +16,6 @@ const express = require("express"),
         })
     })
 
-    router.get("/detail", function(req,res){
-        res.render("news");
-    });
-
     router.get("/create", middleware.isLoggedIn, function(req,res){
         res.render("c_news");
     })
