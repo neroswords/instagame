@@ -16,10 +16,12 @@
             <div class="teams__search">
                 <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหาปาร์ตี้..." aria-label="Search" maxlength="200">
             </div>
+            <% if(currentUser){ %>
             <button class="my_team-icon" onclick="window.location.href='/team/my_team';">
                 <i class="fas fa-users"></i>
                 <span>ปาร์ตี้ของฉัน</span> 
             </button>
+            <% } %>
             <button class="create_team-icon" onclick="window.location.href='/team/create';">
                 <i class="fas fa-plus"></i>
                 <span>สร้างปาร์ตี้</span> 
@@ -43,30 +45,50 @@
                             </a>
                           </h4>
                           <div class="entry__people">
-                            <i class="fas fa-user"></i>
-                            <i class="fas fa-user"></i>
-                            <i class="fas fa-user"></i>
-                            <i class="fas fa-user"></i>
+                            <% if(team.number >= 1) { %>
+                              <i class="fas fa-user"></i>
+                            <% } %>
+                            <% if(team.number >= 2) { %>
+                              <i class="fas fa-user"></i>
+                            <% } %>
+                            <% if(team.number >= 3) { %>
+                              <i class="fas fa-user"></i>
+                            <% } %>
+                            <% if(team.number >= 4) { %>
+                              <i class="fas fa-user"></i>
+                            <% } %>
+                            <% if(team.number >= 5) { %>
+                              <i class="fas fa-user"></i>
+                            <% } %>
+                            <% if(team.number >= 6) { %>
+                              <i class="fas fa-user"></i>
+                            <% } %>
+                            <% if(team.number >= 7) { %>
+                              <i class="fas fa-user"></i>
+                            <% } %>
+                            <% if(team.number >= 8) { %>
+                              <i class="fas fa-user"></i>
+                            <% } %>
                           </div>
                           <div class="entry__meta">
                             <span class="entry__meta__count">
-                              ปาร์ตี้: <span>4/5</span>
+                              ปาร์ตี้: <span><%= team.number %>/<%= team.maxplayer %></span>
                             </span>
                           </div>
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               <i class="fas fa-crown"></i>
-                              <span>ใส่ชื่อหัวหน้าปาร์ตี้</span>
+                              <span><%= team.user_post.alias %></span>
                             </span>
                           </div>
                           <div class="entry__meta">
                             <span class="entry__meta__count">
                               <i class="fas fa-calendar-week"></i>
-                              <%= team.appointment %>
+                              <%= team.appointment_date %>
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              21:00
+                              <%= team.appointment_time %>
                             </span>
                           </div>
                           <div class="entry__meta2">
@@ -76,27 +98,33 @@
                             </span>
                           </div>
                           <div class="entry__meta3">
+                            <% if(currentUser && team.user_post.id.equals(currentUser._id)) { %> <!--แก้เป็นเช็คทุกตัวในรายชื่อ-->
                             <button class="entry__meta__posted2">
                               <i class="fas fa-sign-in-alt"></i>
-                              เข้าร่วมปาร์ตี้
+                              เข้าร่วมปาร์ตี้แล้ว
                             </button>
+                            <% } else{ %>
+                              <button class="entry__meta__posted2">
+                                <i class="fas fa-sign-in-alt"></i>
+                                เข้าร่วมปาร์ตี้
+                              </button>
+                              <% } %>
                             <button class="entry__meta__posted3">
                               <a class="fas fa-info-circle" href="/team/<%= team._id %>"></a>
                               รายละเอียด
                             </button>
                           </div>
                         </div>
-                      </article>
-                      <% }) %>
+                      </article> 
                     </div>
+                    <% }) %>
                   </div>
-
-              <header class="add-view">
-                <button href="#" class="scrollto-add">
-                  โหลดเพิ่ม
-                  <i class="fas fa-plus"></i>
-                </button>
-            </header>
+                  <header class="add-view">
+                    <button href="#" class="scrollto-add">
+                      โหลดเพิ่ม
+                      <i class="fas fa-plus"></i>
+                    </button>
+                </header>  
             
          </section>
       </div>
@@ -105,4 +133,5 @@
 </html>
 
 <%- include("patials/footer") %>
+
 

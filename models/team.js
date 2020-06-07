@@ -15,12 +15,11 @@ let TeamSchema = new mongoose.Schema({
     appointment_time : String,
     number : Number,
     maxplayer : Number,
-    party : {
-        id : {type: mongoose.Schema.Types.ObjectId,
+    party : [
+        {type: mongoose.Schema.Types.ObjectId,
             ref: "User"
-        },
-        alias : String
-    },
+        }
+    ],
     comment : [
         {
             type: mongoose.Schema.Types.ObjectId,
