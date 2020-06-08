@@ -26,7 +26,13 @@
                     <span style="font-family: 'Roboto', sans-serif; color: lightseagreen;">Instagame</span>
                 </h4>
             </div>
-            <form method="POST" class="form-hor" id="fLogin" name="fLogin" action="/Sign_up">
+            <form method="POST" class="form-hor" id="fLogin" name="fLogin" action="/Sign_up" enctype="multipart/form-data">
+                <div>
+                    <label for="ImageUpload" class="label-form-title">แนบรูปภาพ</label>
+                    <div class="form-inside">
+                        <input type="file" class="form-item" id="picture" name="image" accept="image/*">
+                    </div>
+                </div>
                 <div>
                     <label for="email" class="label-form-title">อีเมล์</label>
                     <div class="form-inside">

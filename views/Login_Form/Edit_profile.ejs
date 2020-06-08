@@ -14,11 +14,11 @@
     <main class="profile-content">
         <div class="profile-content-container">
             <h1>แก้ไขข้อมูลส่วนตัว</h1>
-            <form class="profile-form">
+            <form class="profile-form" action="/editprofile/<%= user._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                 <div class="profile-form-group">
                     <div class="profile-form-inside">
-                        <img src="/image/IMGBIN_disease-png_JPsi2TtT.png" alt="บวรศักดิ์ เหลือจันทร์">
+                        <img src=<%= '../uploads/user/' + currentUser.image %>>
                     </div>
                 </div>
 
@@ -27,12 +27,10 @@
                         รูปประจำตัว
                     </label>
                     <div class="profile-form-inside">
-                        <div class="profile-file">
-                            <div class="profile-file-name">
-                                <input class="profile-form-item" disabled="disabled" placeholder="เลือกไฟล์" id="file-name">
-                            </div>
-                            <div class="profile-file-upload">
-                                <input id="avatar" name="avatar" type="file" class="upload-btn valid" aria-invalid="false">
+                        <div>
+                            <label for="ImageUpload" class="label-form-title">แนบรูปภาพ</label>
+                            <div class="form-inside">
+                                <input type="file" class="form-item" id="picture" name="image" accept="image/*">
                             </div>
                         </div>
                         <span class="profile-remark">รูปประจำตัวต้องมีขนาด 60x70 px. และขนาดไฟล์ต้องไม่เกิน 2 MB.</span>  
@@ -89,7 +87,7 @@
                 </div>
 
                 <div class="profile-form-act">
-                    <input type="button" id="editprofile" class="profile-btn profile-btn-primary" value="บันทึกข้อมูล">
+                    <input type="submit" id="editprofile" class="profile-btn profile-btn-primary" value="บันทึกข้อมูล">
                 </div>
             </form>
         </div>

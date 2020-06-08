@@ -1,8 +1,28 @@
 const express = require("express"),
     router = express.Router(),
+    multer = require('multer'),
+    path = require('path'),
+    fs = require('fs'),
     passport = require('passport'),
     User = require('../models/user'),
     middleware = require('../middleware');
+
+    const storage = multer.diskStorage({
+        destination : './public/uploads/user',
+        filename : function(req, file, cb){
+            cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        }
+    });
+    
+    const imageFilter = function(req, file, cb){
+        var ext = path.extname(file.originalname);
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg' && ext !== '.gif'){
+            return cb(new Error('Only image is allow to upload'),false)
+        }
+        cb(null, true);
+    }
+    
+    const upload = multer({storage : storage, fileFilter : imageFilter});
 
 
 router.get("/", function(req,res){
@@ -48,13 +68,47 @@ router.get('/editProfile/:id', middleware.isLoggedIn , function(req,res){
     })
 })
 
-router.put("/editProfile/:id", function(req,res){
-    User.findByIdAndUpdate(req.params.id, req.body.user, function(err, updateUser){
+router.put("/editProfile/:id", middleware.isLoggedIn, upload.single('image'), function(req,res){
+    let n_alias = req.body.alias;
+    let n_firstname = req.body.firstname;
+    let n_lastname = req.body.lastname;
+    let n_email = req.body.email;
+    let n_number = req.body.number;
+    if(req.file){
+        let n_image = req.file.filename;
+        User.findById(req.params.id, function(err, foundUser){
+            if(err){
+                console.log(err);
+                res.redirect('/')
+            } else{
+                const imagePath = './public/uploads/user/' + foundUser.image;
+                fs.unlink(imagePath, function(err){
+                    if(err){
+                        console.log(err);
+                        res.redirect('/');
+                    }
+                })
+            }
+        })
+        var n_user = {firstname : n_firstname,
+                        lastname : n_lastname,
+                        image : n_image,
+                        alias : n_alias,
+                        email : n_email,
+                        number : n_number}
+    } else {
+        var n_user = {firstname : n_firstname,
+            lastname : n_lastname,
+            alias : n_alias,
+            email : n_email,
+            number : n_number}
+    }
+    User.findByIdAndUpdate(req.params.id, n_user, function(err, updateUser){
         if(err){
             console.log("error updating profile");
-            redirect("/");
+            res.redirect("/");
         }else{
-            redirect("/profile"+req.params.id);
+            res.redirect("/");
         }
     })
 })
@@ -107,15 +161,18 @@ router.get("/Sign_up/acception", function(req,res){
     res.render("acception");
 });
 
-router.post('/Sign_up', function(req,res){
+router.post('/Sign_up', upload.single('image'), function(req,res){
+    let n_image = req.file.filename;
     User.register(new User({username: req.body.username, 
                             email: req.body.email , 
                             alias : req.body.alias,
+                            image : n_image,
                             firstname : req.body.firstname,
                             lastname : req.body.surname,
                             gender : req.body.gender,
                             birth_day : req.body.birth_day,
-                            number : req.body.tel}), req.body.password, function(err, user){
+                            number : req.body.tel}), req.body.password, 
+                            function(err, user){
         if(err){
             console.log(err);
             return res.render('SignUp');

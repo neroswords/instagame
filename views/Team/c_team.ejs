@@ -9,7 +9,7 @@
     
 <body>
 
-<div class="create-news" href="/">
+<div class="create-news">
     <a href="/" class="create-news_btn_close">
         <div class="create-news-icon-close"></div>
     </a>
@@ -17,7 +17,7 @@
         <h3 style="font-family: 'Kanit', sans-serif; color: gray;">สร้างปาร์ตี้</h3>
     </div>
 
-    <form action="/team/create" method = 'POST'>
+    <form action="/team/create" method = 'POST' enctype="multipart/form-data">
       <div class="form-group">
         <label for="exampleFormControlInput1">ชื่อปาร์ตี้</label>
         <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อปาร์ตี้" name="headline">
@@ -28,7 +28,7 @@
       </div>
       <div class="form-group">
         <label for="img">เลือกรูปภาพ:</label>
-        <input type="file" id="party-img" name="party-img" accept="image/*">
+        <input type="file" id="party-img" name="image" accept="image/*">
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">จำนวนสมาชิกในปาร์ตี้</label>
