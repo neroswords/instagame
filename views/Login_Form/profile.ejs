@@ -13,28 +13,14 @@
 
     <main class="profile-content">
         <div class="profile-content-container">
-            <h1>แก้ไขข้อมูลส่วนตัว</h1>
+            <h1>ข้อมูลส่วนตัว</h1>
             <form class="profile-form">
-                <!-- <div class="profile-form-group">
-                    <label for="usrname" class="profile-label-item profile-form-title">
-                        อีเมลล์
-                    </label>
+
+                <div class="profile-form-group">
                     <div class="profile-form-inside">
-                        <p>nuiwitclup@gmail.com</p>
+                        <img src="/image/IMGBIN_disease-png_JPsi2TtT.png" alt="บวรศักดิ์ เหลือจันทร์">
                     </div>
                 </div>
-                <div class="profile-form-group">
-                    <label for="usrname" class="profile-label-item profile-form-title">
-                        ชื่อนามแฝง
-                    </label>
-                    <div class="profile-form-inside">
-                        <p>Bawornsak L Nui</p>
-                    </div>
-                </div> -->
-
-                <figure class="profile-avatar-review">
-                    <!-- <img src="/image/IMGBIN_disease-png_JPsi2TtT.png" alt="บวรศักดิ์ เหลือจันทร์"> -->
-                </figure>
 
                 <div class="profile-form-group">
                     <label for="upload" class="profile-label-item profile-form-title">
@@ -59,7 +45,7 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="text" class="profile-form-item" id="name" name="firstname" placeholder="กรอกชื่อ" value="<%= user.firstname %>">
+                        <p><%= user.firstname %></p>
                     </div>
                 </div>
 
@@ -69,7 +55,7 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="text" class="profile-form-item" id="lastname" name="surname" placeholder="กรอกนามสกุล" value="<%= user.lastname %>">
+                        <p><%= user.lastname %></p>
                     </div>
                 </div>
 
@@ -79,7 +65,7 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="text" class="profile-form-item" id="alias" name="alias" placeholder="กรอกชื่อนามแฝง" value="<%= user.alias %>">
+                        <p><%= user.alias %></p>
                     </div>
                 </div>
 
@@ -89,51 +75,16 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="email" class="profile-form-item" id="email" name="email" placeholder="กรอกอีเมลล์" value="<%= user.email %>">
+                        <p><%= user.email %></p>
                     </div>
                 </div>
-
-                <div class="profile-form-group">
-                    <label for="gender" class="profile-label-item profile-form-title">
-                        เพศ
-                        <font color="#FF0000">*</font>
-                    </label>
-                    <div class="profile-form-inside">
-                        <div class="profile-radio">
-                            <input name="gender" type="radio" id="male" value="male" checked="">
-                            <label for="male">
-                                ชาย
-                            </label>
-                        </div>
-                        <div class="profile-radio">
-                            <input name="gender" type="radio" id="female" value="female" checked="">
-                            <label for="male">
-                                หญิง
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="profile-form-group">
-                    <label for="gender" class="profile-label-item profile-form-title">
-                        วันเกิด
-                        <font color="#FF0000">*</font>
-                    </label>
-                    <div class="profile-form-inside">
-                        <div class="profile-selectbox">
-                            <label>
-                                <input type="time" id="party-time" name="appointment_time" value="<%= user.birth_day %>">                  
-                            </label>  
-                        </div>
-                    </div>
-                </div>
-
                 <div class="profile-form-group">
                     <label for="telephone" class="profile-label-item profile-form-title">
                         เบอร์โทรศัพท์
+                        <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="text" class="profile-form-item" id="tel" name="tel" placeholder="กรอกเบอร์โทรศัพท์" maxlength="10" value="<%= user.number %>">
+                        <p><%= user.number %></p>
                     </div>
                 </div>
 
