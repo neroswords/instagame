@@ -79,7 +79,7 @@ router.post("/create", middleware.isLoggedIn, function(req,res){
 })
 
 router.get("/:id", function(req,res){
-    Team.findById(req.params.id, function(error, idTeam){
+    Team.findById(req.params.id).populate('party').exec(function(error, idTeam){
         if(error){
             console.log("ERROR");
             
