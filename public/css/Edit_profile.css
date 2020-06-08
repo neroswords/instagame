@@ -208,6 +208,18 @@
     border-color: teal;
 }
 
+.profile-btn-primary2:hover {
+    background-color: #D68910;
+    color: #fff;
+    border-color: #D68910;
+}
+
+.profile-btn-primary2 {
+    background-color: #F39C12;
+    color: #fff;
+    border-color: #F39C12;
+}
+
 .profile-btn {
     position: relative;
     font-size: 14px;
