@@ -9,13 +9,15 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const flash = require('connect-flash');
 const methodOverride = require('method-override')
 
-mongoose.connect("mongodb://localhost/ig_db", {useNewUrlParser: true});
 const User = require("./models/user"),
     Team = require("./models/team"),
     News = require("./models/news"),
     Commu = require("./models/commu");
-    
+
+mongoose.set('useUnifiedTopology',true)   
 mongoose.set('useCreateIndex', true)
+mongoose.connect("mongodb://localhost/ig_db", {useNewUrlParser: true});
+mongoose.set('useFindAndModify',false)
 
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -25,14 +27,14 @@ app.use(require('express-session')({
     saveUninitialized: false
 }));
 
-app.use(flash());
+
 
 const newsRoutes = require("./routes/news"),
     indexRoutes = require("./routes/index"),
     commuRoutes = require("./routes/communication"),
     teamRoutes = require("./routes/team");
 
-
+app.use(flash());
 app.use(express.static(__dirname + '/public'));
 app.use(passport.initialize());
 app.use(passport.session());

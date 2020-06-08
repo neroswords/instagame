@@ -16,7 +16,7 @@
         <div class="create-news_header">
             <h3 style="font-family: 'Kanit', sans-serif; color: gray;">สร้างข่าว</h3>
         </div>
-        <form action = '/news/create' method = 'POST' class="form-hor">
+        <form action = '/news/create' method = 'POST' class="form-hor" enctype="multipart/form-data">
             <div>
                 <label for="text" class="label-form-title">พาดหัวข่าว</label>
                 <div class="form-inside">
@@ -36,9 +36,9 @@
                 </div>
             </div>
             <div>
-                <label for="text" class="label-form-title">แนบรูปภาพ</label>
+                <label for="ImageUpload" class="label-form-title">แนบรูปภาพ</label>
                 <div class="form-inside">
-                    <input type="file" class="form-item" id="picture" name="picture">
+                    <input type="file" class="form-item" id="picture" name="image" accept="image/*">
                 </div>
             </div>
             <div class="submit-create-news">

@@ -123,7 +123,7 @@ router.post('/Sign_up', function(req,res){
         }
         passport.authenticate('local')(req,res,function(){
             
-            req.flash('success','Welcome to Instagame, ' + user.username);
+            req.flash('success','Welcome to Instagame, ' + user.alias);
             res.redirect('/');
         });
     });

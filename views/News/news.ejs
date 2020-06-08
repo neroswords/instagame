@@ -13,11 +13,13 @@
         <!-- ปุ่มแก้ไขและลบข่าว -->
         <header class="teams__headline headline-sticky">
           <% if(currentUser && news.user_post.id.equals(currentUser._id)){ %>
+            <a href="/news/<%= news._id %>/edit">
             <button class="entry__meta__posted4">
                 <i class="fas fa-edit"></i>
                 แก้ไขข่าว
             </button>
-            <form action="/news/<%= news._id %>?_method=DELETE" method="POST">
+            </a>
+            <form action="/news/<%= news._id %>?_method=DELETE" method="POST" style="display: inline;">
             <button class="entry__meta__posted3">
                 <i class="far fa-trash-alt"></i>
                 ลบข่าว
@@ -29,7 +31,7 @@
         <!-- รูปและพาดหัวข่าว -->
         <header class="featured-box">
           <figure class="featured-box__img">
-              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTMwLzE2NTYzMC90aHVtYm5haWwvUmVfMTIwMF82MjguanBnJnc9MTE0MCZoPTU5Nw" alt="Re:Zero เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if">
+              <img src=<%= '../uploads/news/' + news.image %> alt="Re:Zero เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if">
           </figure>
           <div class="featured-box__desc">
             <h1><%= news.head %></h1>
