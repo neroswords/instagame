@@ -13,7 +13,7 @@
 
     <main class="profile-content">
         <div class="profile-content-container">
-            <h1>แก้ไขข้อมูลส่วนตัว</h1>
+            <h1>ข้อมูลส่วนตัว</h1>
             <form class="profile-form">
 
                 <div class="profile-form-group">
@@ -45,7 +45,7 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="text" class="profile-form-item" id="name" name="firstname" placeholder="กรอกชื่อ" value="<%= user.firstname %>">
+                        <p><%= user.firstname %></p>
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="text" class="profile-form-item" id="lastname" name="surname" placeholder="กรอกนามสกุล" value="<%= user.lastname %>">
+                        <p><%= user.lastname %></p>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="text" class="profile-form-item" id="alias" name="alias" placeholder="กรอกชื่อนามแฝง" value="<%= user.alias %>">
+                        <p><%= user.alias %></p>
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="email" class="profile-form-item" id="email" name="email" placeholder="กรอกอีเมลล์" value="<%= user.email %>">
+                        <p><%= user.email %></p>
                     </div>
                 </div>
                 <div class="profile-form-group">
@@ -84,12 +84,12 @@
                         <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
-                        <input type="text" class="profile-form-item" id="tel" name="tel" placeholder="กรอกเบอร์โทรศัพท์" maxlength="10" value="<%= user.number %>">
+                        <p><%= user.number %></p>
                     </div>
                 </div>
 
                 <div class="profile-form-act">
-                    <input type="button" id="editprofile" class="profile-btn profile-btn-primary" value="บันทึกข้อมูล">
+                    <input type="button" id="editprofile" class="profile-btn profile-btn-primary2" value="แก้ไขข้อมูล">
                 </div>
             </form>
         </div>

@@ -99,17 +99,10 @@
     margin: 2px 0;
 }
 
-@media only screen and (min-width: 768px) {
-.profile-avatar-preview {
-    margin: 0 0 0 120px;
-    padding-left: 10px;
-}
-}
-
-@media only screen and (min-width: 320px) and (max-width: 767.98px) {
-.profile-avatar-preview {
-    margin: 0;
-}
+.profile-form-inside img {
+    width: 120px;
+    height: 119px;
+    margin-bottom: 10px;
 }
 
 .profile-file .profile-file-name {
@@ -206,6 +199,18 @@
     background-color: teal;
     color: #fff;
     border-color: teal;
+}
+
+.profile-btn-primary2:hover {
+    background-color: #D68910;
+    color: #fff;
+    border-color: #D68910;
+}
+
+.profile-btn-primary2 {
+    background-color: #F39C12;
+    color: #fff;
+    border-color: #F39C12;
 }
 
 .profile-btn {
