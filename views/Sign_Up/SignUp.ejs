@@ -52,9 +52,75 @@
                     </div>
                 </div>
                 <div>
-                    <label for="penname" class="label-form-title">ชื่อนามแฝง</label>
+                    <label for="name" class="label-form-title">
+                        ชื่อจริง
+                        <font color="#FF0000">*</font>
+                    </label>
                     <div class="form-inside">
-                        <input type="text" class="form-item" id="email" name="alias" placeholder="ใส่ชื่อนามแฝง" required >
+                        <input type="text" class="form-item" id="name" name="firstname" placeholder="กรอกชื่อ" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="lastname" class="label-form-title">
+                        นามสกุล
+                        <font color="#FF0000">*</font>
+                    </label>
+                    <div class="form-inside">
+                        <input type="text" class="form-item" id="lastname" name="surname" placeholder="กรอกนามสกุล" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="alias" class="label-form-title">
+                        ชื่อนามแฝง
+                        <font color="#FF0000">*</font>
+                    </label>
+                    <div class="form-inside">
+                        <input type="text" class="form-item" id="alias" name="alias" placeholder="กรอกชื่อนามแฝง" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="gender" class="label-form-title">
+                        เพศ
+                        <font color="#FF0000">*</font>
+                    </label>
+                    <div class="form-inside">
+                        <div class="profile-radio">
+                            <input name="gender" type="radio" id="male" value="male" checked="">
+                            <label for="male">
+                                ชาย
+                            </label>
+                        </div>
+                        <div class="profile-radio">
+                            <input name="gender" type="radio" id="female" value="female" checked="">
+                            <label for="male">
+                                หญิง
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="gender" class="label-form-title">
+                        วันเกิด
+                        <font color="#FF0000">*</font>
+                    </label>
+                    <div class="form-inside">
+                        <div class="profile-selectbox">
+                            <label>
+                                <input type="date" id="party-time" name="birth_day" required>                  
+                            </label>  
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="telephone" class="label-form-title">
+                        เบอร์โทรศัพท์
+                    </label>
+                    <div class="form-inside">
+                        <input type="text" class="form-item" id="tel" name="tel" placeholder="กรอกเบอร์โทรศัพท์" maxlength="10" required>
                     </div>
                 </div>
                 <div class="form-inside">

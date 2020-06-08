@@ -39,8 +39,13 @@ router.get('/profile', middleware.isLoggedIn, function(req,res){
 })
 
 router.get('/editProfile/:id', middleware.isLoggedIn , function(req,res){
-    User.findById(req.param.id, function(err, foundProfile){
-        res.render("Edit_profile", {user: foundProfile});
+    User.findById(req.params.id, function(err, foundProfile){
+        if(err){
+            console.log("error to find profile");
+            
+        }else{  
+            res.render("Edit_profile", {user: foundProfile});
+        }
     })
 })
 
@@ -104,7 +109,14 @@ router.get("/Sign_up/acception", function(req,res){
 });
 
 router.post('/Sign_up', function(req,res){
-    User.register(new User({username: req.body.username, email: req.body.email , alias : req.body.alias}), req.body.password, function(err, user){
+    User.register(new User({username: req.body.username, 
+                            email: req.body.email , 
+                            alias : req.body.alias,
+                            firstname : req.body.firstname,
+                            lastname : req.body.surname,
+                            gender : req.body.gender,
+                            birth_day : req.body.birth_day,
+                            number : req.body.tel}), req.body.password, function(err, user){
         if(err){
             console.log(err);
             return res.render('SignUp');

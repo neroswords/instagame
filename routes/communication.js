@@ -6,7 +6,14 @@ const express = require("express"),
     middleware = require('../middleware');
 
 router.get("/", function(req,res){
-    res.render("column");
+    Communication.find({}, function(error,allCommu){
+        if(error){
+            console.log("Error to find commu database");
+            
+        }else{
+            res.render("column", {Commu : allCommu});
+        }
+    })
 });
 
 router.get("/create", function(req,res){
@@ -41,12 +48,12 @@ router.post("/create", middleware.isLoggedIn, function(req,res){
 })
 
 router.get("/:id", function(req,res){
-    Communication.findById(req.params.id, function(error, idTeam){
+    Communication.findById(req.params.id, function(error, idCommu){
         if(error){
             console.log("ERROR");
             
         } else{
-            res.render("commu",{commu:idCommu});
+            res.render("column_detail",{commu:idCommu});
             }
         }
     )}

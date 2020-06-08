@@ -28,6 +28,7 @@
                 กระทู้เกมประเภท: 
                 <a href="#" class="game-type-tag">ประเภทเกม</a> 
             </p> -->
+            <form action="/commu/create" method="POST" style="display: inline;">
             <button type="submit" class="submit-create-party-btn">
                 <svg class="bi bi-file-earmark-plus" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5v-1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v2h1V6L9 1z"/>
@@ -36,41 +37,41 @@
                 </svg>
                 สร้างกระทู้
             </button>
+          </form>
           </header>
+          
   
           <section class="box">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                      <div class="col-6">
-                        <article class="entry">
-                          <figure class="entry__thumb entry__thumb--zoom">
-                            <a href="">
-                              <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                            </a>
-                          </figure>
-                          <div class="entry__body">
-                            <h4 class="entry__title">
-                              <a href="">
-                                ใส่ชื่อกระทู้
-                              </a>
-                            </h4>
-                            <div class="entry__meta">
-                              <span class="entry__meta__count">
-                                <i class="fas fa-eye"></i>
-                                ใส่ยอดวิว
-                              </span>
-                              <span class="entry__meta__posted">
-                                <i class="far fa-clock"></i>
-                                ใส่วันที่โพสต์
-                              </span>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
+            <div class="row" style="display:flex; flex-wrap:wrap;">
+              <% Commu.forEach(function(commu){ %>
+              <div class="col-md-3 col-sm-6">
+                <article class="entry">
+                  <figure class="entry__thumb entry__thumb--zoom">
+                    <a href="/commu/<%= commu._id %>">
+                      <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
+                    </a>
+                  </figure>
+                  <div class="entry__body">
+                    <h4 class="entry__title">
+                      <a href="/commu/<%= commu._id %>">
+                        <%= commu.head %>
+                      </a>
+                    </h4>
+                    <div class="entry__meta">
+                      <span class="entry__meta__count">
+                        <i class="fas fa-eye"></i>
+                        ใส่ยอดวิว
+                      </span>
+                      <span class="entry__meta__posted">
+                        <i class="far fa-clock"></i>
+                        <%= commu.date %>
+                      </span>
                     </div>
                   </div>
-            </div>
+                </article>
+              </div>
+          <% }); %> 
+        </div>
 
             <header class="add-view">
               <button href="#" class="scrollto-add">
