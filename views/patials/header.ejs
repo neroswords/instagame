@@ -72,14 +72,13 @@
                         </button>
                     </a>
                  <% } else { %>
-                    <%= currentUser.alias %>
-                    <div id="member-box d-inline" class="topbar__member">
+                <div id="member-box d-inline" class="topbar__member">
                       <div class="dropdown">
                         <button class="btn dropdown-toggle dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          ใส่ชื่อโปรไฟล์
+                          <%= currentUser.alias %>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">
+                          <a class="dropdown-item" href="/editProfile/<%= currentUser._id %>">
                             <i class="fas fa-user-circle"></i>
                             ข้อมูลสมาชิก
                           </a>
