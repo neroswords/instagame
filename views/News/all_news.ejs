@@ -13,8 +13,26 @@
         <div id="news-section" style="position: relative;">
           <header class="headline headline-sticky">
             <h2 class="headline__name">ข่าวเกมทั้งหมด</h2>
+            <div class="select-news-game_type">
+              <label for="exampleFormControlSelect1 d-inline-block">เลือกดูข่าวตามประเภทเกม:</label>
+              <select class="game-type" id="game-type" name="game-type">
+                <option>จากเกมทุกประเภท</option>
+                <option>Survival</option>
+                <option>Role-Player Game (RPG)</option>
+                <option>Battle Royale</option>
+                <option>First Person Shooter (FPS)</option>
+                <option>Multiplayer Online Battle Arena (MOBA)</option>
+                <option>Fighting</option>
+                <option>Sports</option>
+                <option>Racing</option>
+              </select>
+            </div>
+            <button class="create_team-icon" onclick="window.location.href='#';">
+              <i class="far fa-file"></i>
+              <span>สร้างข่าว</span> 
+          </button>
           </header>
-          <button type="button" class="btn btn-primary" style="float: right;"><a href="/news/create">Create News</a></button>
+
           <section class="box">
                   <div class="row" style="display:flex; flex-wrap:wrap;">
                     <% News.forEach(function(news){ %>
