@@ -62,7 +62,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
     })
 
     router.get("/:id", function(req,res){
-        News.findById(req.params.id, function(error, idNews){
+        News.findById(req.params.id).populate('comments').exec( function(error, idNews){
             if(error){
                 console.log("ERROR");
                 

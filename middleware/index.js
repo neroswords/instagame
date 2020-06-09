@@ -2,7 +2,7 @@ const User = require("../models/user"),
     News = require("../models/news"),
     Comment = require("../models/comment"),
     Commu = require("../models/commu"),
-    Party = require("../models/party");
+    Team = require("../models/team");
 
 let middlewareObj = {};
 
@@ -48,9 +48,9 @@ middlewareObj.checkCommuOwner = function(req,res,next){
     }
 }
 
-middlewareObj.checkPartyOwner = function(req,res,next){
+middlewareObj.checkTeamOwner = function(req,res,next){
     if(req.isAuthenticated()){
-        Party.findById(req.params.id, function(err, foundParty){
+        Team.findById(req.params.id, function(err, foundParty){
             if(err){
                 console.log("can not find Party");
                 res.redirect("back");
@@ -76,7 +76,7 @@ middlewareObj.checkCommentOwner = function(req,res,next){
                 console.log("can not find comment");
                 res.redirect("back");
             } else{
-                console.log(foundNews);
+                console.log(foundComment);
                 
                 if(foundComment.user_post.id.equals(req.user._id)){
                     next();
