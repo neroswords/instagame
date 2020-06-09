@@ -44,11 +44,12 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         let n_head = req.body.headline;
         let n_content = req.body.content;
         let n_image = req.file.filename;
+        let n_viewers = 1;
         let n_user_post = {id: req.user._id, alias: req.user.alias};
         let n_game = req.body.game;
         var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
         let n_date = new Date(asiaTime).toISOString();
-        let n_post = {head:n_head, content:n_content, user_post:n_user_post, game:n_game, date: n_date, image : n_image};
+        let n_post = {head:n_head, content:n_content, viewers : n_viewers, user_post:n_user_post, game:n_game, date: n_date, image : n_image};
         News.create(n_post, function(error, newNews){
             if(error){
                 console.log("error create news");
@@ -78,6 +79,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 console.log(err);
                 
             } else {
+                foundNews.viewers++;
                 res.render("edit_news", {news : foundNews})
             }
         })
