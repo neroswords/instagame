@@ -17,22 +17,22 @@
         <h3 style="font-family: 'Kanit', sans-serif; color: gray;">สร้างกระทู้</h3>
     </div>
 
-    <form>
+    <form action="/commu/create" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label for="exampleFormControlInput1">ชื่อกระทู้</label>
-        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อกระทู้">
+        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อกระทู้" name="head">
       </div>
       <div class="form-group">
         <label for="exampleFormControlInput1">ชื่อเกม</label>
-        <input type="text" class="form-control" id="party-game-name" placeholder="ใส่ชื่อเกม">
+        <input type="text" class="form-control" id="party-game-name" placeholder="ใส่ชื่อเกม" name="game">
       </div>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">เนื้อหากระทู้</label>
-        <textarea class="form-control" id="descteam" rows="3">ใส่เนื้อหาของกระทู้...</textarea>
+        <textarea class="form-control" id="descteam" rows="3" placeholder="ใส่เนื้อหาของกระทู้..." name="content"></textarea>
       </div>
       <div class="form-group">
         <label for="img">แนบรูปภาพ:</label>
-        <input type="file" id="party-img" name="party-img" accept="image/*">
+        <input type="file" id="party-img" name="image" accept="image/*">
       </div>
       <div class="party-btn">
         <div class="submit-create-party">
@@ -43,18 +43,6 @@
               <path fill-rule="evenodd" d="M13 12.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
             </svg>
             สร้างกระทู้
-          </button>
-        </div>
-        <div class="edit-party">
-          <button type="submit" class="edit-party-btn">
-            <i class="far fa-edit"></i>
-            แก้ไขกระทู้
-          </button>
-        </div>
-        <div class="delete-party">
-          <button type="submit" class="delete-party-btn">
-            <i class="far fa-trash-alt"></i>
-            ลบกระทู้
           </button>
         </div>
       </div>

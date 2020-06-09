@@ -1,11 +1,30 @@
 const express = require("express"),
-    router = express.Router()
+    router = express.Router(),
+    multer = require('multer'),
+    path = require('path'),
+    fs = require('fs'),
     passport = require('passport'),
     User = require('../models/user'),
     Team = require('../models/team'),
     Party = require('../models/party'),
     middleware = require('../middleware');
 
+    const storage = multer.diskStorage({
+        destination : './public/uploads/team',
+        filename : function(req, file, cb){
+            cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        }
+    });
+    
+    const imageFilter = function(req, file, cb){
+        var ext = path.extname(file.originalname);
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg' && ext !== '.gif'){
+            return cb(new Error('Only image is allow to upload'),false)
+        }
+        cb(null, true);
+    }
+    
+    const upload = multer({storage : storage, fileFilter : imageFilter});
 
 router.get("/", function(req,res){
     Team.find({}, function(error, allTeam){
@@ -38,20 +57,23 @@ router.post("/create", middleware.isLoggedIn, function(req,res){
     let n_content = req.body.content;
     let n_user_post = {id: req.user._id, alias: req.user.alias};
     let n_game = req.body.game;
+    let n_image = req.file.filename;
     let n_number = 1;
     let n_max_number = req.body.max_number;
     let n_appointment_date = req.body.appointment_date;
     let n_appointment_time = req.body.appointment_time;
     var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
     let n_date = new Date(asiaTime).toISOString();
-    let n_post = {head:n_head, content:n_content,
+    let n_post = {head:n_head, 
+                    content:n_content,
                     user_post:n_user_post,
                     game:n_game,
                     date_post: n_date,
                     appointment_date:n_appointment_date,
                     appointment_time:n_appointment_time,
                     number : n_number,
-                    maxplayer : n_max_number
+                    maxplayer : n_max_number,
+                    image : n_image
                 };
     Team.create(n_post, function(error, newTeam){
         if(error){
@@ -91,6 +113,20 @@ router.get("/:id", function(req,res){
 )
 
 router.delete("/:id", middleware.checkPartyOwner, function(req,res){
+    Team.findById(req.params.id, function(err, foundTeam){
+        if(err){
+            console.log(err);
+            res.redirect('/team/'+ req.params.id)
+        } else{
+            const imagePath = './public/uploads/team/' + foundTeam.image;
+            fs.unlink(imagePath, function(err){
+                if(err){
+                    console.log(err);
+                    res.redirect('/team');
+                }
+            })
+        }
+    })
     Team.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log("error to delete team");
