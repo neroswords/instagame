@@ -141,6 +141,7 @@
         height: auto;
         vertical-align: middle;
         border-style: none;
+        position: relative;
     }
     
     .featured-box__desc {
@@ -363,7 +364,7 @@
         background-color: STEELBLUE;
     }
     
-    @media (min-width: 576px) and (max-width: 767.98px) {
+    @media (max-width: 767.98px) {
         .submit-comment-btn  {
             display: block;
             margin: auto;
