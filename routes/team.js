@@ -52,7 +52,7 @@ router.get("/create", middleware.isLoggedIn, function(req,res){
     res.render("c_team");
 });
 
-router.post("/create", middleware.isLoggedIn, function(req,res){
+router.post("/create", middleware.isLoggedIn, upload.single('image'), function(req,res){
     let n_head = req.body.headline;
     let n_content = req.body.content;
     let n_user_post = {id: req.user._id, alias: req.user.alias};

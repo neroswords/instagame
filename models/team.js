@@ -13,7 +13,7 @@ let TeamSchema = new mongoose.Schema({
     },
     date_post : Date,
     game : String,
-    appointment_date : Date,
+    appointment_date : String,
     appointment_time : String,
     number : Number,
     maxplayer : Number,
