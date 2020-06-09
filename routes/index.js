@@ -57,6 +57,10 @@ router.get('/profile', middleware.isLoggedIn, function(req,res){
     res.render("profile")
 })
 
+router.get("/search", middleware.isLoggedIn, function(req,res){
+    res.render("result");
+});
+
 router.get('/editProfile/:id', middleware.isLoggedIn , function(req,res){
     User.findById(req.params.id, function(err, foundProfile){
         if(err){
