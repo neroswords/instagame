@@ -13,7 +13,7 @@ let NewsSchema = new mongoose.Schema({
     },
     date : Date,
     game : String,
-    comment : [
+    comments : [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Comment"

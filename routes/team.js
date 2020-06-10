@@ -101,7 +101,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
 })
 
 router.get("/:id", function(req,res){
-    Team.findById(req.params.id).populate('party').exec(function(error, idTeam){
+    Team.findById(req.params.id).populate('comments').populate('party').exec(function(error, idTeam){
         if(error){
             console.log("ERROR");
             
@@ -112,7 +112,7 @@ router.get("/:id", function(req,res){
     )}
 )
 
-router.delete("/:id", middleware.checkPartyOwner, function(req,res){
+router.delete("/:id", middleware.checkTeamOwner, function(req,res){
     Team.findById(req.params.id, function(err, foundTeam){
         if(err){
             console.log(err);

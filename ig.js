@@ -32,7 +32,8 @@ app.use(require('express-session')({
 const newsRoutes = require("./routes/news"),
     indexRoutes = require("./routes/index"),
     commuRoutes = require("./routes/communication"),
-    teamRoutes = require("./routes/team");
+    teamRoutes = require("./routes/team"),
+    commentRoutes = require("./routes/comments");
 
 app.use(flash());
 app.use(express.static(__dirname + '/public'));
@@ -68,6 +69,7 @@ app.use("/",indexRoutes);
 app.use("/news", newsRoutes);
 app.use("/team", teamRoutes);
 app.use("/commu", commuRoutes);
+app.use("/:models/:id/comment", commentRoutes);
 
 
 app.listen(3000, function(req,res){

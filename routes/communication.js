@@ -66,7 +66,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
 })
 
 router.get("/:id", function(req,res){
-    Communication.findById(req.params.id, function(error, idCommu){
+    Communication.findById(req.params.id).populate('comments').exec( function(error, idCommu){
         if(error){
             console.log("ERROR");
             

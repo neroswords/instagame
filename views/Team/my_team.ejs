@@ -28,7 +28,8 @@
           <section class="box">
             <div class="row" style="display:flex; flex-wrap:wrap;">
                     <% Team.forEach(function(team){ %>
-                      <% if(team.user_post.id.equals(currentUser._id)) { %>
+                      <% for(var n = 0; n < team.number; n++){ %>
+                        <% if(currentUser && team.party[n].equals(currentUser._id)) { %>
                     <div class="col-md-3 col-sm-6">
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
@@ -124,7 +125,7 @@
                       </div>
                     </article> 
                   </div>
-                  <% } %>
+                  <% }} %>
                   <% }) %>
                 </div>
                 <header class="add-view">
