@@ -58,8 +58,7 @@ a {
     border-bottom: 3px solid lightseagreen;
     padding-bottom: 1;
     opacity: 1;
-    transition: color ease-in-out 0.3s;
-    transform: translateY(0);
+    transition: color .15s ease-in-out;
 }
 
 #member-box {

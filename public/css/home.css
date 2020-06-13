@@ -270,7 +270,7 @@ section .col-md-6 {
     }
     }
 
-.entry__thumb img {
+.entry__thumb img { 
     max-width: 100%;
     height: auto;
 }
