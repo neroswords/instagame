@@ -6,7 +6,9 @@ const express = require("express"),
     passport = require('passport'),
     User = require('../models/user'),
     Communication = require('../models/commu'),
-    middleware = require('../middleware');
+    Tag = require('../models/tag'),
+    middleware = require('../middleware'),
+    async = require('async');
 
     const storage = multer.diskStorage({
         destination : './public/uploads/commu',
@@ -54,13 +56,51 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
     var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
     let n_date = new Date(asiaTime).toISOString();
     let n_post = {head:n_head, content:n_content, user_post:n_user_post, game:n_game, date: n_date, image : n_image};
-    Communication.create(n_post, function(error, newCommu){
+    Communication.create(n_post, async function(error, newCommu){
         if(error){
             console.log("error create commu");
         }
         else{
-            console.log(newCommu);
-            res.redirect("/commu");
+            var tagsarr = req.body.tags.split(',');
+            console.log(tagsarr);
+            
+                for await (let tag of tagsarr) {
+                    await Tag.find({ name : tag },async function(err, findTag){
+                        if(err){
+                            console.log(err);
+                        } else if(!findTag.length){
+                            let n_tag = {name : tag}
+                            Tag.create(n_tag,async function(error, newTag){
+                                if(error){
+                                    console.log(error);
+                                } else {
+                                    console.log("dont find");    
+                                    newCommu.tags.push(newTag);
+                                }
+                            })
+                        } else {
+                            console.log("find");
+                            newCommu.tags.push(findTag[0]._id);
+                        }    
+                    }) 
+                    
+                }; 
+                await Tag.find({ name: n_game },async function(err,findGame){
+                    if(err){
+                        console.log(err);
+                        
+                    } else if(!findGame.length){
+                        let game_tag = { name : n_game};
+                        Tag.create(game_tag,async function(error, gameTag){
+                            newCommu.tags.push(gameTag);
+                            await newCommu.save();
+                        })
+                    } else if(findGame.length){
+                        newCommu.tags.push(findGame[0]);
+                        await newCommu.save();
+                    }
+                })
+            await res.redirect("/commu");
         }
     })
 })

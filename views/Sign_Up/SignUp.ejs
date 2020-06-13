@@ -42,13 +42,13 @@
                 <div>
                     <label for="password" class="label-form-title">รหัสผ่าน</label>
                     <div class="form-inside">
-                        <input type="password" class="form-item" id="email" name="password" placeholder="ใส่รหัสผ่าน" required>
+                        <input type="password" class="form-item" id="txtPassword" name="password" placeholder="ใส่รหัสผ่าน" required>
                     </div>
                 </div>
                 <div>
                     <label for="confirm_password" class="label-form-title">ยืนยันรหัสผ่าน</label>
                     <div class="form-inside">
-                        <input type="password" class="form-item" id="email" name="confirm_password" placeholder="ใส่ยืนยันรหัสผ่าน" required >
+                        <input type="password" class="form-item" id="txtConfirmPassword" name="confirm_password" placeholder="ใส่ยืนยันรหัสผ่าน" required >
                     </div>
                 </div>
                 <div>
@@ -140,7 +140,7 @@
                 </div>
                 
                 <div class="submit-login">
-                    <input type="submit" class="submit-login-btn" value="สมัครสมาชิก">
+                    <input type="submit" class="submit-login-btn" value="สมัครสมาชิก" onclick="return Validate()">
                     <button type="button" class="fb-login-btn">
                         <img src="/image/facebook icon.svg" class="fb-icon-login">
                         สมัครสมาชิกด้วย Facebook
@@ -158,3 +158,15 @@
 </body>
 </html>
 <%- include("patials/footer") %>
+
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script>

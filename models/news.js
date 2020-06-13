@@ -18,6 +18,12 @@ let NewsSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "Comment"
         }
+    ],
+    tags : [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Tag"
+        }
     ]
 });
 

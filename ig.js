@@ -7,7 +7,8 @@ const passport = require("passport");
 const passportLocal = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 const flash = require('connect-flash');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+var async = require('async');
 
 const User = require("./models/user"),
     Team = require("./models/team"),

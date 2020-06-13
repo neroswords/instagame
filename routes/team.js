@@ -7,7 +7,9 @@ const express = require("express"),
     User = require('../models/user'),
     Team = require('../models/team'),
     Party = require('../models/party'),
-    middleware = require('../middleware');
+    Tag = require('../models/tag'),
+    middleware = require('../middleware'),
+    async = require('async');
 
     const storage = multer.diskStorage({
         destination : './public/uploads/team',
@@ -75,14 +77,54 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
                     maxplayer : n_max_number,
                     image : n_image
                 };
-    Team.create(n_post, function(error, newTeam){
+    Team.create(n_post,async function(error, newTeam){
         if(error){
             console.log("error create team");
         }
         else{
             newTeam.party.push(req.user);
-            newTeam.save();
-            res.redirect("/team/" + newTeam._id)
+            var tagsarr = req.body.tags.split(',');
+            for await (let tag of tagsarr) {
+                await Tag.find({ name : tag },async function(err, findTag){
+                    if(err){
+                        console.log(err);
+                    } else if(!findTag.length){
+                        let n_tag = {name : tag}
+                        Tag.create(n_tag,async function(error, newTag){
+                            if(error){
+                                console.log(error);
+                            } else {
+                                console.log("dont find");    
+                                newTeam.tags.push(newTag);
+                                console.log(newTeam);
+
+                            }
+                        })
+                    } else {
+                        console.log("find");
+                        await newTeam.tags.push(findTag[0]._id);
+                        console.log(newTeam);
+                    }    
+                }) 
+                
+            }; 
+            await Tag.find({ name: n_game },async function(err,findGame){
+                if(err){
+                    console.log(err);
+                    
+                } else if(!findGame.length){
+                    let game_tag = { name : n_game};
+                    Tag.create(game_tag,async function(error, gameTag){
+                        await newTeam.tags.push(gameTag);
+                        newTeam.save();
+                        res.redirect("/team/" + newTeam._id)
+                    })
+                } else if(findGame.length){
+                    await newTeam.tags.push(findGame[0]);
+                    newTeam.save();
+                    res.redirect("/team/" + newTeam._id)
+                }
+            })
             // Party.create(,function(err,newParty){
             //     if(err){
             //         console.log("error to create party list");
