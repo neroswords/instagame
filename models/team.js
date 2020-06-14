@@ -22,6 +22,12 @@ let TeamSchema = new mongoose.Schema({
             ref: "User"
         }
     ],
+    tags : [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Tag"
+        }
+    ],
     comments : [
         {
             type: mongoose.Schema.Types.ObjectId,

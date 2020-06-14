@@ -5,6 +5,7 @@ const express = require("express"),
     fs = require('fs'),
     passport = require('passport'),
     User = require('../models/user'),
+    Tag = require('../models/tag'),
     middleware = require('../middleware');
 
     const storage = multer.diskStorage({

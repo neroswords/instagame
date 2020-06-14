@@ -1,3 +1,10 @@
+const User = require("../models/user"),
+    News = require("../models/news"),
+    Comment = require("../models/comment"),
+    Commu = require("../models/commu"),
+    Team = require("../models/team");
+
+
 function Tags(element) {
   var DOMParent = element;
   var DOMList;
@@ -40,7 +47,7 @@ function Tags(element) {
     DOMInput.addEventListener('keyup', function (event) {
       var text = this.value.trim(); // check if ',' or 'enter' key was press
 
-      if (text.includes(',') || event.keyCode == 13) {
+      if (text.includes(',') || event.keyCode == 32) {
         // check if empty text when ',' is remove
         if (text.replace(',', '') != '') {
           // push to array and remove ','

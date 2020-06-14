@@ -38,14 +38,19 @@
                     <textarea rows="20" cols="80" class="form-item" id="content" name="content" required placeholder="ใส่เนื้อหาข่าว"></textarea>    
                 </div>
             </div>
+            <div class="simple-tags"
+                id="containers" 
+                data-simple-tags="news">
+            </div>
             <div>
                 <label for="ImageUpload" class="label-form-title">แนบรูปภาพ</label>
                 <div class="form-inside">
                     <input type="file" class="form-item" id="picture" name="image" accept="image/*">
                 </div>
             </div>
+            <input type="hidden" name="tags" id="tags" value=""> 
             <div class="submit-create-news">
-                <input type="submit" class="submit-create-news-btn" value="สร้างข่าว">
+                <input type="submit" class="submit-create-news-btn" value="สร้างข่าว" onclick="c_tag(document.getElementById('containers').getAttribute('data-simple-tags'))">
             </div>
         </form>
     </div>
@@ -57,3 +62,12 @@
 </html>
 
 <%- include("patials/footer") %>
+
+<script>
+    var el = document.getElementById('containers');
+    new Tags(el);
+
+    function c_tag(x){
+        document.getElementById("tags").value = x;
+    }
+</script>

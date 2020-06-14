@@ -13,6 +13,12 @@ let CommuSchema = new mongoose.Schema({
     },
     date : Date,
     game : String,
+    tags : [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Tag"
+        }
+    ],
     comments : [
         {
             type: mongoose.Schema.Types.ObjectId,
