@@ -46,7 +46,7 @@
                 </span>
                 <span>
                     <i class="far fa-clock"></i>
-                    <%= news.date %>
+                    <%= moment(news.date).format("DD/MM/YYYY") %>
                 </span>
             </div>
           </div>    
@@ -76,17 +76,15 @@
                 <!-- Start Text Content -->
                 <div class="content__read">
                     <h3>
-                        <span style="color: #212529;">
-                            <strong><%= news.head %></strong>
-                        </span>
-                    </h2>
-                    <p><%= news.content %></p>
+                        <%= news.head %>
+                    </h3>
+                    <p><%- news.content %></p>
                 </div>
                 <!-- End text content -->
 
                 <!-- start relate tags -->
                 <!-- <div class="content__tag">
-                    <h4>แท็กที่เกี่ยวข้อง: </h4>
+                    <h5>แท็กที่เกี่ยวข้อง: </h5>
                     <div class="content__tag__content">
                         <a target="blank" href="#" role="button"></a>
                     </div>

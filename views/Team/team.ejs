@@ -83,8 +83,7 @@
                           </div>
                           <div class="entry__meta">
                             <span class="entry__meta__count">
-                              <i class="fas fa-calendar-week"></i>
-                              <%= team.appointment_date %>
+                              <i class="fas fa-calendar-week"></i><%= moment(team.appointment_date).format("DD/MM/YYYY") %>
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>

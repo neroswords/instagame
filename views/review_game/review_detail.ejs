@@ -1,0 +1,176 @@
+<%- include("patials/header") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review_detail</title>
+    <link rel="stylesheet" href="/css/news.css">
+</head>
+<body>
+    <main class="main-body" role="main">
+        <!-- ปุ่มแก้ไขและลบข่าว -->
+        <header class="teams__headline headline-sticky">
+          <% if(currentUser && news.user_post.id.equals(currentUser._id)){ %>
+            <a href="/news/<%= news._id %>/edit">
+            <button class="entry__meta__posted4">
+                <i class="fas fa-edit"></i>
+                แก้ไขรีวิว
+            </button>
+            </a>
+            <form action="/news/<%= news._id %>?_method=DELETE" method="POST" style="display: inline;">
+            <button class="entry__meta__posted3">
+                <i class="far fa-trash-alt"></i>
+                ลบรีวิว
+            </button>
+          </form>
+          <% } %>
+        </header>
+
+        <!-- รูปและพาดหัวข่าว -->
+        <header class="featured-box">
+          <figure class="featured-box__img">
+              <img class="img-fluid load lazy-img" src=<%= '../uploads/news/' + news.image %> alt="Responsive image">
+          </figure>
+          <div class="featured-box__desc">
+            <h1><%= news.head %></h1>
+            <div class="featured-box__meta">
+                <span class="mr-2">
+                    <i class="far fa-user-circle"></i>
+                    <%= news.user_post.alias %>
+                </span>
+                <span class="mr-2">
+                    <i class="fas fa-eye"></i>
+                    ใส่ยอดวิว
+                </span>
+                <span>
+                    <i class="far fa-clock"></i>
+                    <%= news.date %>
+                </span>
+            </div>
+          </div>    
+        </header>    
+
+        <!-- path ของข่าว -->
+        <nav class="breadcrumb-box" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">หน้าแรก</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#">ข่าวเกม</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#">ข่าวเกม: [ประเภทเกม]</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page"> 
+                    <a href="#">เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if</a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- เนื้อข่าว -->
+        <div class="content">
+            <div class="content__main order-1">
+                <!-- Start Text Content -->
+                <div class="content__read">
+                    <h3>
+                        <span style="color: #212529;">
+                            <strong><%= news.head %></strong>
+                        </span>
+                    </h2>
+                    <p><%= news.content %></p>
+                </div>
+                <!-- End text content -->
+
+                <!-- start relate tags -->
+                <!-- <div class="content__tag">
+                    <h4>แท็กที่เกี่ยวข้อง: </h4>
+                    <div class="content__tag__content">
+                        <a target="blank" href="#" role="button"></a>
+                    </div>
+                </div> -->
+                <!-- end relate tags -->
+            </div>
+
+            <!-- start comment section -->
+            <div class="content__comment order-2 order-lg-3">
+                <section class="party-comment-box box">
+                    <header class="party-comment-header box__header">
+                        <h3>
+                            <i class="fas fa-comments fa-sm text-muted mr-1"></i>
+                            ช่องสนทนา
+                        </h3>
+                    </header>
+                     <div class="container">
+                      <div class="be-comment-block">
+                        <% news.comments.forEach(function(comment){ %>
+                        <div class="be-comment">
+                          <div class="be-img-comment">	
+                            <a href="#">
+                              <img src=<%= '../uploads/user/' + comment.user_post.image %> class="be-ava-comment">
+                            </a>
+                          </div>
+                          <div class="be-comment-content">
+                              <span class="be-comment-name">
+                                <a href="#"><%= comment.user_post.alias %></a>
+                              </span>
+                              <span class="be-comment-time">
+                                <i class="fa fa-clock-o"></i>
+                                <%= comment.date %>
+                                <% if(currentUser && currentUser._id.equals(comment.user_post.id)){ %>
+                                <div id="member-box d-inline" class="topbar__member-comment">
+                                  <div class="dropdown">
+                                    <button class="btn dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <button class="dropdown-item" href="#">
+                                        <i class="fas fa-edit"></i>
+                                        แก้ไขข้อความ
+                                      </button>
+                                      <form action="/news/<%= news._id %>/comment/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
+                                      <button class="dropdown-item">
+                                        <i class="far fa-trash-alt"></i>
+                                        ลบข้อความ
+                                      </button>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                                <% } %>
+                              </span>
+                              <p class="be-comment-text">
+                                <%= comment.content %>
+                              </p>
+                          </div>
+                        </div>
+                        <% }) %>
+                        <% if(currentUser){ %>
+                        <form class="form-block" action="/news/<%= news._id %>/comment/create" method="POST">
+                          <div class="row">
+                            <div class="col-md-12">									
+                              <div class="form-group">
+                                <textarea class="form-input" required placeholder="เริ่มแชทกับพวกเขาเลย!" name="comment[content]"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="submit-comment">
+                            <button type="submit" class="submit-comment-btn">ส่ง</button>
+                        </div> 
+                        </div>
+                        </form>
+                      </div>
+                    <% } %>
+                </section>
+            </div>
+            <!-- End comment section -->
+        </div>
+  
+
+    </main>
+</body>
+</html>
+
+<%- include("patials/footer") %>

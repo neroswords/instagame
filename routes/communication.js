@@ -8,6 +8,8 @@ const express = require("express"),
     Communication = require('../models/commu'),
     middleware = require('../middleware');
 
+    var moment = require('moment');
+
     const storage = multer.diskStorage({
         destination : './public/uploads/commu',
         filename : function(req, file, cb){
@@ -31,7 +33,7 @@ router.get("/", function(req,res){
             console.log("Error to find commu database");
             
         }else{
-            res.render("column", {Commu : allCommu});
+            res.render("column", {Commu : allCommu, moment: moment});
         }
     })
 });
@@ -71,7 +73,7 @@ router.get("/:id", function(req,res){
             console.log("ERROR");
             
         } else{
-            res.render("column_detail",{commu:idCommu});
+            res.render("column_detail",{commu:idCommu, moment: moment});
             }
         }
     )}

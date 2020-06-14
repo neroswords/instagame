@@ -9,6 +9,8 @@ const express = require("express"),
     Party = require('../models/party'),
     middleware = require('../middleware');
 
+    var moment = require('moment'); 
+
     const storage = multer.diskStorage({
         destination : './public/uploads/team',
         filename : function(req, file, cb){
@@ -32,7 +34,7 @@ router.get("/", function(req,res){
             console.log("Error!!");
             
         }else{
-            res.render("team",{Team : allTeam});
+            res.render("team",{Team : allTeam, moment: moment});
         }
     })
 })
@@ -43,7 +45,7 @@ router.get("/my_team",middleware.isLoggedIn, function(req,res){
             console.log("Error!!");
             
         }else{
-            res.render("my_team",{Team : allTeam});
+            res.render("my_team",{Team : allTeam, moment: moment});
         }
     })
 })
@@ -106,7 +108,7 @@ router.get("/:id", function(req,res){
             console.log("ERROR");
             
         } else{
-            res.render("team_detail",{team:idTeam});
+            res.render("team_detail",{team:idTeam, moment: moment});
             }
         }
     )}

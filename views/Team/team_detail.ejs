@@ -69,7 +69,7 @@
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               วันที่นัดหมาย: 
-                              <span class="party-detail-info"><%= team.appointment_date %></span>
+                              <span class="party-detail-info"> <%= moment(team.appointment_date).format("DD/MM/YYYY") %></span>
                             </span>
                           </div>
                           <div class="entry__meta">
@@ -151,7 +151,7 @@
                         </span>
                         <span class="be-comment-time">
                           <i class="fa fa-clock-o"></i>
-                          <%= comment.date %>
+                          <%= moment(comment.date).format("DD/MM/YYYY") %>
                           <% if(currentUser && currentUser._id.equals(comment.user_post.id)){ %>
                           <div id="member-box d-inline" class="topbar__member-comment">
                             <div class="dropdown">

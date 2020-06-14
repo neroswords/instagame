@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>create-news</title>
     <link rel="stylesheet" href="/css/c_news.css">
+
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 </head>
 <body>
     <div class="create-news" href="/">
@@ -14,7 +16,7 @@
             <div class="create-news-icon-close"></div>
         </a>
         <div class="create-news_header">
-            <h3 style="font-family: 'Kanit', sans-serif; color: gray;">แก้ไข</h3>
+            <h3 style="font-family: 'Kanit', sans-serif; color: gray;">แก้ไขข่าว</h3>
         </div>
         <form action = '/news/<%= news._id %>?_method=PUT' method = 'POST' class="form-hor" enctype="multipart/form-data">
             <div>
@@ -26,7 +28,7 @@
             <div>
                 <label for="text" class="label-form-title">เนื้อหาข่าว</label>
                 <div class="form-inside">
-                    <textarea rows="20" cols="30" class="form-item" id="content" name="content" aria-valuenow="<%= news.content %>" required></textarea>    
+                    <textarea rows="20" cols="80" class="form-item" id="content" name="content" aria-valuenow="<%= news.content %>" required></textarea>    
                 </div>
             </div>
             <div>
@@ -40,6 +42,10 @@
             </div>
         </form>
     </div>
+
+    <script type="text/javascript">
+        CKEDITOR.replace( 'content' );
+    </script>
 </body>
 </html>
 

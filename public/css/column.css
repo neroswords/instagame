@@ -138,6 +138,7 @@
     text-align: center;
     width: auto;
     color: #fff;
+    border-radius: 1rem;
 }
 
 .my_team-icon:hover {
@@ -165,6 +166,7 @@
     text-align: center;
     width: auto;
     color: #fff;
+    border-radius: .5rem;
 }
 
 .create_team-icon:hover {
@@ -192,6 +194,7 @@
     margin-top: 10px;
     width: auto;
     text-align: center;
+    border-radius: .5rem;
 }
 
 .submit-create-party-btn:hover {

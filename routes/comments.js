@@ -11,6 +11,8 @@ const express = require('express'),
     News = require('../models/news'),
     middleware = require('../middleware');
 
+    var moment = require('moment');
+
 router.post('/create', middleware.isLoggedIn, function(req, res){
     if(req.params.models === "news"){
         News.findById(req.params.id, function(err, foundNews){

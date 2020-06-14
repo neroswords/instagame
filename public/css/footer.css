@@ -1,6 +1,8 @@
 .footer-content {
     background-color: #212529;
     overflow: hidden;
+    position: relative;
+    clear: both;
 }
 
 .footer-content__menu {

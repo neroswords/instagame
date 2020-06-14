@@ -152,21 +152,28 @@
 
     @media (min-width: 1200px) {
         .featured-box__desc h1 {
-            font-size: 1.75rem;
+            font-size: 2rem;
+            color: #fff;
+            margin: 0;
         }
     }   
 
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 1199.98px){
         .featured-box__desc h1 {
             font-size: 1.4rem;
+            color: #fff;
+            margin: 0;
         }
     }
 
-    .featured-box__desc h1 {
-        font-size: 1.1666666667rem;
-        color: #fff;
-        margin: 0;
+    @media (max-width: 767.98px) {
+        .featured-box__desc h1 {
+            font-size: 1.1666666667rem;
+            color: #fff;
+            margin: 0;
         }
+    }
+
 
     .featured-box__meta {
         color: #adb5bd;
@@ -263,10 +270,10 @@
     .content__read h3 {
         margin-bottom: .5rem;
         font-family: inherit;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 1.4;
         color: inherit;
-        font-size: 26px;
+        font-size: 30px;
     }
 
     .content__read p {

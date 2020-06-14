@@ -8,6 +8,8 @@ const express = require("express"),
     News = require('../models/news'),
     middleware = require('../middleware');
 
+var moment = require('moment');     
+
 const storage = multer.diskStorage({
     destination : './public/uploads/news',
     filename : function(req, file, cb){
@@ -31,7 +33,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 console.log("Error!!");
                 
             }else{
-                res.render("all_news",{News : allNews});
+                res.render("all_news",{News : allNews, moment: moment});
             }
         })
     })
@@ -67,7 +69,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 console.log("ERROR");
                 
             } else{
-                res.render("news",{news:idNews});
+                res.render("news",{news:idNews, moment: moment});
                 }
             }
         )}

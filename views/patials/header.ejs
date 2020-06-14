@@ -1,114 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css?family=Kanit|Open+Sans|Roboto&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="/css/header.css"> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <!-- <script src="/js/script-min.js"></script> -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ 
     <script src="https://kit.fontawesome.com/f3bc929b7a.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</head>
-    
-<body data-gr-c-s-loaded="true">
-      <div class="sticky-top">
-        <nav class="navbar navbar-expand-lg" id="topbar_main">
-            <div class="topbar_brand">
-                <a class="navbar-brand" href="/">
-                    <img src="/image/Logo.png" alt="Instagame" style="width: 70px; height: 50px;">
-                </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon">
-                <i class="fas fa-bars"></i>
-              </span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                 <li class="nav-item active">
-                     <a class="nav-link" href="/">หน้าแรก</a>
-                 </li>
-                 <li class="nav-item active">
-                    <a class="nav-link" href="/news">ข่าวเกม</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">รีวิวเกม</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">เกมมาแรง</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/commu">ชุมชน / กระทู้</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/team">หาปาร์ตี้เล่นเกม</a>
-                </li>
-                </ul>
-              <form class="form-inline my-2 my-lg-0" id="member-box">
-                  <div class="topbar_search">
-                    <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
-                  </div>
-                  <% if(!currentUser) { %>
-                    <a href="/Sign_up" id="signup">
-                        <button type="button" id="user-signup" class="btn btn-signup my-2 my-sm-0">
-                            <i class="fas fa-user-plus"></i>
-                            <span class="d-inline-block">สมัครสมาชิก</span>
-                        </button>
-                    </a>
-                    <a href="/login" id="login">
-                        <button type="button" id="user-signin" class="btn btn-signin my-2 my-sm-0">
-                            <i class="fas fa-power-off"></i>
-                            <span class="d-inline-block">เข้าสู่ระบบ</span>
-                        </button>
-                    </a>
-                 <% } else { %>
-                <div id="member-box d-inline" class="topbar__member py-0 px-0">
-                      <div class="dropdown">
-                        <button class="btn dropdown-toggle dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <img class="member-box__thumb" src=<%= '../uploads/user/' + currentUser.image %>> <!--ใส่รูปภาพ-->
-                          <%= currentUser.alias %>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="/editProfile/<%= currentUser._id %>">
-                            <i class="fas fa-user-circle"></i>
-                            ข้อมูลสมาชิก
-                          </a>
-                          <a class="dropdown-item" href="/logout">
-                            <i class="fas fa-sign-out-alt"></i>
-                            ออกจากระบบ
-                          </a>
-                        </div>
+  </head>
+  <body>
+    <div class="sticky-top">
+      <nav class="navbar navbar-expand-lg bg-white" id="topbar_main">
+          <a class="topbar_brand" href="/">
+              <img src="/image/Logo.png" alt="Instagame" style="width: 70px; height: 50px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+               <li class="nav-item">
+                   <a class="nav-link" href="/">หน้าแรก</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/news">ข่าวเกม</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">รีวิวเกม</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">เกมมาแรง</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/commu">ชุมชน / กระทู้</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/team">หาปาร์ตี้เล่นเกม</a>
+              </li>
+              </ul>
+            <form class="form-inline my-2 my-lg-0" id="member-box">
+                <div class="topbar_search">
+                  <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
+                </div>
+                <% if(!currentUser) { %>
+                  <a href="/Sign_up" id="signup">
+                      <button type="button" id="user-signup" class="btn my-2 my-sm-0">
+                          <i class="fas fa-user-plus"></i>
+                          <span class="d-inline-block">สมัครสมาชิก</span>
+                      </button>
+                  </a>
+                  <a href="/login" id="login">
+                      <button type="button" id="user-signin" class="btn my-2 my-sm-0">
+                          <i class="fas fa-power-off"></i>
+                          <span class="d-inline-block">เข้าสู่ระบบ</span>
+                      </button>
+                  </a>
+               <% } else { %>
+              <div id="member-box2" class="topbar__member py-0 px-0">
+                    <div class="dropdown">
+                      <button class="btn dropdown-toggle dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="member-box__thumb" src=<%= '../uploads/user/' + currentUser.image %>> <!--ใส่รูปภาพ-->
+                        <%= currentUser.alias %>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/editProfile/<%= currentUser._id %>">
+                          <i class="fas fa-user-circle"></i>
+                          ข้อมูลสมาชิก
+                        </a>
+                        <a class="dropdown-item" href="/logout">
+                          <i class="fas fa-sign-out-alt"></i>
+                          ออกจากระบบ
+                        </a>
                       </div>
                     </div>
-                 <% } %>    
-              </form>
-            </div>
-        </nav>
-    </div>
-
-    <div class='container'>
-        <% if (error && error.length > 0) { %>
-          <div class="alert alert-danger" role="alert">
-            <%= error %>
+                  </div>
+               <% } %>    
+            </form>
           </div>
-        <% } %>
-        <% if (success && success.length > 0) { %>
-          <div class="alert alert-success" role="alert">
-            <%= success %>
-          </div>
-        <% } %>
-    </div>
+      </nav>
+  </div>
+  
+  <div class='container'>
+      <% if (error && error.length > 0) { %>
+        <div class="alert alert-danger" role="alert">
+          <%= error %>
+        </div>
+      <% } %>
+      <% if (success && success.length > 0) { %>
+        <div class="alert alert-success" role="alert">
+          <%= success %>
+        </div>
+      <% } %>
+  </div>
 
-</body>
+
+  </body>
 </html>

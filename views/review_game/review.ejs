@@ -1,0 +1,83 @@
+<%- include("patials/header") %>
+
+้<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review</title>
+    <link rel="stylesheet" href="/css/all_news.css">
+</head>
+<body>
+    <main class="news-body" role="news"> 
+        <div id="news-section" style="position: relative;">
+          <header class="headline headline-sticky">
+            <h2 class="headline__name">รีวิวเกม</h2>
+            <div class="select-news-game_type">
+              <label for="exampleFormControlSelect1 d-inline-block">ดูรีวิวตามประเภทเกม:</label>
+              <select class="game-type" id="game-type" name="game-type">
+                <option>จากเกมทุกประเภท</option>
+                <option>Survival</option>
+                <option>Role-Player Game (RPG)</option>
+                <option>Battle Royale</option>
+                <option>First Person Shooter (FPS)</option>
+                <option>Multiplayer Online Battle Arena (MOBA)</option>
+                <option>Fighting</option>
+                <option>Sports</option>
+                <option>Racing</option>
+              </select>
+            </div>
+            <button class="create_team-icon-review" onclick="window.location.href='/news/create';">
+                <i class="fas fa-pen"></i>
+              <span>เขียนรีวิว</span> 
+          </button>
+          </header>
+
+          <section class="box">
+                  <div class="row" style="display:flex; flex-wrap:wrap;">
+                    <% News.forEach(function(news){ %>
+                    <div class="col-md-3 col-sm-6">
+                      <article class="entry">
+                        <figure class="entry__thumb entry__thumb--zoom">
+                          <a href="/news/<%= news._id %>">
+                            <img src=<%= '../uploads/news/' + news.image %> class="card-img-top">
+                          </a>
+                        </figure>
+                        <div class="entry__body">
+                          <h4 class="entry__title">
+                            <a href="/news/<%= news._id %>">
+                              รีวิว:  
+                              <%= news.head %>
+                            </a>
+                          </h4>
+                          <div class="entry__meta">
+                            <span class="entry__meta__count">
+                              <i class="fas fa-eye"></i>
+                              ใส่ยอดวิว
+                            </span>
+                            <span class="entry__meta__posted">
+                              <i class="far fa-clock"></i>
+                              <%= news.date %>
+                            </span>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                <% }); %> 
+              </div>
+              <header class="add-view">
+                <button href="#" class="scrollto-add">
+                  โหลดเพิ่ม
+                  <i class="fas fa-plus"></i>
+                </button>
+              </header>
+         </section>
+         
+
+        </div>
+    </main>
+</body>
+</html>
+
+<%- include("patials/footer") %>
+
