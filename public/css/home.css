@@ -1,3 +1,4 @@
+
 @media (min-width: 1200px) {
 .main-body {
     padding-top: 150px;
@@ -149,6 +150,19 @@
     width: 100%;
 }
 
+.news-box {
+    border-top: 1px solid #dee2e6;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+
 .box_header {
     display: flex;
     align-items: center;
@@ -169,8 +183,9 @@
 
 .add-view {
     display: flex;
-    float: right;
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    justify-content: center;
 }
 
 .scrollto-add {
@@ -181,16 +196,16 @@
     border: 1px solid #343a40;
     color: #343a40;
     background-color: transparent;
-    padding: .25rem .5rem;
-    font-size: .875rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
     line-height: 1.5;
     transition: color .15s;
 }
 
 .scrollto-add:hover {
     color: #fff;
-    background-color: rgb(0, 61, 154);
-    border-color: rgb(0, 61, 154);
+    background-color: teal;
+    border-color: teal;
 }
 
 .scrollto {
@@ -212,6 +227,103 @@
     background-color: #343a40;
     border-color: #343a40;
 }
+
+.survival-news {
+    color: #fff;
+    border: 1px solid #229954;
+    background-color: #229954;
+}
+
+.survival:hover {
+    color: #fff;
+    background-color: #196F3D;
+    border-color: #196F3D;
+}
+
+.rpg-news {
+    border: 1px solid #7D3C98;
+    color: #fff;
+    background-color: #7D3C98;
+}
+
+.rpg-news:hover {
+    color: #fff;
+    background-color: #6C3483;
+    border-color: #6C3483;
+}
+
+.br-news {
+    border: 1px solid #6D4C41;
+    color: #fff;
+    background-color: #6D4C41;
+}
+
+.br-news:hover {
+    color: #fff;
+    background-color: #4E342E;
+    border-color: #4E342E;
+}
+
+.fps-news {
+    border: 1px solid #839192;
+    color: #fff;
+    background-color: #839192;
+}
+
+.fps-news:hover {
+    color: #fff;
+    background-color: #5F6A6A;
+    border-color: #5F6A6A;
+}
+
+.moba-news {
+    border: 1px solid #2471A3;
+    color: #fff;
+    background-color: #2471A3;
+}
+
+.moba-news:hover {
+    color: #fff;
+    background-color: #1A5276;
+    border-color: #1A5276;
+}
+
+.fighting-news {
+    border: 1px solid #CB4335;
+    color: #fff;
+    background-color: #CB4335;
+}
+
+.fighting-news:hover {
+    color: #fff;
+    background-color: #943126;
+    border-color: #943126;
+}
+
+.sport-news {
+    border: 1px solid #D68910;
+    color: #fff;
+    background-color: #D68910;
+}
+
+.sport-news:hover {
+    color: #fff;
+    background-color: #9C640C;
+    border-color: #9C640C;
+}
+
+.racing-news {
+    border: 1px solid #D4AC0D;
+    color: #fff;
+    background-color: #D4AC0D;
+}
+
+.racing-news:hover {
+    color: #fff;
+    background-color: #9A7D0A;
+    border-color: #9A7D0A;
+}
+
 
 section .row {
     margin-left: -7.5px;
