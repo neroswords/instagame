@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>create team</title>
   <link rel="stylesheet" href="/css/c_team.css">
+
+  <!-- <link rel="stylesheet" href="/css/tag_demo.css"> -->
+  <link rel="stylesheet" href="/css/tag_style.css">
+  <script src="/js/script-min.js"></script>
+  <script src="/js/tag_script.js"></script>
+
+  <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 </head>
     
 <body>
@@ -59,7 +66,7 @@
       <div class="simple-tags"
                 id="containers" 
                 data-simple-tags="Team">
-      </div>
+            </div>
       <input type="hidden" name="tags" id="tags" value=""> 
       <div class="party-btn">
         <div class="submit-create-party">
@@ -82,7 +89,8 @@
 <%- include("patials/footer") %>
 
 <script>
-  var el = document.getElementById('container');
+  CKEDITOR.replace( 'content' );
+  var el = document.getElementById('containers');
   new Tags(el);
 
   function c_tag(x){

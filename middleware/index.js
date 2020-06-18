@@ -98,4 +98,46 @@ middlewareObj.isLoggedIn = function(req, res, next){
     res.redirect('/login');
 }
 
+middlewareObj.checkO = function(req,res,next){
+    if(req.isAuthenticated()){
+        User.findById(req.params.id, function(err, foundUser){
+            if(err){
+                console.log("can not find USer");
+                res.redirect("back");
+            } else{
+                console.log(foundCommu);
+                
+                if(foundUser.class === "King"){
+                    next();
+                }else{
+                    res.redirect("back");
+                }
+            }
+        })
+    }else{
+        res.redirect("back");
+    }
+}
+
+middlewareObj.checkTu = function(req,res,next){  //Top User
+    if(req.isAuthenticated()){
+        User.findById(req.params.id, function(err, foundUser){
+            if(err){
+                console.log("can not find User");
+                res.redirect("back");
+            } else{
+                console.log(foundCommu);
+                
+                if(foundUser.class === "Noble"){
+                    next();
+                }else{
+                    res.redirect("back");
+                }
+            }
+        })
+    }else{
+        res.redirect("back");
+    }
+}
+
 module.exports = middlewareObj;
