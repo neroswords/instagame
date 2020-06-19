@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="/js/search.js"></script>
   </head>
   <body>
     <div class="sticky-top">
@@ -48,8 +49,14 @@
               </ul>
             <form class="form-inline my-2 my-lg-0" id="member-box">
                 <div class="topbar_search">
-                  <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
+                  <input onkeyup="showResults(this.value)" value="" class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
                 </div>
+                <button class="btn btn-dark my-2 my-sm-0" type="submit"> Search </button>
+                <div style="position: relative; width: 100%; top: -1px;">
+                  <div class="border" id="search-results">
+                  </div>
+                </div>
+            </form>
                 <% if(!currentUser) { %>
                   <a href="/Sign_up" id="signup">
                       <button type="button" id="user-signup" class="btn my-2 my-sm-0">
@@ -87,7 +94,6 @@
                     </div>
                   </div>
                <% } %>    
-            </form>
           </div>
       </nav>
   </div>
@@ -108,3 +114,47 @@
 
   </body>
 </html>
+
+<script>
+  var showResults = debounce(function(arg){
+    var value = arg.trim();
+    if ( value == "" || value.length <=0 ){
+        $("#search-results").fadeOut();
+        return;
+    }
+    else {
+        $("#search-results").fadeIn();
+    };
+    
+    var jqsearch = $.get('/search?q='+ value, function(data){
+        $("#search-results").html("");
+    }) 
+    .edon(function(data){
+        if(data.length === 0) {
+            $("#search-results").append('<p class="lead text-center mt-2">No results</p>');
+        } else {
+            data.forEach(x => {
+                $("#search-results").append('<a href="#"><p class="m-2 lead">'+ x.name +'</p></a>');
+            });
+        }
+    }).fail(function(err){
+        console.log(err);
+    })
+}, 200);
+
+function debounce(func, wait, immediate){
+    var timeout;
+    return function() {
+        var context = this,
+        args = arguments;
+        var later = function(){
+            timeout = null;
+            if(!immediate)func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if(callNow)func.apply(context.args);
+    };
+};
+</script>

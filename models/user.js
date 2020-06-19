@@ -11,7 +11,8 @@ let UserSchema = new mongoose.Schema({
     email : String,
     gender : String,
     number : String,
-    birth_day : Date
+    birth_day : Date,
+    class : String
 });
 
 UserSchema.plugin(passportLocalMongoose);

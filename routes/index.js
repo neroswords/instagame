@@ -194,4 +194,18 @@ router.get("/login/forgetpsswd", function(req,res){
    res.render("forget_psw");
 });
 
+router.get("/search", function(req, res, next){
+    var q = req.query.q;
+
+    Tag.find({ name : {
+        $regex: new RegExp(q)
+        }
+    }, {
+        _id:0,
+        __v : 0
+    }, function(err, data){
+        res.json(data);
+    }).limit(10);
+});
+
 module.exports = router;
