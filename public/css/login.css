@@ -1,3 +1,8 @@
+
+.login-form {
+    min-height: 500px;
+}
+
 @media only screen and (min-width: 320px) {
     .login {
         width: 90%;

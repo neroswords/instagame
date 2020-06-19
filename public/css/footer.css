@@ -3,6 +3,9 @@
     overflow: hidden;
     position: relative;
     clear: both;
+    height: auto;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-content__menu {

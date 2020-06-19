@@ -402,28 +402,12 @@ section .col-md-6 {
     background-color: ORANGERED;
 }
 
-.entry__meta__posted3 {
-    font-size: .875rem;
-    color: white;
-    border-color: FIREBRICK;
-    background-color: FIREBRICK;
-    border: 1px solid;
-    padding: 5px;
-    width: auto;
-    border-radius: .5rem;
-}
-
-.entry__meta__posted3:hover {
-    color: white;
-    border-color: DARKRED;
-    background-color: DARKRED;
-}
 
 .entry__meta__posted4 {
     font-size: .875rem;
     color: white;
-    border-color: #00ACC1;
-    background-color: #00ACC1;
+    border-color: #B3B6B7;
+    background-color: #B3B6B7;
     border: 1px solid;
     padding: 5px;
     width: auto;
@@ -432,8 +416,8 @@ section .col-md-6 {
 
 .entry__meta__posted4:hover {
     color: white;
-    border-color: #00838F;
-    background-color: #00838F;
+    border-color: #B3B6B7;
+    background-color: #B3B6B7;
 }
 
 .entry__body p {
@@ -452,6 +436,22 @@ section .col-md-6 {
     width: 100%;
 }
 
+.entry__meta__posted3 {
+    font-size: .875rem;
+    color: white;
+    border-color: rgb(72, 166, 224);
+    background-color: rgb(72, 166, 224);
+    border: 1px solid;
+    padding: 5px;
+    width: auto;
+    border-radius: .5rem;
+}
+
+.entry__meta__posted3:hover {
+    color: white;
+    border-color: STEELBLUE;
+    background-color: STEELBLUE;
+}
 
 
 

@@ -10,18 +10,18 @@
 </head>
 <body>
     <main class="main-body" role="main">
-        <!-- ปุ่มแก้ไขและลบกระทู้ -->
+        <!-- ปุ่มแก้ไขและลบข่าว -->
         <header class="teams__headline headline-sticky">
             <button class="entry__meta__posted4">
                 <i class="fas fa-edit"></i>
                 แก้ไขกระทู้
             </button>
-            <form action="/commu/<%= commu._id %>?_method=DELETE" method="POST">
+            <form action="/commu/<%= commu._id %>?_method=DELETE" method="POST" style="display: inline;">
             <button class="entry__meta__posted3">
                 <i class="far fa-trash-alt"></i>
                 ลบกระทู้
             </button>
-            </form>
+          </form>
         </header>
 
         <!-- รูปและพาดหัวข่าว -->
@@ -49,25 +49,38 @@
 
         <!-- path ของข่าว -->
         <nav class="breadcrumb-box" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/">หน้าแรก</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#">ข่าวเกม</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#">ข่าวเกม: [ประเภทเกม]</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page"> 
-                    <a href="#">เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if</a>
-                </li>
-            </ol>
+          <ol class="breadcrumbs bg-dark">
+              <li class="breadcrumb-item breadcrumb-section">
+                  <a href="/"><i class="fas fa-home"></i></a>
+              </li>
+              <li class="breadcrumb-item breadcrumb-section active">
+                  <a href="#">ข่าวเกม</a>
+              </li>
+          </ol>
+      </nav>
         </nav>
 
         <!-- เนื้อข่าว -->
         <div class="content">
             <div class="content__main order-1">
+              <!-- Start social sharing -->
+              <div class="content__social">
+                <div class="content__social__share">
+                  <a class="btn-share btn-fb mr-1" href="">
+                    <i class="fab fa-facebook-f"></i>
+                    <span class="d-sm-none d-md-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-share btn-tw mr-1" href="">
+                    <i class="fab fa-twitter"></i>
+                    <span class="d-sm-none d-md-inline-block">ทวีตเรื่องนี้</span>
+                  </a>
+                  <a class="btn-share btn-ln mr-1" href="">
+                    <i class="fab fa-line"></i>
+                    <span class="d-sm-none d-md-inline-block">แบ่งปันเรื่องนี้</span>
+                  </a>
+                </div>
+              </div>              
+
                 <!-- Start Text Content -->
                 <div class="content__read">
                     <h2>
@@ -78,14 +91,351 @@
                 </div>
                 <!-- End text content -->
 
-                <!-- start relate tags -->
-                <!-- <div class="content__tag">
-                    <h4>แท็กที่เกี่ยวข้อง: </h4>
-                    <div class="content__tag__content">
-                        <a target="blank" href="#" role="button"></a>
-                    </div>
-                </div> -->
-                <!-- end relate tags -->
+              <!-- start relate tags -->
+              <div class="content__tag">
+                <h4>แท็กที่เกี่ยวข้อง : </h4>
+                <div class="content__tag__content">
+                  <a class="btn-tag mr-1" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                </div>
+            </div>
+            <!-- end relate tags -->
+            </div>
+
+            <div class="content__aside order-3">
+              <!-- start relate news  -->
+              <section class="box">
+                <header class="box__header">
+                  <h3>
+                    <i class="fas fa-comments"></i>
+                    กระทู้อื่นๆ ที่เกี่ยวข้อง                    
+                  </h3>
+                </header>
+                <div class="row">
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div> 
+              </section>
+              <!-- end relate news  -->
+
+              <!-- start relate column -->
+              <section class="box line-box">
+                <header class="box__header">
+                  <h3>
+                    <i class="far fa-file-alt"></i>
+                    เรื่องอื่นๆ ที่น่าสนใจ
+                  </h3>
+                </header>
+                <div class="row">
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div> 
+              </section>
+              <!-- end relate column  -->                
+
+              <!-- start relate party -->
+              <section class="box line-box">
+                <header class="box__header">
+                  <h3>
+                    <i class="fas fa-users"></i>
+                    ปาร์ตี้อื่นๆ ที่เกี่ยวข้อง
+                  </h3>
+                </header>
+                <div class="row">
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6 item-aside">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  href="">
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div> 
+              </section>
+              <!-- end relate party  --> 
+
+             
+              <!-- start hot tag -->
+              <!-- <section class="box line-tag-box">
+                <header class="box__header">
+                  <h3>
+                    <i class="fas fa-tags"></i>
+                    คำยอดฮิต
+                  </h3>
+                </header>
+                <div class="content__tag__content">
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                </div>
+              </section> -->
+              <!-- end hot tag  -->                 
+
             </div>
 
             <!-- start comment section -->

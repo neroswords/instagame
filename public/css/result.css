@@ -83,17 +83,17 @@
     text-align: right;
 }
 
-.dropdown-item, .dropdown-menu {
-    border-radius: 1rem;
-    
-}
-
 .categoly-btn {
     color: #fff;
-    padding: .5rem;
-    background-color: rgb(35, 134, 173);
-    border: 1px solid rgb(35, 134, 173);
-    border-radius: .5rem;
+    padding: .3rem;
+    background: rgb(28, 156, 150);
+    border: 1px solid rgb(28, 156, 150);
+    font-size: 14px;
+    border-radius: 1rem;
+}
+
+.dropdown-item {
+    font-size: 14px;
 }
 
 @media (min-width: 1200px) {

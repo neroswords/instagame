@@ -1,3 +1,5 @@
+
+
 @media (min-width: 1200px) {
     .teams-body {
         padding-top: 150px;
@@ -13,7 +15,8 @@
 .teams-body {
     overflow: hidden;
     padding-top: 24px;
-    padding-bottom: 24px;    
+    padding-bottom: 24px;   
+    min-height: 600px; 
 }
 
 
@@ -175,6 +178,34 @@
     color: #fff;
 }
 
+.my_team-icon {
+    border: solid 1px MEDIUMSEAGREEN;
+    border-radius: .5rem;
+    display: inline-block;
+    position: relative;
+    padding: 5px 5px;
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+    width: auto;
+    color: white;
+    background-color: MEDIUMSEAGREEN;
+}
+
+.my_team-icon:hover {
+    border: solid 1px SEAGREEN;
+    background-color: SEAGREEN;
+    color: WHITE;
+}
+
+.my_team-icon i {
+    font-size: 16px;
+}
+
+.my_team-icon span {
+    font-size: 1rem;;
+}
+
 .create_team-icon i {
     font-size: 16px;
 }
@@ -183,6 +214,8 @@
     font-size: 1rem;
 }
 
+
+
 .submit-create-party-btn {
     background-color: YELLOWGREEN;
     color: #fff;
@@ -190,7 +223,7 @@
     display: inline-block;
     position: relative;
     padding: 5px 5px;
-    margin-left: 10px;
+    margin-left: 0;
     margin-top: 10px;
     width: auto;
     text-align: center;

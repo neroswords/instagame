@@ -111,7 +111,7 @@
     text-align: center;
     width: auto;
     color: #fff;
-    border-radius: 1rem;
+    border-radius: .5rem;
 }
 
 .my_team-icon:hover {
@@ -151,6 +151,34 @@
     font-size: 16px;
 }
 
+.my_team-icon2 {
+    border: solid 1px MEDIUMSEAGREEN;
+    border-radius: .5rem;
+    display: inline-block;
+    position: relative;
+    padding: 5px 5px;
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+    width: auto;
+    color: white;
+    background-color: MEDIUMSEAGREEN;
+}
+
+.my_team-icon2:hover {
+    border: solid 1px SEAGREEN;
+    background-color: SEAGREEN;
+    color: WHITE;
+}
+
+.my_team-icon2 i {
+    font-size: 16px;
+}
+
+.my_team-icon2 span {
+    font-size: 1rem;;
+}
+
 .submit-create-party-btn {
     background-color: YELLOWGREEN;
     color: #fff;
@@ -158,10 +186,11 @@
     display: inline-block;
     position: relative;
     padding: 5px 5px;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-top: 10px;
     width: auto;
     text-align: center;
+    border-radius: .5rem;
 }
 
 .submit-create-party-btn:hover {
@@ -223,8 +252,9 @@
 
 .add-view {
     display: flex;
-    float: right;
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    justify-content: center;
 }
 
 .scrollto-add {
@@ -235,16 +265,16 @@
     border: 1px solid #343a40;
     color: #343a40;
     background-color: transparent;
-    padding: .25rem .5rem;
-    font-size: .875rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
     line-height: 1.5;
     transition: color .15s;
 }
 
 .scrollto-add:hover {
     color: #fff;
-    background-color: rgb(0, 61, 154);
-    border-color: rgb(0, 61, 154);
+    background-color: teal;
+    border-color: teal;
 }
 
 .scrollto {
@@ -395,6 +425,8 @@ section .col-md-6 {
 .box_body {
     width: 100%;
 }
+
+
 
 
 
