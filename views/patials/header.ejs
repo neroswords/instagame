@@ -47,9 +47,9 @@
                   <a class="nav-link" href="/team">หาปาร์ตี้เล่นเกม</a>
               </li>
               </ul>
-            <form class="form-inline my-2 my-lg-0" id="member-box">
+            <form class="form-inline my-2 my-lg-0" id="member-box" action="/search" method="GET">
                 <div class="topbar_search">
-                  <input onkeyup="showResults(this.value)" value="" class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
+                  <input class="form-control mr-sm-2" name="search" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
                 </div>
                 <button class="btn btn-dark my-2 my-sm-0" type="submit"> Search </button>
                 <div style="position: relative; width: 100%; top: -1px;">
@@ -86,6 +86,12 @@
                           <i class="fas fa-crown"></i>
                           อัพเกรดระดับสมาชิก
                         </a>
+                        <% if(currentUser.class === "King"){ %>
+                          <a class="dropdown-item" href="#">
+                            <i class="fas fa-user-circle"></i>
+                            การจัดการ
+                          </a>
+                        <% } %>
                         <a class="dropdown-item" href="/logout">
                           <i class="fas fa-sign-out-alt"></i>
                           ออกจากระบบ

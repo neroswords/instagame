@@ -42,7 +42,7 @@
                 </span>
                 <span class="mr-2">
                     <i class="fas fa-eye"></i>
-                    ใส่ยอดวิว
+                    <%= news.viewers %>
                 </span>
                 <span>
                     <i class="far fa-clock"></i>
@@ -98,9 +98,11 @@
               <div class="content__tag">
                   <h4>แท็กที่เกี่ยวข้อง : </h4>
                   <div class="content__tag__content">
+                    <% news.tags.forEach(function(tag){ %>
                     <a class="btn-tag mr-1" href="">
-                      <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                      <span class="d-inline-block"><%= tag.name %></span> 
                     </a>
+                  <% }) %>
                   </div>
               </div>
               <!-- end relate tags -->

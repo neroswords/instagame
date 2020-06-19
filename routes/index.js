@@ -1,3 +1,7 @@
+const { query } = require("express");
+const tag = require("../models/tag");
+const news = require("../models/news");
+
 const express = require("express"),
     router = express.Router(),
     multer = require('multer'),
@@ -5,6 +9,10 @@ const express = require("express"),
     fs = require('fs'),
     passport = require('passport'),
     User = require('../models/user'),
+    Community = require('../models/commu'),
+    Team = require('../models/team'),
+    News = require('../models/news'),
+    Review = require('../models/review'),
     Tag = require('../models/tag'),
     middleware = require('../middleware');
 
@@ -59,7 +67,24 @@ router.get('/profile', middleware.isLoggedIn, function(req,res){
 })
 
 router.get("/search", function(req,res){
-    res.render("result");
+    if(req.query.search){
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        Tag.find({name : regex}, function(err, foundtag){
+            if(err){
+                console.log(err);
+            } else {
+                Team.find({tags : {$in : foundtag}},function(err,foundTeam){
+                    Review.find({tags : {$in : foundtag}},function(err,foundReview){
+                        Community.find({tags : {$in : foundtag}},function(err,foundCommu){
+                            News.find({tags : {$in : foundtag}},function(err,foundNews){
+                                res.render("result",{Team : foundTeam, Review : foundReview, Commu : foundCommu, News : foundNews});
+                            })  
+                        })
+                    })
+                })                
+            }
+        })
+    }
 });
 
 router.get('/editProfile/:id', middleware.isLoggedIn , function(req,res){
@@ -168,10 +193,12 @@ router.get("/Sign_up/acception", function(req,res){
 
 router.post('/Sign_up', upload.single('image'), function(req,res){
     let n_image = req.file.filename;
+    let n_class = "People";
     User.register(new User({username: req.body.username, 
                             email: req.body.email , 
                             alias : req.body.alias,
                             image : n_image,
+                            class : n_class,
                             firstname : req.body.firstname,
                             lastname : req.body.surname,
                             gender : req.body.gender,
@@ -194,18 +221,22 @@ router.get("/login/forgetpsswd", function(req,res){
    res.render("forget_psw");
 });
 
-router.get("/search", function(req, res, next){
-    var q = req.query.q;
+// router.get("/search", function(req, res, next){
+//     var q = req.query.q;
 
-    Tag.find({ name : {
-        $regex: new RegExp(q)
-        }
-    }, {
-        _id:0,
-        __v : 0
-    }, function(err, data){
-        res.json(data);
-    }).limit(10);
-});
+//     Tag.find({ name : {
+//         $regex: new RegExp(q)
+//         }
+//     }, {
+//         _id:0,
+//         __v : 0
+//     }, function(err, data){
+//         res.json(data);
+//     }).limit(10);
+// });
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 module.exports = router;

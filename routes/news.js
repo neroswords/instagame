@@ -13,6 +13,7 @@ const express = require("express"),
     async = require('async');
 
 var moment = require('moment');     
+const { populate } = require("../models/user");
 
 const storage = multer.diskStorage({
     destination : './public/uploads/news',
@@ -108,11 +109,13 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
     })
 
     router.get("/:id", function(req,res){
-        News.findById(req.params.id).populate('comments').exec( function(error, idNews){
+        News.findById(req.params.id).populate('comments').populate('tags').exec( function(error, idNews){
             if(error){
                 console.log("ERROR");
                 
             } else{
+                idNews.viewers++;
+                idNews.save();
                 res.render("news",{news:idNews, moment: moment});
                 }
             }

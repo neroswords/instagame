@@ -15,7 +15,7 @@ middlewareObj.checkNewsOwner = function(req,res,next){
             } else{
                 console.log(foundNews);
                 
-                if(foundNews.user_post.id.equals(req.user._id)){
+                if(foundNews.user_post.id.equals(req.user._id) || req.user.class === "King"){
                     next();
                 }else{
                     res.redirect("back");
@@ -36,7 +36,7 @@ middlewareObj.checkCommuOwner = function(req,res,next){
             } else{
                 console.log(foundCommu);
                 
-                if(foundCommu.user_post.id.equals(req.user._id)){
+                if(foundCommu.user_post.id.equals(req.user._id) || req.user.class === "King"){
                     next();
                 }else{
                     res.redirect("back");
@@ -57,7 +57,7 @@ middlewareObj.checkTeamOwner = function(req,res,next){
             } else{
                 console.log(foundParty);
                 
-                if(foundParty.user_post.id.equals(req.user._id)){
+                if(foundParty.user_post.id.equals(req.user._id) || req.user.class === "King"){
                     next();
                 }else{
                     res.redirect("back");
@@ -78,7 +78,7 @@ middlewareObj.checkCommentOwner = function(req,res,next){
             } else{
                 console.log(foundComment);
                 
-                if(foundComment.user_post.id.equals(req.user._id)){
+                if(foundComment.user_post.id.equals(req.user._id) || req.user.class === "King"){
                     next();
                 }else{
                     res.redirect("back");
@@ -100,23 +100,12 @@ middlewareObj.isLoggedIn = function(req, res, next){
 
 middlewareObj.checkO = function(req,res,next){
     if(req.isAuthenticated()){
-        User.findById(req.params.id, function(err, foundUser){
-            if(err){
-                console.log("can not find USer");
-                res.redirect("back");
-            } else{
-                console.log(foundCommu);
-                
-                if(foundUser.class === "King"){
-                    next();
-                }else{
-                    res.redirect("back");
-                }
-            }
-        })
-    }else{
-        res.redirect("back");
+        if(req.user.class === "King"){
+            return next();
+        }
     }
+    req.flash('error', 'You need to login first');
+    res.redirect('/login');
 }
 
 middlewareObj.checkTu = function(req,res,next){  //Top User
