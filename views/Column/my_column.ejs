@@ -13,9 +13,9 @@
         <div id="teams-section" style="position: relative;">
           <header class="teams__headline headline-sticky">
             <h2 class="headline__name">กระทู้ของฉัน</h2>
-            <!-- <div class="teams__search">
+            <div class="teams__search">
                 <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหาปาร์ตี้ของฉัน..." aria-label="Search" maxlength="200">
-            </div> -->
+            </div>
             <button class="my_team-icon" onclick="window.location.href='/commu';">
                 <i class="fas fa-search"></i>
                 <span>ค้นหากระทู้อื่น</span> 
@@ -33,7 +33,7 @@
                             <article class="entry">
                               <figure class="entry__thumb entry__thumb--zoom">
                                 <a href="/commu/<%= commu._id %>">
-                                  <img src=<%= '../uploads/commu/' + commu.image %> class="card-img-top">
+                                  <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + commu.image %> class="card-img-top">
                                 </a>
                               </figure>
                               <div class="entry__body">

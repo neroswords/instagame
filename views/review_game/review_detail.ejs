@@ -13,13 +13,13 @@
         <!-- ปุ่มแก้ไขและลบข่าว -->
         <header class="teams__headline headline-sticky">
           <% if(currentUser && news.user_post.id.equals(currentUser._id)){ %>
-            <a href="/news/<%= news._id %>/edit">
+            <a href="/review/<%= review._id %>/edit">
             <button class="entry__meta__posted4">
                 <i class="fas fa-edit"></i>
                 แก้ไขรีวิว
             </button>
             </a>
-            <form action="/news/<%= news._id %>?_method=DELETE" method="POST" style="display: inline;">
+            <form action="/review/<%= review._id %>?_method=DELETE" method="POST" style="display: inline;">
             <button class="entry__meta__posted3">
                 <i class="far fa-trash-alt"></i>
                 ลบรีวิว
@@ -31,14 +31,14 @@
         <!-- รูปและพาดหัวข่าว -->
         <header class="featured-box">
           <figure class="featured-box__img">
-              <img class="img-fluid load lazy-img" src=<%= '../uploads/news/' + news.image %> alt="Responsive image">
+              <img class="img-fluid load lazy-img" src=<%= '../uploads/review/' + review.image %> alt="Responsive image">
           </figure>
           <div class="featured-box__desc">
-            <h1><%= news.head %></h1>
+            <h1><%= review.head %></h1>
             <div class="featured-box__meta">
                 <span class="mr-2">
                     <i class="far fa-user-circle"></i>
-                    <%= news.user_post.alias %>
+                    <%= review.user_post.alias %>
                 </span>
                 <span class="mr-2">
                     <i class="fas fa-eye"></i>
@@ -46,7 +46,7 @@
                 </span>
                 <span>
                     <i class="far fa-clock"></i>
-                    <%= news.date %>
+                    <%= review.date %>
                 </span>
             </div>
           </div>    
@@ -77,10 +77,10 @@
                 <div class="content__read">
                     <h3>
                         <span style="color: #212529;">
-                            <strong><%= news.head %></strong>
+                            <strong><%= review.head %></strong>
                         </span>
                     </h2>
-                    <p><%= news.content %></p>
+                    <p><%- review.content %></p>
                 </div>
                 <!-- End text content -->
 
@@ -105,7 +105,7 @@
                     </header>
                      <div class="container">
                       <div class="be-comment-block">
-                        <% news.comments.forEach(function(comment){ %>
+                        <% review.comments.forEach(function(comment){ %>
                         <div class="be-comment">
                           <div class="be-img-comment">	
                             <a href="#">

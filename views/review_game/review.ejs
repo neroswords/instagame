@@ -113,13 +113,13 @@
                     <div class="col-md-3 col-sm-6">
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
-                          <a href="/news/<%= news._id %>">
-                            <img src=<%= '../uploads/review/' + review.image %> class="card-img-top">
+                          <a href="/review/<%= review._id %>">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/review/' + review.image %> class="card-img-top">
                           </a>
                         </figure>
                         <div class="entry__body">
                           <h4 class="entry__title">
-                            <a href="/news/<%= news._id %>">
+                            <a href="/review/<%= review._id %>">
                               รีวิว:  
                               <%= review.head %>
                             </a>

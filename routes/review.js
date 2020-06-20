@@ -113,7 +113,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
             } else{
                 idReview.viewers++;
                 idReview.save();
-                res.render("review_detail",{Review:idReview, moment: moment});
+                res.render("review_detail",{review:idReview, moment: moment});
                 }
             }
         )}

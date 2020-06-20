@@ -70,9 +70,10 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
     let n_user_post = {id: req.user._id, alias: req.user.alias};
     let n_image = req.file.filename;
     let n_game = req.body.game;
+    let n_viewers = 1;
     var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
     let n_date = new Date(asiaTime).toISOString();
-    let n_post = {head:n_head, content:n_content, user_post:n_user_post, game:n_game, date: n_date, image : n_image};
+    let n_post = {head:n_head, content:n_content, user_post:n_user_post, game:n_game, date: n_date, image : n_image , viewers : n_viewers};
     Communication.create(n_post, async function(error, newCommu){
         if(error){
             console.log("error create commu");
