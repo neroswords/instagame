@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>create-news</title>
     <link rel="stylesheet" href="/css/c_news.css">
+
+    <!-- <link rel="stylesheet" href="/css/tag_demo.css"> -->
+    <link rel="stylesheet" href="/css/tag_style.css">
+    <script src="/js/script-min.js"></script>
+    <script src="/js/tag_script.js"></script>
+    
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+
 </head>
 <body>
     <div class="create-news" href="/">
@@ -14,15 +22,15 @@
             <div class="create-news-icon-close"></div>
         </a>
         <div class="create-news_header">
-            <h3 style="font-family: 'Kanit', sans-serif; color: gray;">เขียนรีวิว</h3>
+            <h3 style="font-family: 'Kanit', sans-serif; color: gray;">สร้างข่าว</h3>
         </div>
-        <form action = '/news/create' method = 'POST' class="form-hor" enctype="multipart/form-data">
-            <!-- <div>
-                <label for="text" class="label-form-title">ชื่อเกม</label>
+        <form action = '/review/create' method = 'POST' class="form-hor" enctype="multipart/form-data">
+            <div>
+                <label for="text" class="label-form-title">พาดหัวข่าว</label>
                 <div class="form-inside">
-                    <input type="text" class="form-item" id="headline" name="headline" placeholder="ใส่ชื่อเกม" required>
+                    <input type="text" class="form-item" id="headline" name="headline" placeholder="ใส่พาดหัวข่าว" required>
                 </div>
-            </div> -->
+            </div>
             <div>
                 <label for="text" class="label-form-title">ชื่อเกม</label>
                 <div class="form-inside">
@@ -30,9 +38,9 @@
                 </div>
             </div>
             <div>
-                <label for="text" class="label-form-title">เนื้อหารีวิว</label>
+                <label for="text" class="label-form-title">เนื้อหาข่าว</label>
                 <div class="form-inside">
-                    <textarea rows="20" cols="30" class="form-item" id="content" name="content" required placeholder="ใส่เนื้อหารีวิว"></textarea>    
+                    <textarea rows="20" cols="80" class="form-item" id="content" name="content" required placeholder="ใส่เนื้อหาข่าว"></textarea>    
                 </div>
             </div>
             <div>
@@ -41,12 +49,35 @@
                     <input type="file" class="form-item" id="picture" name="image" accept="image/*">
                 </div>
             </div>
+            <div>
+                <label for="text" class="label-form-title">เพิ่มแท็ก: </label>
+                <div class="form-inside">
+                    <div class="simple-tags"
+                        id="containers" 
+                        data-simple-tags="News">
+                    </div>
+                </div>
+            </div>
+            <!-- <input type="hidden" name="tags" id="tags" value="">  -->
             <div class="submit-create-news">
-                <input type="submit" class="submit-create-news-btn" value="สร้างข่าว">
+                <input type="submit" class="submit-create-news-btn" value="สร้างข่าว" onclick="c_tag(document.getElementById('containers').getAttribute('data-simple-tags'))">
             </div>
         </form>
     </div>
+
+    <script type="text/javascript">
+        CKEDITOR.replace( 'content' );
+    </script>
 </body>
 </html>
 
 <%- include("patials/footer") %>
+
+<script>
+    var el = document.getElementById('containers');
+    new Tags(el);
+
+    function c_tag(x){
+        document.getElementById("tags").value = x;
+    }
+</script>

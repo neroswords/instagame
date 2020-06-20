@@ -43,7 +43,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
     })
 
     router.get("/create", middleware.isLoggedIn, function(req,res){
-        res.render("");
+        res.render("c_review");
     })
 
     router.post("/create", middleware.isLoggedIn, upload.single('image'), function(req,res){
@@ -56,7 +56,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
         let n_date = new Date(asiaTime).toISOString();
         let n_post = {head:n_head, content:n_content, viewers : n_viewers, user_post:n_user_post, game:n_game, date: n_date, image : n_image};
-        News.create(n_post, async function(error, newReview){
+        Review.create(n_post, async function(error, newReview){
             if(error){
                 console.log("error create news");
             }
@@ -101,7 +101,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 })
                 
             }
-            res.redirect("");
+            res.redirect("/review");
         })
     })
 
@@ -113,7 +113,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
             } else{
                 idReview.viewers++;
                 idReview.save();
-                res.render("news",{Review:idReview, moment: moment});
+                res.render("review_detail",{Review:idReview, moment: moment});
                 }
             }
         )}
