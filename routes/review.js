@@ -13,7 +13,6 @@ const express = require("express"),
     async = require('async');
 
 var moment = require('moment');     
-const { populate } = require("../models/user");
 
 const storage = multer.diskStorage({
     destination : './public/uploads/review',

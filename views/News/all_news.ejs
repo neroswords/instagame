@@ -11,7 +11,7 @@
 <body>
 
   <section class="highlight">
-    <header class="hero__top">
+    <header class="hero__top d-none d-lg-block">
       <div class="hero__header">
         <h1>ข่าวเกม <span>ทั้งหมด</span></h1>
       </div>
@@ -88,7 +88,6 @@
     <main class="news-body" role="news"> 
         <div id="news-section" style="position: relative;">
           <header class="headline headline-sticky">
-            <!-- <h2 class="headline__name">ข่าวเกมทั้งหมด</h2> -->
             <div class="select-news-game_type">
               <label for="exampleFormControlSelect1 d-inline-block">เลือกดูข่าวตามประเภทเกม:</label>
               <select class="game-type" id="game-type" name="game-type">
@@ -112,7 +111,7 @@
           <section class="box">
                   <div class="row" style="display:flex; flex-wrap:wrap;">
                     <% News.forEach(function(news){ %>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-6">
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/news/<%= news._id %>">

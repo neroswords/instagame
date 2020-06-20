@@ -51,11 +51,9 @@
                 <div class="topbar_search">
                   <input class="form-control mr-sm-2" name="search" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200">
                 </div>
-                <button class="btn btn-dark my-2 my-sm-0" type="submit"> Search </button>
-                <div style="position: relative; width: 100%; top: -1px;">
-                  <div class="border" id="search-results">
-                  </div>
-                </div>
+                <button class="btn-search" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
             </form>
                 <% if(!currentUser) { %>
                   <a href="/Sign_up" id="signup">
@@ -82,14 +80,10 @@
                           <i class="fas fa-user-circle"></i>
                           ดูข้อมูลสมาชิก
                         </a>
-                        <a class="dropdown-item" href="">
-                          <i class="fas fa-crown"></i>
-                          อัพเกรดระดับสมาชิก
-                        </a>
                         <% if(currentUser.class === "King"){ %>
                           <a class="dropdown-item" href="#">
-                            <i class="fas fa-user-circle"></i>
-                            การจัดการ
+                            <i class="fas fa-crown"></i>
+                            อัพเกรดระดับสมาชิก
                           </a>
                         <% } %>
                         <a class="dropdown-item" href="/logout">
@@ -98,7 +92,7 @@
                         </a>
                       </div>
                     </div>
-                  </div>
+                </div>
                <% } %>    
           </div>
       </nav>

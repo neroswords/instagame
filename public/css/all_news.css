@@ -11,6 +11,72 @@
     }
  }
 
+ @media (max-width: 767.98px) {
+    .highlight {
+        max-width: 540px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+    }
+ }
+
+ .highlight {
+    position: relative;
+    z-index: 5;
+    margin: auto;
+}
+
+.hightlight-box {
+    position: relative;
+    background: #fff;
+    margin-bottom: 0;
+}
+
+.carousel-item img {
+    opacity: 1;
+}
+
+.carousel-item img:hover {
+    opacity: 0.9;
+    transition: ease-in-out .15s;
+}
+
+.carousel-caption {
+    position: absolute;
+    display: inline-block;
+    vertical-align: bottom;
+    justify-content: end;
+    background-color: black;
+    opacity: .75;
+    color: #fff;
+    border: 1px solid inherit;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+    align-items: flex-end;
+    width: auto;
+}
+
+.carousel-caption:hover {
+    text-decoration: underline;
+}
+
+.carousel-caption h4 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.carousel-caption p {
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
  .hero__header {
     margin-bottom: 0;
     background-color: #003d9a!important;
@@ -35,7 +101,7 @@
     }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (max-width: 767.98px) {
     .breadcrumb-box {
         max-width: 540px;
     }
@@ -97,7 +163,7 @@
     font-weight: 500;
 }
 
- @media (min-width: 576px) and (max-width: 767.98px) {
+ @media (max-width: 767.98px) {
     .highlight {
         max-width: 540px;
     }
@@ -155,7 +221,7 @@
         }
      }
     
-     @media (min-width: 576px) and (max-width: 767.98px) {
+     @media (max-width: 767.98px) {
         .headline {
             max-width: 540px;
         }
@@ -192,10 +258,10 @@
         z-index: 5;
     }
     
-    @media (min-width: 576px) and (max-width: 767.98px) {
+    @media (max-width: 767.98px) {
         .select-news-game_type {
             width: 100%;
-            display: inline-block;
+            display: block;
             position: relative;
             padding: 10px 5px;
             margin-top: 10px;
@@ -223,9 +289,9 @@
     }
 
     .game-type {
+        position: relative;
         display: inline-block;
         width: auto;
-        height: calc(1.5em + .75rem + 2px);
         padding: .375rem .75rem;
         font-size: 1rem;
         font-weight: 400;
@@ -235,7 +301,11 @@
         background-clip: padding-box;
         border: 1px solid #ced4da;
         border-radius: .25rem;
-        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .game-type option {
+        display: list-item;
+        width: auto;
     }
 
     .create_team-icon {
@@ -301,7 +371,7 @@
         }
      }
     
-     @media (min-width: 576px) and (max-width: 767.98px) {
+     @media (max-width: 767.98px) {
         .box {
             max-width: 540px;
         }

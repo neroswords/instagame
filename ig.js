@@ -31,11 +31,11 @@ app.use(require('express-session')({
 
 
 const newsRoutes = require("./routes/news"),
+    reviewRoutes = require("./routes/review"),
     indexRoutes = require("./routes/index"),
     commuRoutes = require("./routes/communication"),
     teamRoutes = require("./routes/team"),
     commentRoutes = require("./routes/comments"),
-    reviewRoutes = require("./routes/review"),
     searchRoutes = require("./routes/search");
 
 app.use(flash());

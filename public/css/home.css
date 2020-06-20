@@ -29,9 +29,12 @@
     }
  }
 
- @media (min-width: 576px) and (max-width: 767.98px) {
+ @media (max-width: 767.98px) {
     .highlight {
         max-width: 540px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
     }
  }
 
@@ -57,11 +60,19 @@
 }
 
 .carousel-caption {
-    margin: 0 auto;
+    position: absolute;
+    display: inline-block;
+    vertical-align: bottom;
+    justify-content: end;
     background-color: black;
-    border-style: double;
-    opacity: .8;
+    opacity: .75;
     color: #fff;
+    border: 1px solid inherit;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+    align-items: flex-end;
+    width: auto;
 }
 
 .carousel-caption:hover {
@@ -70,10 +81,18 @@
 
 .carousel-caption h4 {
     font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin-bottom: 0;
 }
 
 .carousel-caption p {
     font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin-bottom: 0;
 }
 
 @media (min-width: 1200px) {
@@ -88,7 +107,7 @@
     }
  }
 
- @media (min-width: 576px) and (max-width: 767.98px) {
+ @media (max-width: 767.98px) {
     .headline {
         max-width: 540px;
     }
@@ -135,7 +154,7 @@
     }
  }
 
- @media (min-width: 576px) and (max-width: 767.98px) {
+ @media (max-width: 767.98px) {
     .box {
         max-width: 540px;
     }
@@ -147,13 +166,14 @@
     margin: 0 auto;
     padding-right: 1rem;
     padding-left: 1rem;
-    width: 100%;
 }
 
 .news-box {
     border-top: 1px solid #dee2e6;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .row {
@@ -172,7 +192,7 @@
 
 .box_header h4{
     color: #343a40;
-    font-size: 21px;
+    font-size: 1.125rem;
     font-weight: 600;
 }
 

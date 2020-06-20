@@ -29,7 +29,7 @@
     }
  }
 
- @media (min-width: 576px) and (max-width: 767.98px) {
+ @media (max-width: 767.98px) {
     .teams__headline {
         max-width: 540px;
     }
@@ -66,7 +66,7 @@
     z-index: 5;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 0px) {
     .teams__search {
         width: 100%;
         display: inline-block;
@@ -168,7 +168,7 @@
     }
  }
 
- @media (min-width: 576px) and (max-width: 767.98px) {
+ @media (max-width: 767.98px) {
     .box {
         max-width: 540px;
     }
@@ -382,7 +382,7 @@ section .col-md-6 {
 .entry__meta__count2{
     font-size: .875rem;
     color: GRAY;
-    background-color: ;
+
 }
 
 .entry__meta__posted2 {
