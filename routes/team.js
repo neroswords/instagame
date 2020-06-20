@@ -223,6 +223,47 @@ router.post("/:id/addlist",middleware.isLoggedIn, function(req,res){
     })
 })
 
+router.post("/:id/deletelist",middleware.isLoggedIn, function(req,res){
+    Team.findById(req.params.id, function(err, idTeam){
+        if(err){
+            console.log("cannot find team");
+            res.redirect("/team")
+        }
+        else{
+            if(!req.user._id.equals(idTeam.user_post.id)){
+                for(let n = 0; n < idTeam.number; n++){                  
+                    if(req.user._id.equals(idTeam.party[n])){ 
+                        idTeam.party.splice(n, 1);
+                        idTeam.number--;
+                        idTeam.save();
+                        return res.redirect("/team");
+                    }
+                }
+            }
+            else {
+                req.flash('error','Cannot out from party please delete the party instead');
+                res.redirect("back")
+            }
+            // Party.findById(idTeam.party._id, function(err, idParty){
+            //     if(err){
+            //         console.log("cannot find Party");
+            //         res.redirect("/team")
+            //     }else{
+            //         let n_number = idTeam.number++;
+            //         idParty.posts.push(member);
+            //         foundUser.save(function(err, data){
+            //             if(err){
+            //                 console.log(err);
+            //             } else {
+            //                 console.log(data);
+            //             }
+            //         });
+            //     }
+            // })
+        }
+    })
+})
+
 
 
 module.exports = router;

@@ -2,6 +2,7 @@ const User = require("../models/user"),
     News = require("../models/news"),
     Comment = require("../models/comment"),
     Commu = require("../models/commu"),
+    Review = require("../models/review"),
     Team = require("../models/team");
 
 let middlewareObj = {};
@@ -13,9 +14,26 @@ middlewareObj.checkNewsOwner = function(req,res,next){
                 console.log("can not find news");
                 res.redirect("back");
             } else{
-                console.log(foundNews);
-                
                 if(foundNews.user_post.id.equals(req.user._id) || req.user.class === "King"){
+                    next();
+                }else{
+                    res.redirect("back");
+                }
+            }
+        })
+    }else{
+        res.redirect("back");
+    }
+}
+
+middlewareObj.checkReviewOwner = function(req,res,next){
+    if(req.isAuthenticated()){
+        Review.findById(req.params.id, function(err, foundReview){
+            if(err){
+                console.log("can not find review");
+                res.redirect("back");
+            } else{
+                if(foundReview.user_post.id.equals(req.user._id) || req.user.class === "King"){
                     next();
                 }else{
                     res.redirect("back");
