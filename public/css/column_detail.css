@@ -324,6 +324,11 @@
             height: 40px;
             font-weight: 400;
         }
+
+        .btn-share span{
+            display: none;
+        }
+
     }   
 
     .btn-share:hover {
