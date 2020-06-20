@@ -18,6 +18,7 @@ const express = require("express"),
 
     router.get("/", function(req,res){
         if(req.query.search){
+            var n_result = req.query.search;
             const regex = new RegExp(escapeRegex(req.query.search), 'gi');
             Tag.find({name : regex}, function(err, foundtag){
                 if(err){
@@ -27,11 +28,7 @@ const express = require("express"),
                         Review.find({tags : {$in : foundtag}},function(err,foundReview){
                             Community.find({tags : {$in : foundtag}},function(err,foundCommu){
                                 News.find({tags : {$in : foundtag}},function(err,foundNews){
-                                    // console.log(foundTeam);
-                                    // console.log(foundCommu);
-                                    // console.log(foundNews);
-                                    // console.log(foundReview);
-                                    res.render("result",{Team : foundTeam, Review : foundReview, Commu : foundCommu, News : foundNews});
+                                    res.render("result",{Team : foundTeam, Review : foundReview, Commu : foundCommu, News : foundNews, result : n_result});
                                 })  
                             })
                         })

@@ -10,7 +10,7 @@ var showResults = debounce(function(arg){
         $("#search-results").fadeIn();
     };
     
-    var jqsearch = $.get('/search?q='+ value, function(data){
+    var jqsearch = $.get('/searchtag?q='+ value, function(data){
         $("#search-results").html("");
     }) 
     .done(function(data){
