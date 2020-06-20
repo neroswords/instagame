@@ -9,10 +9,84 @@
     <link rel="stylesheet" href="/css/all_news.css">
 </head>
 <body>
+  <section class="highlight">
+    <header class="hero__top d-none d-lg-block">
+      <div class="hero__header2">
+        <h1>รีวิวเกม <span>ทั้งหมด</span></h1>
+      </div>
+      <nav class="breadcrumb-box" aria-label="breadcrumb">
+        <ol class="breadcrumbs bg-dark">
+            <li class="breadcrumb-item breadcrumb-section">
+                <a href="/"><i class="fas fa-home"></i></a>
+            </li>
+            <li class="breadcrumb-item breadcrumb-section active">
+                <a href="#">ข่าวเกม</a>
+            </li>
+        </ol>
+    </nav>
+    </header>
+  
+    <div id="main-highlight" class="hightlight-box">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="#">
+              <img src="/image/slide1.JPG" class="d-block w-100" >
+              <div class="carousel-caption d-sm-block">
+                <h4>ใส่พาดหัวข่าว</h4>
+                <p>ใส่ description สั้นๆของข่าว</p>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="#">
+              <img src="/image/slide2.JPG" class="d-block w-100" >
+              <div class="carousel-caption d-sm-block">
+                <h4>ใส่พาดหัวข่าว</h4>
+                <p>ใส่ description สั้นๆของข่าว</p>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="#">
+              <img src="/image/slide3.JPG" class="d-block w-100" >
+              <div class="carousel-caption d-sm-block">
+                <h4>ใส่พาดหัวข่าว</h4>
+                <p>ใส่ description สั้นๆของข่าว</p>
+              </div>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="#">
+              <img src="/image/slide4.JPG" class="d-block w-100" >
+              <div class="carousel-caption d-sm-block">
+                <h4>ใส่พาดหัวข่าว</h4>
+                <p>ใส่ description สั้นๆของข่าว</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </section> 
+
     <main class="news-body" role="news"> 
         <div id="news-section" style="position: relative;">
           <header class="headline headline-sticky">
-            <h2 class="headline__name">รีวิวเกม</h2>
             <div class="select-news-game_type">
               <label for="exampleFormControlSelect1 d-inline-block">ดูรีวิวตามประเภทเกม:</label>
               <select class="game-type" id="game-type" name="game-type">

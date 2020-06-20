@@ -41,11 +41,14 @@
         <label for="img">แนบรูปภาพ:</label>
         <input type="file" id="party-img" name="image" accept="image/*">
       </div>
-      <div class="simple-tags"
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">เพิ่มแท็ก: </label>
+            <div class="simple-tags"
                 id="containers" 
                 data-simple-tags="community">
+            </div>
+        </input>
       </div>
-      <input type="hidden" name="tags" id="tags" value=""> 
       <div class="party-btn">
         <div class="submit-create-party">
           <button type="submit" class="submit-create-party-btn" onclick="c_tag(document.getElementById('containers').getAttribute('data-simple-tags'))">
