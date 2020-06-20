@@ -31,7 +31,7 @@
         }
      }
     
-     @media (min-width: 576px) and (max-width: 767.98px) {
+     @media (max-width: 767.98px) {
         .teams__headline {
             max-width: 540px;
         }
@@ -159,7 +159,7 @@
         font-size: 1rem;
     }
     
-    @media (min-width: 576px) and (max-width: 767.98px) {
+    @media (max-width: 767.98px) {
         .select-news-game_type {
             width: 100%;
             display: inline-block;
@@ -198,7 +198,7 @@
     @media (min-width: 768px) {
         .select-news-game_type {
             width: auto;
-            display: inline-block;
+            display: block;
             position: relative;
             min-width: 250px;
             padding: 10px 5px;
@@ -244,7 +244,7 @@
         }
      }
     
-     @media (min-width: 576px) and (max-width: 767.98px) {
+     @media (max-width: 767.98px) {
         .box {
             max-width: 540px;
         }
@@ -458,7 +458,7 @@
     .entry__meta__count2{
         font-size: .875rem;
         color: GRAY;
-        background-color: ;
+
     }
 
     .entry__meta__posted2 {

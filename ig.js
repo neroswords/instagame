@@ -31,6 +31,7 @@ app.use(require('express-session')({
 
 
 const newsRoutes = require("./routes/news"),
+    reviewRoutes = require("./routes/review"),
     indexRoutes = require("./routes/index"),
     commuRoutes = require("./routes/communication"),
     teamRoutes = require("./routes/team"),
@@ -70,6 +71,7 @@ app.use("/",indexRoutes);
 app.use("/news", newsRoutes);
 app.use("/team", teamRoutes);
 app.use("/commu", commuRoutes);
+app.use("/review", reviewRoutes);
 app.use("/:models/:id/comment", commentRoutes);
 
 
