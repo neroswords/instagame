@@ -12,10 +12,6 @@
     <main class="teams-body" role="news"> 
         <div id="teams-section" style="position: relative;">
           <header class="teams__headline headline-sticky">
-            <h2 class="headline__name">หาปาร์ตี้เล่นเกม</h2>
-            <div class="teams__search">
-                <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหาปาร์ตี้..." aria-label="Search" maxlength="200">
-            </div>
             <% if(currentUser){ %>
             <button class="my_team-icon" onclick="window.location.href='/team/my_team';">
                 <i class="fas fa-users"></i>
@@ -28,7 +24,7 @@
             </button>
             <div class="select-news-game_type">
               <label for="exampleFormControlSelect1 d-inline-block">หาปาร์ตี้ตามประเภทเกม:</label>
-              <select class="game-type" id="game-type" name="game-type">
+              <select class="game-type" id="game-type" name="game-type" style="display: inline;">
                 <option>จากเกมทุกประเภท</option>
                 <option>Survival</option>
                 <option>Role-Player Game (RPG)</option>

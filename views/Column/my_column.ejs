@@ -1,0 +1,76 @@
+<%- include("patials/header") %>
+
+้<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My team</title>
+    <link rel="stylesheet" href="/css/my_team.css">
+</head>
+<body>
+    <main class="teams-body" role="news"> 
+        <div id="teams-section" style="position: relative;">
+          <header class="teams__headline headline-sticky">
+            <h2 class="headline__name">ปาร์ตี้ของฉัน</h2>
+            <div class="teams__search">
+                <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหาปาร์ตี้ของฉัน..." aria-label="Search" maxlength="200">
+            </div>
+            <button class="my_team-icon" onclick="window.location.href='/commu';">
+                <i class="fas fa-search"></i>
+                <span>ค้นหากระทู้อื่น</span> 
+            </button>
+            <button class="create_team-icon" onclick="window.location.href='/commu/create';">
+                <i class="fas fa-plus"></i>
+                <span>สร้างกระทู้</span> 
+            </button>
+          </header>
+          <section class="box">
+            <div class="row" style="display:flex; flex-wrap:wrap;">
+                    <% Commu.forEach(function(commu){ %>
+                        <% if(currentUser && commu.user_post.id.equals(currentUser._id)) { %>
+                        <div class="col-md-3 col-sm-6">
+                            <article class="entry">
+                              <figure class="entry__thumb entry__thumb--zoom">
+                                <a href="/commu/<%= commu._id %>">
+                                  <img src=<%= '../uploads/commu/' + commu.image %> class="card-img-top">
+                                </a>
+                              </figure>
+                              <div class="entry__body">
+                                <h4 class="entry__title">
+                                  <a href="/commu/<%= commu._id %>">
+                                    <%= commu.head %>
+                                  </a>
+                                </h4>
+                                <div class="entry__meta">
+                                  <span class="entry__meta__count">
+                                    <i class="fas fa-eye"></i>
+                                    ใส่ยอดวิว
+                                  </span>
+                                  <span class="entry__meta__posted">
+                                    <i class="far fa-clock"></i>
+                                    <%= moment(commu.date).format("DD/MM/YYYY") %>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        <% } %>
+                  <% }) %>
+                </div>
+                <header class="add-view">
+                  <button href="#" class="scrollto-add">
+                    โหลดเพิ่ม
+                    <i class="fas fa-plus"></i>
+                  </button>
+              </header>  
+          
+       </section>
+         
+
+        </div>
+    </main>
+</body>
+</html>
+
+<%- include("patials/footer") %>

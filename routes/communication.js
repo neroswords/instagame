@@ -40,6 +40,17 @@ router.get("/", function(req,res){
     })
 });
 
+router.get("/my_column",middleware.isLoggedIn, function(req,res){
+    Communication.find({}, function(error, myCommu){
+        if(error){
+            console.log("Error!!");
+            
+        }else{
+            res.render("my_column",{Commu : myCommu, moment: moment});
+        }
+    })
+})
+
 router.get("/create", function(req,res){
     res.render("c_column");
 });
@@ -117,6 +128,8 @@ router.get("/:id", function(req,res){
             console.log("ERROR");
             
         } else{
+            idCommu.viewers++;
+            idCommu.save();
             res.render("column_detail",{commu:idCommu, moment: moment});
             }
         }

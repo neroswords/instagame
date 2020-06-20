@@ -35,7 +35,8 @@ const newsRoutes = require("./routes/news"),
     indexRoutes = require("./routes/index"),
     commuRoutes = require("./routes/communication"),
     teamRoutes = require("./routes/team"),
-    commentRoutes = require("./routes/comments");
+    commentRoutes = require("./routes/comments"),
+    searchRoutes = require("./routes/search");
 
 app.use(flash());
 app.use(express.static(__dirname + '/public'));
@@ -50,6 +51,7 @@ app.set("views", [path.join(__dirname, "views"),
                     path.join(__dirname, "views/Home"),
                     path.join(__dirname, "views/News"),
                     path.join(__dirname, "views/column"),
+                    path.join(__dirname, "views/review_game"),
                     path.join(__dirname, "views/Search")]);
 
 app.set("view engine", "ejs");
@@ -72,6 +74,7 @@ app.use("/news", newsRoutes);
 app.use("/team", teamRoutes);
 app.use("/commu", commuRoutes);
 app.use("/review", reviewRoutes);
+app.use("/search", searchRoutes);
 app.use("/:models/:id/comment", commentRoutes);
 
 
