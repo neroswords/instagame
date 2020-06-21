@@ -38,6 +38,22 @@
                 </div>
             </div>
             <div>
+                <label for="text" class="label-form-title">ประเภทเกม</label>
+                <div class="form-inside">
+                    <select class="game-type form-item" id="game-type" name="game-type" required>
+                        <option>เลือกประเภทเกม</option>
+                        <option>Survival</option>
+                        <option>Role-Player Game (RPG)</option>
+                        <option>Battle Royale</option>
+                        <option>First Person Shooter (FPS)</option>
+                        <option>Multiplayer Online Battle Arena (MOBA)</option>
+                        <option>Fighting</option>
+                        <option>Sports</option>
+                        <option>Racing</option>
+                      </select>
+                </div>
+            </div>
+            <div>
                 <label for="text" class="label-form-title">เนื้อหาข่าว</label>
                 <div class="form-inside">
                     <textarea rows="20" cols="80" class="form-item" id="content" name="content" required placeholder="ใส่เนื้อหาข่าว"></textarea>    
@@ -56,6 +72,8 @@
                         id="containers" 
                         data-simple-tags="News">
                     </div>
+                    <span class="add-tag-remark">หมายเหตุ: กดปุ่ม space bar หรือ , (comma) เพื่อเป็นการเพิ่มแท็ก และคลิกที่ x เพื่อเป็นการลบแท็ก</span>
+                    <span class="profile-remark">*โปรดระบุแท็กให้เหมาะสมและชัดเจนเพื่อง่ายต่อการค้นหา</span>
                 </div>
             </div>
             <input type="hidden" name="tags" id="tags" value="">

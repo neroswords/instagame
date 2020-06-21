@@ -150,3 +150,17 @@
     color: #fff;
     border-color: #D32F2F;
 }
+
+.add-tag-remark {
+    font-size: 14px;
+    color: #555;
+    position: relative;
+    display: block;
+}
+
+
+.profile-remark {
+    font-size: 14px;
+    color: red;
+    display: block;
+}
