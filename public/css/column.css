@@ -158,13 +158,13 @@
     font-size: 1rem;
 }
 
+
 .create_team-icon {
     border: 1px solid #E74C3C ;
     background-color: #E74C3C  ;
     display: inline-block;
     position: relative;
     padding: 5px 5px;
-    margin-left: 10px;
     margin-top: 10px;
     text-align: center;
     width: auto;
@@ -177,6 +177,7 @@
     background-color: #C0392B ;
     color: #fff;
 }
+
 
 .my_team-icon {
     border: solid 1px MEDIUMSEAGREEN;
@@ -198,24 +199,6 @@
     color: WHITE;
 }
 
-.my_team-icon i {
-    font-size: 16px;
-}
-
-.my_team-icon span {
-    font-size: 1rem;;
-}
-
-.create_team-icon i {
-    font-size: 16px;
-}
-
-.create_team-icon span {
-    font-size: 1rem;
-}
-
-
-
 .submit-create-party-btn {
     background-color: YELLOWGREEN;
     color: #fff;
@@ -235,6 +218,64 @@
     color: #fff;
     border-color: OLIVEDRAB;
 }
+
+@media (max-width: 768px) {
+    .create_team-icon {
+        border: 1px solid #E74C3C ;
+        background-color: #E74C3C  ;
+        display: block;
+        position: relative;
+        padding: 5px 5px;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+        color: #fff;
+        border-radius: .5rem;
+    }
+    .my_team-icon {
+        border: solid 1px MEDIUMSEAGREEN;
+        background-color: MEDIUMSEAGREEN;
+        color: white;
+        border-radius: .5rem;
+        display: inline-block;
+        position: relative;
+        padding: 5px 5px;
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+        width: 49%;
+    }
+    .submit-create-party-btn {
+        background-color: YELLOWGREEN;
+        color: #fff;
+        border: 1px solid YELLOWGREEN;
+        display: inline-block;
+        position: relative;
+        padding: 5px 5px;
+        margin-left: 0;
+        margin-top: 10px;
+        width: 49%;
+        text-align: center;
+        border-radius: .5rem;
+    }
+ }
+
+.my_team-icon i {
+    font-size: 16px;
+}
+
+.my_team-icon span {
+    font-size: 1rem;;
+}
+
+.create_team-icon i {
+    font-size: 16px;
+}
+
+.create_team-icon span {
+    font-size: 1rem;
+}
+
 
 
 @media (min-width: 1200px) {

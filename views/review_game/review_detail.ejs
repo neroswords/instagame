@@ -46,7 +46,7 @@
                 </span>
                 <span>
                     <i class="far fa-clock"></i>
-                    <%= review.date %>
+                    <%= moment(review.date).format("DD/MM/YYYY") %>
                 </span>
             </div>
           </div>    
