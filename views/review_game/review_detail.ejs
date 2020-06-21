@@ -12,7 +12,7 @@
     <main class="main-body" role="main">
         <!-- ปุ่มแก้ไขและลบข่าว -->
         <header class="teams__headline headline-sticky">
-          <% if(currentUser && news.user_post.id.equals(currentUser._id)){ %>
+          <% if(currentUser && review.user_post.id.equals(currentUser._id)){ %>
             <a href="/review/<%= review._id %>/edit">
             <button class="entry__meta__posted4">
                 <i class="fas fa-edit"></i>
@@ -130,7 +130,7 @@
                                         <i class="fas fa-edit"></i>
                                         แก้ไขข้อความ
                                       </button>
-                                      <form action="/news/<%= news._id %>/comment/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
+                                      <form action="/review/<%= review._id %>/comment/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
                                       <button class="dropdown-item">
                                         <i class="far fa-trash-alt"></i>
                                         ลบข้อความ
@@ -148,7 +148,7 @@
                         </div>
                         <% }) %>
                         <% if(currentUser){ %>
-                        <form class="form-block" action="/news/<%= news._id %>/comment/create" method="POST">
+                        <form class="form-block" action="/review/<%= review_id %>/comment/create" method="POST">
                           <div class="row">
                             <div class="col-md-12">									
                               <div class="form-group">

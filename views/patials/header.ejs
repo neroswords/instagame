@@ -48,16 +48,22 @@
                   <a class="nav-link" href="/team">หาปาร์ตี้เล่นเกม</a>
               </li>
               </ul>
-            <form class="form-inline my-2 my-lg-0" id="member-box" action="/search" method="GET">
+            <form class="form-inline my-2 my-lg-0" id="member-box" action="/search/result" method="GET">
+              <div class="group">
                 <div class="topbar_search">
                   <input class="form-control mr-sm-2" name="search" type="search" id="search" placeholder="ค้นหา..." aria-label="Search" maxlength="200" autocomplete="off" onkeyup="showResults(this.value)">
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  </input>
                 </div>
-                <div id="search-results">
-
+              </div>
+                <div style="position:relative; width: 100%; top: -1px;">
+                  <div id="search-results" style="position:absolute; background-color: whitesmoke; width: 100%">
+                  </div>
                 </div>
-                <button class="btn-search" type="submit">
+                <!-- <button class="btn-search" type="submit">
                   <i class="fas fa-search"></i>
-                </button>
+                </button> -->
             </form>
                 <% if(!currentUser) { %>
                   <a href="/Sign_up" id="signup">
@@ -80,7 +86,7 @@
                         <%= currentUser.alias %>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/editProfile/<%= currentUser._id %>">
+                        <a class="dropdown-item" href="/profile/<%= currentUser._id %>">
                           <i class="fas fa-user-circle"></i>
                           ดูข้อมูลสมาชิก
                         </a>

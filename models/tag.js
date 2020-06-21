@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
 let TagSchema = new mongoose.Schema({
-    name : String
+    name : String,
+    type : String,
+    view : Number
 });
 
 

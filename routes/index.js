@@ -35,7 +35,67 @@ const express = require("express"),
 
 
 router.get("/", function(req,res){
-    res.render("home");
+    Tag.find({name : "Survival"}, function(err,foundTag){
+        News.find({tags : {$in : foundTag }}, function(err,foundSurvival){
+            var n_Survival = foundSurvival;
+            Tag.find({name : "RPG"}, function(err,foundTag){
+                News.find({tags : {$in : foundTag }}, function(err,foundRPG){
+                    var n_RPG = foundRPG;    
+                    Tag.find({name : "Battle Royal"}, function(err,foundTag){
+                        News.find({tags : {$in : foundTag }}, function(err,foundBattleR){
+                            var n_Battle_Royal = foundBattleR;
+                            Tag.find({name : "FPS"}, function(err,foundTag){
+                                News.find({tags : {$in : foundTag }}, function(err,foundFPS){
+                                    var n_FPS = foundFPS;
+                                    Tag.find({name : "MOBA"}, function(err,foundTag){
+                                        News.find({tags : {$in : foundTag }}, function(err,foundMOBA){
+                                            var n_MOBA = foundMOBA;
+                                            Tag.find({name : "Fighting"}, function(err,foundTag){
+                                                News.find({tags : {$in : foundTag }}, function(err,foundFighting){
+                                                    var n_Fighting = foundFighting;  
+                                                    Tag.find({name : "Sports"}, function(err,foundTag){
+                                                        News.find({tags : {$in : foundTag }}, function(err,foundSports){
+                                                            var n_Sports = foundSports;
+                                                            Tag.find({name : "Racing"}, function(err,foundTag){
+                                                                News.find({tags : {$in : foundTag }}, function(err,foundRacing){
+                                                                    var n_Racing = foundRacing;
+                                                                    Team.find({}, function(err,foundTeam){
+                                                                        var n_Team = foundTeam;
+                                                                        Community.find({}, function(err,foundCommu){
+                                                                            var n_Commu = foundCommu;
+                                                                            Review.find({}, function(err,foundReview){
+                                                                                var n_Review = foundReview;
+                                                                                res.render("home",
+                                                                                {Battle_Royal : n_Battle_Royal,
+                                                                                    FPS : n_FPS,
+                                                                                    Fighting : n_Fighting,
+                                                                                    MOBA : n_MOBA,
+                                                                                    RPG : n_RPG,
+                                                                                    Racing : n_Racing,
+                                                                                    Sports : n_Sports,
+                                                                                    Survival : n_Survival,
+                                                                                    Team : n_Team,
+                                                                                    Commu : n_Commu,
+                                                                                    Review : n_Review });
+                                                                            }).sort({date : -1}).limit(8);
+                                                                        }).sort({date : -1}).limit(8);
+                                                                    }).sort({date : -1}).limit(8);    
+                                                                }).sort({date : -1}).limit(2);
+                                                            })    
+                                                        }).sort({date : -1}).limit(2)
+                                                    });
+                                                })
+                                            }).sort({date : -1}).limit(2);    
+                                        })
+                                    }).sort({date : -1}).limit(2);  
+                                })
+                            }).sort({date : -1}).limit(2);    
+                        })
+                    }).sort({date : -1}).limit(2);
+                })
+            }).sort({date : -1}).limit(2);            
+        })
+    }).sort({date : -1}).limit(2);
 });
 
 router.get("/profile", function(req,res){
@@ -62,8 +122,11 @@ router.get('/logout', function(req,res){
     res.redirect('back');
 });
 
-router.get('/profile', middleware.isLoggedIn, function(req,res){
-    res.render("profile")
+router.get('/profile/:id', middleware.isLoggedIn, function(req,res){
+    User.findById(req.params.id, function(err, foundProfile){
+        res.render("profile", { user : foundProfile});
+    })
+    
 })
 
 
@@ -201,19 +264,7 @@ router.get("/login/forgetpsswd", function(req,res){
    res.render("forget_psw");
 });
 
-router.get("/searchtag", function(req, res, next){
-    var q = req.query.q;
 
-    Tag.find({ name : {
-        $regex: new RegExp(q)
-        }
-    }, {
-        _id:0,
-        __v : 0
-    }, function(err, data){
-        res.json(data);
-    }).limit(10);
-});
 
 
 module.exports = router;
