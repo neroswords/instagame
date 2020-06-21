@@ -1109,6 +1109,7 @@
               </a>
             </header>
                 <div class="row">
+                  <% Commu.forEach(function(commu){ %>
                   <div class="col-lg-3 col-6">
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
@@ -1119,7 +1120,7 @@
                       <div class="entry__body">
                         <h4 class="entry__title">
                           <a href="">
-                            รีวิว KartRider Rush+ ไม่ซิ่งก็ซี้เกมมือถือแนวแข่งรถสายแบ๊วใหม่ล่าสุด
+                            <%= commu.head %>
                           </a>
                         </h4>
                         <p>
@@ -1141,6 +1142,7 @@
                       </div>
                     </article>
                   </div>
+                <% }) %>
                 </div>
                 <header class="add-view">
                   <button href="#" class="scrollto-add rpg-news">
@@ -1151,7 +1153,7 @@
               </section>
           </div> 
 
-          <!-- ปารร์ตี้ -->
+          <!-- ปาร์ตี้ -->
           <div id="party-section">
             <header class="headline headline-sticky">
               <h2 class="headline__name">หาปาร์ตี้เล่นเกม</h2>

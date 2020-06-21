@@ -111,8 +111,8 @@
           <section class="box">
                   <div class="row" style="display:flex; flex-wrap:wrap;">
                     <% News.forEach(function(news){ %>
-                    <div class="col-lg-3 col-6">
-                      <article class="entry">
+                    <div class="col-lg-3 col-6" >
+                      <article class="entry" style="display: none;">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/news/<%= news._id %>">
                             <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + news.image %> class="card-img-top">
@@ -140,18 +140,52 @@
                 <% }); %> 
               </div>
               <header class="add-view">
-                <button href="#" class="scrollto-add">
+                <button id="loadMore" class="scrollto-add">
                   โหลดเพิ่ม
                   <i class="fas fa-plus"></i>
                 </button>
               </header>
+              <p class="totop" style="position: fixed;
+         bottom: 10px;
+         right: 20px;"> 
+          <a href="#top" style="display: none;">Back to top</a> 
+        </p>
          </section>
-         
-
         </div>
     </main>
 </body>
 </html>
 
 <%- include("patials/footer") %>
+
+<script>
+  $(function () {
+    $("article").slice(0, 4).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $("article:hidden").slice(0, 4).slideDown();
+        if ($("article:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
+});
+
+$('a[href=#top]').click(function () {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 600);
+    return false;
+});
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+        $('.totop a').fadeIn();
+    } else {
+        $('.totop a').fadeOut();
+    }
+});
+</script>
 

@@ -40,7 +40,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
             }else{
                 res.render("all_news",{News : allNews, moment: moment});
             }
-        })
+        }).sort({date : -1});
     })
 
     router.get("/create", middleware.isLoggedIn, function(req,res){

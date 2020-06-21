@@ -10,7 +10,7 @@ var showResults = debounce(function(arg){
         $("#search-results").fadeIn();
     };
     
-    var jqsearch = $.get('/searchtag?q='+ value, function(data){
+    var jqsearch = $.get('/search?q='+ value, function(data){
         $("#search-results").html("");
     }) 
     .done(function(data){
@@ -18,7 +18,7 @@ var showResults = debounce(function(arg){
             $("#search-results").append('<p class="lead text-center mt-2">No results</p>');
         } else {
             data.forEach(x => {
-                $("#search-results").append('<a href="#"><p class="m-2 lead">'+ x.name +'</p></a>');
+                $("#search-results").append('<a href="/search/'+ x.name +'"><p class="m-2 lead" style="border-bottom: 1px solid black">'+ x.name +'</p></a>');
             });
         }
     }).fail(function(err){
