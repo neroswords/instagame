@@ -12,7 +12,7 @@
     <main class="main-body" role="main">
         <!-- ปุ่มแก้ไขและลบข่าว -->
         <header class="teams__headline headline-sticky">
-          <% if(currentUser && news.user_post.id.equals(currentUser._id)){ %>
+          <% if(currentUser && review.user_post.id.equals(currentUser._id)){ %>
             <a href="/review/<%= review._id %>/edit">
             <button class="entry__meta__posted4">
                 <i class="fas fa-edit"></i>
@@ -73,99 +73,465 @@
         <!-- เนื้อข่าว -->
         <div class="content">
             <div class="content__main order-1">
+              <!-- Start social sharing -->
+              <div class="content__social">
+                <div class="content__social__share">
+                  <a class="btn-share btn-fb mr-1" href="">
+                    <i class="fab fa-facebook-f"></i>
+                    <span class="d-sm-none d-md-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-share btn-tw mr-1" href="">
+                    <i class="fab fa-twitter"></i>
+                    <span class="d-sm-none d-md-inline-block">ทวีตเรื่องนี้</span>
+                  </a>
+                  <a class="btn-share btn-ln mr-1" href="">
+                    <i class="fab fa-line"></i>
+                    <span class="d-sm-none d-md-inline-block">แบ่งปันเรื่องนี้</span>
+                  </a>
+                </div>
+              </div>
+
                 <!-- Start Text Content -->
                 <div class="content__read">
                     <h3>
                         <span style="color: #212529;">
-                            <strong><%= review.head %></strong>
+                            <strong><%= review.game %></strong>
                         </span>
-                    </h2>
+                    </h3>
                     <p><%- review.content %></p>
                 </div>
                 <!-- End text content -->
 
-                <!-- start relate tags -->
-                <!-- <div class="content__tag">
-                    <h4>แท็กที่เกี่ยวข้อง: </h4>
-                    <div class="content__tag__content">
-                        <a target="blank" href="#" role="button"></a>
-                    </div>
-                </div> -->
-                <!-- end relate tags -->
+              <!-- start relate tags -->
+              <div class="content__tag">
+                <h4>แท็กที่เกี่ยวข้อง : </h4>
+                <div class="content__tag__content">
+                  <% review.tags.forEach(function(tag){ %>
+                  <a class="btn-tag mr-1" href="">
+                    <span class="d-inline-block"><%= tag.name %></span> 
+                  </a>
+                <% }) %>
+                </div>
+            </div>
+            <!-- end relate tags -->
+          </div>
+
+            <div class="content__aside order-3">
+              <!-- start relate news  -->
+              <section class="box">
+                <header class="box__header">
+                  <h3>
+                    <i class="far fa-file-alt"></i>
+                    เรื่องอื่นๆ ที่น่าสนใจ
+                  </h3>
+                </header>
+                <div class="row">
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div> 
+              </section>
+              <!-- end relate news  -->
+
+              <!-- start relate column -->
+              <section class="box line-box">
+                <header class="box__header">
+                  <h3>
+                    <i class="fas fa-comments"></i>
+                    กระทู้อื่นๆ ที่เกี่ยวข้อง
+                  </h3>
+                </header>
+                <div class="row">
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div> 
+              </section>
+              <!-- end relate column  -->                
+
+              <!-- start relate party -->
+              <section class="box line-box">
+                <header class="box__header">
+                  <h3>
+                    <i class="fas fa-users"></i>
+                    ปาร์ตี้อื่นๆ ที่เกี่ยวข้อง
+                  </h3>
+                </header>
+                <div class="row">
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6 item-aside">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  href="">
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="">
+                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        </a>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  >
+                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            ใส่วันที่โพสต์
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div> 
+              </section>
+              <!-- end relate party  --> 
+
+             
+              <!-- start hot tag -->
+              <!-- <section class="box line-tag-box">
+                <header class="box__header">
+                  <h3>
+                    <i class="fas fa-tags"></i>
+                    คำยอดฮิต
+                  </h3>
+                </header>
+                <div class="content__tag__content">
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                  <a class="btn-tag" href="">
+                    <span class="d-inline-block">แชร์เรื่องนี้</span> 
+                  </a>
+                </div>
+              </section> -->
+              <!-- end hot tag  -->                 
+
             </div>
 
             <!-- start comment section -->
             <div class="content__comment order-2 order-lg-3">
-                <section class="party-comment-box box">
-                    <header class="party-comment-header box__header">
-                        <h3>
-                            <i class="fas fa-comments fa-sm text-muted mr-1"></i>
-                            ช่องสนทนา
+              <section class="party-comment-box box">
+                  <header class="party-comment-header box__header">
+                        <h3 class="d-inline-block">
+                          <i class="fas fa-comments fa-sm text-muted mr-1"></i>
+                          แสดงความคิดเห็น
                         </h3>
-                    </header>
-                     <div class="container">
-                      <div class="be-comment-block">
-                        <% review.comments.forEach(function(comment){ %>
-                        <div class="be-comment">
-                          <div class="be-img-comment">	
-                            <a href="#">
-                              <img src=<%= '../uploads/user/' + comment.user_post.image %> class="be-ava-comment">
-                            </a>
-                          </div>
-                          <div class="be-comment-content">
-                              <span class="be-comment-name">
-                                <a href="#"><%= comment.user_post.alias %></a>
-                              </span>
-                              <span class="be-comment-time">
-                                <i class="fa fa-clock-o"></i>
-                                <%= comment.date %>
-                                <% if(currentUser && currentUser._id.equals(comment.user_post.id)){ %>
-                                <div id="member-box d-inline" class="topbar__member-comment">
-                                  <div class="dropdown">
-                                    <button class="btn dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <i class="fas fa-ellipsis-h"></i>
+                        <div class="sort-comment d-inline-block">
+                          <select class="custom-select d-inline-block" id="inputGroupSelect03" aria-label="Example select with button addon">
+                            <option selected>เรียงตาม</option>
+                            <option value="1">ยอดนิยม</option>
+                            <option value="2">ล่าสุด</option>
+                            <option value="3">เก่าสุด</option>
+                          </select>
+                        </div>
+                  </header>
+
+                   <div class="container">
+                    <div class="be-comment-block">
+                      <% review.comments.forEach(function(comment){ %>
+                      <div class="be-comment">
+                        <div class="be-img-comment">	
+                          <a href="#">
+                            <img src=<%= '../uploads/user/' + comment.user_post.image %> class="be-ava-comment">
+                          </a>
+                        </div>
+                        <div class="be-comment-content">
+                            <span class="be-comment-name">
+                              <a href="#"><%= comment.user_post.alias %></a>
+                            </span>
+                            <span class="be-comment-time">
+                              <i class="fa fa-clock-o"></i>
+                              <%= comment.date %>
+                              <% if(currentUser && currentUser._id.equals(comment.user_post.id)){ %>
+                              <div id="member-box d-inline" class="topbar__member-comment">
+                                <div class="dropdown">
+                                  <button class="btn dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                  </button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button class="dropdown-item" href="#">
+                                      <i class="fas fa-edit"></i>
+                                      แก้ไขข้อความ
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <button class="dropdown-item" href="#">
-                                        <i class="fas fa-edit"></i>
-                                        แก้ไขข้อความ
-                                      </button>
-                                      <form action="/news/<%= news._id %>/comment/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
-                                      <button class="dropdown-item">
-                                        <i class="far fa-trash-alt"></i>
-                                        ลบข้อความ
-                                      </button>
-                                      </form>
-                                    </div>
+                                    <form action="/news/<%= review._id %>/comment/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
+                                    <button class="dropdown-item">
+                                      <i class="far fa-trash-alt"></i>
+                                      ลบข้อความ
+                                    </button>
+                                    </form>
                                   </div>
                                 </div>
-                                <% } %>
-                              </span>
-                              <p class="be-comment-text">
-                                <%= comment.content %>
-                              </p>
-                          </div>
-                        </div>
-                        <% }) %>
-                        <% if(currentUser){ %>
-                        <form class="form-block" action="/news/<%= news._id %>/comment/create" method="POST">
-                          <div class="row">
-                            <div class="col-md-12">									
-                              <div class="form-group">
-                                <textarea class="form-input" required placeholder="เริ่มแชทกับพวกเขาเลย!" name="comment[content]"></textarea>
                               </div>
+                              <% } %>
+                            </span>
+                            <p class="be-comment-text">
+                              <%= comment.content %>
+                            </p>
+                        </div>
+                      </div>
+                      <% }) %>
+                      <% if(currentUser){ %>
+                      <form class="form-block" action="/review/<%= review._id %>/comment/create" method="POST">
+                        <div class="row">
+                          <div class="col-md-12">									
+                            <div class="form-group">
+                              <textarea class="form-input" required placeholder="เพิ่มความคิดเห็นของคุณ..." name="comment[content]"></textarea>
                             </div>
                           </div>
-                          <div class="submit-comment">
-                            <button type="submit" class="submit-comment-btn">ส่ง</button>
-                        </div> 
                         </div>
-                        </form>
+                        <div class="submit-comment">
+                          <button type="submit" class="submit-comment-btn">ส่ง</button>
+                      </div> 
                       </div>
-                    <% } %>
-                </section>
-            </div>
-            <!-- End comment section -->
+                      </form>
+                    </div>
+                  <% } %>
+              </section>
+          </div>
+          <!-- End comment section -->
         </div>
   
 
