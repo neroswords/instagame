@@ -9,6 +9,7 @@ const express = require('express'),
     Comment = require('../models/comment'),
     Team = require('../models/team'),
     News = require('../models/news'),
+    Review = require('../models/review'),
     middleware = require('../middleware');
 
     var moment = require('moment');
@@ -80,6 +81,30 @@ router.post('/create', middleware.isLoggedIn, function(req, res){
                         comment.save();
                         foundTeam.comments.push(comment);
                         foundTeam.save();
+                        res.redirect("back");
+                    }
+                })
+            }
+        })
+    } 
+    else if(req.params.models === "review"){
+        Review.findById(req.params.id, function(err, foundReview){
+            if(err){
+                console.log(err);
+            } else{
+                Comment.create(req.body.comment, function(err,comment){
+                    if(err){
+                        console.log(err);
+                    } else {
+                        comment.user_post.id = req.user._id;
+                        comment.user_post.alias = req.user.alias;
+                        comment.user_post.image = req.user.image;
+                        var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
+                        let n_date = new Date(asiaTime).toISOString();
+                        comment.date = n_date;
+                        comment.save();
+                        foundReview.comments.push(comment);
+                        foundReview.save();
                         res.redirect("back");
                     }
                 })
