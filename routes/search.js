@@ -26,8 +26,10 @@ const express = require("express"),
                 if(err){
                     console.log(err);
                 } else {
-                    foundtag.view++;
-                    foundtag.save();
+                    for(let tag of foundtag){
+                    tag.view++;
+                    tag.save();
+                    }
                     Team.find({tags : {$in : foundtag}},function(err,foundTeam){
                         Review.find({tags : {$in : foundtag}},function(err,foundReview){
                             Community.find({tags : {$in : foundtag}},function(err,foundCommu){
@@ -63,7 +65,9 @@ const express = require("express"),
             Tag.find({name : regex}, function(err, foundtag){
                 if(err){
                     console.log(err);
-                } else {
+                } else { 
+                    foundtag[0].view++;
+                    foundtag[0].save();
                     Team.find({tags : {$in : foundtag}},function(err,foundTeam){
                         Review.find({tags : {$in : foundtag}},function(err,foundReview){
                             Community.find({tags : {$in : foundtag}},function(err,foundCommu){

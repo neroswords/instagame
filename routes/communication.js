@@ -156,8 +156,9 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
             console.log("error create commu");
         }
         else{
-            console.log(req.body.tags);
-            
+            var n_type_tag = "tag";
+            var n_type_game = "game";
+            var n_view = 1;
             var tagsarr = req.body.tags[0].split(',');
             await tagsarr.push(req.body.type);
             
@@ -166,7 +167,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
                         if(err){
                             console.log(err);
                         } else if(!findTag.length){
-                            let n_tag = {name : tag}
+                            let n_tag = {name : tag, type : n_type_tag ,view :n_view}
                             Tag.create(n_tag,async function(error, newTag){
                                 if(error){
                                     console.log(error);
@@ -176,7 +177,8 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
                                 }
                             })
                         } else {
-                            console.log("find");
+                            findTag[0].view++;
+                            findTag[0].save();
                             newCommu.tags.push(findTag[0]._id);
                         }    
                     }) 
@@ -187,12 +189,14 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
                         console.log(err);
                         
                     } else if(!findGame.length){
-                        let game_tag = { name : n_game};
+                        let game_tag = { name : n_game, type : n_type_game, view : n_view};
                         Tag.create(game_tag,async function(error, gameTag){
                             newCommu.tags.push(gameTag);
                             await newCommu.save();
                         })
                     } else if(findGame.length){
+                        findGame[0].view++;
+                        findGame[0].save();
                         newCommu.tags.push(findGame[0]);
                         await newCommu.save();
                     }
