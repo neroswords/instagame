@@ -216,9 +216,9 @@ label a:hover {
 }
 
 .fb-login-btn {
-    background-color: STEELBLUE;
+    background-color: rgb(70,130,200);
     color: #fff;
-    border-color: STEELBLUE;
+    border-color: rgb(70,130,200);
     border-style: solid;
     font-size: 14px;
     padding: 4px 14px;
@@ -226,9 +226,9 @@ label a:hover {
 }
 
 .fb-login-btn:hover {
-    background-color: rgb(70,130,200);
+    background-color: steelblue;
     color: #fff;
-    border-color: rgb(70,130,200);
+    border-color: steelblue;
 }
 
 .fb-icon-login {

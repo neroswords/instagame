@@ -14,7 +14,7 @@
         <div id="teams-section" style="position: relative;">
           <header class="teams__headline headline-sticky">
             <div class="row">
-              <div class="col-md-9 col-sm-12">
+              <div class="col-md-9 col-xs-12">
                 <h4 class="headline__name">
                   คำที่ค้นหา:
                   <span><%= result %></span>
@@ -23,7 +23,7 @@
                   ผลการค้นหาพบ <span>24</span> รายการ
               </p> -->
               </div>
-              <div class="col-md-3 col-sm-12">
+              <div class="col-md-3 col-xs-12">
               </div>
             </div>
           </header>
@@ -60,7 +60,7 @@
                                             </span>
                                             <span class="entry__meta__posted">
                                               <i class="far fa-clock"></i>
-                                              <%= news.date %>
+                                              <%= moment(news.date).format("DD/MM/YYYY") %>
                                             </span>
                                           </div>
                                         </div>
@@ -72,7 +72,7 @@
                             <div class="add-view">
                               <a href="/search/<%= result %>/news">
                                 <button class="scrollto-add">
-                                  อ่านเพิ่ม
+                                  โหลดเพิ่ม
                                   <i class="fas fa-plus"></i>
                                 </button>
                               </a>
@@ -109,7 +109,7 @@
                                           </span>
                                           <span class="entry__meta__posted">
                                             <i class="far fa-clock"></i>
-                                            <%= commu.date %>
+                                            <%= moment(commu.date).format("DD/MM/YYYY") %>
                                           </span>
                                         </div>
                                       </div>
@@ -136,33 +136,102 @@
                           </header>
                           <div class="row">
                             <% Team.forEach(function(team){ %>
-                              <div class="col-md-3 order-1">
-                                  <article class="entry entry--hor-sm-only">
-                                      <figure class="entry__thumb entry__thumb--zoom">
-                                        <a href="/team/<%= team._id %>">
-                                          <img src="<%= '../uploads/team/' + team.image %>" class="card-img-top">
-                                        </a>
-                                      </figure>
-                                      <div class="entry__body">
-                                        <h4 class="entry__title">
-                                          <a href="/team/<%= team._id %>">
-                                            <%= team.head %>
-                                          </a>
-                                        </h4>
-                                        <div class="entry__meta">
-                                          <span class="entry__meta__count">
-                                            <i class="fas fa-eye"></i>
-                                            <%= team.viewers %>
-                                          </span>
-                                          <span class="entry__meta__posted">
-                                            <i class="far fa-clock"></i>
-                                            <%= team.date %>
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </article>
-                              </div>
-                          <% }) %>
+                              <div class="col-6 col-md-3">
+                              <article class="entry">
+                                <figure class="entry__thumb entry__thumb--zoom">
+                                  <a href="/team/<%= team._id %>">
+                                    <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '/uploads/team/' + team.image %> class="card-img-top">
+                                  </a>
+                                </figure>
+                                <div class="entry__body">
+                                  <h4 class="entry__title">
+                                    <a href="/team/<%= team._id %>">
+                                      <%= team.head %>
+                                    </a>
+                                  </h4>
+                                  <div class="entry__people">
+                                    <% if(team.number >= 1) { %>
+                                      <i class="fas fa-user"></i>
+                                    <% } %>
+                                    <% if(team.number >= 2) { %>
+                                      <i class="fas fa-user"></i>
+                                    <% } %>
+                                    <% if(team.number >= 3) { %>
+                                      <i class="fas fa-user"></i>
+                                    <% } %>
+                                    <% if(team.number >= 4) { %>
+                                      <i class="fas fa-user"></i>
+                                    <% } %>
+                                    <% if(team.number >= 5) { %>
+                                      <i class="fas fa-user"></i>
+                                    <% } %>
+                                    <% if(team.number >= 6) { %>
+                                      <i class="fas fa-user"></i>
+                                    <% } %>
+                                    <% if(team.number >= 7) { %>
+                                      <i class="fas fa-user"></i>
+                                    <% } %>
+                                    <% if(team.number >= 8) { %>
+                                      <i class="fas fa-user"></i>
+                                    <% } %>
+                                  </div>
+                                  <div class="entry__meta">
+                                    <span class="entry__meta__count">
+                                      ปาร์ตี้: <span><%= team.number %>/<%= team.maxplayer %></span>
+                                    </span>
+                                  </div>
+                                  <div class="entry__meta">
+                                    <span class="entry__meta__posted">
+                                      <i class="fas fa-crown"></i>
+                                      <span><%= team.user_post.alias %></span>
+                                    </span>
+                                  </div>
+                                  <div class="entry__meta">
+                                    <span class="entry__meta__count">
+                                      <i class="fas fa-calendar-week"></i>
+                                      <%= moment(team.appointment_date).format("DD/MM/YYYY") %>
+                                    </span>
+                                    <span class="entry__meta__posted">
+                                      <i class="far fa-clock"></i>
+                                      <%= team.appointment_time %>
+                                    </span>
+                                  </div>
+                                  <div class="entry__meta2">
+                                    <span class="entry__meta__count2">
+                                      <i class="fas fa-gamepad"></i>
+                                      <span><%= team.game %></span>
+                                    </span>
+                                  </div>
+                                  <div class="entry__meta3">
+                                    <% var inv = true %>
+                                    <% for(var n = 0; n < team.number; n++){ %>
+                                    <% if(currentUser && team.party[n].equals(currentUser._id)) { %>
+                                    <button class="entry__meta__posted4">
+                                      <i class="fas fa-check-circle"></i>
+                                      เข้าร่วมแล้ว
+                                    </button>
+                                    <% inv = false %>
+                                    <% break %>
+                                    <% }} %>
+                                    <% if(inv) { %>
+                                      <form action="/team/<%= team._id %>/addlist" method="POST" style="display: inline;">
+                                      <button class="entry__meta__posted2">
+                                        <i class="fas fa-sign-in-alt"></i>
+                                        เข้าร่วมปาร์ตี้
+                                      </button>
+                                      </form>
+                                    <% } %>
+                                    <a href="/team/<%= team._id %>">
+                                      <button class="entry__meta__posted3">
+                                        <i class="fas fa-info-circle"></i>
+                                        รายละเอียด
+                                      </button>
+                                    </a>
+                                  </div>
+                                </div>
+                              </article> 
+                            </div>
+                            <% }) %>
                           </div>
                           <div class="add-view">
                             <button class="scrollto-add" onclick="window.location.href='/search/<%= result %>/team';">
