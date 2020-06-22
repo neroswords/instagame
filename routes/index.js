@@ -16,6 +16,8 @@ const express = require("express"),
     Tag = require('../models/tag'),
     middleware = require('../middleware');
 
+    var moment = require('moment');
+
     const storage = multer.diskStorage({
         destination : './public/uploads/user',
         filename : function(req, file, cb){
@@ -66,7 +68,7 @@ router.get("/", function(req,res){
                                                                             Review.find({}, function(err,foundReview){
                                                                                 var n_Review = foundReview;
                                                                                 res.render("home",
-                                                                                {Battle_Royal : n_Battle_Royal,
+                                                                                {   Battle_Royal : n_Battle_Royal, 
                                                                                     FPS : n_FPS,
                                                                                     Fighting : n_Fighting,
                                                                                     MOBA : n_MOBA,
@@ -76,7 +78,8 @@ router.get("/", function(req,res){
                                                                                     Survival : n_Survival,
                                                                                     Team : n_Team,
                                                                                     Commu : n_Commu,
-                                                                                    Review : n_Review });
+                                                                                    Review : n_Review,
+                                                                                    moment: moment});
                                                                             }).sort({date : -1}).limit(8);
                                                                         }).sort({date : -1}).limit(8);
                                                                     }).sort({date : -1}).limit(8);    
