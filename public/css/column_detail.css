@@ -283,6 +283,7 @@
         padding-bottom: 1rem;
         margin-left: 1rem;
         margin-right: 1rem;
+        margin-top: 1rem;
     }
 
     .content__social__share {
@@ -427,11 +428,8 @@
     max-width: 35%;
     padding-right: 0;
     padding-left: 0;
+    margin-top: 1rem;
 }
-}
-
-.content__aside {
-    width: 100%;
 }
 
 .entry {
@@ -685,7 +683,7 @@
     .box__header h3{
         color: inherit;
         font-size: 1.25rem;
-        font-weight: bold;
+        font-weight: 600;
     }
 
     .box__header i{
@@ -886,6 +884,40 @@
     padding-left: 7.5px;
     }
     
+    .hot-game {
+        background-color: #212529!important;
+    }
+
+    .hot-game-icon {
+        color: #E74C3C;
+    }
+
+    .add-view {
+        display: flex;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        justify-content: center;
+    }
+    
+    .scrollto-add {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        background-color: transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        transition: color .15s;
+    }
+    
+    .scrollto-add:hover {
+        color: #fff;
+        background-color: teal;
+        border-color: teal;
+    }
       
     
     

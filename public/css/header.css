@@ -233,3 +233,21 @@ img {
   box-shadow: none;
 }
 
+.results {
+  position:relative; 
+  width: 100%; 
+  top: -1px;
+}
+ 
+.results-list {
+  position: absolute; 
+  background-color: white; 
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: .5rem;
+  width: 100%;
+  text-decoration: none;
+}
+.results-list:hover {
+border: 2px solid lightseagreen;
+}

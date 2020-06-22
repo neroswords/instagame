@@ -186,7 +186,7 @@
 
 .entry__meta__posted0 {
     display: inline-block;
-    font-size: .875rem;
+    font-size: 1rem;
     color: #273746;
     font-weight: 600;
     width: 20%;
@@ -196,7 +196,23 @@
 .party-people {
     display: inline-block;
     width: 80%;
-    margin-left: -6px;
+}
+
+@media (max-width: 768px) {
+    .entry__meta__posted0 {
+        display: inline-block;
+        font-size: 1rem;
+        color: #273746;
+        font-weight: 600;
+        width: 30%;
+        float: left;
+    }
+    
+    .party-people {
+        display: inline-block;
+        width: 70%;
+        margin-left: -10px;
+    }
 }
 
 .party-detail-info0 {
@@ -205,6 +221,7 @@
     background-color: #fff;
     color: dimgray;
     font-size: 1rem;
+    margin-left: 10px;
 }
 
 .party-detail-info {
@@ -320,6 +337,29 @@
     border-radius: .5rem;
 }
 
+@media (max-width: 768px) {
+    .entry__meta__posted5 {
+        margin: 3px 0;
+        width: 100%;
+    }
+    .entry__meta__posted4 {
+        margin: 3px 0;
+        width: 100%;
+    }
+    .entry__meta__posted3 {
+        margin: 5px 0;
+        width: 100%;
+    }
+    .entry__meta__posted2 {
+        margin: 3px 0;
+        width: 100%;
+    }
+    .entry__meta__posted1 {
+        margin: 3px 0;
+        width: 100;
+    }
+}
+
 .entry__body p {
     height: 65px;
     margin-bottom: 5px;
@@ -381,11 +421,11 @@
     background-color: STEELBLUE;
 }
 
-@media (min-width: 320px) and (max-width: 767.98px) {
+@media (max-width: 767.98px) {
     .submit-comment-btn  {
         display: block;
         margin: auto;
-        width: 20%;
+        width: 100%;
     }
  }
 
@@ -462,6 +502,7 @@
         color: #b4b7c1;
     }
 
+
 }
 
 @media (min-width: 1200px) {
@@ -500,6 +541,20 @@
     padding: 15px 20px 20px 20px;
 }
 
+@media (max-width: 768px) {
+    .be-comment-text {
+        font-size: 14px;
+        line-height: 18px;
+        color: #7a8192;
+        display: block;
+        background: #f6f6f7;
+        border: 1px solid #edeff2;
+        padding: 10px 20px;
+        width: 100%;
+        position: relative;
+    }
+}
+
 .form-group .form-input {
     font-size: 14px;
     line-height: 50px;
@@ -520,6 +575,24 @@
 .form-group textarea.form-input {
     height: 150px;
 }
+
+.btn-tag {
+    padding: .125rem .25rem;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+}
+
+.btn-tag:hover {
+    color: #fff;
+    background-color: #484d52;
+    border-color: #484d52;
+} 
 
 
 

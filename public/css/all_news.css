@@ -273,6 +273,52 @@
         z-index: 5;
     }
     
+    .dropdown {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        position: relative;
+        text-align: left;
+    }
+    
+    .categoly-btn {
+        color: #fff;
+        padding: .3rem;
+        background: #3949AB;
+        border: 1px solid #3949AB;
+        font-size: 16px;
+        border-radius: .5rem;
+    }
+
+    .categoly-btn:hover {
+        background: #283593;
+        border: 1px solid #283593;
+    }
+
+    .dropdown-item {
+        font-size: 16px;
+        border-radius: 1rem;
+    }
+
+    .dropdown-item:hover {
+        background: #3949AB;
+        border: 1px solid #3949AB;
+    }
+
+    .categoly-btn-review {
+        color: #fff;
+        padding: .3rem;
+        background: #EC407A;
+        border: 1px solid #EC407A;
+        font-size: 16px;
+        border-radius: .5rem;
+    }
+
+    .categoly-btn-review:hover {
+        background: #C2185B;
+        border: 1px solid #C2185B;
+    }
+
     @media (max-width: 767.98px) {
         .select-news-game_type {
             width: 100%;
@@ -324,28 +370,6 @@
     }
 
     .create_team-icon {
-        border: solid 1px #45B39D;
-        border-radius: .5rem;
-        display: inline-block;
-        position: relative;
-        padding: 5px 5px;
-        margin-left: 10px;
-        margin-top: 10px;
-        text-align: center;
-        justify-content: right ;
-        width: auto;
-        color: white;
-        background-color: #45B39D;
-        font-size: 1rem;
-    }
-
-    .create_team-icon:hover {
-        border: solid 1px #138D75;
-        background-color: #138D75;
-        color: WHITE;
-    }
-
-    .create_team-icon-review {
         border: solid 1px #3498DB;
         border-radius: .5rem;
         display: inline-block;
@@ -361,9 +385,31 @@
         font-size: 1rem;
     }
 
-    .create_team-icon-review:hover {
+    .create_team-icon:hover {
         border: solid 1px #2874A6;
         background-color: #2874A6;
+        color: WHITE;
+    }
+
+    .create_team-icon-review {
+        border: solid 1px #BA68C8;
+        border-radius: .5rem;
+        display: inline-block;
+        position: relative;
+        padding: 5px 5px;
+        margin-left: 10px;
+        margin-top: 10px;
+        text-align: center;
+        justify-content: right ;
+        width: auto;
+        color: white;
+        background-color: #BA68C8;
+        font-size: 1rem;
+    }
+
+    .create_team-icon-review:hover {
+        border: solid 1px #8E24AA;
+        background-color: #8E24AA;
         color: WHITE;
     }
 

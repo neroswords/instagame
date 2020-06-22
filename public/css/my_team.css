@@ -453,6 +453,58 @@ section .col-md-6 {
     background-color: STEELBLUE;
 }
 
+@media (max-width: 768px) {
+    .entry__meta__posted3 {
+        font-size: .875rem;
+        color: white;
+        border-color: rgb(72, 166, 224);
+        background-color: rgb(72, 166, 224);
+        border: 1px solid;
+        padding: 5px;
+        width: 100%;
+        border-radius: .5rem;
+    }
+    .entry__meta__posted4 {
+        font-size: .875rem;
+        color: white;
+        border-color: #B3B6B7;
+        background-color: #B3B6B7;
+        border: 1px solid;
+        padding: 5px;
+        width: 100%;
+        border-radius: .5rem;
+    }
+
+    .entry__meta__posted2 {
+        font-size: .875rem;
+        color: white;
+        border-color: CORAL;
+        background-color: CORAL;
+        border: 1px solid;
+        padding: 5px;
+        width: 100%;
+        border-radius: .5rem;
+    }
+
+ }
+
+ .btn-tag {
+    padding: .125rem .25rem;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+}
+
+.btn-tag:hover {
+    color: #fff;
+    background-color: #484d52;
+    border-color: #484d52;
+} 
 
 
 

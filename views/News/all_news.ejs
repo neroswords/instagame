@@ -88,21 +88,22 @@
     <main class="news-body" role="news"> 
         <div id="news-section" style="position: relative;">
           <header class="headline headline-sticky">
-            <div class="select-news-game_type">
-              <label for="exampleFormControlSelect1 d-inline-block">เลือกดูข่าวตามประเภทเกม:</label>
-              <form action="/news/category" method="POST">
-              <select class="game-type form-item" id="type" name="type" required aria-placeholder="เลือกประเภทเกมส์" onchange="this.form.submit()">
-                <option value="">เลือกประเภทเกมส์</option>
-                <option value="Survival" >Survival</option>
-                <option value="RPG">Role-Player Game (RPG)</option>
-                <option value="Battle_Royal">Battle Royale</option>
-                <option value="FPS">First Person Shooter (FPS)</option>
-                <option value="MOBA">Multiplayer Online Battle Arena (MOBA)</option>
-                <option value="Fighting">Fighting</option>
-                <option value="Sports">Sports</option>
-                <option value="Racing">Racing</option>
-              </select>
-            </form>
+            <div class="dropdown">
+              <button class="categoly-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                เลือกดูข่าวตามประเภทเกม
+                <i class="fas fa-gamepad"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-style" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">จากเกมทุกประเภท</a>
+                <a class="dropdown-item" href="#">Survival</a>
+                <a class="dropdown-item" href="#">Role-Player Game (RPG)</a>
+                <a class="dropdown-item" href="#">Battle Royale</a>
+                <a class="dropdown-item" href="#">First Person Shooter (FPS)</a>
+                <a class="dropdown-item" href="#">Multiplayer Online Battle Arena (MOBA)</a>
+                <a class="dropdown-item" href="#">Fighting</a>
+                <a class="dropdown-item" href="#">Sports</a>
+                <a class="dropdown-item" href="#">Racing</a>
+              </div>
             </div>
             <% if(currentUser && (currentUser.class === "Noble"|| currentUser.class === "King")){ %>
             <button class="create_team-icon" onclick="window.location.href='/news/create';">

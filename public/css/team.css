@@ -68,6 +68,28 @@
         z-index: 5;
     }
 
+    .dropdown {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        position: relative;
+        text-align: left;
+    }
+
+    .categoly-btn-review {
+        color: #fff;
+        padding: .3rem;
+        background: #FF5722;
+        border: 1px solid #FF5722;
+        font-size: 16px;
+        border-radius: .5rem;
+    }
+
+    .categoly-btn-review:hover {
+        background: #BF360C;
+        border: 1px solid #BF360C;
+    }
+
     @media (min-width: 576px) {
         .teams__search {
             width: 100%;
@@ -461,6 +483,24 @@
 
     }
 
+    .btn-tag {
+        padding: .125rem .25rem;
+        display: inline-block;
+        white-space: nowrap;
+        text-align: center;
+        vertical-align: middle;
+        line-height: normal;
+        width: auto;
+        height: auto;
+        font-size: 14px;
+    }
+    
+    .btn-tag:hover {
+        color: #fff;
+        background-color: #484d52;
+        border-color: #484d52;
+    } 
+
     .entry__meta__posted2 {
         font-size: .875rem;
         color: white;
@@ -505,6 +545,41 @@
         width: auto;
         border-radius: .5rem;
     }
+
+    @media (max-width: 768px) {
+        .entry__meta__posted2 {
+            font-size: .875rem;
+            color: white;
+            border-color: YELLOWGREEN;
+            background-color: YELLOWGREEN;
+            border: 1px solid;
+            padding: 5px;
+            width: 100%;
+            border-radius: .5rem;
+        }
+    
+        .entry__meta__posted3 {
+            font-size: .875rem;
+            color: white;
+            border-color: rgb(72, 166, 224);
+            background-color: rgb(72, 166, 224);
+            border: 1px solid;
+            padding: 5px;
+            width: 100%;
+            border-radius: .5rem;
+        }
+
+        .entry__meta__posted4 {
+            font-size: .875rem;
+            color: white;
+            border-color: #B3B6B7;
+            background-color: #B3B6B7;
+            border: 1px solid;
+            padding: 5px;
+            width: 100%;
+            border-radius: .5rem;
+        }
+     }
 
     .entry__body p {
         height: 65px;

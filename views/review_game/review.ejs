@@ -87,19 +87,22 @@
     <main class="news-body" role="news"> 
         <div id="news-section" style="position: relative;">
           <header class="headline headline-sticky">
-            <div class="select-news-game_type">
-              <label for="exampleFormControlSelect1 d-inline-block">ดูรีวิวตามประเภทเกม:</label>
-              <select class="game-type" id="game-type" name="game-type">
-                <option>จากเกมทุกประเภท</option>
-                <option>Survival</option>
-                <option>Role-Player Game (RPG)</option>
-                <option>Battle Royale</option>
-                <option>First Person Shooter (FPS)</option>
-                <option>Multiplayer Online Battle Arena (MOBA)</option>
-                <option>Fighting</option>
-                <option>Sports</option>
-                <option>Racing</option>
-              </select>
+            <div class="dropdown">
+              <button class="categoly-btn-review" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                เลือกดูรีวิวตามประเภทเกม
+                <i class="fas fa-star"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-style" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">จากเกมทุกประเภท</a>
+                <a class="dropdown-item" href="#">Survival</a>
+                <a class="dropdown-item" href="#">Role-Player Game (RPG)</a>
+                <a class="dropdown-item" href="#">Battle Royale</a>
+                <a class="dropdown-item" href="#">First Person Shooter (FPS)</a>
+                <a class="dropdown-item" href="#">Multiplayer Online Battle Arena (MOBA)</a>
+                <a class="dropdown-item" href="#">Fighting</a>
+                <a class="dropdown-item" href="#">Sports</a>
+                <a class="dropdown-item" href="#">Racing</a>
+              </div>
             </div>
             <button class="create_team-icon-review" onclick="window.location.href='/review/create';">
                 <i class="fas fa-pen"></i>
@@ -131,7 +134,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= review.date %>
+                              <%= moment(review.date).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
