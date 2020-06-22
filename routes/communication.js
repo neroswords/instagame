@@ -6,9 +6,11 @@ const express = require("express"),
     passport = require('passport'),
     User = require('../models/user'),
     Communication = require('../models/commu'),
+    Team = require('../models/team'),
+    News = require('../models/news'),
+    Review = require('../models/review'),
     Tag = require('../models/tag'),
-    middleware = require('../middleware'),
-    async = require('async');
+    middleware = require('../middleware');
 
     var moment = require('moment');
 
@@ -128,7 +130,7 @@ router.get("/my_column",middleware.isLoggedIn, function(req,res){
     }).sort({date : -1})
 })
 
-router.get("/create", function(req,res){
+router.get("/create", middleware.isLoggedIn, function(req,res){
     res.render("c_column");
 });
 
@@ -214,7 +216,30 @@ router.get("/:id", function(req,res){
         } else{
             idCommu.viewers++;
             idCommu.save();
-            res.render("column_detail",{commu:idCommu, moment: moment});
+            var n_type_game = "game";
+            Tag.find({type : n_type_game}, function(err, hotGame){
+                Review.find({tags : {$in : hotGame }}, function(err,HOTGAME){
+                    var n_hotgame = HOTGAME;
+                    Tag.find({name : idCommu.game}, function(err,foundTag){
+                        News.find({tags : {$in : foundTag }}, function(err,foundrelateNews){
+                            var n_News = foundrelateNews;
+                            Team.find({tags : {$in : foundTag }}, function(err,foundrelateTeam){
+                                var n_Team = foundrelateTeam;
+                                Communication.find({tags : {$in : foundTag }}, function(err,foundrelateCommu){
+                                    var n_Commu = foundrelateCommu;
+                                        res.render("column_detail",{commu:idCommu, 
+                                            moment: moment, 
+                                            reCommu : n_Commu, 
+                                            reTeam : n_Team, 
+                                            reNews : n_News, 
+                                            hotgames : n_hotgame});
+    
+                                }).sort({date : -1}).limit(6);
+                            }).sort({date : -1}).limit(2);    
+                        }).sort({date : -1}).limit(2);
+                    })  
+                })
+            }).sort({view : -1}).limit(4);
             }
         }
     )}

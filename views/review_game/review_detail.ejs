@@ -34,7 +34,7 @@
               <img class="img-fluid load lazy-img" src=<%= '../uploads/review/' + review.image %> alt="Responsive image">
           </figure>
           <div class="featured-box__desc">
-            <h1><%= review.head %></h1>
+            <h1><%= review.game %></h1>
             <div class="featured-box__meta">
                 <span class="mr-2">
                     <i class="far fa-user-circle"></i>
@@ -59,13 +59,10 @@
                     <a href="/">หน้าแรก</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">ข่าวเกม</a>
+                    <a href="#">รีวิวเกม</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">ข่าวเกม: [ประเภทเกม]</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page"> 
-                    <a href="#">เตรียมออกเกมสำหรับ PS4/Switch/PC ที่จะมีเนื้อเรื่องแบบ if</a>
+                    <a href="#"><%= review.game %></a>
                 </li>
             </ol>
         </nav>
@@ -107,7 +104,7 @@
                 <h4>แท็กที่เกี่ยวข้อง : </h4>
                 <div class="content__tag__content">
                   <% review.tags.forEach(function(tag){ %>
-                  <a class="btn-tag mr-1" href="">
+                  <a class="btn-tag mr-1" href="/search/<%= tag.name %>">
                     <span class="d-inline-block"><%= tag.name %></span> 
                   </a>
                 <% }) %>
@@ -115,163 +112,57 @@
             </div>
             <!-- end relate tags -->
 
-              <!-- start relate review  -->
+              <!-- start relate news  -->
               <section class="box">
                 <header class="box__header">
                   <h3>
-                    <i class="fas fa-star"></i>
-                    รีวิวอื่นๆ ที่คล้ายกัน                    
+                    <i class="far fa-file-alt"></i>
+                    ข่าวอื่นๆ ที่คล้ายกัน                  
                   </h3>
                 </header>
                 <div class="row">
+                  
+                  <% reNews.forEach(function(renews){ %>
+                    <% var invi = false; %>
+                    <% if(renews._id.equals(review._id)){  %>
+                    <% invi = true; %>
+                     <% } %>
+                    <% if(invi === false){ %>
                   <div class="col-6">
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
-                        <a href=""></a>
-                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        <a href="/news/<%= renews._id %>">
+                        <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '/uploads/news/' + renews.image %> class="card-img-top">
                         </a>
                       </figure>
                       <div class="entry__body">
                         <h4 class="entry__title">
-                          <a  href="">
-                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                          <a  href="/news/<%= renews._id %>">
+                            <%= renews.head %>
                           </a>
                         </h4>
                         <div class="entry__meta">
                           <span class="entry__meta__count">
                             <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
+                            <%= renews.viewers %>
                           </span>
                           <span class="entry__meta__posted">
                             <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
+                            <%= moment(renews.date).format("DD/MM/YYYY") %>
                           </span>
                         </div>
                       </div>
                     </article>
                   </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href=""></a>
-                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a  href="">
-                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href=""></a>
-                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a  href="">
-                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href=""></a>
-                          <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a  href="">
-                            Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                    <% } %>
+                  <% }) %>
                 </div> 
               </section>
-              <!-- end relate review  -->
-            
+              <!-- end relate news  -->
+              
           </div>
 
-          <div class="content__aside order-3">
-            <!-- start relate news -->
-            <section class="box ">
-              <header class="box__header">
-                <h3>
-                  <i class="far fa-file-alt"></i>
-                  ข่าวอื่นๆ ที่เกี่ยวข้อง
-                </h3>
-              </header>
-              <div class="row">
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href=""></a>
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a  href="">
-                          Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
-                        </a>
-                      </h4>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-            </section>
-            <!-- end relate news  -->                
+          <div class="content__aside order-3">              
 
             <!-- start relate commu -->
             <section class="box">
@@ -282,33 +173,35 @@
                 </h3>
               </header>
               <div class="row">
-                <div class="col-6">
-                  <article class="entry">
-                    <figure class="entry__thumb entry__thumb--zoom">
-                      <a href=""></a>
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                      </a>
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title">
-                        <a  href="">
-                          Shadowverseฉลองครบรอบเปิดตัว Leader Skin ใหม่และโคลาโบกับ Code Geass!
+                <% reCommu.forEach(function(recommu){ %>
+                  <div class="col-6">
+                    <article class="entry">
+                      <figure class="entry__thumb entry__thumb--zoom">
+                        <a href="/commu/<%= recommu._id %>"></a>
+                          <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '/uploads/commu/' + recommu.image %>  class="card-img-top">
                         </a>
-                      </h4>
-                      <div class="entry__meta">
-                        <span class="entry__meta__count">
-                          <i class="fas fa-eye"></i>
-                          ใส่ยอดวิว
-                        </span>
-                        <span class="entry__meta__posted">
-                          <i class="far fa-clock"></i>
-                          ใส่วันที่โพสต์
-                        </span>
+                      </figure>
+                      <div class="entry__body">
+                        <h4 class="entry__title">
+                          <a  href="/commu/<%= recommu._id %>">
+                            <%= recommu.head %>
+                          </a>
+                        </h4>
+                        <div class="entry__meta">
+                          <span class="entry__meta__count">
+                            <i class="fas fa-eye"></i>
+                            <%= recommu.viewers %>
+                          </span>
+                          <span class="entry__meta__posted">
+                            <i class="far fa-clock"></i>
+                            <%= moment(recommu.date).format("DD/MM/YYYY") %>
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </article>
+                    </article>
+                  </div>
+                  <% }) %>
                 </div>
-              </div> 
             </section>
             <!-- end relate commu  -->
             
@@ -321,55 +214,22 @@
                 </h3>
               </header>
               <div class="row">
-                <div class="col-12">
-                  <article class="entry">
-                    <a href="">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title text-white">
-                          ชื่อเกม
-                      </h4>
-                    </div>
-                    </a>
-                  </article>
-                </div>
+                <% hotgames.forEach(function(hotgame){ %>
                 <div class="col-6">
                   <article class="entry">
-                    <a href="">
+                    <a href="/review/<% hotgame._id %>">
                       <figure class="entry__thumb entry__thumb--zoom">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
+                        <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '/uploads/review/' + hotgame.image %> class="card-img-top">
                     </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title text-white">
-                          ชื่อเกม
-                      </h4>
+                    <div class="entry__body"> 
+                        <h4 class="entry__title text-white">
+                            รีวิว : <%= hotgame.game %>
+                        </h4>
                     </div>
                     </a>
                   </article>
                 </div>
-                <div class="col-6">
-                  <article class="entry">
-                    <a href="">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <img src="https://www.gamemonday.com/wp-content/uploads/2020/05/KartRider-1352020-110-300x180.jpg" class="card-img-top" class="card-img-top">
-                    </figure>
-                    <div class="entry__body">
-                      <h4 class="entry__title text-white">
-                          ชื่อเกม
-                      </h4>
-                    </div>
-                    </a>
-                  </article>
-                </div>
-              </div>
-               <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
+                <% }) %>
             </section>
             <!-- end hot game -->
           </div>

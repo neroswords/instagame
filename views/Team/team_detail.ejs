@@ -87,9 +87,11 @@
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               แท็ก: 
-                              <a class="btn-tag mr-1 party-detail-info" href="">
-                                <span class="d-inline-block">ใส่แท็ก</span> 
-                              </a>
+                              <% team.tags.forEach(function(tag){ %>
+                                <a class="btn-tag mr-1 party-detail-info" href="/search/<%= tag.name %>">
+                                  <span class="d-inline-block"><%= tag.name %></span> 
+                                </a>
+                              <% }) %>
                             </span>
                           </div>
                           <div class="entry__meta3">

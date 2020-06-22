@@ -7,10 +7,12 @@ const express = require("express"),
     fs = require('fs'),
     passport = require('passport'),
     User = require('../models/user'),
+    Community = require('../models/commu'),
+    Team = require('../models/team'),
+    News = require('../models/news'),
     Review = require('../models/review'),
-    middleware = require('../middleware'),
     Tag = require('../models/tag'),
-    async = require('async');
+    middleware = require('../middleware');
 
 var moment = require('moment');     
 
@@ -130,19 +132,41 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         })
     })
 
+    
     router.get("/:id", function(req,res){
         Review.findById(req.params.id).populate('comments').populate('tags').exec( function(error, idReview){
             if(error){
                 console.log("ERROR");
                 
             } else{
-                idReview.viewers++;
-                idReview.save();
-                res.render("review_detail",{review:idReview, moment: moment});
+                    idReview.viewers++;
+                    idReview.save();
+                    var n_type_game = "game";
+                    Tag.find({type : n_type_game}, function(err, hotGame){
+                        Review.find({tags : {$in : hotGame }}, function(err,HOTGAME){
+                            var n_hotgame = HOTGAME;
+                            Tag.find({name : idReview.game}, function(err,foundTag){
+                                News.find({tags : {$in : foundTag }}, function(err,foundrelateNews){
+                                    var n_News = foundrelateNews;
+                                        Community.find({tags : {$in : foundTag }}, function(err,foundrelateCommu){
+                                            var n_Commu = foundrelateCommu;
+                                                res.render("review_detail",{
+                                                    review : idReview, 
+                                                    moment: moment, 
+                                                    reCommu : n_Commu,  
+                                                    reNews : n_News, 
+                                                    hotgames : n_hotgame});
+            
+                                        }).sort({date : -1}).limit(4);   
+                                }).sort({date : -1}).limit(6);
+                            })  
+                        })
+                    }).sort({view : -1}).limit(4);
                 }
             }
-        )}
-    )
+        )
+    }
+)
 
     router.get("/:id/edit", middleware.checkReviewOwner, function(req,res){
         Review.findById(req.params.id, function(err, foundReview){

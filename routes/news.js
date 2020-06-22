@@ -7,10 +7,12 @@ const express = require("express"),
     fs = require('fs'),
     passport = require('passport'),
     User = require('../models/user'),
+    Community = require('../models/commu'),
+    Team = require('../models/team'),
     News = require('../models/news'),
-    middleware = require('../middleware'),
+    Review = require('../models/review'),
     Tag = require('../models/tag'),
-    async = require('async');
+    middleware = require('../middleware');
 
 var moment = require('moment');     
 const { populate } = require("../models/user");
@@ -140,13 +142,31 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 console.log("ERROR");
                 
             } else{
-                idNews.viewers++;
-                idNews.save();
-                res.render("news",{news:idNews, moment: moment});
+                    idNews.viewers++;
+                    idNews.save();
+                    var n_type_game = "game";
+                    Tag.find({type : n_type_game}, function(err, hotGame){
+                        Review.find({tags : {$in : hotGame }}, function(err,HOTGAME){
+                            var n_hotgame = HOTGAME;
+                            Tag.find({name : idNews.game}, function(err,foundTag){
+                                News.find({tags : {$in : foundTag }}, function(err,foundrelateNews){
+                                    var n_News = foundrelateNews;
+                                        Community.find({tags : {$in : foundTag }}, function(err,foundrelateCommu){
+                                            var n_Commu = foundrelateCommu;
+                                                res.render("news",{news:idNews, 
+                                                    moment: moment, 
+                                                    reCommu : n_Commu,  
+                                                    reNews : n_News, 
+                                                    hotgames : n_hotgame});
+                                        }).sort({date : -1}).limit(4);
+                                    }).sort({date : -1}).limit(6);    
+                                })
+                            }).sort({view : -1}).limit(4);
+                    })
                 }
             }
-        )}
-    )
+        )
+    })
 
     router.get("/:id/edit", middleware.checkNewsOwner, function(req,res){
         News.findById(req.params.id, function(err, foundNews){

@@ -168,7 +168,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
 })
 
 router.get("/:id", function(req,res){
-    Team.findById(req.params.id).populate('comments').populate('party').exec(function(error, idTeam){
+    Team.findById(req.params.id).populate('comments').populate('party').populate('tags').exec(function(error, idTeam){
         if(error){
             console.log("ERROR");
             
