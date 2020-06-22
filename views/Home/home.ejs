@@ -104,7 +104,7 @@
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/news/<%= survival._id %>">
-                            <img src=<%= '../uploads/news/' + survival.image %> class="card-img-top">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + survival.image %> class="card-img-top">
                           </a>
                         </figure>
                         <div class="entry__body">
@@ -120,7 +120,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(survival.date).format("DD/MM/YYYY") %>
+                              <%= moment(survival.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -148,7 +148,7 @@
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/news/<%= rpg._id %>">
-                            <img src=<%= '../uploads/news/' + rpg.image %> class="card-img-top">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + rpg.image %> class="card-img-top">
                           </a>
                         </figure>
                         <div class="entry__body">
@@ -164,7 +164,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(rpg.date).format("DD/MM/YYYY") %>
+                              <%= moment(rpg.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -191,7 +191,7 @@
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/news/<%= battle_royal._id %>">
-                            <img src=<%= '../uploads/news/' + battle_royal.image %> class="card-img-top">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + battle_royal.image %> class="card-img-top">
                           </a>
                         </figure>
                         <div class="entry__body">
@@ -207,7 +207,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(battle_royal.date).format("DD/MM/YYYY") %>
+                              <%= moment(battle_royal.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -234,7 +234,7 @@
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
                         <a href="/news/<%= fps._id %>">
-                          <img src=<%= '../uploads/news/' + fps.image %> class="card-img-top">
+                          <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + fps.image %> class="card-img-top">
                         </a>
                       </figure>
                       <div class="entry__body">
@@ -250,7 +250,7 @@
                           </span>
                           <span class="entry__meta__posted">
                             <i class="far fa-clock"></i>
-                            <%= moment(fps.date).format("DD/MM/YYYY") %>
+                            <%= moment(fps.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                           </span>
                         </div>
                       </div>
@@ -277,7 +277,7 @@
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/news/<%= moba._id %>">
-                            <img src=<%= '../uploads/news/' + moba.image %> class="card-img-top">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + moba.image %> class="card-img-top">
                           </a>
                         </figure>
                         <div class="entry__body">
@@ -293,7 +293,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(moba.date).format("DD/MM/YYYY") %>
+                              <%= moment(moba.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -320,7 +320,7 @@
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/news/<%= fighting._id %>">
-                            <img src=<%= '../uploads/news/' + fighting.image %> class="card-img-top">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + fighting.image %> class="card-img-top">
                           </a>
                         </figure>
                         <div class="entry__body">
@@ -336,7 +336,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(fighting.date).format("DD/MM/YYYY") %>
+                              <%= moment(fighting.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -363,7 +363,7 @@
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/news/<%= sports._id %>">
-                            <img src=<%= '../uploads/news/' + sports.image %> class="card-img-top">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + sports.image %> class="card-img-top">
                           </a>
                         </figure>
                         <div class="entry__body">
@@ -379,7 +379,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(sports.date).format("DD/MM/YYYY") %>
+                              <%= moment(sports.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -406,7 +406,7 @@
                         <article class="entry">
                           <figure class="entry__thumb entry__thumb--zoom">
                             <a href="/news/<%= racing._id %>">
-                              <img src=<%= '../uploads/news/' + racing.image %> class="card-img-top">
+                              <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + racing.image %> class="card-img-top">
                             </a>
                           </figure>
                           <div class="entry__body">
@@ -422,7 +422,7 @@
                               </span>
                               <span class="entry__meta__posted">
                                 <i class="far fa-clock"></i>
-                                <%= moment(racing.date).format("DD/MM/YYYY") %>
+                                <%= moment(racing.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                               </span>
                             </div>
                           </div>
@@ -461,7 +461,7 @@
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
                         <a href="/review/<%= review._id %>">
-                          <img src=<%= '../uploads/review/' + review.image %> class="card-img-top">
+                          <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/review/' + review.image %> class="card-img-top">
                         </a>
                       </figure>
                       <div class="entry__body">
@@ -477,7 +477,7 @@
                           </span>
                           <span class="entry__meta__posted">
                             <i class="far fa-clock"></i>
-                            <%= moment(review.date).format("DD/MM/YYYY") %>
+                            <%= moment(review.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                           </span>
                         </div>
                       </div>
@@ -520,7 +520,7 @@
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/column_detail/<%= commu._id %>">
-                            <img src=<%= '../uploads/news/' + commu.image %> class="card-img-top">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + commu.image %> class="card-img-top">
                           </a>
                         </figure>
                         <div class="entry__body">
@@ -536,7 +536,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(commu.date).format("DD/MM/YYYY") %>
+                              <%= moment(commu.date, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -576,7 +576,7 @@
                   <div class="row">
                     <% Team.forEach(function(team){ %>
                       <div class="col-lg-3 col-6">
-                      <article class="entry" style="display: none;">
+                      <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/team_detail/<%= team._id %>">
                             <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/team/' + team.image %> class="card-img-top">
@@ -628,11 +628,11 @@
                           <div class="entry__meta">
                             <span class="entry__meta__count">
                               <i class="fas fa-calendar-week"></i>
-                              <%= moment(team.appointment_date).format("DD/MM/YYYY") %>
+                              <%= moment(team.appointment_date, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(team.appointment_time).format("DD/MM/YYYY") %>
+                              <%= moment(team.appointment_time, moment.ISO_8601).format("DD/MM/YYYY") %>
                             </span>
                           </div>
                           <div class="entry__meta2">
@@ -672,12 +672,6 @@
                     </div>
                     <% }) %>
                   </div>
-                  <header class="add-view">
-                    <button href="#" class="scrollto-add moba-news">
-                      โหลดเพิ่ม
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </header>
                 </section>
             </div>            
          
