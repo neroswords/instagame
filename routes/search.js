@@ -72,7 +72,7 @@ const express = require("express"),
                         Review.find({tags : {$in : foundtag}},function(err,foundReview){
                             Community.find({tags : {$in : foundtag}},function(err,foundCommu){
                                 News.find({tags : {$in : foundtag}},function(err,foundNews){
-                                    res.render("result",{Team : foundTeam, Review : foundReview, Commu : foundCommu, News : foundNews, result : n_result});
+                                    res.render("result",{moment : moment, Team : foundTeam, Review : foundReview, Commu : foundCommu, News : foundNews, result : n_result});
                                 }).sort({date : -1}).limit(4); 
                             }).sort({date : -1}).limit(4);
                         }).sort({date : -1}).limit(4);
