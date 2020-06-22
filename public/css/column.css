@@ -19,7 +19,6 @@
     min-height: 600px; 
 }
 
-
 @media (min-width: 1200px) {
     .teams__headline {
         max-width: 980px;
@@ -557,7 +556,46 @@ section .col-md-6 {
     width: 100%;
 }
 
+.dropdown {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    position: relative;
+    text-align: left;
+}
 
+@media (max-width: 768px){
+    .dropdown {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}
+
+.categoly-btn {
+    color: #fff;
+    padding: .3rem;
+    background: #E74C3C;
+    border: 1px solid #E74C3C;
+    font-size: 16px;
+    border-radius: .5rem;
+}
+
+.categoly-btn:hover {
+    background: #C0392B;
+    border: 1px solid #C0392B;
+}
+
+.dropdown-item {
+    font-size: 16px;
+    border-radius: 1rem;
+}
+
+.dropdown-item:hover {
+    background: #E74C3C;
+    border: 1px solid #E74C3C;
+}
 
 
 
