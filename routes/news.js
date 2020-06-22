@@ -43,6 +43,25 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         }).sort({date : -1});
     })
 
+    router.post("/category", function(req,res){
+        var n_type = req.body.type;
+        Tag.find({name : n_type}, function(err, foundtag){
+            if(err){
+                console.log(err);
+            } else {
+                News.find({tags : {$in : foundtag}}, function(error, someNews){
+                    if(error){
+                        console.log(error);
+                        
+                     }else {
+                        res.render("all_news",{News : someNews, moment: moment});
+                    }
+                }).sort({date : -1});
+        }
+    })
+})
+
+
     router.get("/create", middleware.isLoggedIn, function(req,res){
         res.render("c_news");
     })
@@ -63,6 +82,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
             }
             else{
                 var tagsarr = req.body.tags.split(',');
+                tagsarr.push(req.body.type);
                 for await (let tag of tagsarr) {
                     Tag.find({ name : tag },async function(err, findTag){
                         if(err){
@@ -108,6 +128,8 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         })
     })
 
+    
+
     router.get("/:id", function(req,res){
         News.findById(req.params.id).populate('comments').populate('tags').exec( function(error, idNews){
             if(error){
@@ -138,7 +160,6 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         let n_content = req.body.content;
         if(req.file){
             let n_image = req.file.filename;
-            console.log(n_image);
             News.findById(req.params.id, function(err, foundNews){
                 if(err){
                     console.log(err);

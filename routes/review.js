@@ -62,6 +62,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
             }
             else{
                 var tagsarr = req.body.tags.split(',');
+                tagsarr.push(req.body.type);
                 for await (let tag of tagsarr) {
                     Tag.find({ name : tag },async function(err, findTag){
                         if(err){

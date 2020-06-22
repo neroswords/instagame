@@ -90,22 +90,26 @@
           <header class="headline headline-sticky">
             <div class="select-news-game_type">
               <label for="exampleFormControlSelect1 d-inline-block">เลือกดูข่าวตามประเภทเกม:</label>
-              <select class="game-type" id="game-type" name="game-type">
-                <option>จากเกมทุกประเภท</option>
-                <option>Survival</option>
-                <option>Role-Player Game (RPG)</option>
-                <option>Battle Royale</option>
-                <option>First Person Shooter (FPS)</option>
-                <option>Multiplayer Online Battle Arena (MOBA)</option>
-                <option>Fighting</option>
-                <option>Sports</option>
-                <option>Racing</option>
+              <form action="/news/category" method="POST">
+              <select class="game-type form-item" id="type" name="type" required aria-placeholder="เลือกประเภทเกมส์" onchange="this.form.submit()">
+                <option value="">เลือกประเภทเกมส์</option>
+                <option value="Survival" >Survival</option>
+                <option value="RPG">Role-Player Game (RPG)</option>
+                <option value="Battle_Royal">Battle Royale</option>
+                <option value="FPS">First Person Shooter (FPS)</option>
+                <option value="MOBA">Multiplayer Online Battle Arena (MOBA)</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Sports">Sports</option>
+                <option value="Racing">Racing</option>
               </select>
+            </form>
             </div>
+            <% if(currentUser && (currentUser.class === "Noble"|| currentUser.class === "King")){ %>
             <button class="create_team-icon" onclick="window.location.href='/news/create';">
               <i class="far fa-file"></i>
               <span>สร้างข่าว</span> 
           </button>
+          <% } %>
           </header>
 
           <section class="box">

@@ -135,7 +135,7 @@ middlewareObj.checkTu = function(req,res,next){  //Top User
             } else{
                 console.log(foundCommu);
                 
-                if(foundUser.class === "Noble"){
+                if(foundUser.class === "Noble" || foundUser.class === "King"){
                     next();
                 }else{
                     res.redirect("back");
