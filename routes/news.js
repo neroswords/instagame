@@ -43,8 +43,8 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         }).sort({date : -1});
     })
 
-    router.post("/category", function(req,res){
-        var n_type = req.body.type;
+    router.get("/category/:category", function(req,res){
+        var n_type = req.params.category;
         Tag.find({name : n_type}, function(err, foundtag){
             if(err){
                 console.log(err);
@@ -82,7 +82,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
             }
             else{
                 var tagsarr = req.body.tags.split(',');
-                tagsarr.push(req.body.type);
+                await tagsarr.push(req.body.type);
                 for await (let tag of tagsarr) {
                     Tag.find({ name : tag },async function(err, findTag){
                         if(err){
