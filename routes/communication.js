@@ -79,8 +79,10 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
             console.log("error create commu");
         }
         else{
-            var tagsarr = req.body.tags.split(',');
-            console.log(tagsarr);
+            console.log(req.body.tags);
+            
+            var tagsarr = req.body.tags[0].split(',');
+            tagsarr.push(req.body.type);
             
                 for await (let tag of tagsarr) {
                     await Tag.find({ name : tag },async function(err, findTag){

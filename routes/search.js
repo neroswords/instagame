@@ -16,6 +16,8 @@ const express = require("express"),
     Tag = require('../models/tag'),
     middleware = require('../middleware');
 
+    var moment = require('moment'); 
+
     router.get("/result", function(req, res){
         if(req.query.search){
             var n_result = req.query.search;
@@ -56,7 +58,7 @@ const express = require("express"),
         if(req.params.keyword){
             var n_result = req.params.keyword;
             const regex = new RegExp(escapeRegex(req.params.keyword), 'gi');
-            Tag.find({name : regex}, function(err, foundtag){
+            Tag.find({name : req.params.keyword}, function(err, foundtag){
                 if(err){
                     console.log(err);
                 } else {
@@ -74,19 +76,30 @@ const express = require("express"),
         }
     });
 
-    router.get("/:category", function(req,req){
-        if(req.params.category === "news"){
-
-        }
-        if(req.params.category === "commu"){
-            
-        }
-        if(req.params.category === "review"){
-            
-        }
-        if(req.params.category === "team"){
-            
-        }
+    router.get("/:keyword/:category", function(req,res){
+        var n_keyword = req.params.keyword;
+        Tag.find({name : n_keyword }, function(err, foundtag){
+            if(req.params.category === "news"){
+                News.find({tags : {$in : foundtag}},function(err,foundNews){
+                    res.render("category_result",{Result: foundNews, keyword :req.params.keyword, category:req.params.category, moment:moment});
+                })
+            }
+            else if(req.params.category === "commu"){
+                Community.find({tags : {$in : foundtag}},function(err,foundCommu){
+                    res.render("category_result",{Result: foundCommu, keyword :req.params.keyword, category:req.params.category, moment:moment});
+                })
+            }
+            else if(req.params.category === "review"){
+                Review.find({tags : {$in : foundtag}},function(err,foundReview){
+                    res.render("category_result",{Result: foundReview, keyword :req.params.keyword, category:req.params.category, moment:moment});
+                })
+            }
+            else if(req.params.category === "team"){
+                Team.find({tags : {$in : foundtag}},function(err,foundTeam){
+                    res.render("category_result",{Result : foundTeam, keyword :req.params.keyword, category:req.params.category, moment:moment});
+                })
+            }
+        })
     })
 
     

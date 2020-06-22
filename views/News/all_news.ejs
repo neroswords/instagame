@@ -105,10 +105,12 @@
                 <a class="dropdown-item" href="#">Racing</a>
               </div>
             </div>
+            <% if(currentUser && (currentUser.class === "Noble"|| currentUser.class === "King")){ %>
             <button class="create_team-icon" onclick="window.location.href='/news/create';">
               <i class="far fa-file"></i>
               <span>สร้างข่าว</span> 
           </button>
+          <% } %>
           </header>
 
           <section class="box">

@@ -86,6 +86,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
         else{
             newTeam.party.push(req.user);
             var tagsarr = req.body.tags.split(',');
+            tagsarr.push(req.body.type);
             for await (let tag of tagsarr) {
                 await Tag.find({ name : tag },async function(err, findTag){
                     if(err){

@@ -1,0 +1,101 @@
+<%- include("patials/header") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>column</title>
+    <link rel="stylesheet" href="/css/column.css">
+</head>
+<body>
+    <main class="teams-body" role="news"> 
+        <div id="teams-section" style="position: relative;">
+          <header class="teams__headline headline-sticky">
+            <h2 class="headline__name"><%= category %> in <%= keyword %></h2>
+          </header>
+          
+  
+          <section class="box">
+            <div class="row" style="display:flex; flex-wrap:wrap;">
+              <% Result.forEach(function(result){ %>
+              <div class="col-lg-3 col-6">
+                <article class="entry" style="display: none;">
+                  <figure class="entry__thumb entry__thumb--zoom">
+                    <a href="/<%= category %>/<%= result._id %>">
+                      <img style="width:  200px; height: 100px; object-fit: cover;" src="/uploads/<%= category %>/<%= result.image %>" class="card-img-top">
+                    </a>
+                  </figure>
+                  <div class="entry__body">
+                    <h4 class="entry__title">
+                      <a href="/<%= category %>/<%= result._id %>">
+                        <%= result.head %>
+                      </a>
+                    </h4>
+                    <div class="entry__meta">
+                      <span class="entry__meta__count">
+                        <i class="fas fa-eye"></i>
+                        <%= result.viewers %>
+                      </span>
+                      <span class="entry__meta__posted">
+                        <i class="far fa-clock"></i>
+                        <%= moment(result.date).format("DD/MM/YYYY") %>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+          <% }); %> 
+        </div>
+
+            <header class="add-view">
+              <button id="loadMore" class="scrollto-add">
+                โหลดเพิ่ม
+                <i class="fas fa-plus"></i>
+              </button>
+          </header>
+          <p class="totop" style="position: fixed;
+         bottom: 10px;
+         right: 20px;"> 
+          <a href="#top" style="display: none;">Back to top</a> 
+        </p>
+       </section>
+
+      </div>
+    </main>
+</body>
+</html>
+
+
+<%- include("patials/footer") %>
+
+<script>
+  $(function () {
+    $("article").slice(0, 4).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $("article:hidden").slice(0, 4).slideDown();
+        if ($("article:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
+});
+
+$('a[href=#top]').click(function () {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 600);
+    return false;
+});
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+        $('.totop a').fadeIn();
+    } else {
+        $('.totop a').fadeOut();
+    }
+});
+</script>

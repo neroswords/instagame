@@ -84,18 +84,18 @@ router.get("/", function(req,res){
                                                             })    
                                                         }).sort({date : -1}).limit(2)
                                                     });
-                                                })
-                                            }).sort({date : -1}).limit(2);    
-                                        })
-                                    }).sort({date : -1}).limit(2);  
-                                })
-                            }).sort({date : -1}).limit(2);    
-                        })
-                    }).sort({date : -1}).limit(2);
-                })
-            }).sort({date : -1}).limit(2);            
-        })
-    }).sort({date : -1}).limit(2);
+                                                }).sort({date : -1}).limit(2);
+                                            })    
+                                        }).sort({date : -1}).limit(2);
+                                    })  
+                                }).sort({date : -1}).limit(2);
+                            })  
+                        }).sort({date : -1}).limit(2);
+                    })
+                }).sort({date : -1}).limit(2);
+            })           
+        }).sort({date : -1}).limit(2);
+    })
 });
 
 router.get("/profile", function(req,res){
