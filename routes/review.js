@@ -39,8 +39,26 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
             }else{
                 res.render("review",{Review : allReview, moment: moment});
             }
-        })
+        }).sort({date : -1})
     })
+
+    router.get("/category/:category", function(req,res){
+        var n_type = req.params.category;
+        Tag.find({name : n_type}, function(err, foundtag){
+            if(err){
+                console.log(err);
+            } else {
+                Review.find({tags : {$in : foundtag}}, function(error, someReview){
+                    if(error){
+                        console.log(error);
+                        
+                     }else {
+                        res.render("review",{Review : someReview, moment: moment});
+                    }
+                }).sort({date : -1});
+        }
+    })
+})
 
     router.get("/create", middleware.isLoggedIn, function(req,res){
         res.render("c_review");
@@ -62,7 +80,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
             }
             else{
                 var tagsarr = req.body.tags.split(',');
-                tagsarr.push(req.body.type);
+                await tagsarr.push(req.body.type);
                 for await (let tag of tagsarr) {
                     Tag.find({ name : tag },async function(err, findTag){
                         if(err){

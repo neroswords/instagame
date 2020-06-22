@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>column</title>
     <link rel="stylesheet" href="/css/column.css">
+    <script src="/js/load_more.js"></script>
 </head>
 <body>
     <main class="teams-body" role="news"> 
@@ -20,10 +21,23 @@
                 <i class="fas fa-globe-americas"></i>
                 <span>ดูกระทู้ทั้งหมด</span> 
             </a> -->
-            <a href="/commu/type" class="create_team-icon">
-                <span>ดูกระทู้ตามประเภทเกม</span>
-                <i class="fas fa-gamepad"></i> 
-            </a>
+            <div class="dropdown">
+              <button class="categoly-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                เลือกดูข่าวตามประเภทเกม
+                <i class="fas fa-gamepad"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-style" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/commu">จากเกมทุกประเภท</a>
+                <a class="dropdown-item" href="/commu/category/Survival">Survival</a>
+                <a class="dropdown-item" href="/commu/category/RPG">Role-Player Game (RPG)</a>
+                <a class="dropdown-item" href="/commu/category/Battle_Royal">Battle Royale</a>
+                <a class="dropdown-item" href="/commu/category/FPS">First Person Shooter (FPS)</a>
+                <a class="dropdown-item" href="/commu/category/MOBA">Multiplayer Online Battle Arena (MOBA)</a>
+                <a class="dropdown-item" href="/commu/category/Fighting">Fighting</a>
+                <a class="dropdown-item" href="/commu/category/Sports">Sports</a>
+                <a class="dropdown-item" href="/commu/category/Racing">Racing</a>
+              </div>
+            </div>
             <button class="my_team-icon" onclick="window.location.href='/commu/my_column';">
               <i class="fas fa-file-alt"></i>
               <span>กระทู้ของฉัน</span> 
@@ -48,7 +62,7 @@
                 <article class="entry" style="display: none;">
                   <figure class="entry__thumb entry__thumb--zoom">
                     <a href="/commu/<%= commu._id %>">
-                      <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + commu.image %> class="card-img-top">
+                      <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '/uploads/commu/' + commu.image %> class="card-img-top">
                     </a>
                   </figure>
                   <div class="entry__body">
@@ -73,13 +87,8 @@
           <% }); %> 
         </div>
 
-<<<<<<< HEAD
-          <header class="add-view">
-              <button href="#" class="scrollto-add">
-=======
             <header class="add-view">
               <button id="loadMore" class="scrollto-add">
->>>>>>> 0023ef74c94e3b7ecfe446890fc7bedb39dd3e67
                 โหลดเพิ่ม
                 <i class="fas fa-plus"></i>
               </button>
@@ -95,37 +104,3 @@
     </main>
 </body>
 </html>
-
-
-<%- include("patials/footer") %>
-
-<script>
-  $(function () {
-    $("article").slice(0, 4).show();
-    $("#loadMore").on('click', function (e) {
-        e.preventDefault();
-        $("article:hidden").slice(0, 4).slideDown();
-        if ($("article:hidden").length == 0) {
-            $("#load").fadeOut('slow');
-        }
-        $('html,body').animate({
-            scrollTop: $(this).offset().top
-        }, 1500);
-    });
-});
-
-$('a[href=#top]').click(function () {
-    $('body,html').animate({
-        scrollTop: 0
-    }, 600);
-    return false;
-});
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-        $('.totop a').fadeIn();
-    } else {
-        $('.totop a').fadeOut();
-    }
-});
-</script>

@@ -26,6 +26,8 @@ const express = require("express"),
                 if(err){
                     console.log(err);
                 } else {
+                    foundtag.view++;
+                    foundtag.save();
                     Team.find({tags : {$in : foundtag}},function(err,foundTeam){
                         Review.find({tags : {$in : foundtag}},function(err,foundReview){
                             Community.find({tags : {$in : foundtag}},function(err,foundCommu){
@@ -58,7 +60,7 @@ const express = require("express"),
         if(req.params.keyword){
             var n_result = req.params.keyword;
             const regex = new RegExp(escapeRegex(req.params.keyword), 'gi');
-            Tag.find({name : req.params.keyword}, function(err, foundtag){
+            Tag.find({name : regex}, function(err, foundtag){
                 if(err){
                     console.log(err);
                 } else {
@@ -77,8 +79,9 @@ const express = require("express"),
     });
 
     router.get("/:keyword/:category", function(req,res){
-        var n_keyword = req.params.keyword;
-        Tag.find({name : n_keyword }, function(err, foundtag){
+        var n_result = req.params.keyword;
+        const regex = new RegExp(escapeRegex(req.params.keyword), 'gi');
+        Tag.find({name : regex }, function(err, foundtag){
             if(req.params.category === "news"){
                 News.find({tags : {$in : foundtag}},function(err,foundNews){
                     res.render("category_result",{Result: foundNews, keyword :req.params.keyword, category:req.params.category, moment:moment});

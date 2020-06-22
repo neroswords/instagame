@@ -38,6 +38,24 @@ router.get("/", function(req,res){
         }else{
             res.render("team",{Team : allTeam, moment: moment});
         }
+    }).sort({date : -1})
+})
+
+router.get("/category/:category", function(req,res){
+    var n_type = req.params.category;
+    Tag.find({name : n_type}, function(err, foundtag){
+        if(err){
+            console.log(err);
+        } else {
+            Team.find({tags : {$in : foundtag}}, function(error, someTeam){
+                if(error){
+                    console.log(error);
+                    
+                 }else {
+                    res.render("team",{Team : someTeam, moment: moment});
+                }
+            }).sort({date : -1});
+        }
     })
 })
 
@@ -49,7 +67,7 @@ router.get("/my_team",middleware.isLoggedIn, function(req,res){
         }else{
             res.render("my_team",{Team : allTeam, moment: moment});
         }
-    })
+    }).sort({date : -1})
 })
 
 router.get("/create", middleware.isLoggedIn, function(req,res){
@@ -86,7 +104,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
         else{
             newTeam.party.push(req.user);
             var tagsarr = req.body.tags.split(',');
-            tagsarr.push(req.body.type);
+            await tagsarr.push(req.body.type);
             for await (let tag of tagsarr) {
                 await Tag.find({ name : tag },async function(err, findTag){
                     if(err){

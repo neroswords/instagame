@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>column game type all</title>
     <link rel="stylesheet" href="/css/column_game_type.css">
+    <script src="/js/load_more.js"></script>
 </head>
 <body>
     <main class="teams-body" role="news"> 
@@ -16,7 +17,7 @@
             <div class="teams__search">
               <input class="form-control mr-sm-2" type="search" id="search" placeholder="ค้นหากระทู้..." aria-label="Search" maxlength="200">
           </div>
-            <a href="#" class="my_team-icon">
+            <a href="#" class="my_team-icon" onclick="window.location.href='/commu/category';">
                 <span>ดูกระทู้ทั้งหมด</span>
                 <i class="fas fa-globe-americas"></i> 
             </a>
@@ -28,6 +29,7 @@
               <i class="fas fa-file-alt"></i>
               <span>กระทู้ของฉัน</span> 
             </button>
+            <a href="/commu/create">
             <button type="submit" class="submit-create-party-btn">
               <svg class="bi bi-file-earmark-plus" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5v-1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v2h1V6L9 1z"/>
@@ -36,6 +38,7 @@
               </svg>
               สร้างกระทู้
           </button>
+          </a>
           </header>
   
           <section class="box">
