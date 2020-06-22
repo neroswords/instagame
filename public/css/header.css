@@ -67,6 +67,15 @@ a:hover {
   transition-duration: .3s;
 }
 
+@media (max-width: 768px) {
+  .topbar_search {
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 10px 10px;
+  }
+}
+
 .topbar_search {
   width: auto;
   display: inline-block;

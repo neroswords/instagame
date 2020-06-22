@@ -1,93 +1,26 @@
-body {
-    text-align: left;
+@media only screen and (min-width: 320px) {
+    .agreement {
+        width: 90%;
+        margin: 80px auto;
+        padding: 15px; 
+    }
 }
 
-.login {
-    width: 800px;
-    height: 1720px;
-    margin: 120px auto;
-    padding: 20px;
+@media only screen and (min-width: 1200px) {
+    .agreement {
+        width: 800px;
+        margin: 120px auto;
+        padding: 20px;
+    }
+}
+
+.agreement {
     background-color: rgb(255, 255, 255);
     position: relative;
     border-top: 5px solid lightseagreen;
     cursor: default;
     box-sizing: border-box;
     box-shadow: 0 0 15px rgba(0, 0, 0, .18);
-    font-family: 'Kanit', sans-serif;
-}
-
-.login h3 {
-    color: DIMGREY;
-    font-size: 24px;
-    font-weight: 550;
-    margin-bottom: 30px;
-    margin-top: -10px;
-}
-.login h4 {
-    color: DIMGREY;
-    text-decoration: underline;
-    margin-top: 30px;
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: -5px;
-}
-
-ul {
-    width: 740px;
-    height: 816px;
-    box-sizing: border-box;
-    display: block;
-}
-
-ul.rule {
-    width: 740px;
-    height: 530px;
-    box-sizing: border-box;
-    display: block;
-}
-
-li {
-    width: 720px;
-    height: 50;
-    font-size: 16px;
-    color: gray;
-    display: list-item;
-}
-
-p {
-    width: 760px;
-    height: 60px;
-    font-size: 16px;
-    color: gray;
-}
-
-p.remark {
-    color: red;
-    font-size: 12px;
-    margin: 1px 5px;
-    text-align: center;
-    width: 760;
-    height: 45px;
-
-}
-
-.act-btn {
-    width: 80px;
-    height: 20;
-    padding: 4px;
-    border: 1px lightseagreen solid;
-    margin: 2px 0px;
-    background-color: lightseagreen;
-    color: white;
-    position: relative;
-    text-align: center;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.act-btn:hover{
-    border: 1px TEAL solid;
-    background-color: TEAL;
 }
 
 .login_btn_close {
@@ -96,7 +29,7 @@ p.remark {
     right: 0px;
     font-size: 0px;
     margin: 0;
-    padding: 15px;
+    padding: 10px;
     align-items: flex-start;
     background-color: lightseagreen;
     border-bottom-color: lightseagreen;
@@ -114,14 +47,34 @@ p.remark {
 }
 
 .login-icon-close {
-    background-image: url(image/close.svg);
+    background-image: url(/image/close.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     width: 17px;
     height: 17px;
-    
 }
+
+.remark {
+    color: red;
+}
+
+.agreement h3,h4 {
+    margin-bottom: 1rem;
+}
+
+.act-btn {
+    border: 1px solid #FFC107;
+    background-color: #FFC107;
+    padding: .2rem .5rem;
+}
+
+.act-btn:hover {
+    border: 1px solid #FF8F00;
+    background-color: #FF8F00;
+    padding: .2rem .5rem;
+}
+
 
 
 

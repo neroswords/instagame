@@ -128,8 +128,8 @@
 }
 
 .create_team-icon {
-    border: 1px solid #E74C3C ;
-    background-color: #E74C3C  ;
+    border: 1px solid #E74C3C;
+    background-color: #E74C3C;
     display: inline-block;
     position: relative;
     padding: 5px 5px;
@@ -141,8 +141,8 @@
 }
 
 .create_team-icon:hover {
-    border: #C0392B ;
-    background-color: #C0392B ;
+    border: #C0392B;
+    background-color: #C0392B;
     color: #fff;
 }
 
