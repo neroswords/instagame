@@ -79,6 +79,9 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 console.log("error create news");
             }
             else{
+                var n_type_tag = "tag";
+                var n_type_game = "game";
+                var n_view = 1;
                 var tagsarr = req.body.tags.split(',');
                 await tagsarr.push(req.body.type);
                 for await (let tag of tagsarr) {
@@ -86,7 +89,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                         if(err){
                             console.log(err);
                         } else if(!findTag.length){
-                            let n_tag = {name : tag}
+                            let n_tag = {name : tag, type : n_type_tag ,view :n_view}
                             Tag.create(n_tag,async function(error, newTag){
                                 if(error){
                                     console.log(error);
@@ -97,7 +100,8 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                                 }
                             })
                         } else {
-                            console.log("find");
+                            findTag[0].view++;
+                            findTag[0].save();
                             await newReview.tags.push(findTag[0]._id);
                         }    
                     }) 
@@ -108,13 +112,15 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                         console.log(err);
                         
                     } else if(!findGame.length){
-                        let game_tag = { name : n_game};
+                        let game_tag = { name : n_game , type : n_type_game ,view :n_view};
                         Tag.create(game_tag,async function(error, gameTag){
                             await newReview.tags.push(gameTag);
                             newReview.save();
                         })
                     } else if(findGame.length){
                         await newReview.tags.push(findGame[0]);
+                        findGame[0].view++;
+                        findGame[0].save();
                         newReview.save();
                     }
                 })

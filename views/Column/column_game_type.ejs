@@ -43,583 +43,352 @@
   
           <section class="box">
             <div class="row">
+              <!-- ข่าวเกม survival -->
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
-                    <a href="#">Survival</a>
+                    <a href="/commu/category/Survival">Survival</a>
                   </h4>
-                  <a href="#" class="scrollto">
-                    ดูกระทู้ทั้งหมด
+                  <a href="/commu/category/Survival" class="btn-sm scrollto" role="button">
+                    เลื่อนดูข่าว
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
                 <div class="row">
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
+                  <% Survival.forEach(function(survival){ %>
+                    <div class="col-6">
+                      <article class="entry">
+                        <figure class="entry__thumb entry__thumb--zoom">
+                          <a href="/commu/<%= survival._id %>">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + survival.image %> class="card-img-top">
                           </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
+                        </figure>
+                        <div class="entry__body">
+                          <h4 class="entry__title">
+                            <a href="/commu/<%= survival._id %>">
+                              <%= survival.head %>
+                            </a>
+                          </h4>
+                          <div class="entry__meta">
+                            <span class="entry__meta__count">
+                              <i class="fas fa-eye"></i>
+                              <%= survival.viewers %>
+                            </span>
+                            <span class="entry__meta__posted">
+                              <i class="far fa-clock"></i>
+                              <%= moment(survival.date).format("DD/MM/YYYY") %>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                      </article>
+                    </div>
+                    <% }) %>
+          
                 </div>
-                <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
               </div>
               
+              <!-- ข่าวเกม RPG -->
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
-                    <a href="#">Role-Player Game (RPG)</a>
+                    <a href="/commu/category/RPG">Role-Player Game (RPG)</a>
                   </h4>
-                  <a href="#" class="scrollto">
-                    ดูกระทู้ทั้งหมด
+                  <a href="/commu/category/RPG" class="btn-sm scrollto" role="button">
+                    เลื่อนดูข่าว
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
                 <div class="row">
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
+                  <% RPG.forEach(function(rpg){ %>
+                    <div class="col-6">
+                      <article class="entry">
+                        <figure class="entry__thumb entry__thumb--zoom">
+                          <a href="/commu/<%= rpg._id %>">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + rpg.image %> class="card-img-top">
                           </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
+                        </figure>
+                        <div class="entry__body">
+                          <h4 class="entry__title">
+                            <a href="/commu/<%= rpg._id %>">
+                              <%= rpg.head %>
+                            </a>
+                          </h4>
+                          <div class="entry__meta">
+                            <span class="entry__meta__count">
+                              <i class="fas fa-eye"></i>
+                              <%= rpg.viewers %>
+                            </span>
+                            <span class="entry__meta__posted">
+                              <i class="far fa-clock"></i>
+                              <%= moment(rpg.date).format("DD/MM/YYYY") %>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                      </article>
+                    </div>
+                    <% }) %>
                 </div>
-                <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
               </div>
     
+              <!-- ข่าวเกม  BR -->
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
-                    <a href="#">ฺBattle Royale</a>
+                    <a href="/commu/category/Battle_Royal">Battle Royale</a>
                   </h4>
-                  <a href="#" class="scrollto">
-                    ดูกระทู้ทั้งหมด
+                  <a href="/commu/category/Battle_Royal" class="btn-sm scrollto" role="button">
+                    เลื่อนดูข่าว
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
                 <div class="row">
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
+                  <% Battle_Royal.forEach(function(battle_royal){ %>
+                    <div class="col-6">
+                      <article class="entry">
+                        <figure class="entry__thumb entry__thumb--zoom">
+                          <a href="/commu/<%= battle_royal._id %>">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + battle_royal.image %> class="card-img-top">
                           </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
+                        </figure>
+                        <div class="entry__body">
+                          <h4 class="entry__title">
+                            <a href="/commu/<%= battle_royal._id %>">
+                              <%= battle_royal.head %>
+                            </a>
+                          </h4>
+                          <div class="entry__meta">
+                            <span class="entry__meta__count">
+                              <i class="fas fa-eye"></i>
+                              <%= battle_royal.viewers %>
+                            </span>
+                            <span class="entry__meta__posted">
+                              <i class="far fa-clock"></i>
+                              <%= moment(battle_royal.date).format("DD/MM/YYYY") %>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                      </article>
+                    </div>
+                    <% }) %>
                 </div>
-                <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
               </div>
     
+              <!-- ช่าวเกม FPS -->
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
-                    <a href="#">First Person Shooter (FPS)</a>
+                    <a href="/commu/category/FPS">First Person Shooter (FPS)</a>
                   </h4>
-                  <a href="#" class="scrollto">
-                    ดูกระทู้ทั้งหมด
+                  <a href="/commu/category/FPS" class="btn-sm scrollto" role="button">
+                    เลื่อนดูข่าว
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
                 <div class="row">
+                  <% FPS.forEach(function(fps){ %>
                   <div class="col-6">
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
+                        <a href="/commu/<%= fps._id %>">
+                          <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + fps.image %> class="card-img-top">
                         </a>
                       </figure>
                       <div class="entry__body">
                         <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
+                          <a href="/commu/<%= fps._id %>">
+                            <%= fps.head %>
                           </a>
                         </h4>
                         <div class="entry__meta">
                           <span class="entry__meta__count">
                             <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
+                            <%= fps.viewers %>
                           </span>
                           <span class="entry__meta__posted">
                             <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
+                            <%= moment(fps.date).format("DD/MM/YYYY") %>
                           </span>
                         </div>
                       </div>
                     </article>
                   </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                  <% }) %>
                 </div>
-                <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
               </div>
     
+              <!-- ข่าวเกม MOBA -->
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
-                    <a href="#">Multiplayer Online Battle Arena</a>
+                    <a href="/commu/category/MOBA">Multiplayer Online Battle Arena</a>
                   </h4>
-                  <a href="#" class="scrollto">
-                    ดูกระทู้ทั้งหมด
+                  <a href="/commu/category/MOBA" class="btn-sm scrollto" role="button">
+                    เลื่อนดูข่าว
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
                 <div class="row">
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
+                  <% MOBA.forEach(function(moba){ %>
+                    <div class="col-6">
+                      <article class="entry">
+                        <figure class="entry__thumb entry__thumb--zoom">
+                          <a href="/commu/<%= moba._id %>">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + moba.image %> class="card-img-top">
                           </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
+                        </figure>
+                        <div class="entry__body">
+                          <h4 class="entry__title">
+                            <a href="/commu/<%= moba._id %>">
+                              <%= moba.head %>
+                            </a>
+                          </h4>
+                          <div class="entry__meta">
+                            <span class="entry__meta__count">
+                              <i class="fas fa-eye"></i>
+                              <%= moba.viewers %>
+                            </span>
+                            <span class="entry__meta__posted">
+                              <i class="far fa-clock"></i>
+                              <%= moment(moba.date).format("DD/MM/YYYY") %>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                      </article>
+                    </div>
+                    <% }) %>
                 </div>
-                <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
               </div>
     
+              <!-- ข่าวเกม Fighting -->
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
-                    <a href="#">Fighting</a>
+                    <a href="/commu/category/Fighting">Fighting</a>
                   </h4>
-                  <a href="#" class="scrollto">
-                    ดูกระทู้ทั้งหมด
+                  <a href="/commu/category/Fighting" class="btn-sm scrollto" role="button">
+                    เลื่อนดูข่าว
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
                 <div class="row">
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
+                  <% Fighting.forEach(function(fighting){ %>
+                    <div class="col-6">
+                      <article class="entry">
+                        <figure class="entry__thumb entry__thumb--zoom">
+                          <a href="/commu/<%= fighting._id %>">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + fighting.image %> class="card-img-top">
                           </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
+                        </figure>
+                        <div class="entry__body">
+                          <h4 class="entry__title">
+                            <a href="/commu/<%= fighting._id %>">
+                              <%= fighting.head %>
+                            </a>
+                          </h4>
+                          <div class="entry__meta">
+                            <span class="entry__meta__count">
+                              <i class="fas fa-eye"></i>
+                              <%= fighting.viewers %>
+                            </span>
+                            <span class="entry__meta__posted">
+                              <i class="far fa-clock"></i>
+                              <%= moment(fighting.date).format("DD/MM/YYYY") %>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                      </article>
+                    </div>
+                    <% }) %>
                 </div>
-                <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
               </div>
     
+              <!-- ข่าวเกม sport -->
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
                     <a href="#">Sports</a>
                   </h4>
-                  <a href="#" class="scrollto">
-                    ดูกระทู้ทั้งหมด
+                  <a href="#" class="btn-sm scrollto" role="button">
+                    เลื่อนดูข่าว
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
                 <div class="row">
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
+                  <% Sports.forEach(function(sports){ %>
+                    <div class="col-6">
+                      <article class="entry">
+                        <figure class="entry__thumb entry__thumb--zoom">
+                          <a href="/commu/<%= sports._id %>">
+                            <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + sports.image %> class="card-img-top">
                           </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
+                        </figure>
+                        <div class="entry__body">
+                          <h4 class="entry__title">
+                            <a href="/commu/<%= sports._id %>">
+                              <%= sports.head %>
+                            </a>
+                          </h4>
+                          <div class="entry__meta">
+                            <span class="entry__meta__count">
+                              <i class="fas fa-eye"></i>
+                              <%= sports.viewers %>
+                            </span>
+                            <span class="entry__meta__posted">
+                              <i class="far fa-clock"></i>
+                              <%= moment(sports.date).format("DD/MM/YYYY") %>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                      </article>
+                    </div>
+                    <% }) %>
                 </div>
-                <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
               </div>
     
+              <!-- ข่าวเกม racing -->
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
                     <a href="#">Racing</a>
                   </h4>
-                  <a href="#" class="scrollto">
-                    ดูกระทู้ทั้งหมด
+                  <a href="#" class="btn-sm scrollto" role="button">
+                    เลื่อนดูข่าว
                     <i class="fas fa-angle-double-down ml-1"></i>
                   </a>
                 </header>
                 <div class="row">
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
+                    <% Racing.forEach(function(racing){ %>
+                      <div class="col-6">
+                        <article class="entry">
+                          <figure class="entry__thumb entry__thumb--zoom">
+                            <a href="/commu/<%= racing._id %>">
+                              <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + racing.image %> class="card-img-top">
+                            </a>
+                          </figure>
+                          <div class="entry__body">
+                            <h4 class="entry__title">
+                              <a href="/commu/<%= racing._id %>">
+                                <%= racing.head %>
+                              </a>
+                            </h4>
+                            <div class="entry__meta">
+                              <span class="entry__meta__count">
+                                <i class="fas fa-eye"></i>
+                                <%= racing.viewers %>
+                              </span>
+                              <span class="entry__meta__posted">
+                                <i class="far fa-clock"></i>
+                                <%= moment(racing.date).format("DD/MM/YYYY") %>
+                              </span>
+                            </div>
+                          </div>
+                        </article>
                       </div>
-                    </article>
-                  </div>
-                  <div class="col-6">
-                    <article class="entry">
-                      <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="">
-                          <img src="https://www.online-station.net/pic/X2NvbnRlbnQvMjAyMC8wNTE1LzE2NDMxNi90aHVtYm5haWwvVHJ1ZS1TdXBlci1GaWJlci1HYW1lci1Qcm8tUGFja18xMjAwXzYyOC5qcGcmdz0yODAmaD0xNDc" class="card-img-top">
-                        </a>
-                      </figure>
-                      <div class="entry__body">
-                        <h4 class="entry__title">
-                          <a href="">
-                            ใส่พาดหัวข่าว
-                          </a>
-                        </h4>
-                        <div class="entry__meta">
-                          <span class="entry__meta__count">
-                            <i class="fas fa-eye"></i>
-                            ใส่ยอดวิว
-                          </span>
-                          <span class="entry__meta__posted">
-                            <i class="far fa-clock"></i>
-                            ใส่วันที่โพสต์
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <header class="add-view">
-                  <button href="#" class="scrollto-add">
-                    โหลดเพิ่ม
-                    <i class="fas fa-plus"></i>
-                  </button>
-              </header>
+                      <% }) %>
               </div>
           </div>
         </section>
+      </div>
 
       </div>
     </main>
