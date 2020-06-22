@@ -41,7 +41,7 @@
                 </span>
                 <span>
                     <i class="far fa-clock"></i>
-                    <%= moment(commu.date).format("DD/MM/YYYY") %>
+                    <%= moment(column.date).format("HH:mm:ss DD/MM/YYYY") %>
                 </span>
             </div>
           </div>    
@@ -389,7 +389,7 @@
                             </span>
                             <span class="be-comment-time">
                               <i class="fa fa-clock-o"></i>
-                              <%= moment(comment.date).format("DD/MM/YYYY") %>
+                              <%= moment(comment.date).format("HH:mm:ss DD/MM/YYYY") %>
                               <% if(currentUser && currentUser._id.equals(comment.user_post.id)){ %>
                               <div id="member-box d-inline" class="topbar__member-comment">
                                 <div class="dropdown">

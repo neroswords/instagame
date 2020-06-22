@@ -94,8 +94,8 @@
                     <a href="/news/category/Survival">Survival</a>
                   </h4>
                   <a href="/news/category/Survival" class="btn-sm scrollto" role="button">
-                    เลื่อนดูข่าว
-                    <i class="fas fa-angle-double-down ml-1"></i>
+                    ดูข่าวทั้งหมด
+                    <i class="fas fa-angle-double-right"></i>
                   </a>
                 </header>
                 <div class="row">
@@ -138,8 +138,8 @@
                     <a href="/news/category/RPG">Role-Player Game (RPG)</a>
                   </h4>
                   <a href="/news/category/RPG" class="btn-sm scrollto" role="button">
-                    เลื่อนดูข่าว
-                    <i class="fas fa-angle-double-down ml-1"></i>
+                    ดูข่าวทั้งหมด
+                    <i class="fas fa-angle-double-right"></i>
                   </a>
                 </header>
                 <div class="row">
@@ -181,8 +181,8 @@
                     <a href="/news/category/Battle_Royal">Battle Royale</a>
                   </h4>
                   <a href="/news/category/Battle_Royal" class="btn-sm scrollto" role="button">
-                    เลื่อนดูข่าว
-                    <i class="fas fa-angle-double-down ml-1"></i>
+                    ดูข่าวทั้งหมด
+                    <i class="fas fa-angle-double-right"></i>
                   </a>
                 </header>
                 <div class="row">
@@ -224,8 +224,8 @@
                     <a href="/news/category/FPS">First Person Shooter (FPS)</a>
                   </h4>
                   <a href="/news/category/FPS" class="btn-sm scrollto" role="button">
-                    เลื่อนดูข่าว
-                    <i class="fas fa-angle-double-down ml-1"></i>
+                    ดูข่าวทั้งหมด
+                    <i class="fas fa-angle-double-right"></i>
                   </a>
                 </header>
                 <div class="row">
@@ -267,8 +267,8 @@
                     <a href="/news/category/MOBA">Multiplayer Online Battle Arena</a>
                   </h4>
                   <a href="/news/category/MOBA" class="btn-sm scrollto" role="button">
-                    เลื่อนดูข่าว
-                    <i class="fas fa-angle-double-down ml-1"></i>
+                    ดูข่าวทั้งหมด
+                    <i class="fas fa-angle-double-right"></i>
                   </a>
                 </header>
                 <div class="row">
@@ -310,8 +310,8 @@
                     <a href="/news/category/Fighting">Fighting</a>
                   </h4>
                   <a href="/news/category/Fighting" class="btn-sm scrollto" role="button">
-                    เลื่อนดูข่าว
-                    <i class="fas fa-angle-double-down ml-1"></i>
+                    ดูข่าวทั้งหมด
+                    <i class="fas fa-angle-double-right"></i>
                   </a>
                 </header>
                 <div class="row">
@@ -353,8 +353,8 @@
                     <a href="#">Sports</a>
                   </h4>
                   <a href="#" class="btn-sm scrollto" role="button">
-                    เลื่อนดูข่าว
-                    <i class="fas fa-angle-double-down ml-1"></i>
+                    ดูข่าวทั้งหมด
+                    <i class="fas fa-angle-double-right"></i>
                   </a>
                 </header>
                 <div class="row">
@@ -396,8 +396,8 @@
                     <a href="#">Racing</a>
                   </h4>
                   <a href="#" class="btn-sm scrollto" role="button">
-                    เลื่อนดูข่าว
-                    <i class="fas fa-angle-double-down ml-1"></i>
+                    ดูข่าวทั้งหมด
+                    <i class="fas fa-angle-double-right"></i>
                   </a>
                 </header>
                 <div class="row">
@@ -576,7 +576,7 @@
                   <div class="row">
                     <% Team.forEach(function(team){ %>
                       <div class="col-lg-3 col-6">
-                      <article class="entry" style="display: none;">
+                      <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/team_detail/<%= team._id %>">
                             <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/team/' + team.image %> class="card-img-top">
@@ -632,7 +632,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(team.appointment_time).format("DD/MM/YYYY") %>
+                              <%= team.appointment_time %>
                             </span>
                           </div>
                           <div class="entry__meta2">
