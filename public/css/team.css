@@ -68,6 +68,28 @@
         z-index: 5;
     }
 
+    .dropdown {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        position: relative;
+        text-align: left;
+    }
+
+    .categoly-btn-review {
+        color: #fff;
+        padding: .3rem;
+        background: #FF5722;
+        border: 1px solid #FF5722;
+        font-size: 16px;
+        border-radius: .5rem;
+    }
+
+    .categoly-btn-review:hover {
+        background: #BF360C;
+        border: 1px solid #BF360C;
+    }
+
     @media (min-width: 576px) {
         .teams__search {
             width: 100%;
