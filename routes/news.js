@@ -36,12 +36,13 @@ const imageFilter = function(req, file, cb){
 const upload = multer({storage : storage, fileFilter : imageFilter});
 
     router.get("/", function(req,res){
+        var category = " "
         News.find({}, function(error, allNews){
             if(error){
                 console.log("Error!!");
                 
             }else{
-                res.render("all_news",{News : allNews, moment: moment});
+                res.render("all_news",{News : allNews, moment: moment, category : category});
             }
         }).sort({date : -1});
     })
@@ -57,7 +58,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                         console.log(error);
                         
                      }else {
-                        res.render("all_news",{News : someNews, moment: moment});
+                        res.render("all_news",{News : someNews, moment: moment,category : req.params.category});
                     }
                 }).sort({date : -1});
         }

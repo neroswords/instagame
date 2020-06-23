@@ -16,17 +16,17 @@
             <div class="create-news-icon-close"></div>
         </a>
         <div class="create-news_header">
-            <h3 style="font-family: 'Kanit', sans-serif; color: gray;">แก้ไขรีวิว</h3>
+            <h3 style="font-family: 'Kanit', sans-serif; color: gray;">แก้ไขกระทู้</h3>
         </div>
         <form action = '/commu/<%= Commu._id %>?_method=PUT' method = 'POST' class="form-hor" enctype="multipart/form-data">
             <div>
-                <label for="text" class="label-form-title">พาดหัวรีวิว</label>
+                <label for="text" class="label-form-title">หัวข้อกระทู้</label>
                 <div class="form-inside">
                     <input type="text" class="form-item" id="headline" name="head" placeholder="ใส่พาดหัวข่าว" value="<%= Commu.head %>" required>
                 </div>
             </div>
             <div>
-                <label for="text" class="label-form-title">เนื้อหารีวิว</label>
+                <label for="text" class="label-form-title">เนื้อหากระทู้</label>
                 <div class="form-inside">
                     <textarea rows="20" cols="80" class="form-item" id="content" name="content" required><%= Commu.content %></textarea>    
                 </div>
