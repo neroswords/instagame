@@ -246,13 +246,24 @@ router.get("/:id", function(req,res){
     )}
 )
 
+router.get("/:id/edit", middleware.checkCommuOwner, function(req,res){
+    Communication.findById(req.params.id, function(err, foundCommu){
+        if(err){
+            console.log(err);
+            
+        } else {
+            res.render("edit_column", {Commu : foundCommu})
+        }
+    })
+})
+
 router.put("/:id", middleware.checkCommuOwner, upload.single('image'), function(req, res){
     let n_head = req.body.head;
     let n_content = req.body.content;
     if(req.file){
         let n_image = req.file.filename;
         console.log(n_image);
-        News.findById(req.params.id, function(err, foundCommu){
+        Communication.findById(req.params.id, function(err, foundCommu){
             if(err){
                 console.log(err);
                 res.redirect('/commu/'+ req.params.id)
@@ -270,7 +281,7 @@ router.put("/:id", middleware.checkCommuOwner, upload.single('image'), function(
     } else {
         var n_commu = {head : n_head, content : n_content}
     }
-    News.findByIdAndUpdate(req.params.id, n_commu, function(err, updateCommu){
+    Communication.findByIdAndUpdate(req.params.id, n_commu, function(err, updateCommu){
         if(err){
             console.log(err);
             

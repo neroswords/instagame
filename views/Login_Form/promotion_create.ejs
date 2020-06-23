@@ -24,10 +24,10 @@
         <h3 style="font-family: 'Kanit', sans-serif; color: gray;">ขออัพเกรดระดับสมาชิก</h3>
     </div>
 
-    <form action="/team/create" method = 'POST' enctype="multipart/form-data">
+    <form action="/promotion/request/<%= currentUser._id %>" method = 'POST' enctype="multipart/form-data">
       <div class="form-group">
         <label for="exampleFormControlInput1">ชื่อบริษัทที่ต้องการอัพเกรด</label>
-        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อบริษัท" name="headline">
+        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อบริษัท" name="company">
       </div>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">เหตุผลที่ต้องการอัพเกรด</label>
@@ -39,7 +39,7 @@
       </div>
       <div class="party-btn">
         <div class="submit-create-party">
-          <button type="submit" class="submit-create-party-btn" onclick="c_tag(document.getElementById('containers').getAttribute('data-simple-tags'))">
+          <button type="submit" class="submit-create-party-btn">
             <svg class="bi bi-file-earmark-plus" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5v-1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v2h1V6L9 1z"/>
               <path fill-rule="evenodd" d="M13.5 10a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>

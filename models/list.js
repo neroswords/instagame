@@ -6,7 +6,8 @@ let ListSchema = new mongoose.Schema({
         ref: "User"
     },
     content : String,
-    company : String
+    company : String,
+    doc : String
 });
 
 // not sure

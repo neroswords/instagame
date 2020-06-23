@@ -139,19 +139,25 @@ router.post("/promotion/request/:id",middleware.isLoggedIn,upload.single('PDF'),
         if(err){
             console.log(err); 
         } else {
+            foundUser.status = "sent";
+            foundUser.save();
             var n_content = req.body.content;
             var n_company = req.body.company;
-            var n_list = {list : foundUser,content : n_content, company : n_company}
+            let n_file = req.file.filename
+            var n_list = {list : foundUser,
+                content : n_content, 
+                company : n_company,
+                doc : n_file}
             List.create(n_list, function(err,newList){
                 req.flash('sucess',"you already sent request")
-                res.redirect("/profile"+req.params.id)
+                res.redirect("/profile/"+req.params.id)
             })
         }
     })
 })
 
 // ส่ง id ของ listมาหาก่อน
-router.post("/promotion/sucess/:id", middleware.checkO,function(req,res){
+router.post("/promotion/success/:id", middleware.checkO,function(req,res){
     List.findById(req.params.id, function(err, foundList){
         User.findById(foundList.list, function(err, foundUser){
             if(err){
@@ -168,8 +174,28 @@ router.post("/promotion/sucess/:id", middleware.checkO,function(req,res){
             }
         })
     })
-    
 })
+
+// router.post("/promotion/demote/:id", middleware.checkO,function(req,res){
+//     List.findById(req.params.id, function(err, foundList){
+//         User.findById(foundList.list, function(err, foundUser){
+//             if(err){
+//                 console.log(err);
+//             } else {
+//                 foundUser.class = "People";
+//                 foundUser.status = "none";
+//                 foundUser.save();
+//                 List.findByIdAndRemove(req.params.id, function(err){
+//                     if(err){
+//                         console.log(err);
+//                     }
+//                 })
+//                 res.redirect("/promotion");
+//             }
+//         })
+//     })
+    
+// })
 
 router.post("/promotion/denied/:id", middleware.checkO,function(req,res){
     List.findByIdAndRemove(req.params.id, function(err){

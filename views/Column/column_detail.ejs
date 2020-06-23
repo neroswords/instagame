@@ -12,17 +12,21 @@
 <body>
     <main class="main-body" role="main">
         <!-- ปุ่มแก้ไขและลบข่าว -->
+        <% if(currentUser && (commu.user_post.id.equals(currentUser._id)|| currentUser.class === "King")){ %>
         <header class="teams__headline headline-sticky">
+          <a href="/commu/<%= commu._id %>/edit">
             <button class="entry__meta__posted4">
                 <i class="fas fa-edit"></i>
                 แก้ไขกระทู้
             </button>
+          </a>
             <form action="/commu/<%= commu._id %>?_method=DELETE" method="POST" style="display: inline;">
             <button class="entry__meta__posted3">
                 <i class="far fa-trash-alt"></i>
                 ลบกระทู้
             </button>
           </form>
+          <% } %>
         </header>
 
         <!-- รูปและพาดหัวข่าว -->
@@ -34,7 +38,7 @@
             <div class="featured-box__meta">
                 <span class="mr-2">
                     <i class="far fa-user-circle"></i>
-                    <%= commu.user_post.alias %>
+                    <a href="/profile/<%= commu.user_post.id %>"><%= commu.user_post.alias %></a>
                 </span>
                 <span class="mr-2">
                     <i class="fas fa-eye"></i>
