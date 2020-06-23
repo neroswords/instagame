@@ -821,36 +821,53 @@
         }
         
     
-    .be-comment-text {
-        font-size: 14px;
-        line-height: 18px;
-        color: #7a8192;
-        display: block;
-        background: #f6f6f7;
-        border: 1px solid #edeff2;
-        padding: 15px 20px 20px 20px;
-    }
-    
-    .form-group .form-input {
-        font-size: 14px;
-        line-height: 50px;
-        font-weight: 400;
-        color: #7a8192;
-        width: 100%;
-        height: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-        border: 1px solid #edeff2;
-        border-radius: 3px;
-    }
-    
-    .form-group.fl_icon .form-input {
-        padding-left: 70px;
-    }
-    
-    .form-group textarea.form-input {
-        height: 150px;
-    }
+        .be-comment-text {
+            font-size: 14px;
+            line-height: 1rem;
+            color: #7a8192;
+            display: block;
+            width: 100%;
+            background: #f6f6f7;
+            border: 1px solid #edeff2;
+            padding: 15px 20px 20px 20px;
+            border-radius: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .be-comment-text {
+                font-size: 14px;
+                line-height: 1rem;
+                color: #7a8192;
+                display: block;
+                background: #f6f6f7;
+                border: 1px solid #edeff2;
+                padding: 10px 20px;
+                width: 100%;
+                position: relative;
+            }
+        }
+        
+        .form-group .form-input {
+            font-size: 14px;
+            line-height: 1.2rem;
+            font-weight: 400;
+            color: #7a8192;
+            width:100%;
+            margin: auto;
+            height: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: 1px solid #edeff2;
+            border-radius: 1rem;
+        }
+        
+        .form-group.fl_icon .form-input {
+            padding-left: 50px;
+        }
+        
+        .form-group textarea.form-input {
+            height: 100px;
+        }
     
     .dropdown {
         display: block;

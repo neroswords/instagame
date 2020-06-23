@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team detail</title>
     <link rel="stylesheet" href="/css/team_detail.css">
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 </head>
 <body>
     <main class="teams-body" role="news"> 
@@ -142,12 +143,21 @@
          <!-- comment -->
          <div class="content__comment order-2 order-lg-3">
           <section class="party-comment-box box">
-              <header class="party-comment-header box__header">
-                  <h3>
-                      <i class="fas fa-comments fa-sm text-muted mr-1"></i>
-                      ช่องสนทนา
-                  </h3>
-              </header>
+            <header class="party-comment-header box__header">
+              <h3 class="d-inline-block">
+                <i class="fas fa-comments fa-sm text-muted mr-1"></i>
+                แสดงความคิดเห็น
+              </h3>
+              <!-- <div class="sort-comment d-inline-block">
+                <select class="custom-select d-inline-block" id="inputGroupSelect03" aria-label="Example select with button addon">
+                  <option selected>เรียงตาม</option>
+                  <option value="1">ยอดนิยม</option>
+                  <option value="2">ล่าสุด</option>
+                  <option value="3">เก่าสุด</option>
+                </select>
+              </div> -->
+        </header>
+
                <div class="container">
                 <div class="be-comment-block">
                   <% team.comments.reverse().forEach(function(comment){ %>
@@ -186,9 +196,9 @@
                           </div>
                           <% } %>
                         </span>
-                        <p class="be-comment-text">
-                          <%= comment.content %>
-                        </p>
+                        <div class="be-comment-text">
+                          <%- comment.content %>
+                        </div>
                     </div>
                   </div>
                   <% }) %>
@@ -213,6 +223,10 @@
 
         </div>
     </main>
+
+    <script type="text/javascript">
+      CKEDITOR.replace( 'comment[content]' );
+  </script>
 </body>
 </html>
 

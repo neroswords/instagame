@@ -109,6 +109,11 @@
     font-weight: bold;
 }
 
+.sort-comment select {
+    text-align: right;
+    font-size: 14px;
+}
+
 .entry {
     display: flex;
     flex-direction: column;
@@ -387,6 +392,13 @@
     color: #343a40;
 }
 
+.box__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
 .content__comment {
     flex: 0 0 100%;
     max-width: 100%;
@@ -533,9 +545,10 @@
 
 .be-comment-text {
     font-size: 14px;
-    line-height: 1.2rem;
+    line-height: 1rem;
     color: #7a8192;
     display: block;
+    width: 100%;
     background: #f6f6f7;
     border: 1px solid #edeff2;
     padding: 15px 20px 20px 20px;
@@ -545,7 +558,7 @@
 @media (max-width: 768px) {
     .be-comment-text {
         font-size: 14px;
-        line-height: 1.2rem;
+        line-height: 1rem;
         color: #7a8192;
         display: block;
         background: #f6f6f7;
@@ -558,7 +571,7 @@
 
 .form-group .form-input {
     font-size: 14px;
-    line-height: 1.4rem;
+    line-height: 1.2rem;
     font-weight: 400;
     color: #7a8192;
     width:100%;

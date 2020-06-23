@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>news</title>
     <link rel="stylesheet" href="/css/news.css">
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 </head>
 <body>
     <main class="main-body" role="main">
@@ -270,14 +271,14 @@
                           <i class="fas fa-comments fa-sm text-muted mr-1"></i>
                           แสดงความคิดเห็น
                         </h3>
-                        <div class="sort-comment d-inline-block">
+                        <!-- <div class="sort-comment d-inline-block">
                           <select class="custom-select d-inline-block" id="inputGroupSelect03" aria-label="Example select with button addon">
                             <option selected>เรียงตาม</option>
                             <option value="1">ยอดนิยม</option>
                             <option value="2">ล่าสุด</option>
                             <option value="3">เก่าสุด</option>
                           </select>
-                        </div>
+                        </div> -->
                   </header>
 
                    <div class="container">
@@ -318,9 +319,9 @@
                               </div>
                               <% } %>
                             </span>
-                            <p class="be-comment-text">
-                              <%= comment.content %>
-                            </p>
+                            <div class="be-comment-text">
+                              <%- comment.content %>
+                            </div>
                         </div>
                       </div>
                       <% }) %>
@@ -344,6 +345,9 @@
           </div>
           <!-- End comment section -->
 
+          <script type="text/javascript">
+            CKEDITOR.replace( 'comment[content]' );
+        </script>          
     </main>
 </body>
 </html>
