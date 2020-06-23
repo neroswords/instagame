@@ -229,9 +229,9 @@ router.get('/editProfile/:id', middleware.isLoggedIn , function(req,res){
 router.put("/editProfile/:id", middleware.isLoggedIn, upload.single('image'), function(req,res){
     let n_alias = req.body.alias;
     let n_firstname = req.body.firstname;
-    let n_lastname = req.body.lastname;
+    let n_lastname = req.body.surname;
     let n_email = req.body.email;
-    let n_number = req.body.number;
+    let n_number = req.body.tel;
     if(req.file){
         let n_image = req.file.filename;
         User.findById(req.params.id, function(err, foundUser){
@@ -322,18 +322,18 @@ router.get("/Sign_up/acception", function(req,res){
 router.post('/Sign_up', upload.single('image'), function(req,res){
     let n_image = req.file.filename;
     let n_class = "People";
-    let status = "none";
+    let n_status = "none";
     User.register(new User({username: req.body.username, 
                             email: req.body.email , 
                             alias : req.body.alias,
                             image : n_image,
                             class : n_class,
                             firstname : req.body.firstname,
-                            lastname : req.body.surname,
+                            lastname : req.body.lastname,
                             status : n_status,
                             gender : req.body.gender,
                             birth_day : req.body.birth_day,
-                            number : req.body.tel}), req.body.password, 
+                            number : req.body.number}), req.body.password, 
                             function(err, user){
         if(err){
             console.log(err);
