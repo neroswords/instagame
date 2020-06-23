@@ -57,6 +57,10 @@
         margin-top: -20px;
     }
     
+    .healine-uprank {
+        color: #2C3E50;
+    }
+
     .headline__name {
         background: white;
         font-size: 24px;
@@ -597,6 +601,7 @@
         width: 100%;
     }
     
+
     
     
     

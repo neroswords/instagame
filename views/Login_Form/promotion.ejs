@@ -1,0 +1,55 @@
+<%- include("patials/header") %>
+
+้<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teams</title>
+    <link rel="stylesheet" href="/css/team.css">
+
+    <script src="./js/load_more.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <main class="teams-body" role="news"> 
+        <div id="teams-section" style="position: relative;">
+          <header class="teams__headline headline-sticky healine-uprank">
+            <h2 class="headline__name">รายชื่อที่ต้องการอัพเกรดระดับสมาชิก</h2>
+          </header>
+  
+          <section class="box">
+            <div class="row" style="display:flex; flex-wrap:wrap;">
+                <article class="entry" style="display: none;">
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">ลำดับ</th>
+                            <th scope="col">ชื่อบริษัท</th>
+                            <th scope="col">ไฟล์ PDF</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                </article> 
+            </div>
+          </section>
+      </div>
+    </main>
+</body>
+
+    
+<%- include("patials/footer") %>
