@@ -99,7 +99,7 @@
          <div class="row ">
                     <!-- ข่าวที่เกี่ยวข้อง -->
                     <div class="col-12" id="profile-items">
-                        <div class="profile-item-content">
+                        <div class="profile-item-content profile-news">
                             <h1>
                                 <i class="fas fa-newspaper"></i>
                                 ข่าวเกมที่สร้าง
@@ -138,10 +138,53 @@
                         <% }) %>
                      </div>
                     </div> 
+
+                  <!-- รีวิวเกม -->
+                  <div class="col-12" id="profile-items">
+                    <div class="profile-item-content profile-review">
+                        <h1>
+                            <i class="fas fa-pen"></i>
+                            รีวิวที่เขียน
+                        </h1>
+                    </div> 
+                    <div class="row">
+                      <% Review.forEach(function(review){ %>
+                        <% if(user._id.equals(review.user_post.id)){ %> 
+                        <div class="col-6 col-md-3 order-1">
+                            <article class="entry entry--hor-sm-only">
+                                <figure class="entry__thumb entry__thumb--zoom">
+                                  <a href="/review/<%= review._id %>">
+                                    <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/review/' + review.image %> class="card-img-top">
+                                  </a>
+                                </figure>
+                                <div class="entry__body">
+                                  <h4 class="entry__title">
+                                    <a href="/review/<%= review._id %>">
+                                        รีวิว: 
+                                      <%= review.game %>
+                                    </a>
+                                  </h4>
+                                  <div class="entry__meta">
+                                    <span class="entry__meta__count">
+                                      <i class="fas fa-eye"></i>
+                                      <%= review.viewers %>
+                                    </span>
+                                    <span class="entry__meta__posted">
+                                      <i class="far fa-clock"></i>
+                                      <%= moment(review.date).format("DD/MM/YYYY") %>
+                                    </span>
+                                  </div>
+                                </div>
+                              </article>
+                        </div>
+                        <% } %>
+                    <% }) %>
+                    </div>
+                </div>                    
                         
                     <!-- ชุมชน / กระทู้ ที่เกี่ยวข้อง -->
                     <div class="col-12" id="profile-items">
-                        <div class="profile-item-content">
+                        <div class="profile-item-content profile-commu">
                             <h1>
                                 <i class="fas fa-file-alt"></i>
                                 กระทู้ที่สร้าง
@@ -184,7 +227,7 @@
 
                     <!-- ปาร์ตี้ที่เกี่ยวข้อง -->
                     <div class="col-12" id="profile-items">
-                        <div class="profile-item-content">
+                        <div class="profile-item-content profile-team">
                             <h1>
                                 <i class="fas fa-users"></i>
                                 ปาร์ตี้ที่สร้าง
@@ -293,48 +336,6 @@
                       </div>
                   </div>
                   
-                  <!-- รีวิวเกม -->
-                  <div class="col-12" id="profile-items">
-                    <div class="profile-item-content">
-                        <h1>
-                            <i class="fas fa-pen"></i>
-                            รีวิวที่เขียน
-                        </h1>
-                    </div> 
-                    <div class="row">
-                      <% Review.forEach(function(review){ %>
-                        <% if(user._id.equals(review.user_post.id)){ %> 
-                        <div class="col-6 col-md-3 order-1">
-                            <article class="entry entry--hor-sm-only">
-                                <figure class="entry__thumb entry__thumb--zoom">
-                                  <a href="/review/<%= review._id %>">
-                                    <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/review/' + review.image %> class="card-img-top">
-                                  </a>
-                                </figure>
-                                <div class="entry__body">
-                                  <h4 class="entry__title">
-                                    <a href="/review/<%= review._id %>">
-                                        รีวิว: 
-                                      <%= review.game %>
-                                    </a>
-                                  </h4>
-                                  <div class="entry__meta">
-                                    <span class="entry__meta__count">
-                                      <i class="fas fa-eye"></i>
-                                      <%= review.viewers %>
-                                    </span>
-                                    <span class="entry__meta__posted">
-                                      <i class="far fa-clock"></i>
-                                      <%= moment(review.date).format("DD/MM/YYYY") %>
-                                    </span>
-                                  </div>
-                                </div>
-                              </article>
-                        </div>
-                        <% } %>
-                    <% }) %>
-                    </div>
-                </div>
                </div>
               </div>
             </div>
