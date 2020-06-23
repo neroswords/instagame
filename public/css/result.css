@@ -13,13 +13,13 @@
 .teams-body {
     overflow: hidden;
     padding-top: 24px;
-    padding-bottom: 24px;    
+    padding-bottom: 24px;   
 }
 
 
 @media (min-width: 1200px) {
     .teams__headline {
-        max-width: 980px;
+        max-width: 1050px;
     }
  }
 
@@ -37,6 +37,9 @@
 
 .teams__headline {
     background-color: #fff;
+    border-left: 1px solid #ddd; 
+    border-right: 1px solid #ddd; 
+    border-top: 1px solid #ddd;
     margin: 0 auto;
     padding: 1.25rem;
     color: #343a40;
@@ -45,6 +48,8 @@
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
 }
+
+
 
 .headline-sticky {
     z-index: 10;
@@ -98,7 +103,7 @@
 
 @media (min-width: 1200px) {
     .box {
-        max-width: 980px;
+        max-width: 1050px;
     }
  }
 
@@ -115,7 +120,6 @@
  }
 
 .box {
-    background-color: white;
     z-index: 5;
     margin: 0 auto;
     padding-right: 1.25rem;
@@ -123,6 +127,10 @@
     width: 100%;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
+    background-color: #fff;
+    border-left: 1px solid #ddd; 
+    border-right: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd;
 }
 
 .box_header {

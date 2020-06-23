@@ -14,7 +14,10 @@
 
     <main class="profile-content">
         <div class="profile-content-container">
-            <h1>ข้อมูลส่วนตัว</h1>
+                <h1>
+                    <i class="fas fa-address-card"></i>
+                    ข้อมูลส่วนตัว
+                </h1>
             <div class="profile-form">
                 <div class="profile-form-group">
                     <div class="profile-form-inside">
@@ -39,7 +42,6 @@
                 <div class="profile-form-group">
                     <label for="name" class="profile-label-item profile-form-title">
                         ชื่อ
-                        <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
                         <p><%= user.firstname %></p>
@@ -49,7 +51,6 @@
                 <div class="profile-form-group">
                     <label for="lastname" class="profile-label-item profile-form-title">
                         นามสกุล
-                        <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
                         <p><%= user.lastname %></p>
@@ -59,7 +60,6 @@
                 <div class="profile-form-group">
                     <label for="alias" class="profile-label-item profile-form-title">
                         ชื่อนามแฝง
-                        <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
                         <p><%= user.alias %></p>
@@ -69,7 +69,6 @@
                 <div class="profile-form-group">
                     <label for="email" class="profile-label-item profile-form-title">
                         อีเมลล์
-                        <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
                         <p><%= user.email %></p>
@@ -78,7 +77,6 @@
                 <div class="profile-form-group">
                     <label for="telephone" class="profile-label-item profile-form-title">
                         เบอร์โทรศัพท์
-                        <font color="#FF0000">*</font>
                     </label>
                     <div class="profile-form-inside">
                         <p><%= user.number %></p>
@@ -86,7 +84,8 @@
                 </div>
                 <% if(currentUser && currentUser._id.equals(user._id)){ %>
                 <div class="profile-form-act">
-                    <button  id="editprofile" class="profile-btn profile-btn-primary2" onclick="window.location.href='/editProfile/<%= user._id %>'">แก้ไขข้อมูล</button>
+                    <button  id="editprofile" class="profile-btn profile-btn-primary3" onclick="window.location.href='/editProfile/<%= user._id %>'">แก้ไขข้อมูล</button>
+                    <button  id="editprofile" class="profile-btn profile-btn-primary2">ขออัพเกรดระดับสมาชิก</button>
                 </div>
                 <% } %>
         </div>
@@ -94,32 +93,18 @@
 </main>
 
 <main class="teams-body" role="news"> 
-    <div id="teams-section" style="position: relative;">
-      <header class="teams__headline headline-sticky">
-        <div class="row">
-          <div class="col-md-9 col-xs-12">
-            <h4 class="headline__name">
-              ค้นหา: 
-          </h4>
-          <!-- <p class="headline__found">
-              ผลการค้นหาพบ <span>24</span> รายการ
-          </p> -->
-          </div>
-          <div class="col-md-3 col-xs-12">
-          </div>
-        </div>
-      </header>
+    <div id="profile-item-section" style="position: relative;">
 
-      <section class="box">
-         <div class="row">
+      <section class="box profile-item-section">
+         <div class="row ">
                     <!-- ข่าวที่เกี่ยวข้อง -->
-                    <div class="col-12" id="search-news">
-                        <header class="box_header">
-                            <h6>
-                                <i class="far fa-newspaper"></i>
-                                ข่าวที่เกี่ยวข้อง
-                            </h6>
-                        </header>
+                    <div class="col-12" id="profile-items">
+                        <div class="profile-item-content">
+                            <h1>
+                                <i class="fas fa-newspaper"></i>
+                                ข่าวเกมที่สร้าง
+                            </h1>
+                        </div>              
                         <div class="row">
                           <% News.forEach(function(news){ %>
                             <% if(user._id.equals(news.user_post.id)){ %>                            
@@ -127,7 +112,7 @@
                                 <article class="entry entry--hor-sm-only">
                                     <figure class="entry__thumb entry__thumb--zoom">
                                       <a href="/news/<%= news._id %>">
-                                        <img src=<%= '../uploads/news/' + news.image %> class="card-img-top">
+                                        <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/news/' + news.image %> class="card-img-top">
                                       </a>
                                     </figure>
                                     <div class="entry__body">
@@ -151,17 +136,17 @@
                             </div>
                             <% } %>
                         <% }) %>
-                    </div>
+                     </div>
+                    </div> 
                         
-
                     <!-- ชุมชน / กระทู้ ที่เกี่ยวข้อง -->
-                    <div class="col-12" id="search-news">
-                      <header class="box_header">
-                          <h6>
-                            <i class="fas fa-users"></i>
-                              ชุมชน/กระทู้ที่เกี่ยวข้อง
-                          </h6>
-                      </header>
+                    <div class="col-12" id="profile-items">
+                        <div class="profile-item-content">
+                            <h1>
+                                <i class="fas fa-file-alt"></i>
+                                กระทู้ที่สร้าง
+                            </h1>
+                        </div>   
                       <div class="row">
                         <% Commu.forEach(function(commu){ %>
                             <% if(user._id.equals(commu.user_post.id)){ %> 
@@ -169,7 +154,7 @@
                               <article class="entry entry--hor-sm-only">
                                   <figure class="entry__thumb entry__thumb--zoom">
                                     <a href="/commu/<%= commu._id %>">
-                                      <img src=<%= '../uploads/commu/' + commu.image %> class="card-img-top">
+                                      <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '../uploads/commu/' + commu.image %> class="card-img-top">
                                     </a>
                                   </figure>
                                   <div class="entry__body">
@@ -194,17 +179,17 @@
                           <% } %>
                       <% }) %>
                       </div>
-
+                    </div> 
 
 
                     <!-- ปาร์ตี้ที่เกี่ยวข้อง -->
-                    <div class="col-12" id="search-news">
-                      <header class="box_header">
-                          <h6>
-                            <i class="fas fa-users"></i>
-                              ปาร์ตี้ที่เกี่ยวข้อง
-                          </h6>
-                      </header>
+                    <div class="col-12" id="profile-items">
+                        <div class="profile-item-content">
+                            <h1>
+                                <i class="fas fa-users"></i>
+                                ปาร์ตี้ที่สร้าง
+                            </h1>
+                        </div> 
                       <div class="row">
                         <% Team.forEach(function(team){ %>
                             <% if(user._id.equals(team.user_post.id)){ %> 
@@ -309,17 +294,17 @@
                   </div>
                   
                   <!-- รีวิวเกม -->
-                  <div class="col-md-3" id="search-news">
-                    <header class="box_header">
-                        <h6>
-                          <i class="fas fa-star"></i>
-                            รีวิวเกม
-                        </h6>
-                    </header>
+                  <div class="col-12" id="profile-items">
+                    <div class="profile-item-content">
+                        <h1>
+                            <i class="fas fa-pen"></i>
+                            รีวิวที่เขียน
+                        </h1>
+                    </div> 
                     <div class="row">
                       <% Review.forEach(function(review){ %>
                         <% if(user._id.equals(review.user_post.id)){ %> 
-                        <div class="col-12 order-1">
+                        <div class="col-6 col-md-3 order-1">
                             <article class="entry entry--hor-sm-only">
                                 <figure class="entry__thumb entry__thumb--zoom">
                                   <a href="/review/<%= review._id %>">
@@ -329,6 +314,7 @@
                                 <div class="entry__body">
                                   <h4 class="entry__title">
                                     <a href="/review/<%= review._id %>">
+                                        รีวิว: 
                                       <%= review.game %>
                                     </a>
                                   </h4>
