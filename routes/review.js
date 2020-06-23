@@ -175,7 +175,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 console.log(err);
                 
             } else {
-                res.render("", {Review : foundReview})
+                res.render("edit_review", {Review : foundReview})
             }
         })
     })

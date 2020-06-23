@@ -115,10 +115,12 @@
                 <a class="dropdown-item" href="/review/category/Racing">Racing</a>
               </div>
             </div>
+            <% if(currentUser && currentUser.class === "King"){ %>
             <button class="create_team-icon-review" onclick="window.location.href='/review/create';">
                 <i class="fas fa-pen"></i>
               <span>เขียนรีวิว</span> 
           </button>
+          <% } %>
           </header>
 
           <section class="box">

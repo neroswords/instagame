@@ -29,7 +29,7 @@ const { isLoggedIn } = require("../middleware");
     
     const imageFilter = function(req, file, cb){
         var ext = path.extname(file.originalname);
-        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg' && ext !== '.gif'){
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg' && ext !== '.gif' && ext !== '.pdf'){
             return cb(new Error('Only image is allow to upload'),false)
         }
         cb(null, true);
@@ -124,7 +124,7 @@ router.get("/profile/:id", function(req,res){
 })
 
 router.get("/promotion", middleware.checkO, function(req,res){
-    List.find({}, function(err,allList){
+    List.find({}).populate('list').exec( function(err,allList){
         res.render("promotion",{List : allList});
     })
 })
@@ -134,23 +134,30 @@ router.get("/promotion/request/:id", middleware.isLoggedIn, function(req,res){
 })
 
 //รับidของ userที่ขอมา
-router.post("/promotion/request/:id",middleware.isLoggedIn, function(req,res){
+router.post("/promotion/request/:id",middleware.isLoggedIn,upload.single('PDF'), function(req,res){
     User.findById(req.params.id, function(err, foundUser){
         if(err){
             console.log(err); 
         } else {
+            foundUser.status = "sent";
+            foundUser.save();
             var n_content = req.body.content;
-            var n_list = {list : foundUser,content : n_content}
+            var n_company = req.body.company;
+            let n_file = req.file.filename
+            var n_list = {list : foundUser,
+                content : n_content, 
+                company : n_company,
+                doc : n_file}
             List.create(n_list, function(err,newList){
                 req.flash('sucess',"you already sent request")
-                res.redirect("/profile"+req.params.id)
+                res.redirect("/profile/"+req.params.id)
             })
         }
     })
 })
 
 // ส่ง id ของ listมาหาก่อน
-router.post("/promotion/sucess/:id", middleware.checkO,function(req,res){
+router.post("/promotion/success/:id", middleware.checkO,function(req,res){
     List.findById(req.params.id, function(err, foundList){
         User.findById(foundList.list, function(err, foundUser){
             if(err){
@@ -163,20 +170,51 @@ router.post("/promotion/sucess/:id", middleware.checkO,function(req,res){
                         console.log(err);
                     }
                 })
+                req.flash('success','New One has became the Noble')
                 res.redirect("/promotion");
             }
         })
     })
-    
 })
 
-router.post("/promotion/denied/:id", middleware.checkO,function(req,res){
-    List.findByIdAndRemove(req.params.id, function(err){
-        if(err){
-            console.log(err);
-        }
+// router.post("/promotion/demote/:id", middleware.checkO,function(req,res){
+//     List.findById(req.params.id, function(err, foundList){
+//         User.findById(foundList.list, function(err, foundUser){
+//             if(err){
+//                 console.log(err);
+//             } else {
+//                 foundUser.class = "People";
+//                 foundUser.status = "none";
+//                 foundUser.save();
+//                 List.findByIdAndRemove(req.params.id, function(err){
+//                     if(err){
+//                         console.log(err);
+//                     }
+//                 })
+//                 res.redirect("/promotion");
+//             }
+//         })
+//     })
+// })
+
+router.delete("/promotion/denied/:id", middleware.checkO,function(req,res){
+    List.findById(req.params.id, function(err, foundList){
+        User.findById(foundList.list, function(err, foundUser){
+            if(err){
+                console.log(err);
+            } else {
+                foundUser.status = "none";
+                foundUser.save();
+                List.findByIdAndRemove(req.params.id, function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                })
+                req.flash('error','Not THAT ONE')
+                res.redirect("/promotion");
+            }
+        })
     })
-    res.redirect("/promotion");
 })
 
     
@@ -266,7 +304,7 @@ router.put("/editProfile/:id", middleware.isLoggedIn, upload.single('image'), fu
             console.log("error updating profile");
             res.redirect("/");
         }else{
-            res.redirect("/");
+            res.redirect("/profile/"+req.params.id);
         }
     })
 })

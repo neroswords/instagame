@@ -44,7 +44,7 @@
                           <div class="entry__meta">
                             <span class="entry__meta__posted">
                               หัวหน้าปาร์ตี้: 
-                              <span class="party-detail-info"><%= team.user_post.alias %></span>
+                              <span class="party-detail-info"><a href="/profile/<%= team.user_post.id %>"><%= team.user_post.alias %></a></span>
                             </span>
                           </div>
                           <!-- <div class="entry__meta">
@@ -63,7 +63,7 @@
                             <div class="entry__meta__posted0">รายชื่อสมาชิก:</div>
                             <div class="party-people">
                               <% team.party.forEach(function(list){ %>
-                                <span class="party-detail-info0"><%= list.alias %></span>
+                                <span class="party-detail-info0"><a href="/profile/<%= list._id %>"><%= list.alias %></a></span>
                               <% }) %>
                             </div>
                           </div>
