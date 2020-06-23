@@ -1,0 +1,66 @@
+<%- include("patials/header") %>
+
+้<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teams</title>
+    <link rel="stylesheet" href="/css/team.css">
+
+    <script src="./js/load_more.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <main class="teams-body" role="news"> 
+        <div id="teams-section" style="position: relative;">
+          <header class="teams__headline headline-sticky healine-uprank">
+            <h2 class="headline__name">รายชื่อที่ต้องการอัพเกรดระดับสมาชิก</h2>
+          </header>
+  
+          <section class="box">
+            <div class="row" style="display:flex; flex-wrap:wrap;">
+                <article class="entry" style="display: none;">
+                    <table class="table uprank-table">
+                        <thead class="uprank-head">
+                          <tr>
+                            <th scope="col">ชื่อผู้ใช้</th>
+                            <th scope="col">ชื่อบริษัท</th>
+                            <th scope="col">ไฟล์ PDF</th>
+                            <th scope="col">การอนุมัติ</th>
+                            <th scope="col">การปฏิเสธ</th>
+                          </tr>
+                        </thead>
+                        <tbody class="uprank-item">
+                          <tr>
+                            <td>ชื่อผู้ใช้</td>
+                            <td>ชื่อบริษัท</td>
+                            <td>ไฟล์ PDF</td>
+                            <td>
+                                <button class="entry__meta__accept">
+                                    <i class="fas fa-check-circle"></i>
+                                    อนุมัติ
+                                </button>
+                            </td>
+                            <td>
+                                <button class="entry__meta__cancle">
+                                    <i class="fas fa-times-circle"></i>
+                                    ปฏิเสธ
+                                </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </article> 
+            </div>
+          </section>
+      </div>
+    </main>
+</body>
+
+    
+<%- include("patials/footer") %>
