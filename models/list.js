@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 let ListSchema = new mongoose.Schema({
-    name : String,
+    list: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }]
 });
 
 // not sure

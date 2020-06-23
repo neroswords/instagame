@@ -6,6 +6,7 @@ const express = require("express"),
     passport = require('passport'),
     User = require('../models/user'),
     Communication = require('../models/commu'),
+    Comment = require('../models/comment'),
     Team = require('../models/team'),
     News = require('../models/news'),
     Review = require('../models/review'),
@@ -279,12 +280,19 @@ router.put("/:id", middleware.checkCommuOwner, upload.single('image'), function(
     })
 })
 
-router.delete("/:id", middleware.checkCommuOwner, function(req,res){
-    Communication.findById(req.params.id, function(err, foundCommu){
+router.delete("/:id", middleware.checkCommuOwner,async function(req,res){
+    Communication.findById(req.params.id,async function(err, foundCommu){
         if(err){
             console.log(err);
             res.redirect('/commu/'+ req.params.id)
         } else{
+            for await(let comment of foundCommu.comments){
+                Comment.findByIdAndRemove(comment._id,function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                })
+            }
             const imagePath = './public/uploads/commu/' + foundCommu.image;
             fs.unlink(imagePath, function(err){
                 if(err){
@@ -294,7 +302,7 @@ router.delete("/:id", middleware.checkCommuOwner, function(req,res){
             })
         }
     })
-    Communication.findByIdAndRemove(req.params.id, function(err){
+    await Communication.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log("error to delete commu");
             res.redirect("/commu");

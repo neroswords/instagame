@@ -12,6 +12,7 @@ const express = require("express"),
     News = require('../models/news'),
     Review = require('../models/review'),
     Tag = require('../models/tag'),
+    Comment = require('../models/comment'),
     middleware = require('../middleware');
 
 var moment = require('moment');     
@@ -64,11 +65,11 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
 })
 
 
-    router.get("/create", middleware.isLoggedIn, function(req,res){
+    router.get("/create", middleware.checkTu, function(req,res){
         res.render("c_news");
     })
 
-    router.post("/create", middleware.isLoggedIn, upload.single('image'), function(req,res){
+    router.post("/create", middleware.checkTu, upload.single('image'), function(req,res){
         let n_head = req.body.headline;
         let n_content = req.body.content;
         let n_image = req.file.filename;
@@ -212,22 +213,28 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         })
     })
 
-    router.delete("/:id", middleware.checkNewsOwner, function(req,res){
-        News.findById(req.params.id, function(err, foundNews){
+    router.delete("/:id", middleware.checkNewsOwner,async function(req,res){
+        News.findById(req.params.id, async function(err, foundNews){
             if(err){
                 console.log(err);
                 res.redirect('/news/'+ req.params.id)
             } else{
+                for await(let comment of foundNews.comments){
+                    Comment.findByIdAndRemove(comment._id,function(err){
+                        if(err){
+                            console.log(err);
+                        }
+                    })
+                }
                 const imagePath = './public/uploads/news/' + foundNews.image;
                 fs.unlink(imagePath, function(err){
                     if(err){
                         console.log(err);
-                        res.redirect('/news');
                     }
                 })
             }
         })
-        News.findByIdAndRemove(req.params.id, function(err){
+        await News.findByIdAndRemove(req.params.id, function(err){
             if(err){
                 console.log("error to delete news");
                 res.redirect("/news");
