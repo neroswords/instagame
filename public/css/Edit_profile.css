@@ -35,12 +35,32 @@
 }
 
 .profile-item-content h1 {
+    color: white;
     font-size: 24px;
-    border: 1px solid #5DADE2;
+    border: 1px solid;
     border-radius: 1rem;
     margin: 10px 0 20px;
     padding: .5rem;
-    background-color: #5DADE2;
+}
+
+.profile-news h1{
+    border-color: #16A085;
+    background-color: #16A085;
+}
+
+.profile-commu h1{
+    border-color: #3498DB;
+    background-color: #3498DB;
+}
+
+.profile-team h1{
+    border-color: #9B59B6;
+    background-color: #9B59B6;
+}
+
+.profile-review h1{
+    border-color: #E74C3C;
+    background-color: #E74C3C;
 }
 
 @media (min-width: 1200px) {
