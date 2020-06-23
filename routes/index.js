@@ -129,7 +129,7 @@ router.get("/promotion", middleware.checkO, function(req,res){
     })
 })
 
-router.get("/promotion/request", middleware.isLoggedIn, function(req,res){
+router.get("/promotion/request/:id", middleware.isLoggedIn, function(req,res){
     res.render("promotion_create");
 })
 
