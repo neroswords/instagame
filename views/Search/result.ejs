@@ -242,7 +242,7 @@
                       </div>
                       
                       <!-- รีวิวเกม -->
-                      <div class="col-md-3" id="search-news">
+                      <div class="col-12" id="search-news">
                         <header class="box_header">
                             <h6>
                               <i class="fas fa-star"></i>
@@ -251,7 +251,7 @@
                         </header>
                         <div class="row">
                           <% Review.forEach(function(review){ %>
-                            <div class="col-12 order-1">
+                            <div class="col-6 col-md-3 order-1">
                                 <article class="entry entry--hor-sm-only">
                                     <figure class="entry__thumb entry__thumb--zoom">
                                       <a href="/review/<%= review._id %>">

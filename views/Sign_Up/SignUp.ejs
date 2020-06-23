@@ -24,31 +24,46 @@
             </div>
             <form method="POST" class="form-hor" id="fLogin" name="fLogin" action="/Sign_up" enctype="multipart/form-data">
                 <div>
-                    <label for="ImageUpload" class="label-form-title">แนบรูปภาพ</label>
+                    <label for="ImageUpload" class="label-form-title">
+                        แนบรูปภาพ
+                        <font color="#FF0000">*</font>
+                    </label>
                     <div class="form-inside">
                         <input type="file" class="form-item" id="picture" name="image" accept="image/*">
                     </div>
                 </div>
                 <div>
-                    <label for="email" class="label-form-title">อีเมล์</label>
+                    <label for="email" class="label-form-title">
+                        อีเมล์
+                        <font color="#FF0000">*</font>
+                    </label>
                     <div class="form-inside">
                         <input type="email" class="form-item" id="email" name="email" placeholder="ใส่อีเมล์" required>
                     </div>
                 </div>
                 <div>
-                    <label for="password" class="label-form-title">รหัสผ่าน</label>
+                    <label for="password" class="label-form-title">
+                        รหัสผ่าน
+                        <font color="#FF0000">*</font>
+                    </label>
                     <div class="form-inside">
                         <input type="password" class="form-item" id="txtPassword" name="password" placeholder="ใส่รหัสผ่าน" required>
                     </div>
                 </div>
                 <div>
-                    <label for="confirm_password" class="label-form-title">ยืนยันรหัสผ่าน</label>
+                    <label for="confirm_password" class="label-form-title">
+                        ยืนยันรหัสผ่าน
+                        <font color="#FF0000">*</font>
+                    </label>
                     <div class="form-inside">
                         <input type="password" class="form-item" id="txtConfirmPassword" name="confirm_password" placeholder="ใส่ยืนยันรหัสผ่าน" required >
                     </div>
                 </div>
                 <div>
-                    <label for="penname" class="label-form-title">ชื่อผู้ใช้</label>
+                    <label for="penname" class="label-form-title">
+                        ชื่อผู้ใช้
+                        <font color="#FF0000">*</font>
+                    </label>
                     <div class="form-inside">
                         <input type="text" class="form-item" id="email" name="username" placeholder="ใส่ชื่อผู้ใช้" required >
                     </div>
@@ -120,6 +135,7 @@
                 <div>
                     <label for="telephone" class="label-form-title">
                         เบอร์โทรศัพท์
+                        <font color="#FF0000">*</font>
                     </label>
                     <div class="form-inside">
                         <input type="text" class="form-item" id="tel" name="number" placeholder="กรอกเบอร์โทรศัพท์" maxlength="10" required>

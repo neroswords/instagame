@@ -77,3 +77,33 @@
     padding: 16px;
 }
 
+.up #up{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: #eee;
+    top: -2.5rem;
+    right: 5rem;
+    border-radius: 100%;
+    display: flex;
+    animation: pulse 2s infinite;
+}
+
+.up i{
+
+    color: #16162d;
+    font-size: 2rem;
+    margin: auto;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(253, 87, 191, 0.99);
+    }
+    70%{
+        box-shadow: 0 0 0 2rem rgba(253, 87, 191, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(253, 87, 191, 0.99);
+    }
+}
