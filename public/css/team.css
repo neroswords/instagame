@@ -522,6 +522,78 @@
         background-color: OLIVEDRAB;
     }
 
+    .entry__meta__accept {
+        font-size: .875rem;
+        color: white;
+        border-color: #7CB342;
+        background-color: #7CB342;
+        border: 1px solid;
+        padding: 5px;
+        width: auto;
+        border-radius: 1rem;
+    }
+
+    .entry__meta__accept:hover {
+        color: white;
+        border-color: OLIVEDRAB;
+        background-color: OLIVEDRAB;
+    }
+
+    .entry__meta__cancle {
+        font-size: .875rem;
+        color: white;
+        border-color: #E74C3C;
+        background-color: #E74C3C;
+        border: 1px solid;
+        padding: 5px;
+        width: auto;
+        border-radius: 1rem;
+    }
+
+    .entry__meta__cancle:hover {
+        color: white;
+        border-color: #B03A2E;
+        background-color: #B03A2E;
+    }
+
+    .uprank-table {
+        border-radius: 1rem;
+    }
+
+    .uprank-head {
+        color: white;
+        background-color: teal;
+        border: 1px solid teal;
+        border-radius: 1rem;
+    }
+
+    .uprank-head tr {
+        width: auto;
+    }
+
+    .uprank-head th {
+        font-size: 16px;
+        font-weight: 500;
+        width: auto;
+    }
+
+    .uprank-item {
+        background-color: white;
+        border: 1px solid #B2BABB;
+        border-radius: 1rem;
+    }
+
+    .uprank-item tr {
+        width: auto;
+    }
+
+    .uprank-item td {
+        font-size: 16px;
+        font-weight: 500;
+        width: auto;
+    }
+
+
     .entry__meta__posted3 {
         font-size: .875rem;
         color: white;
