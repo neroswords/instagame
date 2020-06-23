@@ -124,7 +124,7 @@ router.get("/profile/:id", function(req,res){
 })
 
 router.get("/promotion", middleware.checkO, function(req,res){
-    List.find({}, function(err,allList){
+    List.find({}).populate('list').exec( function(err,allList){
         res.render("promotion",{List : allList});
     })
 })
@@ -170,6 +170,7 @@ router.post("/promotion/success/:id", middleware.checkO,function(req,res){
                         console.log(err);
                     }
                 })
+                req.flash('success','New One has became the Noble')
                 res.redirect("/promotion");
             }
         })
@@ -194,16 +195,26 @@ router.post("/promotion/success/:id", middleware.checkO,function(req,res){
 //             }
 //         })
 //     })
-    
 // })
 
-router.post("/promotion/denied/:id", middleware.checkO,function(req,res){
-    List.findByIdAndRemove(req.params.id, function(err){
-        if(err){
-            console.log(err);
-        }
+router.delete("/promotion/denied/:id", middleware.checkO,function(req,res){
+    List.findById(req.params.id, function(err, foundList){
+        User.findById(foundList.list, function(err, foundUser){
+            if(err){
+                console.log(err);
+            } else {
+                foundUser.status = "none";
+                foundUser.save();
+                List.findByIdAndRemove(req.params.id, function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                })
+                req.flash('error','Not THAT ONE')
+                res.redirect("/promotion");
+            }
+        })
     })
-    res.redirect("/promotion");
 })
 
     

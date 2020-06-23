@@ -35,25 +35,31 @@
                             <th scope="col">การปฏิเสธ</th>
                           </tr>
                         </thead>
+                        <% List.forEach(function(list){ %>
                         <tbody class="uprank-item">
                           <tr>
-                            <td>ชื่อผู้ใช้</td>
-                            <td>ชื่อบริษัท</td>
-                            <td>ไฟล์ PDF</td>
+                            <td><%= list.list.username %></td>
+                            <td><%= list.company %></td>
+                            <td><a href="/uploads/user/<%= list.doc %>"><%= list.doc %></a></td>
                             <td>
-                                <button class="entry__meta__accept">
-                                    <i class="fas fa-check-circle"></i>
-                                    อนุมัติ
-                                </button>
+                                <form action="/promotion/success/<%= list._id %>" method="POST">
+                                    <button class="entry__meta__accept">
+                                        <i class="fas fa-check-circle"></i>
+                                        อนุมัติ
+                                    </button>
+                                </form>
                             </td>
                             <td>
+                                <form action="/promotion/denied/<%= list._id %>?_method=DELETE" method="POST">
                                 <button class="entry__meta__cancle">
                                     <i class="fas fa-times-circle"></i>
                                     ปฏิเสธ
                                 </button>
+                            </form>
                             </td>
                           </tr>
                         </tbody>
+                        <% }) %>
                       </table>
                 </article> 
             </div>
