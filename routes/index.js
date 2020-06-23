@@ -29,7 +29,7 @@ const { isLoggedIn } = require("../middleware");
     
     const imageFilter = function(req, file, cb){
         var ext = path.extname(file.originalname);
-        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg' && ext !== '.gif'){
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg' && ext !== '.gif' && ext !== '.pdf'){
             return cb(new Error('Only image is allow to upload'),false)
         }
         cb(null, true);
@@ -134,13 +134,14 @@ router.get("/promotion/request/:id", middleware.isLoggedIn, function(req,res){
 })
 
 //รับidของ userที่ขอมา
-router.post("/promotion/request/:id",middleware.isLoggedIn, function(req,res){
+router.post("/promotion/request/:id",middleware.isLoggedIn,upload.single('PDF'), function(req,res){
     User.findById(req.params.id, function(err, foundUser){
         if(err){
             console.log(err); 
         } else {
             var n_content = req.body.content;
-            var n_list = {list : foundUser,content : n_content}
+            var n_company = req.body.company;
+            var n_list = {list : foundUser,content : n_content, company : n_company}
             List.create(n_list, function(err,newList){
                 req.flash('sucess',"you already sent request")
                 res.redirect("/profile"+req.params.id)
@@ -229,9 +230,9 @@ router.get('/editProfile/:id', middleware.isLoggedIn , function(req,res){
 router.put("/editProfile/:id", middleware.isLoggedIn, upload.single('image'), function(req,res){
     let n_alias = req.body.alias;
     let n_firstname = req.body.firstname;
-    let n_lastname = req.body.lastname;
+    let n_lastname = req.body.surname;
     let n_email = req.body.email;
-    let n_number = req.body.number;
+    let n_number = req.body.tel;
     if(req.file){
         let n_image = req.file.filename;
         User.findById(req.params.id, function(err, foundUser){
@@ -266,7 +267,7 @@ router.put("/editProfile/:id", middleware.isLoggedIn, upload.single('image'), fu
             console.log("error updating profile");
             res.redirect("/");
         }else{
-            res.redirect("/");
+            res.redirect("/profile/"+req.params.id);
         }
     })
 })
@@ -322,18 +323,18 @@ router.get("/Sign_up/acception", function(req,res){
 router.post('/Sign_up', upload.single('image'), function(req,res){
     let n_image = req.file.filename;
     let n_class = "People";
-    let status = "none";
+    let n_status = "none";
     User.register(new User({username: req.body.username, 
                             email: req.body.email , 
                             alias : req.body.alias,
                             image : n_image,
                             class : n_class,
                             firstname : req.body.firstname,
-                            lastname : req.body.surname,
+                            lastname : req.body.lastname,
                             status : n_status,
                             gender : req.body.gender,
                             birth_day : req.body.birth_day,
-                            number : req.body.tel}), req.body.password, 
+                            number : req.body.number}), req.body.password, 
                             function(err, user){
         if(err){
             console.log(err);
