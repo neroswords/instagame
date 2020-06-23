@@ -261,7 +261,7 @@
                                     <div class="entry__body">
                                       <h4 class="entry__title">
                                         <a href="/review/<%= review._id %>">
-                                          <%= review.head %>
+                                          <%= review.game %>
                                         </a>
                                       </h4>
                                       <div class="entry__meta">
@@ -271,7 +271,7 @@
                                         </span>
                                         <span class="entry__meta__posted">
                                           <i class="far fa-clock"></i>
-                                          <%= review.date %>
+                                          <%= moment(review.date).format("DD/MM/YYYY") %>
                                         </span>
                                       </div>
                                     </div>

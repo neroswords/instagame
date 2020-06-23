@@ -5,14 +5,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>column</title>
-    <link rel="stylesheet" href="/css/column.css">
+    <title>category_result</title>
+    <link rel="stylesheet" href="/css/result.css">
 </head>
 <body>
     <main class="teams-body" role="news"> 
         <div id="teams-section" style="position: relative;">
           <header class="teams__headline headline-sticky">
-            <h2 class="headline__name"><%= category %> in <%= keyword %></h2>
+            <div class="row">
+              <div class="col-md-9 col-xs-12">
+                <h4 class="headline__name">
+                  <% if(category==="news") { %>
+                    <span> ข่าวที่มี <%= keyword %></span>
+                 <% } else if(category==="commu") { %>
+                    <span> กระทู้ที่มี <%= keyword %></span>
+                 <% } else if(category==="team") { %>
+                  <span> ปาร์ตี้ที่มี <%= keyword %></span>
+               <% } %>
+              </h4>
+              <!-- <p class="headline__found">
+                  ผลการค้นหาพบ <span>24</span> รายการ
+              </p> -->
+              </div>
+              <div class="col-md-3 col-xs-12">
+              </div>
+            </div>
           </header>
           
   

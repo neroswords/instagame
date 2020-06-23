@@ -54,17 +54,18 @@
 
         <!-- path ของข่าว -->
         <nav class="breadcrumb-box" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/">หน้าแรก</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#">รีวิวเกม</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#"><%= review.game %></a>
-                </li>
-            </ol>
+          <ol class="breadcrumbs bg-dark">
+              <li class="breadcrumb-item breadcrumb-section">
+                  <a href="/"><i class="fas fa-home"></i></a>
+              </li>
+              <li class="breadcrumb-item breadcrumb-section active">
+                  <a href="/review">รีวิวเกม</a>
+              </li>
+              <li class="breadcrumb-item breadcrumb-section active">
+                <a href="#"><%= review.game %></a>
+            </li>
+          </ol>
+      </nav>
         </nav>
 
         <!-- เนื้อข่าว -->

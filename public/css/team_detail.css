@@ -533,18 +533,19 @@
 
 .be-comment-text {
     font-size: 14px;
-    line-height: 18px;
+    line-height: 1.2rem;
     color: #7a8192;
     display: block;
     background: #f6f6f7;
     border: 1px solid #edeff2;
     padding: 15px 20px 20px 20px;
+    border-radius: 1rem;
 }
 
 @media (max-width: 768px) {
     .be-comment-text {
         font-size: 14px;
-        line-height: 18px;
+        line-height: 1.2rem;
         color: #7a8192;
         display: block;
         background: #f6f6f7;
@@ -557,23 +558,24 @@
 
 .form-group .form-input {
     font-size: 14px;
-    line-height: 50px;
+    line-height: 1.4rem;
     font-weight: 400;
     color: #7a8192;
-    width: 100%;
+    width:100%;
+    margin: auto;
     height: 50px;
     padding-left: 20px;
     padding-right: 20px;
     border: 1px solid #edeff2;
-    border-radius: 3px;
+    border-radius: 1rem;
 }
 
 .form-group.fl_icon .form-input {
-    padding-left: 70px;
+    padding-left: 50px;
 }
 
 .form-group textarea.form-input {
-    height: 150px;
+    height: 100px;
 }
 
 .btn-tag {
