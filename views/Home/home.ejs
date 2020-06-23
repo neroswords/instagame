@@ -110,7 +110,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= survival._id %>">
-                              <%= survival.head %>
+                              <%- descriptionText(survival.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -154,7 +154,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= rpg._id %>">
-                              <%= rpg.head %>
+                              <%- descriptionText(rpg.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -197,7 +197,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= battle_royal._id %>">
-                              <%= battle_royal.head %>
+                              <%- descriptionText(battle_royal.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -240,7 +240,7 @@
                       <div class="entry__body">
                         <h4 class="entry__title">
                           <a href="/news/<%= fps._id %>">
-                            <%= fps.head %>
+                            <%- descriptionText(fps.head,50) %>
                           </a>
                         </h4>
                         <div class="entry__meta">
@@ -283,7 +283,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= moba._id %>">
-                              <%= moba.head %>
+                              <%- descriptionText(moba.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -326,7 +326,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= fighting._id %>">
-                              <%= fighting.head %>
+                              <%- descriptionText(fighting.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -369,7 +369,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= sports._id %>">
-                              <%= sports.head %>
+                              <%- descriptionText(sports.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -412,7 +412,7 @@
                           <div class="entry__body">
                             <h4 class="entry__title">
                               <a href="/news/<%= racing._id %>">
-                                <%= racing.head %>
+                                <%- descriptionText(racing.head,50) %>
                               </a>
                             </h4>
                             <div class="entry__meta">
@@ -468,7 +468,7 @@
                         <h4 class="entry__title">
                           <a href="/review/<%= review._id %>">
                             รีวิว:
-                            <%= review.game %>
+                            <%- descriptionText(review.game,50) %>
                           </a>
                         </h4>
                         <div class="entry__meta">
@@ -521,7 +521,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/commu/<%= commu._id %>">
-                              <%= commu.head %>
+                              <%- descriptionText(commu.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -574,7 +574,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/team/<%= team._id %>">
-                              <%= team.head %>
+                              <%- descriptionText(team.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__people">

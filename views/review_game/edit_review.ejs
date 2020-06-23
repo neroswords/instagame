@@ -20,9 +20,9 @@
         </div>
         <form action = '/review/<%= Review._id %>?_method=PUT' method = 'POST' class="form-hor" enctype="multipart/form-data">
             <div>
-                <label for="text" class="label-form-title">พาดหัวรีวิว</label>
+                <label for="text" class="label-form-title">ชื่อเกม</label>
                 <div class="form-inside">
-                    <input type="text" class="form-item" id="headline" name="game" placeholder="ใส่พาดหัวข่าว" value="<%= Review.game %>" required>
+                    <input type="text" class="form-item" id="headline" name="game" placeholder="ใส่ชื่อเกมที่จะรีวิว" value="<%= Review.game %>" required>
                 </div>
             </div>
             <div>
