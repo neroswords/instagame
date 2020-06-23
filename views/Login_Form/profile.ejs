@@ -99,8 +99,7 @@
         <div class="row">
           <div class="col-md-9 col-xs-12">
             <h4 class="headline__name">
-              คำที่ค้นหา:
-              <span><%= result %></span>
+              ค้นหา: 
           </h4>
           <!-- <p class="headline__found">
               ผลการค้นหาพบ <span>24</span> รายการ
@@ -123,7 +122,8 @@
                         </header>
                         <div class="row">
                           <% News.forEach(function(news){ %>
-                            <div class="col-md-3 order-1">
+                            <% if(user._id.equals(news.user_post.id)){ %>                            
+                                <div class="col-md-3 order-1">
                                 <article class="entry entry--hor-sm-only">
                                     <figure class="entry__thumb entry__thumb--zoom">
                                       <a href="/news/<%= news._id %>">
@@ -149,18 +149,10 @@
                                     </div>
                                   </article>
                             </div>
+                            <% } %>
                         <% }) %>
-                            
-                        </div>
-                        <div class="add-view">
-                          <a href="/search/<%= result %>/news">
-                            <button class="scrollto-add">
-                              โหลดเพิ่ม
-                              <i class="fas fa-plus"></i>
-                            </button>
-                          </a>
-                        </div>
                     </div>
+                        
 
                     <!-- ชุมชน / กระทู้ ที่เกี่ยวข้อง -->
                     <div class="col-12" id="search-news">
@@ -172,6 +164,7 @@
                       </header>
                       <div class="row">
                         <% Commu.forEach(function(commu){ %>
+                            <% if(user._id.equals(commu.user_post.id)){ %> 
                           <div class="col-md-3 order-1">
                               <article class="entry entry--hor-sm-only">
                                   <figure class="entry__thumb entry__thumb--zoom">
@@ -198,15 +191,10 @@
                                   </div>
                                 </article>
                           </div>
+                          <% } %>
                       <% }) %>
                       </div>
-                      <div class="add-view">
-                          <button class="scrollto-add" onclick="window.location.href='/search/<%= result %>/commu';">
-                            โหลดเพิ่ม
-                            <i class="fas fa-plus"></i>
-                          </button>
-                      </div>
-                  </div>
+
 
 
                     <!-- ปาร์ตี้ที่เกี่ยวข้อง -->
@@ -219,6 +207,7 @@
                       </header>
                       <div class="row">
                         <% Team.forEach(function(team){ %>
+                            <% if(user._id.equals(team.user_post.id)){ %> 
                           <div class="col-6 col-md-3">
                           <article class="entry">
                             <figure class="entry__thumb entry__thumb--zoom">
@@ -314,13 +303,8 @@
                             </div>
                           </article> 
                         </div>
+                        <% } %>
                         <% }) %>
-                      </div>
-                      <div class="add-view">
-                        <button class="scrollto-add" onclick="window.location.href='/search/<%= result %>/team';">
-                          โหลดเพิ่ม
-                          <i class="fas fa-plus"></i>
-                        </button>
                       </div>
                   </div>
                   
@@ -334,6 +318,7 @@
                     </header>
                     <div class="row">
                       <% Review.forEach(function(review){ %>
+                        <% if(user._id.equals(review.user_post.id)){ %> 
                         <div class="col-12 order-1">
                             <article class="entry entry--hor-sm-only">
                                 <figure class="entry__thumb entry__thumb--zoom">
@@ -360,6 +345,7 @@
                                 </div>
                               </article>
                         </div>
+                        <% } %>
                     <% }) %>
                     </div>
                 </div>

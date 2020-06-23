@@ -103,7 +103,21 @@ router.get("/", function(req,res){
 
 router.get("/profile/:id", function(req,res){
     User.findById(req.params.id, function(err,foundProfile){
-        res.render("profile", {user: foundProfile});
+        News.find({}, function(err,foundNews){
+            Team.find({},function(err,foundTeam){
+                Community.find({},function(err,foundCommu){
+                    Review.find({},function(err,foundReview){
+                        res.render("profile", {user: foundProfile, 
+                            News : foundNews,
+                            Commu : foundCommu,
+                            Team : foundTeam,
+                            Review : foundReview,
+                            moment : moment
+                        });
+                    }) 
+                })
+            }) 
+        })
     })
 })
     
