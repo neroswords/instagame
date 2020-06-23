@@ -26,9 +26,21 @@
 
 .profile-content-container h1 {
     font-size: 24px;
-    border-bottom: 3px solid #ddd;
+    border: 1px solid #F39C12;
+    border-radius: 1rem;
     margin: 0 0 20px;
-    padding: 0 0 10px;
+    padding: .5rem;
+    color: white;
+    background-color: #F39C12;
+}
+
+.profile-item-content h1 {
+    font-size: 24px;
+    border: 1px solid #5DADE2;
+    border-radius: 1rem;
+    margin: 10px 0 20px;
+    padding: .5rem;
+    background-color: #5DADE2;
 }
 
 @media (min-width: 1200px) {
@@ -213,6 +225,18 @@
     border-color: #F39C12;
 }
 
+.profile-btn-primary3 {
+    background-color: #5DADE2;
+    color: #fff;
+    border-color: #5DADE2;
+}
+
+.profile-btn-primary3:hover {
+    background-color: #2874A6;
+    color: #fff;
+    border-color: #2874A6;
+}
+
 .profile-btn {
     position: relative;
     font-size: 14px;
@@ -231,3 +255,30 @@
     vertical-align: middle;
 }
 
+.profile-item-section {
+    background-color: #fff;
+    border-left: 1px solid #ddd; 
+    border-right: 1px solid #ddd; 
+    border-top: 1px solid #ddd;
+    border-radius: 1rem;
+}
+
+#profile-items {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.profile-head-bg {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid;
+}
+
+.profile-head-bg h1 {
+    color: #fff;
+}
+
+.profile-head {
+    border-color: red;
+    background-color: red;
+}
