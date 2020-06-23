@@ -14,7 +14,10 @@
   <section class="highlight">
     <header class="hero__top d-none d-lg-block">
       <div class="hero__header2">
-        <h1>รีวิวเกม <span>ทั้งหมด</span></h1>
+        <h1>รีวิวเกม <span><% if(category){ %>
+          <%= category %>
+          <% } %>
+          ทั้งหมด</span></h1>
       </div>
       <nav class="breadcrumb-box" aria-label="breadcrumb">
         <ol class="breadcrumbs bg-dark">
@@ -24,6 +27,9 @@
             <li class="breadcrumb-item breadcrumb-section active">
                 <a href="#">รีวิวเกม</a>
             </li>
+            <li class="breadcrumb-item breadcrumb-section active">
+              <a href="#"><%= category %></a>
+          </li>
         </ol>
     </nav>
     </header>
