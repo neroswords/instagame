@@ -285,13 +285,13 @@
                       <% news.comments.forEach(function(comment){ %>
                       <div class="be-comment">
                         <div class="be-img-comment">	
-                          <a href="#">
+                          <a href="/profile/<%= comment.user_post.id %>">
                             <img src=<%= '../uploads/user/' + comment.user_post.image %> class="be-ava-comment">
                           </a>
                         </div>
                         <div class="be-comment-content">
                             <span class="be-comment-name">
-                              <a href="#"><%= comment.user_post.alias %></a>
+                              <a href="/profile/<%= comment.user_post.id %>"><%= comment.user_post.alias %></a>
                             </span>
                             <span class="be-comment-time">
                               <i class="fa fa-clock-o"></i>

@@ -101,7 +101,14 @@ router.get("/", function(req,res){
     })
 });
 
-router.get("/profile", function(req,res){
+router.get("/profile/:id", function(req,res){
+    User.findById(req.params.id, function(err,foundProfile){
+        res.render("profile", {user: foundProfile});
+    })
+})
+    
+
+router.get("/profile/editProfile", middleware.isLoggedIn, function(req,res){
     res.render("Edit_profile");
 });
 

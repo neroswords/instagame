@@ -8,6 +8,7 @@ const express = require("express"),
     passport = require('passport'),
     User = require('../models/user'),
     Community = require('../models/commu'),
+    Comment = require('../models/comment'),
     Team = require('../models/team'),
     News = require('../models/news'),
     Review = require('../models/review'),
@@ -213,12 +214,19 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         })
     })
 
-    router.delete("/:id", middleware.checkReviewOwner, function(req,res){
-        Review.findById(req.params.id, function(err, foundReview){
+    router.delete("/:id", middleware.checkReviewOwner,async function(req,res){
+        Review.findById(req.params.id,async function(err, foundReview){
             if(err){
                 console.log(err);
                 res.redirect('/news/'+ req.params.id)
             } else{
+                for await(let comment of foundReview.comments){
+                    Comment.findByIdAndRemove(comment._id,function(err){
+                        if(err){
+                            console.log(err);
+                        }
+                    })
+                }
                 const imagePath = './public/uploads/review/' + foundReview.image;
                 fs.unlink(imagePath, function(err){
                     if(err){
@@ -228,7 +236,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 })
             }
         })
-        Review.findByIdAndRemove(req.params.id, function(err){
+        await Review.findByIdAndRemove(req.params.id, function(err){
             if(err){
                 console.log("error to delete news");
                 res.redirect("/news");

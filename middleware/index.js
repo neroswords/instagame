@@ -128,16 +128,15 @@ middlewareObj.checkO = function(req,res,next){
 
 middlewareObj.checkTu = function(req,res,next){  //Top User
     if(req.isAuthenticated()){
-        User.findById(req.params.id, function(err, foundUser){
+        User.findById(req.user._id, function(err, foundUser){
             if(err){
                 console.log("can not find User");
                 res.redirect("back");
             } else{
-                console.log(foundCommu);
-                
                 if(foundUser.class === "Noble" || foundUser.class === "King"){
                     next();
                 }else{
+                    req.flash('error', "ONLY THE CHOSEN ONE CAN CREATE THE NEWS... WHO ARE YOU!!?")
                     res.redirect("back");
                 }
             }
