@@ -14,9 +14,11 @@ const express = require("express"),
     News = require('../models/news'),
     Review = require('../models/review'),
     Tag = require('../models/tag'),
+    List = require('../models/list'),
     middleware = require('../middleware');
 
     var moment = require('moment');
+const { isLoggedIn } = require("../middleware");
 
     const storage = multer.diskStorage({
         destination : './public/uploads/user',
@@ -120,6 +122,65 @@ router.get("/profile/:id", function(req,res){
         })
     })
 })
+
+router.get("/promotion", middleware.checkO, function(req,res){
+    List.find({}, function(err,allList){
+        res.render("promotion",{List : allList});
+    })
+})
+
+router.get("/promotion/request/:id", middleware.isLoggedIn, function(req,res){
+    res.render("promotion_create");
+})
+
+//รับidของ userที่ขอมา
+router.post("/promotion/request/:id",middleware.isLoggedIn, function(req,res){
+    User.findById(req.params.id, function(err, foundUser){
+        if(err){
+            console.log(err); 
+        } else {
+            var n_content = req.body.content;
+            var n_list = {list : foundUser,content : n_content}
+            List.create(n_list, function(err,newList){
+                req.flash('sucess',"you already sent request")
+                res.redirect("/profile"+req.params.id)
+            })
+        }
+    })
+})
+
+// ส่ง id ของ listมาหาก่อน
+router.post("/promotion/sucess/:id", middleware.checkO,function(req,res){
+    List.findById(req.params.id, function(err, foundList){
+        User.findById(foundList.list, function(err, foundUser){
+            if(err){
+                console.log(err);
+            } else {
+                foundUser.class = "Noble";
+                foundUser.save();
+                List.findByIdAndRemove(req.params.id, function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                })
+                res.redirect("/promotion");
+            }
+        })
+    })
+    
+})
+
+router.post("/promotion/denied/:id", middleware.checkO,function(req,res){
+    List.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            console.log(err);
+        }
+    })
+    res.redirect("/promotion");
+})
+
+    
+
     
 
 router.get("/profile/editProfile", middleware.isLoggedIn, function(req,res){
@@ -261,6 +322,7 @@ router.get("/Sign_up/acception", function(req,res){
 router.post('/Sign_up', upload.single('image'), function(req,res){
     let n_image = req.file.filename;
     let n_class = "People";
+    let status = "none";
     User.register(new User({username: req.body.username, 
                             email: req.body.email , 
                             alias : req.body.alias,
@@ -268,6 +330,7 @@ router.post('/Sign_up', upload.single('image'), function(req,res){
                             class : n_class,
                             firstname : req.body.firstname,
                             lastname : req.body.surname,
+                            status : n_status,
                             gender : req.body.gender,
                             birth_day : req.body.birth_day,
                             number : req.body.tel}), req.body.password, 

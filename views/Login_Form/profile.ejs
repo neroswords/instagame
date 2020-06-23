@@ -74,6 +74,7 @@
                         <p><%= user.email %></p>
                     </div>
                 </div>
+                <% if(currentUser && currentUser._id.equals(user._id)){ %>
                 <div class="profile-form-group">
                     <label for="telephone" class="profile-label-item profile-form-title">
                         เบอร์โทรศัพท์
@@ -82,10 +83,11 @@
                         <p><%= user.number %></p>
                     </div>
                 </div>
-                <% if(currentUser && currentUser._id.equals(user._id)){ %>
                 <div class="profile-form-act">
                     <button  id="editprofile" class="profile-btn profile-btn-primary3" onclick="window.location.href='/editProfile/<%= user._id %>'">แก้ไขข้อมูล</button>
-                    <button  id="editprofile" class="profile-btn profile-btn-primary2">ขออัพเกรดระดับสมาชิก</button>
+                    <% if(currentUser && currentUser.class === "People" && currentUser.status ==="none"){ %>
+                    <button  id="editprofile" class="profile-btn profile-btn-primary2" onclick="window.location.href='/promotion/request/<%= user._id %>'">ขออัพเกรดระดับสมาชิก</button>
+                    <% } %>
                 </div>
                 <% } %>
         </div>
