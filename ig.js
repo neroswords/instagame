@@ -9,6 +9,8 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const flash = require('connect-flash');
 const methodOverride = require('method-override');
 var async = require('async');
+const PORT = process.env.PORT || 3000;
+const URI = "mongodb+srv://neroswords:Min1234_@igdb-wxnmy.mongodb.net/igdb?retryWrites=true&w=majority"
 
 app.locals.descriptionText=function(text,length) {
     return text.substring(0,length);
@@ -19,9 +21,10 @@ const User = require("./models/user"),
     News = require("./models/news"),
     Commu = require("./models/commu");
 
+
 mongoose.set('useUnifiedTopology',true)   
 mongoose.set('useCreateIndex', true)
-mongoose.connect("mongodb://localhost/ig_db", {useNewUrlParser: true});
+mongoose.connect( "mongodb://localhost/ig_db" , {useNewUrlParser: true, useUnifiedTopology: true}); //process.env.IG_DATABASE || URI || 
 mongoose.set('useFindAndModify',false)
 
 app.use(methodOverride("_method"));
@@ -82,6 +85,6 @@ app.use("/search", searchRoutes);
 app.use("/:models/:id/comment", commentRoutes);
 
 
-app.listen(3000, function(req,res){
+app.listen(PORT, function(req,res){
     console.log("Server have started!!");
 });
