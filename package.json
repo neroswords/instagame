@@ -24,7 +24,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
     "path": "^0.12.7",
-    "start": "node ig.js"
+    "start": "^5.1.0"
   },
   "devDependencies": {},
   "scripts": {
