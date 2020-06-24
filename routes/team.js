@@ -225,6 +225,7 @@ router.delete("/:id", middleware.checkTeamOwner,async function(req,res){
             console.log("error to delete team");
             res.redirect("/team/"+ req.params.id);
         }
+        req.flash('success', "suscess to delete the party")
         res.redirect("/team");
     });
 })

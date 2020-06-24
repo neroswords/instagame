@@ -318,6 +318,7 @@ router.delete("/:id", middleware.checkCommuOwner,async function(req,res){
             res.redirect("/commu");
         }
         res.redirect("/commu");
+        req.flash('suscess', "suscess to delete community")
     });
 })
 

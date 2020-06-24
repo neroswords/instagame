@@ -240,6 +240,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 console.log("error to delete news");
                 res.redirect("/news");
             }
+            req.flash('success', "success to delete news")
             res.redirect("/news");
         });
     })
