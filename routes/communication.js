@@ -139,9 +139,6 @@ router.get("/type", function(req,res){
     res.render("column_game_type");
 });
 
-router.get("/type/all", function(req,res){
-    res.render("column_game_type_all");
-});
 
 
 router.post("/create", middleware.isLoggedIn, upload.single('image'), function(req,res){

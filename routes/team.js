@@ -52,7 +52,7 @@ router.get("/category/:category", function(req,res){
                 if(error){
                     console.log(error);
                     
-                 }else {
+                 }else { 
                     res.render("team",{Team : someTeam, moment: moment});
                 }
             }).sort({date : -1});
