@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="/css/column.css">
     <link rel="stylesheet" href="/css/column_game_type.css">
     <script src="/js/load_more.js"></script>
+
+    <style>
+      body {
+        background-image: url('/image/the_elder_scrolls_v.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
+    </style>
 </head>
 <body>
     <main class="teams-body" role="news"> 
@@ -61,7 +70,7 @@
           <section class="box">
             <div class="row" style="display:flex; flex-wrap:wrap;">
               <% Commu.forEach(function(commu){ %>
-              <div class="col-6 col-lg-4 col-xl-3">
+              <div class="col-6 col-lg-3">
                 <article class="entry" style="display: none;">
                   <figure class="entry__thumb entry__thumb--zoom">
                     <a href="/commu/<%= commu._id %>">

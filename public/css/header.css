@@ -272,3 +272,9 @@ opacity: 1;
 .results-list:hover {
 border: 2px solid lightseagreen;
 }
+
+@media (min-width: 1024px) and (max-width: 1199.98px) { 
+  .topbar_brand img {
+    src: url(/public/image/Logo.png);
+  }
+ }

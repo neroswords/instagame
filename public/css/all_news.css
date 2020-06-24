@@ -5,7 +5,7 @@
     }
  }
 
- @media (min-width: 768px) and (max-width: 1024px) {
+ @media (min-width: 768px) and (max-width: 1199.98px) {
     .highlight {
         max-width: 720px;
     }
@@ -111,7 +111,7 @@
     }   
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
     .breadcrumb-box {
         max-width: 720px;
     }
@@ -211,7 +211,7 @@
     }
     }
     
-    @media (min-width: 768px) and (max-width: 1024px){
+    @media (min-width: 768px) and (max-width: 1199.98px){
     .news-body {
         padding-top: 100px;
     }
@@ -230,7 +230,7 @@
         }
      }
     
-     @media (min-width: 768px) and (max-width: 1024px) {
+     @media (min-width: 768px) and (max-width: 1199.98px) {
         .headline {
             max-width: 720px;
         }
@@ -251,6 +251,9 @@
         z-index: 5;
         border-top-right-radius: 1rem;
         border-top-left-radius: 1rem;
+        border-top: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
     }
     
     .headline-sticky {
@@ -447,6 +450,9 @@
         width: 100%;
         border-bottom-right-radius: 1rem;
         border-bottom-left-radius: 1rem;
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
     }
     
     .box_header {

@@ -4,7 +4,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) (max-width: 1199.98px) {
     .teams-body {
         padding-top: 100px;
     }
@@ -24,7 +24,7 @@
     }
  }
 
- @media (min-width: 768px) {
+ @media (min-width: 768px) (max-width: 1199.98px) {
     .teams__headline {
         max-width: 720px;
     }
@@ -45,6 +45,9 @@
     z-index: 5;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 .headline-sticky {
@@ -163,7 +166,7 @@
     }
  }
 
- @media (min-width: 768px) {
+ @media (min-width: 768px) (max-width: 1199.98px) {
     .box {
         max-width: 720px;
     }
@@ -184,6 +187,10 @@
     width: 100%;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    
 }
 
 .box_header {
