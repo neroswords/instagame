@@ -208,13 +208,16 @@ router.delete("/:id", middleware.checkTeamOwner,async function(req,res){
                     }
                 })
             }
-            const imagePath = './public/uploads/team/' + foundTeam.image;
-            fs.unlink(imagePath, function(err){
-                if(err){
-                    console.log(err);
-                    res.redirect('/team');
-                }
-            })
+            if(foundTeam.image !== "none.jpg"){
+                const imagePath = './public/uploads/team/' + foundTeam.image;
+                fs.unlink(imagePath, function(err){
+                    if(err){
+                        console.log(err);
+                        res.redirect('/team');
+                    }
+                })
+            }
+            
         }
     })
     await Team.findByIdAndRemove(req.params.id, function(err){

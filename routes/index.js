@@ -277,13 +277,15 @@ router.put("/editProfile/:id", middleware.isLoggedIn, upload.single('image'), fu
                 console.log(err);
                 res.redirect('/')
             } else{
-                const imagePath = './public/uploads/user/' + foundUser.image;
-                fs.unlink(imagePath, function(err){
+                if(foundUser.image !== "none.jpg"){
+                    const imagePath = './public/uploads/user/' + foundUser.image;
+                    fs.unlink(imagePath, function(err){
                     if(err){
                         console.log(err);
                         res.redirect('/');
-                    }
-                })
+                        }
+                    })
+                }
             }
         })
         var n_user = {firstname : n_firstname,

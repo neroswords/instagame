@@ -265,13 +265,15 @@ router.put("/:id", middleware.checkCommuOwner, upload.single('image'), function(
                 console.log(err);
                 res.redirect('/commu/'+ req.params.id)
             } else{
-                const imagePath = './public/uploads/commu/' + foundCommu.image;
-                fs.unlink(imagePath, function(err){
+                if(foundCommu.image !== "none.jpg"){
+                    const imagePath = './public/uploads/commu/' + foundCommu.image;
+                    fs.unlink(imagePath, function(err){
                     if(err){
                         console.log(err);
                         res.redirect('/commu');
                     }
                 })
+                }   
             }
         })
         var n_commu = {head : n_head, image : n_image, content : n_content}
