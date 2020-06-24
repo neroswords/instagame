@@ -80,24 +80,39 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
     let n_content = req.body.content;
     let n_user_post = {id: req.user._id, alias: req.user.alias};
     let n_game = req.body.game;
-    let n_image = req.file.filename;
     let n_number = 1;
     let n_max_number = req.body.max_number;
     let n_appointment_date = req.body.appointment_date;
     let n_appointment_time = req.body.appointment_time;
     var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
     let n_date = new Date(asiaTime).toISOString();
-    let n_post = {head:n_head, 
-                    content:n_content,
-                    user_post:n_user_post,
-                    game:n_game,
-                    date_post: n_date,
-                    appointment_date:n_appointment_date,
-                    appointment_time:n_appointment_time,
-                    number : n_number,
-                    maxplayer : n_max_number,
-                    image : n_image
-                };
+    if(req.file){
+        let n_image = req.file.filename;
+        var n_post = {head:n_head, 
+            content:n_content,
+            user_post:n_user_post,
+            game:n_game,
+            date_post: n_date,
+            appointment_date:n_appointment_date,
+            appointment_time:n_appointment_time,
+            number : n_number,
+            maxplayer : n_max_number,
+            image : n_image
+        };
+    } else {
+        let n_image = "none.jpg";
+        var n_post = {head:n_head, 
+            content:n_content,
+            user_post:n_user_post,
+            game:n_game,
+            date_post: n_date,
+            appointment_date:n_appointment_date,
+            appointment_time:n_appointment_time,
+            number : n_number,
+            maxplayer : n_max_number,
+            image : n_image
+        }
+    }
     Team.create(n_post,async function(error, newTeam){
         if(error){
             console.log("error create team");

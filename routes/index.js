@@ -358,9 +358,13 @@ router.get("/Sign_up/acception", function(req,res){
 });
 
 router.post('/Sign_up', upload.single('image'), function(req,res){
-    let n_image = req.file.filename;
     let n_class = "People";
     let n_status = "none";
+    if(req.file){
+        var n_image = req.file.filename;
+    } else {
+        var n_image = "none.jpg";
+    }
     User.register(new User({username: req.body.username, 
                             email: req.body.email , 
                             alias : req.body.alias,
