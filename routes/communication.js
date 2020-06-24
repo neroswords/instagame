@@ -34,54 +34,53 @@ const express = require("express"),
 
 router.get("/", function(req,res){
     Tag.find({name : "Survival"}, function(err,foundTag){
-        // Communication.find({tags : {$in : foundTag }}, function(err,foundSurvival){
-        //     var n_Survival = foundSurvival;
-        //     Tag.find({name : "RPG"}, function(err,foundTag){
-        //         Communication.find({tags : {$in : foundTag }}, function(err,foundRPG){
-        //             var n_RPG = foundRPG;    
-        //             Tag.find({name : "Battle Royal"}, function(err,foundTag){
-        //                 Communication.find({tags : {$in : foundTag }}, function(err,foundBattleR){
-        //                     var n_Battle_Royal = foundBattleR;
-        //                     Tag.find({name : "FPS"}, function(err,foundTag){
-        //                         Communication.find({tags : {$in : foundTag }}, function(err,foundFPS){
-        //                             var n_FPS = foundFPS;
-        //                             Tag.find({name : "MOBA"}, function(err,foundTag){
-        //                                 Communication.find({tags : {$in : foundTag }}, function(err,foundMOBA){
-        //                                     var n_MOBA = foundMOBA;
-        //                                     Tag.find({name : "Fighting"}, function(err,foundTag){
-        //                                         Communication.find({tags : {$in : foundTag }}, function(err,foundFighting){
-        //                                             var n_Fighting = foundFighting;  
-        //                                             Tag.find({name : "Sports"}, function(err,foundTag){
-        //                                                 Communication.find({tags : {$in : foundTag }}, function(err,foundSports){
-        //                                                     var n_Sports = foundSports;
-        //                                                     Tag.find({name : "Racing"}, function(err,foundTag){
-        //                                                         Communication.find({tags : {$in : foundTag }}, function(err,foundRacing){
-        //                                                             var n_Racing = foundRacing;
-        //                                                             res.render("column_game_type", {Battle_Royal : n_Battle_Royal,
-        //                                                                                 FPS : n_FPS,
-        //                                                                                 Fighting : n_Fighting,
-        //                                                                                 MOBA : n_MOBA,
-        //                                                                                 RPG : n_RPG,
-        //                                                                                 Racing : n_Racing,
-        //                                                                                 Sports : n_Sports,
-        //                                                                                 Survival : n_Survival, 
-        //                                                                                 moment: moment});
-        //                                                         }).sort({date : -1}).limit(2);
-        //                                                     })    
-        //                                                 }).sort({date : -1}).limit(2)
-        //                                             });
-        //                                         }).sort({date : -1}).limit(2);
-        //                                     })    
-        //                                 }).sort({date : -1}).limit(2);
-        //                             })  
-        //                         }).sort({date : -1}).limit(2);
-        //                     })  
-        //                 }).sort({date : -1}).limit(2);
-        //             })
-        //         }).sort({date : -1}).limit(2);
-        //     })           
-        // }).sort({date : -1}).limit(2);
-        res.render("SignUp");
+        Communication.find({tags : {$in : foundTag }}, function(err,foundSurvival){
+            var n_Survival = foundSurvival;
+            Tag.find({name : "RPG"}, function(err,foundTag){
+                Communication.find({tags : {$in : foundTag }}, function(err,foundRPG){
+                    var n_RPG = foundRPG;    
+                    Tag.find({name : "Battle Royal"}, function(err,foundTag){
+                        Communication.find({tags : {$in : foundTag }}, function(err,foundBattleR){
+                            var n_Battle_Royal = foundBattleR;
+                            Tag.find({name : "FPS"}, function(err,foundTag){
+                                Communication.find({tags : {$in : foundTag }}, function(err,foundFPS){
+                                    var n_FPS = foundFPS;
+                                    Tag.find({name : "MOBA"}, function(err,foundTag){
+                                        Communication.find({tags : {$in : foundTag }}, function(err,foundMOBA){
+                                            var n_MOBA = foundMOBA;
+                                            Tag.find({name : "Fighting"}, function(err,foundTag){
+                                                Communication.find({tags : {$in : foundTag }}, function(err,foundFighting){
+                                                    var n_Fighting = foundFighting;  
+                                                    Tag.find({name : "Sports"}, function(err,foundTag){
+                                                        Communication.find({tags : {$in : foundTag }}, function(err,foundSports){
+                                                            var n_Sports = foundSports;
+                                                            Tag.find({name : "Racing"}, function(err,foundTag){
+                                                                Communication.find({tags : {$in : foundTag }}, function(err,foundRacing){
+                                                                    var n_Racing = foundRacing;
+                                                                    res.render("column_game_type", {Battle_Royal : n_Battle_Royal,
+                                                                                        FPS : n_FPS,
+                                                                                        Fighting : n_Fighting,
+                                                                                        MOBA : n_MOBA,
+                                                                                        RPG : n_RPG,
+                                                                                        Racing : n_Racing,
+                                                                                        Sports : n_Sports,
+                                                                                        Survival : n_Survival, 
+                                                                                        moment: moment});
+                                                                }).sort({date : -1}).limit(2);
+                                                            })    
+                                                        }).sort({date : -1}).limit(2)
+                                                    });
+                                                }).sort({date : -1}).limit(2);
+                                            })    
+                                        }).sort({date : -1}).limit(2);
+                                    })  
+                                }).sort({date : -1}).limit(2);
+                            })  
+                        }).sort({date : -1}).limit(2);
+                    })
+                }).sort({date : -1}).limit(2);
+            })           
+        }).sort({date : -1}).limit(2);
     })
     // Communication.find({}, function(error,allCommu){
     //     if(error){
