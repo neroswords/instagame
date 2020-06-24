@@ -47,7 +47,7 @@
                   <div class="entry__body">
                     <h4 class="entry__title">
                       <a href="/<%= category %>/<%= result._id %>">
-                        <%= result.head %>
+                        <%- descriptionText(result.head,50) %>
                       </a>
                     </h4>
                     <div class="entry__meta">
@@ -57,7 +57,7 @@
                       </span>
                       <span class="entry__meta__posted">
                         <i class="far fa-clock"></i>
-                        <%= moment(result.date).format("DD/MM/YYYY") %>
+                        <%= moment(result.date).format("HH:mm DD/MM/YYYY") %>
                       </span>
                     </div>
                   </div>
@@ -76,7 +76,7 @@
                 <div class="entry__body">
                   <h4 class="entry__title">
                     <a href="/team/<%= team._id %>">
-                      <%= team.head %>
+                      <%- descriptionText(team.head,50) %>
                     </a>
                   </h4>
                   <div class="entry__people">

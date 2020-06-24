@@ -50,7 +50,7 @@
                                         <div class="entry__body">
                                           <h4 class="entry__title">
                                             <a href="/news/<%= news._id %>">
-                                              <%= news.head %>
+                                              <%- descriptionText(news.head,50) %>
                                             </a>
                                           </h4>
                                           <div class="entry__meta">
@@ -60,7 +60,7 @@
                                             </span>
                                             <span class="entry__meta__posted">
                                               <i class="far fa-clock"></i>
-                                              <%= moment(news.date).format("DD/MM/YYYY") %>
+                                              <%= moment(news.date).format("HH:mm DD/MM/YYYY") %>
                                             </span>
                                           </div>
                                         </div>
@@ -99,7 +99,7 @@
                                       <div class="entry__body">
                                         <h4 class="entry__title">
                                           <a href="/commu/<%= commu._id %>">
-                                            <%= commu.head %>
+                                            <%- descriptionText(commu.head,50) %>
                                           </a>
                                         </h4>
                                         <div class="entry__meta">
@@ -109,7 +109,7 @@
                                           </span>
                                           <span class="entry__meta__posted">
                                             <i class="far fa-clock"></i>
-                                            <%= moment(commu.date).format("DD/MM/YYYY") %>
+                                            <%= moment(commu.date).format("HH:mm DD/MM/YYYY") %>
                                           </span>
                                         </div>
                                       </div>
@@ -146,7 +146,7 @@
                                 <div class="entry__body">
                                   <h4 class="entry__title">
                                     <a href="/team/<%= team._id %>">
-                                      <%= team.head %>
+                                      <%- descriptionText(team.head,50) %>
                                     </a>
                                   </h4>
                                   <div class="entry__people">
@@ -261,6 +261,7 @@
                                     <div class="entry__body">
                                       <h4 class="entry__title">
                                         <a href="/review/<%= review._id %>">
+                                          รีวิว:
                                           <%= review.game %>
                                         </a>
                                       </h4>
@@ -271,7 +272,7 @@
                                         </span>
                                         <span class="entry__meta__posted">
                                           <i class="far fa-clock"></i>
-                                          <%= moment(review.date).format("DD/MM/YYYY") %>
+                                          <%= moment(review.date).format("HH:mm DD/MM/YYYY") %>
                                         </span>
                                       </div>
                                     </div>

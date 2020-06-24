@@ -21,8 +21,8 @@
   <body>
     <div class="sticky-top">
       <nav class="navbar navbar-expand-lg bg-white" id="topbar_main">
-          <a class="topbar_brand">
-              <img src="/image/Logo.png" alt="Instagame" style="width: 70px; height: 50px;">
+          <a  href="/" class="topbar_brand">
+              <img src="/image/Logo5.png" alt="Instagame" style="width: 220px; height: 60px;">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-align-justify"></i>
@@ -81,7 +81,9 @@
                     <div class="dropdown">
                       <button class="btn dropdown-toggle dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="member-box__thumb" src=<%= '/uploads/user/' + currentUser.image %>> <!--ใส่รูปภาพ-->
-                        <%= currentUser.alias %>
+                        <div class="username-login">
+                          <%= currentUser.alias %>
+                        </div>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="/profile/<%= currentUser._id %>">

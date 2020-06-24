@@ -28,8 +28,13 @@ body {
 .topbar_brand {
   display: inline-block;
   margin-left: 0;
-  margin-right: 15px;
+  margin-right: 5px;
   margin-bottom: 0;
+}
+
+.topbar_brand img {
+  vertical-align: middle;
+  border-style: none;
 }
 
 a {
@@ -105,8 +110,15 @@ a:hover {
   border-style: none;
   display: inline-block;
   overflow: hidden;
-  margin-right: 5px;
 }
+
+.username-login {
+  display: inline-block;
+  width: auto;
+  align-items: center;
+  vertical-align: middle;
+}
+
 
 #user-signup {
   color: #fff;
@@ -170,7 +182,7 @@ opacity: 1;
 }
 
 
-img {
+.topbar_brand img {
   vertical-align: middle;
   border-style: none;
 }

@@ -39,7 +39,7 @@
             <div class="featured-box__meta">
                 <span class="mr-2">
                     <i class="far fa-user-circle"></i>
-                    <a href="/profile/<%= news.user_post.id %>"><%= news.user_post.alias %></a>
+                    <a class="poster" href="/profile/<%= news.user_post.id %>"><%= news.user_post.alias %></a>
                 </span>
                 <span class="mr-2">
                     <i class="fas fa-eye"></i>
@@ -47,7 +47,7 @@
                 </span>
                 <span>
                     <i class="far fa-clock"></i>
-                    <%= moment(news.date).format("HH:mm:ss DD/MM/YYYY") %>
+                    <%= moment(news.date).format("HH:mm DD/MM/YYYY") %>
                 </span>
             </div>
           </div>    
@@ -63,11 +63,10 @@
                   <a href="/news">ข่าวเกม</a>
               </li>
               <li class="breadcrumb-item breadcrumb-section active">
-                <a href="#"><%= news.head %></a>
+                <a href="#"><%- descriptionText(news.head,50) %></a>
             </li>
           </ol>
       </nav>
-        </nav>
 
         <!-- เนื้อข่าว -->
         <div class="content">
@@ -91,9 +90,9 @@
               </div>
                 <!-- Start Text Content -->
                 <div class="content__read">
-                  <h3>
+                  <h2>
                       <%= news.head %>
-                  </h3>
+                  </h2>
                   <p><%- news.content %></p>
               </div>
               <!-- End text content -->
@@ -120,7 +119,6 @@
                   </h3>
                 </header>
                 <div class="row">
-                  
                   <% reNews.forEach(function(renews){ %>
                     <% var invi = false; %>
                     <% if(renews._id.equals(news._id)){  %>
@@ -137,7 +135,7 @@
                       <div class="entry__body">
                         <h4 class="entry__title">
                           <a  href="/news/<%= renews._id %>">
-                            <%= renews.head %>
+                            <%- descriptionText(renews.head,50) %>
                           </a>
                         </h4>
                         <div class="entry__meta">
@@ -147,7 +145,7 @@
                           </span>
                           <span class="entry__meta__posted">
                             <i class="far fa-clock"></i>
-                            <%= moment(renews.date).format("DD/MM/YYYY") %>
+                            <%= moment(renews.date).format("HH:mm DD/MM/YYYY") %>
                           </span>
                         </div>
                       </div>
@@ -183,7 +181,7 @@
                       <div class="entry__body">
                         <h4 class="entry__title">
                           <a  href="/commu/<%= recommu._id %>">
-                            <%= recommu.head %>
+                            <%- descriptionText(recommu.head,50) %>
                           </a>
                         </h4>
                         <div class="entry__meta">
@@ -193,7 +191,7 @@
                           </span>
                           <span class="entry__meta__posted">
                             <i class="far fa-clock"></i>
-                            <%= moment(recommu.date).format("DD/MM/YYYY") %>
+                            <%= moment(recommu.date).format("HH:mm DD/MM/YYYY") %>
                           </span>
                         </div>
                       </div>
@@ -222,7 +220,7 @@
                     </figure>
                     <div class="entry__body"> 
                         <h4 class="entry__title text-white">
-                            รีวิว : <%= hotgame.game %>
+                            <%= hotgame.game %>
                         </h4>
                     </div>
                     </a>
@@ -299,7 +297,7 @@
                             </span>
                             <span class="be-comment-time">
                               <i class="fa fa-clock-o"></i>
-                              <%= moment(comment.date).format("HH:mm:ss DD/MM/YYYY") %>
+                              <%= moment(comment.date).format("HH:mm DD/MM/YYYY") %>
                               <% if(currentUser && currentUser._id.equals(comment.user_post.id)){ %>
                               <div id="member-box d-inline" class="topbar__member-comment">
                                 <div class="dropdown">

@@ -587,15 +587,17 @@ section .col-md-6 {
     border: 1px solid #C0392B;
 }
 
-.dropdown-item {
+/* .dropdown-item {
     font-size: 16px;
     border-radius: 1rem;
 }
 
 .dropdown-item:hover {
+    font-size: 16px;
+    border-radius: 1rem;
     background: #E74C3C;
     border: 1px solid #E74C3C;
-}
+} */
 
 
 

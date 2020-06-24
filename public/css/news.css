@@ -180,6 +180,14 @@
         margin-top: 10px;
     }
 
+    a.poster {
+        color: #adb5bd;
+    }
+
+    a.poster:hover {
+        color: #91979e;
+    }
+
     @media (min-width: 1200px) {
         .breadcrumb-box {
              max-width: 980px;
@@ -375,7 +383,7 @@
         order: 1;
     }
 
-    .content__read h3 {
+    .content__read h2 {
         margin-bottom: .5rem;
         font-family: inherit;
         font-weight: 400;

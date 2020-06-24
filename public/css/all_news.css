@@ -295,7 +295,7 @@
         border: 1px solid #283593;
     }
 
-    .dropdown-item {
+    /* .dropdown-item {
         font-size: 16px;
         border-radius: 1rem;
     }
@@ -303,7 +303,7 @@
     .dropdown-item:hover {
         background: #3949AB;
         border: 1px solid #3949AB;
-    }
+    } */
 
     .categoly-btn-review {
         color: #fff;

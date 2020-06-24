@@ -35,10 +35,11 @@
               <img src=<%= '../uploads/commu/' + commu.image %>>
           </figure>
           <div class="featured-box__desc">
+            <h1><%= commu.head %></h1>
             <div class="featured-box__meta">
                 <span class="mr-2">
                     <i class="far fa-user-circle"></i>
-                    <a href="/profile/<%= commu.user_post.id %>"><%= commu.user_post.alias %></a>
+                    <a class="poster" href="/profile/<%= commu.user_post.id %>"><%= commu.user_post.alias %></a>
                 </span>
                 <span class="mr-2">
                     <i class="fas fa-eye"></i>
@@ -62,7 +63,7 @@
                   <a href="/commu">กระทู้</a>
               </li>
               <li class="breadcrumb-item breadcrumb-section active">
-                <a href="#"><%= commu.head %></a>
+                <a href="#"><%- descriptionText(commu.head,50) %></a>
             </li>
           </ol>
       </nav>
@@ -93,10 +94,11 @@
                 <!-- Start Text Content -->
                 <div class="content__read">
                     <h2>
-                        <span style="color: #212529;">
-                          <%- commu.content %>
-                        </span>
+                      <%= commu.head %>
                     </h2>
+                    <p style="color: #212529;">
+                        <%- commu.content %>
+                    </p>
                 </div>
                 <!-- End text content -->
 

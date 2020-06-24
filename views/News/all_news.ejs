@@ -24,7 +24,7 @@
                 <a href="/"><i class="fas fa-home"></i></a>
             </li>
             <li class="breadcrumb-item breadcrumb-section active">
-                <a href="#">ข่าวเกม</a>
+                <a href="/news">ข่าวเกม</a>
             </li>
             <li class="breadcrumb-item breadcrumb-section active">
               <a href="#"><%= category %></a>
@@ -132,7 +132,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= news._id %>">
-                              <%= news.head %>
+                              <%- descriptionText(news.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -142,7 +142,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(news.date).format("DD/MM/YYYY") %>
+                              <%= moment(news.date).format("HH:mm DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
