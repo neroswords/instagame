@@ -17,7 +17,7 @@
 <body>
 
 <div class="create-news">
-    <a href="/" class="create-news_btn_close">
+    <a href="/team" class="create-news_btn_close">
         <div class="create-news-icon-close"></div>
     </a>
     <div class="create-news_header">
@@ -27,15 +27,15 @@
     <form action="/team/create" method = 'POST' enctype="multipart/form-data">
       <div class="form-group">
         <label for="exampleFormControlInput1">ชื่อปาร์ตี้</label>
-        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อปาร์ตี้" name="headline">
+        <input type="text" class="form-control" id="party-name" placeholder="ใส่ชื่อปาร์ตี้" name="headline" required>
       </div>
       <div class="form-group">
         <label for="exampleFormControlInput1">ชื่อเกม</label>
-        <input type="text" class="form-control" id="party-game-name" placeholder="ใส่ชื่อเกม" name="game">
+        <input type="text" class="form-control" id="party-game-name" placeholder="ใส่ชื่อเกม" name="game" required>
       </div>
       <div class="form-group">
         <label for="exampleFormControlInput1">ประเภทเกม</label>
-        <select class="game-type form-item" id="game-type" name="type" required aria-placeholder="เลือกประเภทเกมส์">
+        <select class="game-type form-item form-control" id="game-type" name="type" required aria-placeholder="เลือกประเภทเกมส์" required>
           <option value="Survival">Survival</option>
           <option value="RPG">Role-Player Game (RPG)</option>
           <option value="Battle_Royal">Battle Royale</option>
@@ -47,12 +47,12 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="img">เลือกรูปภาพ:</label>
+        <label for="img">แนบรูปภาพ:</label>
         <input type="file" id="party-img" name="image" accept="image/*" required>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">จำนวนสมาชิกในปาร์ตี้</label>
-        <select class="form-control" id="party-member" name="max_number">
+        <select class="form-control" id="party-member" name="max_number" required>
           <option>2</option>
           <option>3</option>
           <option>4</option>
@@ -90,11 +90,7 @@
       <div class="party-btn">
         <div class="submit-create-party">
           <button type="submit" class="submit-create-party-btn" onclick="c_tag(document.getElementById('containers').getAttribute('data-simple-tags'))">
-            <svg class="bi bi-file-earmark-plus" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5v-1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5v2.5A1.5 1.5 0 0 0 10.5 6H13v2h1V6L9 1z"/>
-              <path fill-rule="evenodd" d="M13.5 10a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
-              <path fill-rule="evenodd" d="M13 12.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
-            </svg>
+            <i class="fas fa-users"></i>
             สร้างปาร์ตี้
           </button>
         </div>

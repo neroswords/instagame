@@ -29,8 +29,8 @@
   <body>
     <div class="sticky-top">
       <nav class="navbar navbar-expand-lg bg-white" id="topbar_main">
-          <a class="topbar_brand">
-              <img src="/image/Logo.png" alt="Instagame" style="width: 70px; height: 50px;">
+          <a  href="/" class="topbar_brand">
+              <img src="/image/Logo5.png" alt="Instagame" style="width: 220px; height: 60px;">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-align-justify"></i>
@@ -73,15 +73,15 @@
             </form>
                 <% if(!currentUser) { %>
                   <a href="/Sign_up" id="signup">
-                      <button type="button" id="user-signup" class="btn my-2 my-sm-0">
+                      <button type="button" id="user-signup" class="btn my-2 my-sm-0 ">
                           <i class="fas fa-user-plus"></i>
-                          <span class="d-inline-block">สมัครสมาชิก</span>
+                          <span class="d-lg-none d-xl-inline-block">สมัครสมาชิก</span>
                       </button>
                   </a>
                   <a href="/login" id="login">
                       <button type="button" id="user-signin" class="btn my-2 my-sm-0">
                           <i class="fas fa-power-off"></i>
-                          <span class="d-inline-block">เข้าสู่ระบบ</span>
+                          <span class="d-lg-none d-xl-inline-block">เข้าสู่ระบบ</span>
                       </button>
                   </a>
                <% } else { %>
@@ -89,7 +89,9 @@
                     <div class="dropdown">
                       <button class="btn dropdown-toggle dropdown-login" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="member-box__thumb" src=<%= '/uploads/user/' + currentUser.image %>> <!--ใส่รูปภาพ-->
-                        <%= currentUser.alias %>
+                        <div class="username-login">
+                          <%= currentUser.alias %>
+                        </div>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="/profile/<%= currentUser._id %>">

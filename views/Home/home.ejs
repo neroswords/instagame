@@ -121,7 +121,7 @@ body {
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= survival._id %>">
-                              <%= survival.head %>
+                              <%- descriptionText(survival.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -131,7 +131,7 @@ body {
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(survival.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                              <%= moment(survival.date, moment.ISO_8601).format("HH:mm DD/MM/YY") %>
                             </span>
                           </div>
                         </div>
@@ -165,7 +165,7 @@ body {
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= rpg._id %>">
-                              <%= rpg.head %>
+                              <%- descriptionText(rpg.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -175,7 +175,7 @@ body {
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(rpg.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                              <%= moment(rpg.date, moment.ISO_8601).format("HH:mm DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -208,7 +208,7 @@ body {
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= battle_royal._id %>">
-                              <%= battle_royal.head %>
+                              <%- descriptionText(battle_royal.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -218,7 +218,7 @@ body {
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(battle_royal.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                              <%= moment(battle_royal.date, moment.ISO_8601).format("HH:mm DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -251,7 +251,7 @@ body {
                       <div class="entry__body">
                         <h4 class="entry__title">
                           <a href="/news/<%= fps._id %>">
-                            <%= fps.head %>
+                            <%- descriptionText(fps.head,50) %>
                           </a>
                         </h4>
                         <div class="entry__meta">
@@ -261,7 +261,7 @@ body {
                           </span>
                           <span class="entry__meta__posted">
                             <i class="far fa-clock"></i>
-                            <%= moment(fps.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                            <%= moment(fps.date, moment.ISO_8601).format("HH:mm DD/MM/YYYY") %>
                           </span>
                         </div>
                       </div>
@@ -294,7 +294,7 @@ body {
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= moba._id %>">
-                              <%= moba.head %>
+                              <%- descriptionText(moba.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -304,7 +304,7 @@ body {
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(moba.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                              <%= moment(moba.date, moment.ISO_8601).format("HH:mm DD/MM/YY") %>
                             </span>
                           </div>
                         </div>
@@ -337,7 +337,7 @@ body {
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= fighting._id %>">
-                              <%= fighting.head %>
+                              <%- descriptionText(fighting.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -347,7 +347,7 @@ body {
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(fighting.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                              <%= moment(fighting.date, moment.ISO_8601).format("HH:mm DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -361,9 +361,9 @@ body {
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
-                    <a href="#">Sports</a>
+                    <a href="/news/category/Sports">Sports</a>
                   </h4>
-                  <a href="#" class="btn-sm scrollto" role="button">
+                  <a href="/news/category/Sports" class="btn-sm scrollto" role="button">
                     ดูข่าวทั้งหมด
                     <i class="fas fa-angle-double-right"></i>
                   </a>
@@ -380,7 +380,7 @@ body {
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/news/<%= sports._id %>">
-                              <%= sports.head %>
+                              <%- descriptionText(sports.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -390,7 +390,7 @@ body {
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(sports.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                              <%= moment(sports.date, moment.ISO_8601).format("HH:mm DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -404,9 +404,9 @@ body {
               <div class="col-md-6">
                 <header class="box_header">
                   <h4>
-                    <a href="#">Racing</a>
+                    <a href="/news/category/Racing">Racing</a>
                   </h4>
-                  <a href="#" class="btn-sm scrollto" role="button">
+                  <a href="/news/category/Racing" class="btn-sm scrollto" role="button">
                     ดูข่าวทั้งหมด
                     <i class="fas fa-angle-double-right"></i>
                   </a>
@@ -423,7 +423,7 @@ body {
                           <div class="entry__body">
                             <h4 class="entry__title">
                               <a href="/news/<%= racing._id %>">
-                                <%= racing.head %>
+                                <%- descriptionText(racing.head,50) %>
                               </a>
                             </h4>
                             <div class="entry__meta">
@@ -433,7 +433,7 @@ body {
                               </span>
                               <span class="entry__meta__posted">
                                 <i class="far fa-clock"></i>
-                                <%= moment(racing.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                                <%= moment(racing.date, moment.ISO_8601).format("HH:mm DD/MM/YYYY") %>
                               </span>
                             </div>
                           </div>
@@ -468,7 +468,7 @@ body {
           </header>
               <div class="row">
                 <% Review.forEach(function(review){ %>
-                  <div class="col-6 col-lg-3">
+                  <div class="col-6 col-lg-4 col-xl-3">
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
                         <a href="/review/<%= review._id %>">
@@ -479,7 +479,7 @@ body {
                         <h4 class="entry__title">
                           <a href="/review/<%= review._id %>">
                             รีวิว:
-                            <%= review.game %>
+                            <%- descriptionText(review.game,50) %>
                           </a>
                         </h4>
                         <div class="entry__meta">
@@ -489,7 +489,7 @@ body {
                           </span>
                           <span class="entry__meta__posted">
                             <i class="far fa-clock"></i>
-                            <%= moment(review.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                            <%= moment(review.date, moment.ISO_8601).format("HH:mm DD/MM/YYYY") %>
                           </span>
                         </div>
                       </div>
@@ -510,19 +510,19 @@ body {
           <section class="box">
             <header class="box_header">
               <h4>
-                <a href="/column">
+                <a href="/commu">
                   <img src="https://img.icons8.com/dusk/36/000000/speech-bubble-with-dots.png"/>
                   กระทู้ล่าสุด
                 </a>
               </h4>
-              <a href="/column" class="scrollto rpg-news">
+              <a href="/commu" class="scrollto rpg-news">
                 ดูกระทู้ทั้งหมด
                 <i class="fas fa-angle-right ml-1"></i>
               </a>
             </header>
                 <div class="row">
                   <% Commu.forEach(function(commu){ %>
-                    <div class="col-6 col-lg-3">
+                    <div class="col-6 col-lg-4 col-xl-3">
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/commu/<%= commu._id %>">
@@ -532,7 +532,7 @@ body {
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/commu/<%= commu._id %>">
-                              <%= commu.head %>
+                              <%- descriptionText(commu.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__meta">
@@ -542,7 +542,7 @@ body {
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(commu.date, moment.ISO_8601).format("DD/MM/YYYY") %>
+                              <%= moment(commu.date, moment.ISO_8601).format("HH:mm DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
@@ -575,7 +575,7 @@ body {
               </header>
                   <div class="row">
                     <% Team.forEach(function(team){ %>
-                      <div class="col-lg-3 col-6">
+                      <div class="col-6 col-lg-4 col-xl-3">
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/team/<%= team._id %>">
@@ -585,7 +585,7 @@ body {
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/team/<%= team._id %>">
-                              <%= team.head %>
+                              <%- descriptionText(team.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__people">

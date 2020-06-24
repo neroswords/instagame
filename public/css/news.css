@@ -22,7 +22,7 @@
         }
      }
     
-     @media (min-width: 768px) and (max-width: 991.98px) {
+     @media (min-width: 768px) {
         .teams__headline {
             max-width: 720px;
         }
@@ -178,6 +178,14 @@
     .featured-box__meta {
         color: #adb5bd;
         margin-top: 10px;
+    }
+
+    a.poster {
+        color: #adb5bd;
+    }
+
+    a.poster:hover {
+        color: #91979e;
     }
 
     @media (min-width: 1200px) {
@@ -375,7 +383,7 @@
         order: 1;
     }
 
-    .content__read h3 {
+    .content__read h2 {
         margin-bottom: .5rem;
         font-family: inherit;
         font-weight: 400;

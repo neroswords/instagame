@@ -25,7 +25,7 @@
                 <a href="/"><i class="fas fa-home"></i></a>
             </li>
             <li class="breadcrumb-item breadcrumb-section active">
-                <a href="#">รีวิวเกม</a>
+                <a href="/review">รีวิวเกม</a>
             </li>
             <li class="breadcrumb-item breadcrumb-section active">
               <a href="#"><%= category %></a>
@@ -47,10 +47,8 @@
             <a href="#">
               <img src="/image/slide1.JPG" class="d-block w-100" >
               <div class="carousel-caption d-sm-block">
-                รีวิว:
-                <span>ใส่ชื่อเกม</span>
-              </h4>
-                <!-- <p>ใส่ description สั้นๆของข่าว</p> -->
+                <h4>รีวิว: ใส่ชื่อเกม</h4>
+                <p>ถ้าจ่ายเงินให้ผมเดี๋ยวผมใส่ให้ครับ</p>
               </div>
             </a>
           </div>
@@ -58,10 +56,8 @@
             <a href="#">
               <img src="/image/slide2.JPG" class="d-block w-100" >
               <div class="carousel-caption d-sm-block">
-                รีวิว:
-                <span>ใส่ชื่อเกม</span>
-              </h4>
-                <!-- <p>ใส่ description สั้นๆของข่าว</p> -->
+                <h4>รีวิว: ใส่ชื่อเกม</h4>
+                <p>ถ้าจ่ายเงินให้ผมเดี๋ยวผมใส่ให้ครับ</p>
               </div>
             </a>
           </div>
@@ -69,10 +65,8 @@
             <a href="#">
               <img src="/image/slide3.JPG" class="d-block w-100" >
               <div class="carousel-caption d-sm-block">
-                รีวิว:
-                <span>ใส่ชื่อเกม</span>
-              </h4>
-                <!-- <p>ใส่ description สั้นๆของข่าว</p> -->
+                <h4>รีวิว: ใส่ชื่อเกม</h4>
+                <p>ถ้าจ่ายเงินให้ผมเดี๋ยวผมใส่ให้ครับ</p>
               </div>
             </a>
           </div>
@@ -81,10 +75,8 @@
               <img src="/image/slide4.JPG" class="d-block w-100" >
               <div class="carousel-caption d-sm-block">
                 <h4>
-                  รีวิว:
-                  <span>ใส่ชื่อเกม</span>
-                </h4>
-                <!-- <p>ใส่ description สั้นๆของข่าว</p> -->
+                  <h4>รีวิว: ใส่ชื่อเกม</h4>
+                  <p>ถ้าจ่ายเงินให้ผมเดี๋ยวผมใส่ให้ครับ</p>
               </div>
             </a>
           </div>
@@ -132,7 +124,7 @@
           <section class="box">
                   <div class="row" style="display:flex; flex-wrap:wrap;">
                     <% Review.forEach(function(review){ %>
-                    <div class="col-6 col-lg-3">
+                    <div class="col-6 col-lg-4 col-xl-3">
                       <article class="entry" style="display : none">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/review/<%= review._id %>">
@@ -153,7 +145,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(review.date).format("DD/MM/YYYY") %>
+                              <%= moment(review.date).format("HH:mm DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>

@@ -3,11 +3,24 @@
     margin: 30px 0;
 }
 
+
 @media (min-width: 1200px) {
-.profile-content-container {
-    width: 1050px;
-}
-}
+    .profile-content-container {
+        max-width: 1050px;
+    }
+ }
+
+ @media (min-width: 768px) {
+    .profile-content-container {
+        max-width: 720px;
+    }
+ }
+
+ @media (max-width: 767.98px) {
+    .profile-content-container {
+        max-width: 540px;
+    }
+ }
 
 .profile-content-container {
     background-color: #fff;

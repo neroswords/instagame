@@ -110,7 +110,7 @@
                         <div class="row">
                           <% News.forEach(function(news){ %>
                             <% if(user._id.equals(news.user_post.id)){ %>                            
-                                <div class="col-md-3 order-1">
+                                <div class="col-md-4 col-lg-3 order-1">
                                 <article class="entry entry--hor-sm-only">
                                     <figure class="entry__thumb entry__thumb--zoom">
                                       <a href="/news/<%= news._id %>">
@@ -120,7 +120,7 @@
                                     <div class="entry__body">
                                       <h4 class="entry__title">
                                         <a href="/news/<%= news._id %>">
-                                          <%= news.head %>
+                                          <%- descriptionText(news.head,50) %>
                                         </a>
                                       </h4>
                                       <div class="entry__meta">
@@ -130,7 +130,7 @@
                                         </span>
                                         <span class="entry__meta__posted">
                                           <i class="far fa-clock"></i>
-                                          <%= moment(news.date).format("DD/MM/YYYY") %>
+                                          <%= moment(news.date).format("HH:mm DD/MM/YYYY") %>
                                         </span>
                                       </div>
                                     </div>
@@ -152,7 +152,7 @@
                     <div class="row">
                       <% Review.forEach(function(review){ %>
                         <% if(user._id.equals(review.user_post.id)){ %> 
-                        <div class="col-6 col-md-3 order-1">
+                        <div class="col-md-4 col-lg-3 order-1">
                             <article class="entry entry--hor-sm-only">
                                 <figure class="entry__thumb entry__thumb--zoom">
                                   <a href="/review/<%= review._id %>">
@@ -173,7 +173,7 @@
                                     </span>
                                     <span class="entry__meta__posted">
                                       <i class="far fa-clock"></i>
-                                      <%= moment(review.date).format("DD/MM/YYYY") %>
+                                      <%= moment(review.date).format("HH:mm DD/MM/YYYY") %>
                                     </span>
                                   </div>
                                 </div>
@@ -195,7 +195,7 @@
                       <div class="row">
                         <% Commu.forEach(function(commu){ %>
                             <% if(user._id.equals(commu.user_post.id)){ %> 
-                          <div class="col-md-3 order-1">
+                          <div class="col-md-4 col-lg-3 order-1">
                               <article class="entry entry--hor-sm-only">
                                   <figure class="entry__thumb entry__thumb--zoom">
                                     <a href="/commu/<%= commu._id %>">
@@ -205,7 +205,7 @@
                                   <div class="entry__body">
                                     <h4 class="entry__title">
                                       <a href="/commu/<%= commu._id %>">
-                                        <%= commu.head %>
+                                        <%- descriptionText(commu.head,50) %>
                                       </a>
                                     </h4>
                                     <div class="entry__meta">
@@ -215,7 +215,7 @@
                                       </span>
                                       <span class="entry__meta__posted">
                                         <i class="far fa-clock"></i>
-                                        <%= moment(commu.date).format("DD/MM/YYYY") %>
+                                        <%= moment(commu.date).format("HH:mm DD/MM/YYYY") %>
                                       </span>
                                     </div>
                                   </div>
@@ -238,7 +238,7 @@
                       <div class="row">
                         <% Team.forEach(function(team){ %>
                             <% if(user._id.equals(team.user_post.id)){ %> 
-                          <div class="col-6 col-md-3">
+                          <div class="col-6 col-md-4 col-lg-3">
                           <article class="entry">
                             <figure class="entry__thumb entry__thumb--zoom">
                               <a href="/team/<%= team._id %>">
@@ -248,7 +248,7 @@
                             <div class="entry__body">
                               <h4 class="entry__title">
                                 <a href="/team/<%= team._id %>">
-                                  <%= team.head %>
+                                  <%- descriptionText(team.head,50) %>
                                 </a>
                               </h4>
                               <div class="entry__people">

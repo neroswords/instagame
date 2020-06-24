@@ -47,7 +47,7 @@
           <section class="box">
               <div class="row" style="display:flex; flex-wrap:wrap;">
                       <% Team.forEach(function(team){ %>
-                      <div class="col-lg-3 col-6">
+                      <div class="col-6 col-lg-4 col-xl-3">
                       <article class="entry" style="display: none;">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/team/<%= team._id %>">
@@ -57,7 +57,7 @@
                         <div class="entry__body">
                           <h4 class="entry__title">
                             <a href="/team/<%= team._id %>">
-                              <%= team.head %>
+                              <%- descriptionText(team.head,50) %>
                             </a>
                           </h4>
                           <div class="entry__people">

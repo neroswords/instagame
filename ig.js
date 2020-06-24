@@ -10,6 +10,10 @@ const flash = require('connect-flash');
 const methodOverride = require('method-override');
 var async = require('async');
 
+app.locals.descriptionText=function(text,length) {
+    return text.substring(0,length);
+}
+
 const User = require("./models/user"),
     Team = require("./models/team"),
     News = require("./models/news"),
