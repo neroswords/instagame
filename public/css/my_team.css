@@ -4,7 +4,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px){
+@media (min-width: 768px) {
     .teams-body {
         padding-top: 100px;
     }
@@ -23,7 +23,7 @@
     }
  }
 
- @media (min-width: 768px) and (max-width: 991.98px) {
+ @media (min-width: 768px) {
     .teams__headline {
         max-width: 720px;
     }
@@ -162,7 +162,7 @@
     }
  }
 
- @media (min-width: 768px) and (max-width: 991.98px) {
+ @media (min-width: 768px) {
     .box {
         max-width: 720px;
     }

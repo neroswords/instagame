@@ -23,7 +23,6 @@
                   ผลการค้นหาพบ <span>24</span> รายการ
               </p> -->
               </div>
-              <div class="col-md-3 col-xs-12">
               </div>
             </div>
           </header>
@@ -40,7 +39,7 @@
                             </header>
                             <div class="row">
                               <% News.forEach(function(news){ %>
-                                <div class="col-md-3 order-1">
+                                <div class="col-md-4 col-lg-3 order-1">
                                     <article class="entry entry--hor-sm-only">
                                         <figure class="entry__thumb entry__thumb--zoom">
                                           <a href="/news/<%= news._id %>">
@@ -89,7 +88,7 @@
                           </header>
                           <div class="row">
                             <% Commu.forEach(function(commu){ %>
-                              <div class="col-md-3 order-1">
+                              <div class="col-md-4 col-lg-3 order-1">
                                   <article class="entry entry--hor-sm-only">
                                       <figure class="entry__thumb entry__thumb--zoom">
                                         <a href="/commu/<%= commu._id %>">
@@ -136,7 +135,7 @@
                           </header>
                           <div class="row">
                             <% Team.forEach(function(team){ %>
-                              <div class="col-6 col-md-3">
+                              <div class="col-6 col-md-4 col-lg-3">
                               <article class="entry">
                                 <figure class="entry__thumb entry__thumb--zoom">
                                   <a href="/team/<%= team._id %>">
@@ -251,7 +250,7 @@
                         </header>
                         <div class="row">
                           <% Review.forEach(function(review){ %>
-                            <div class="col-6 col-md-3 order-1">
+                            <div class="col-6 col-md-4 col-lg-3 order-1">
                                 <article class="entry entry--hor-sm-only">
                                     <figure class="entry__thumb entry__thumb--zoom">
                                       <a href="/review/<%= review._id %>">

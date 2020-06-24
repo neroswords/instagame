@@ -124,7 +124,7 @@
           <section class="box">
                   <div class="row" style="display:flex; flex-wrap:wrap;">
                     <% Review.forEach(function(review){ %>
-                    <div class="col-6 col-lg-3">
+                    <div class="col-6 col-lg-4 col-xl-3">
                       <article class="entry" style="display : none">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/review/<%= review._id %>">
@@ -145,7 +145,7 @@
                             </span>
                             <span class="entry__meta__posted">
                               <i class="far fa-clock"></i>
-                              <%= moment(review.date).format("DD/MM/YYYY") %>
+                              <%= moment(review.date).format("HH:mm DD/MM/YYYY") %>
                             </span>
                           </div>
                         </div>
