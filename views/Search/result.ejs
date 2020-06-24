@@ -8,6 +8,15 @@
     <title>Team detail</title>
     <link rel="stylesheet" href="/css/result.css">
     <!-- <link rel="stylesheet" href="/css/team_detail.css"> -->
+
+    <style>
+      body {
+        background-image: url('/image/god_of_war_kratos_and_atreus.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
+    </style>
 </head>
 <body>
     <main class="teams-body" role="news"> 
@@ -250,7 +259,7 @@
                         </header>
                         <div class="row">
                           <% Review.forEach(function(review){ %>
-                            <div class="col-6 col-md-4 col-lg-3 order-1">
+                            <div class=" col-md-4 col-lg-3 order-1">
                                 <article class="entry entry--hor-sm-only">
                                     <figure class="entry__thumb entry__thumb--zoom">
                                       <a href="/review/<%= review._id %>">

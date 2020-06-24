@@ -10,15 +10,12 @@
 
   <script src="/js/home.js" defer></script>
   <style>
-
-body {
-    background-image: url('/image/bg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    background-size: 100% 100%;
-  }
-
-
+      body {
+        background-image: url('/image/valorant.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
   </style>
   
 
@@ -468,7 +465,7 @@ body {
           </header>
               <div class="row">
                 <% Review.forEach(function(review){ %>
-                  <div class="col-6 col-lg-4 col-xl-3">
+                  <div class="col-6 col-lg-3">
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
                         <a href="/review/<%= review._id %>">
@@ -522,7 +519,7 @@ body {
             </header>
                 <div class="row">
                   <% Commu.forEach(function(commu){ %>
-                    <div class="col-6 col-lg-4 col-xl-3">
+                    <div class="col-6 col-lg-3">
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/commu/<%= commu._id %>">
@@ -575,7 +572,7 @@ body {
               </header>
                   <div class="row">
                     <% Team.forEach(function(team){ %>
-                      <div class="col-6 col-lg-4 col-xl-3">
+                      <div class="col-6 col-lg-3">
                       <article class="entry">
                         <figure class="entry__thumb entry__thumb--zoom">
                           <a href="/team/<%= team._id %>">

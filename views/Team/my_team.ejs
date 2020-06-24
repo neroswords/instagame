@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My team</title>
     <link rel="stylesheet" href="/css/my_team.css">
+
+    <style>
+      body {
+        background-image: url('/image/call_of_duty_modern_warfare.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }
+  </style>
 </head>
 <body>
     <main class="teams-body" role="news"> 
@@ -30,7 +39,7 @@
                     <% Team.forEach(function(team){ %>
                       <% for(var n = 0; n < team.number; n++){ %>
                         <% if(currentUser && team.party[n].equals(currentUser._id)) { %>
-                    <div class="col-6 col-lg-4 col-xl-3">
+                    <div class="col-6 col-lg-3">
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
                         <a href="/team/<%= team._id %>">

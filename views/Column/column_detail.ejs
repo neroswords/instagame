@@ -15,7 +15,20 @@
         height: auto; 
         object-fit: cover;
       }
-     </style>
+
+      .be-comment-text img {
+        width:  100%; 
+        height: auto; 
+        object-fit: cover;
+      }
+
+      body {
+        background-image: url('/image/assassins_creed_odyssey.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+      }      
+    </style>
 </head>
 <body>
     <main class="main-body" role="main">
@@ -186,7 +199,7 @@
                   <div class="col-6">
                     <article class="entry">
                       <figure class="entry__thumb entry__thumb--zoom">
-                        <a href="/news/<%= renews._id %>"></a>
+                        <a href="/news/<%= renews._id %>"> 
                           <img style="width:  200px; height: 100px; object-fit: cover;" src=<%= '/uploads/news/' + renews.image %>  class="card-img-top">
                         </a>
                       </figure>
@@ -232,7 +245,7 @@
                     </figure>
                     <div class="entry__body"> 
                         <h4 class="entry__title text-white">
-                            รีวิว : <%= hotgame.game %>
+                            <%= hotgame.game %>
                         </h4>
                     </div>
                     </a>
