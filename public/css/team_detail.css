@@ -4,7 +4,7 @@
     }
 }
 
-@media (min-width: 768px) (max-width: 1199.98px) {
+@media (min-width: 768px), (max-width: 1199.98px) {
     .teams-body {
         padding-top: 100px;
     }
@@ -23,7 +23,7 @@
     }
  }
 
- @media (min-width: 768px) (max-width: 1199.98px) {
+ @media (min-width: 768px), (max-width: 1199.98px) {
     .teams__headline {
         max-width: 720px;
     }
@@ -76,7 +76,7 @@
     }
  }
 
- @media (min-width: 768px) (max-width: 1199.98px) {
+ @media (min-width: 768px), (max-width: 1199.98px) {
     .box {
         max-width: 720px;
     }
@@ -617,6 +617,44 @@
 
 .party-box-comment {
     border-top: 1px solid #ddd;
+}
+
+.entry__meta__posted0 {
+    display: inline-block;
+    font-size: 1rem;
+    color: #273746;
+    font-weight: 600;
+    width: 22%;
+    float: left;
+}
+
+.party-people {
+    display: inline-block;
+    width: 78%;
+}
+
+@media (max-width: 768px) {
+    .entry__meta__posted0 {
+        display: inline-block;
+        font-size: 1rem;
+        color: #273746;
+        font-weight: 600;
+        width: 30%;
+        float: left;
+    }
+    
+    .party-people {
+        display: inline-block;
+        width: 70%;
+    }
+}
+
+.party-detail-info0 {
+    display: block;
+    width: auto;
+    background-color: #fff;
+    color: dimgray;
+    font-size: 1rem;
 }
 
 

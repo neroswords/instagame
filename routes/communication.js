@@ -196,7 +196,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
                         await newCommu.save();
                     }
                 })
-            await res.redirect("/commu");
+            await res.redirect("/commu/"+ newCommu._id);
         }
     })
 })

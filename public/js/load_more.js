@@ -1,8 +1,8 @@
 $(function () {
-    $("article").slice(0, 16).show();
+    $("article").slice(0, 8).show();
     $("#loadMore").on('click', function (e) {
         e.preventDefault();
-        $("article:hidden").slice(0, 16).slideDown();
+        $("article:hidden").slice(0, 8).slideDown();
         if ($("article:hidden").length == 0) {
             $("#load").fadeOut('slow');
         }

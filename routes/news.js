@@ -132,7 +132,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 })
                 
             }
-            res.redirect("/news");
+            res.redirect("/news/"+ newNews._id);
         })
     })
 

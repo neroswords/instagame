@@ -130,7 +130,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 })
                 
             }
-            res.redirect("/review");
+            res.redirect("/review/"+newReview._id);
         })
     })
 
@@ -150,7 +150,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                             Tag.find({name : idReview.game}, function(err,foundTag){
                                 News.find({tags : {$in : foundTag }}, function(err,foundrelateNews){
                                     var n_News = foundrelateNews;
-                                        Community.find({tags : {$in : foundTag }}, function(err,foundrelateCommu){
+                                        Community.find({tags : {$in : foundTag }}, function(err,foundrelateCommu){  
                                             var n_Commu = foundrelateCommu;
                                                 res.render("review_detail",{
                                                     review : idReview, 
@@ -162,8 +162,8 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                                         }).sort({date : -1}).limit(4);   
                                 }).sort({date : -1}).limit(6);
                             })  
-                        })
-                    }).sort({view : -1}).limit(4);
+                        }).limit(4).sort({view : -1});
+                    });
                 }
             }
         )
