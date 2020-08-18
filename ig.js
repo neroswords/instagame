@@ -24,7 +24,7 @@ const User = require("./models/user"),
 
 mongoose.set('useUnifiedTopology',true)   
 mongoose.set('useCreateIndex', true)
-mongoose.connect( "mongodb://localhost/ig_db" , {useNewUrlParser: true, useUnifiedTopology: true}); //process.env.IG_DATABASE || URI || 
+mongoose.connect( URI ||  "mongodb://localhost/ig_db" , {useNewUrlParser: true, useUnifiedTopology: true}); //  process.env.IG_DATABASE  || 
 mongoose.set('useFindAndModify',false)
 
 app.use(methodOverride("_method"));
@@ -74,6 +74,10 @@ app.use(function(req,res,next){
     res.locals.success = req.flash('success');
     next();
 });
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('public'));
+}
 
 
 app.use("/",indexRoutes);

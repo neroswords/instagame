@@ -135,11 +135,6 @@ router.get("/create", middleware.isLoggedIn, function(req,res){
     res.render("c_column");
 });
 
-router.get("/type", function(req,res){
-    res.render("column_game_type");
-});
-
-
 
 router.post("/create", middleware.isLoggedIn, upload.single('image'), function(req,res){
     let n_head = req.body.head;
@@ -201,7 +196,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
                         await newCommu.save();
                     }
                 })
-            await res.redirect("/commu");
+            await res.redirect("/commu/"+ newCommu._id);
         }
     })
 })
@@ -265,13 +260,15 @@ router.put("/:id", middleware.checkCommuOwner, upload.single('image'), function(
                 console.log(err);
                 res.redirect('/commu/'+ req.params.id)
             } else{
-                const imagePath = './public/uploads/commu/' + foundCommu.image;
-                fs.unlink(imagePath, function(err){
+                if(foundCommu.image !== "none.jpg"){
+                    const imagePath = './public/uploads/commu/' + foundCommu.image;
+                    fs.unlink(imagePath, function(err){
                     if(err){
                         console.log(err);
                         res.redirect('/commu');
                     }
                 })
+                }   
             }
         })
         var n_commu = {head : n_head, image : n_image, content : n_content}
@@ -316,6 +313,7 @@ router.delete("/:id", middleware.checkCommuOwner,async function(req,res){
             res.redirect("/commu");
         }
         res.redirect("/commu");
+        req.flash('suscess', "suscess to delete community")
     });
 })
 

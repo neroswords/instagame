@@ -28,9 +28,10 @@
                   คำที่ค้นหา:
                   <span><%= result %></span>
               </h4>
-              <!-- <p class="headline__found">
-                  ผลการค้นหาพบ <span>24</span> รายการ
-              </p> -->
+              <p class="headline__found">
+                <% var x = News.length+Commu.length+Team.length+Review.length; %>
+                  ผลการค้นหาพบ <span><%= x %></span> รายการ
+              </p>
               </div>
               </div>
             </div>

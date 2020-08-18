@@ -132,7 +132,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 })
                 
             }
-            res.redirect("/news");
+            res.redirect("/news/"+ newNews._id);
         })
     })
 
@@ -240,6 +240,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 console.log("error to delete news");
                 res.redirect("/news");
             }
+            req.flash('success', "success to delete news")
             res.redirect("/news");
         });
     })
