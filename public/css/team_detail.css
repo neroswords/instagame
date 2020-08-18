@@ -200,13 +200,13 @@
     font-size: 1rem;
     color: #273746;
     font-weight: 600;
-    width: 25%;
+    width: 22%;
     float: left;
 }
 
 .party-people {
     display: inline-block;
-    width: 75%;
+    width: 78%;
 }
 
 @media (max-width: 768px) {
@@ -222,7 +222,6 @@
     .party-people {
         display: inline-block;
         width: 70%;
-        margin-left: -10px;
     }
 }
 
@@ -232,7 +231,6 @@
     background-color: #fff;
     color: dimgray;
     font-size: 1rem;
-    margin-left: 10px;
 }
 
 .party-detail-info {
