@@ -89,7 +89,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 var n_type_game = "game";
                 var n_view = 1;
                 var tagsarr = req.body.tags.split(',');
-                await tagsarr.push(req.body.type);
+                await tagsarr.push(req.body.type);  //มีปํญหาตอนpush มันไม่รอเวลา
                 for await (let tag of tagsarr) {
                     Tag.find({ name : tag },async function(err, findTag){
                         if(err){
