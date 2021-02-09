@@ -80,7 +80,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
         var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
         let n_date = new Date(asiaTime).toISOString();
         let n_post = {head:n_head, content:n_content, viewers : n_viewers, user_post:n_user_post, game:n_game, date: n_date, image : n_image};
-        News.create(n_post, async function(error, newNews){
+        News.create(n_post, function(error, newNews){
             if(error){
                 console.log("error create news");
             }
@@ -89,8 +89,8 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                 var n_type_game = "game";
                 var n_view = 1;
                 var tagsarr = req.body.tags.split(',');
-                await tagsarr.push(req.body.type);  //มีปํญหาตอนpush มันไม่รอเวลา
-                for await (let tag of tagsarr) {
+                tagsarr.push(req.body.type);  //มีปํญหาตอนpush มันไม่รอเวลา
+                for (let tag of tagsarr) {
                     Tag.find({ name : tag },async function(err, findTag){
                         if(err){
                             console.log(err);
@@ -108,7 +108,7 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                         } else {
                             findTag[0].view++;
                             findTag[0].save();
-                            await newNews.tags.push(findTag[0]._id);
+                            newNews.tags.push(findTag[0]._id);
                         }    
                     }) 
                     
@@ -120,11 +120,11 @@ const upload = multer({storage : storage, fileFilter : imageFilter});
                     } else if(!findGame.length){
                         let game_tag = { name : n_game, type : n_type_game, view : n_view};
                         Tag.create(game_tag,async function(error, gameTag){
-                            await newNews.tags.push(gameTag);
+                            newNews.tags.push(gameTag);
                             newNews.save();
                         })
                     } else if(findGame.length){
-                        await newNews.tags.push(findGame[0]);
+                        newNews.tags.push(findGame[0]);
                         findGame[0].view++;
                         findGame[0].save();
                         newNews.save();

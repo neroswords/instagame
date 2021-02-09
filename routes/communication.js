@@ -155,10 +155,10 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
             var n_type_game = "game";
             var n_view = 1;
             var tagsarr = req.body.tags[0].split(',');
-            await tagsarr.push(req.body.type);
+            tagsarr.push(req.body.type);
             
-                for await (let tag of tagsarr) {
-                    await Tag.find({ name : tag },async function(err, findTag){
+                for (let tag of tagsarr) {
+                    Tag.find({ name : tag },async function(err, findTag){
                         if(err){
                             console.log(err);
                         } else if(!findTag.length){
@@ -179,7 +179,7 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
                     }) 
                     
                 }; 
-                await Tag.find({ name: n_game },async function(err,findGame){
+                Tag.find({ name: n_game },async function(err,findGame){
                     if(err){
                         console.log(err);
                         
@@ -187,16 +187,16 @@ router.post("/create", middleware.isLoggedIn, upload.single('image'), function(r
                         let game_tag = { name : n_game, type : n_type_game, view : n_view};
                         Tag.create(game_tag,async function(error, gameTag){
                             newCommu.tags.push(gameTag);
-                            await newCommu.save();
+                            newCommu.save();
                         })
                     } else if(findGame.length){
                         findGame[0].view++;
                         findGame[0].save();
                         newCommu.tags.push(findGame[0]);
-                        await newCommu.save();
+                        newCommu.save();
                     }
                 })
-            await res.redirect("/commu/"+ newCommu._id);
+            res.redirect("/commu/"+ newCommu._id);
         }
     })
 })
